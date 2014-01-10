@@ -1,0 +1,12 @@
+﻿einfach lösung ? 
+ein enumerable übergeben und die funtionen die nötig sindu m werte zu setzen bzw zu bekommen 
+damit kann nicht garantiert werden das die daten während des reinigungsorgangs in der 
+geleichen reihenfolge bleiben 
+ein problem 
+
+vlt wäre es sinnnvoll den contasiner mit dem parted string zu übergeben 
+dann muss das innere der funktion die zuornung machen 
+
+find ich doof 
+
+eine lösung wäre als 

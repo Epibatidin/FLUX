@@ -1,0 +1,40 @@
+﻿// okay die daten werden korrekt gesäubert
+            // ABER 
+            // ich kann sie nicht setzen da ich nen strinpartmanager nicht zum album
+            //und oder song oder folge oder session oder oder oder oder parsen kann 
+            
+            //ich kirge also eine menge on strings die gesetzt werden müssen 
+            // was its mit out ?! 
+            // ich will pointer haben ! ewiges rumkopieren nervt
+
+            // lösung ?1 
+            // out probieren sonst die clean methode zur eigenschafft von rawdatamanger machen 
+            // optimal lösung ?! 
+            // or nach teile der delegation an raw data manager ? 
+            // raw data manger kontrolliert nur eine einzel instanz kann also nicht säubern ist also keine löszung => schade 
+            // alterniven ? 
+            // keine ?! 
+            
+            // wie bekomm ich die kack daten in das haupt object rein ? 
+
+            // bzw wie setz ich das überhaupt prinzpell wieder ? 
+            // 
+
+            /*//
+             also ich lass album usw nicht mehr direkt vom rawdatamanger erben sondern lass sie ein rawdatamanger 
+             object enthalten das kann ich dann setzen 
+             löst das problem nicht oder ? 
+             * 
+             * angenommen ich mach das so dann ist das eine clean only lösung 
+             * so lässt sich nämlich nix setzen also ausser den raw parts 
+             * reine clean lösung 
+             * ohne extraction 
+             * wie setz ich dann die informationen die ich haben will ? 
+             * lies den extractor aus und setze ?! => stufe 2 
+             * tu es 
+             * alternativen ? 
+             * ref und out ist nicht sinnoll da nur ein teil geändert werden muss und nicht der gesamte container 
+             geht ja auch garnicht ^^
+             * 
+             
+            //*/

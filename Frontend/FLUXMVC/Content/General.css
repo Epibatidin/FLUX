@@ -1,0 +1,37 @@
+﻿body
+{
+    font-size:18px;
+}
+
+
+.l0
+{
+    color:#E35057;   
+}
+
+
+.l1
+{
+    color:Blue;
+}
+
+
+.right 
+{
+    float : right;
+}
+
+.left 
+{
+    float : left;
+}
+
+div.cfix 
+{
+    clear : both;
+}
+
+.hidden 
+{
+    display:none;
+}

@@ -1,0 +1,30 @@
+﻿
+konkret ? 
+wie in diesem einem extrem störendem fall ? 
+um aufbauen der so groß ist wie die menge aller lieder dieses albums
+dann such in der menge der geordneten zahlen nach übereinstimmungen 
+
+aber wie ? 
+
+linq kann das n
+also manuell  und history wird nötig dadurch 
+
+
+welchei nformationen brauch ich ? 
+
+alle zahlen mit ihrem ort des vorkommens 
+
+alle lied objecte und zwar wahlfrei 
+
+das ziel ist eine ordnung herzustellen auf den daten der nummern 
+
+immer noch WIE `?! 
+
+wie kann man die zuordnung herstellen ? 
+
+nimm alle zahlen klopfe sie in eine liste und mach nen join die die überbleiben bzw keinen finden müssen extra behandelt werden 
+also brauche ich die eindeutige zuordnung von lied - extrahierter nummer - und ort des vorkommens 
+
+
+
+

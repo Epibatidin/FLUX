@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Source Name="2005 Amduscia - Impulso Biomecanico">
+    <Item ID="17" Name="01 - Impulso Biomecаnico.mp3">
+      <URL>D:\Musik\Musik - Die geordnet werden muss\Amduscia\2005 Amduscia - Impulso Biomecanico\01 - Impulso Biomecаnico.mp3</URL>
+    </Item>
+    <Item ID="18" Name="02 - Impulso Biomecаnico (English Version).mp3">
+      <URL>D:\Musik\Musik - Die geordnet werden muss\Amduscia\2005 Amduscia - Impulso Biomecanico\02 - Impulso Biomecаnico (English Version).mp3</URL>
+    </Item>
+    <Item ID="19" Name="03 - Sad Warrior Soul.mp3">
+      <URL>D:\Musik\Musik - Die geordnet werden muss\Amduscia\2005 Amduscia - Impulso Biomecanico\03 - Sad Warrior Soul.mp3</URL>
+    </Item>
+    <Item ID="20" Name="04 - Impulso Biomecаnico (Hell Model Version).mp3">
+      <URL>D:\Musik\Musik - Die geordnet werden muss\Amduscia\2005 Amduscia - Impulso Biomecanico\04 - Impulso Biomecаnico (Hell Model Version).mp3</URL>
+    </Item>
+    <Item ID="21" Name="05 - Impulso Biomecаnico (Grendel Mix).mp3">
+      <URL>D:\Musik\Musik - Die geordnet werden muss\Amduscia\2005 Amduscia - Impulso Biomecanico\05 - Impulso Biomecаnico (Grendel Mix).mp3</URL>
+    </Item>
+  </Source>
+</Group>

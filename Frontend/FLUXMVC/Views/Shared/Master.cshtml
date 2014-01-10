@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src='@Url.Content("~/Scripts/JQ20.js")' ></script>    
+    <script type="text/javascript" src='@Url.Content("~/Scripts/Notifications.js")' ></script>    
+
+    <link href='@Url.Content("~/Content/General.css")' rel="Stylesheet"  type="text/css" />
+    <link href='@Url.Content("~/Content/TableStyle.css")' rel="Stylesheet"  type="text/css" />
+    <link href='@Url.Content("~/Content/Colors.css")' rel="Stylesheet"  type="text/css" />
+
+    <title dir="ltr">Der Flux ordnet deine MP3 s</title>
+    
+    @RenderSection("SCRIPTS", false)
+</head>
+<body>    
+    <div id="Notifications" style="height:0px;max-height:100px;overflow-y:scroll"></div>
+
+    <div>
+        @RenderBody()
+    </div>
+  
+</body>
+</html>
+

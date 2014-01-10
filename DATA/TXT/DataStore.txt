@@ -1,0 +1,115 @@
+Der DataStore muss sich meiner meinung nach auch irgendwie darum kümmern das 
+alle unterschiedlichen strukturen irgendwie vereinbar werden 
+oder das müssen die UpdateObjects machen 
+ka 
+irgendwer muss es tun 
+und wenn der nächste layer wieder eine andere datenstruktur und zeug brauch will ich nicht die nächste liste auf machen 
+
+vlt sowas wie get item by key 
+dann iteriere ich über die layerBase values - die müssten dann meiner meinung nach auch in den Konstruktur 
+letzt endlich sollte ich immer mit iteratoren arbeiten 
+
+oder einer schnittstelle die key und value definerit und über die drüber iteriert werden kann 
+
+dann verliere ich die struktur 
+ich will ja den baum 
+nur der nächste layer könnte auch eine andere struktur verlangen 
+ich will 
+das sich der layer oder das upadteobject da nen kopp drum machen müssen 
+
+updateobject IEnumerable<int, value> implementieren lassen ? 
+
+alle arbeiten mit bäumen 
+und welcher baum wird dann für das layout verwendet ? 
+der basis baum ? 
+dann sieht man niemals das sich etwas verändert hat - in der hierachie 
+
+fang ich dann an mit mehrheits entscheiden ?
+ich brauch EINEN einheitlichen weg damit zu arbeiten - mh nein 
+
+ich brauch die initalDaten eh zum schluss wieder 
+zum schreiben kann ich die bearbeitet daten nicht verwenden 
+
+jeder layer soll auf seine art mit den daten arbeiten 
+
+nur muss es einen einehtlichen - komplexität versteckenden weg geben 
+die daten zusammen zu bringen 
+in einen haufen werfen 
+
+das ist ein plan 
+warum muss die view eine hierachie haben ? 
+ich brauch nur künstler - egal ich lese nur einen ordner pro bearbeitung 
+kein guter plan dann muss ich auch wieder gruppieren usw 
+
+mein initaldatum ist ein baum
+dieser wird eventuell umgearbeitet - Traversiert 
+welcher baum ist der boss ? 
+und brauchen die anderen layer überhaupt bäume ?
+
+welchen vorteil bieten bäume ? structur 
+
+ich kann nichtmal wirklich erzwingen das alle nen baum nehmen 
+mp3tag reader muss auf die physische datei zugreifen 
+
+am anfang gibts nur das was ich sage 
+wer was eigenes brauch muss das intern basteln und pflegen - okay lesen bleibt so 
+
+wie ?!? bau ich den nur für die anzeige benötigten baum ?
+das muss ich im mvc adapter tun 
+alle kommen nur als "liste"
+resultat ALLER Layer ist IEnumerable<key,value> und die updateobjecte haben eine methode getValueByID
+
+aber wie ordnen ?! 
+
+vlt nach typen 
+jeder muss angeben von welchem typ - Artist, Album,CD, Song das zurück gegebene resultat ist 
+dann kommt es in die entsprechende liste
+danach kann ich gruppieren ?!? 
+innerhalb eines albums ändert sich nix 
+ich kann nicht nach dem typ album gruppieren und erwarten das korrekt nach album namen gruppiert wird 
+- das geht nich 
+
+filestructure bekommt einen sonderplatz ! 
+anders ? ka 
+
+
+ka vor nachteile
+aber ich bleib beim baum als inital structure 
+geht nicht 2 gründe : 
+	- CD aufpumpen 
+	- initalPfad				<= der könnte auch im artist root stehen oder einem knoten drüber 
+
+ich krieg die menge an daten einfach nicht mehr geordnet 
+eigentlich ein reines view problem 
+
+kann man das mit dem dict key lösen - TreeKey 
+
+also dict<TreeKey, value> 
+
+mit TreeKey == int[] jeder level bekommt eine feste position 
+
+wenn ich dann die werte ändere sind die keys immernoch gut 
+wenn ich das key ändern in filestructre mache sind die values nur 'verschoben'
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

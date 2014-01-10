@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{91434679-7462-467A-98DA-6992FA65B49A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FileStructureDataExtraction.Tests</RootNamespace>
+    <AssemblyName>FileStructureDataExtraction.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Builder\TreeBuilderTests.cs" />
+    <Compile Include="Cleaner\BlacklistCleanerTest.cs" />
+    <Compile Include="Cleaner\Data\MultiFilterTestData.cs" />
+    <Compile Include="Cleaner\EqualityCleanerTests.cs" />
+    <Compile Include="Cleaner\InternetStuffCleanerTests.cs" />
+    <Compile Include="Cleaner\MOCK\MockedBlackListConfig.cs" />
+    <Compile Include="Cleaner\MOCK\MockedWhiteListConfig.cs" />
+    <Compile Include="Cleaner\OneStepUpCleanerTests.cs" />
+    <Compile Include="Extraction\TrackExtraction.Tests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Components\Tree\Tree.csproj">
+      <Project>{D56A5A9D-4CCB-4384-9732-EFD3640801CA}</Project>
+      <Name>Tree</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Layers\AbstractDataExtraction\AbstractDataExtraction.csproj">
+      <Project>{FC452E20-1B12-4747-941C-D10775E42B32}</Project>
+      <Name>AbstractDataExtraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Components\Common\Common.csproj">
+      <Project>{F7CE969C-81D6-465F-A2D9-8811E4C50CF0}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Layers\FileLayer\FileStructureDataExtraction\FileStructureDataExtraction.csproj">
+      <Project>{9750009D-98E8-499A-9A2C-7F9E95CAF8D2}</Project>
+      <Name>FileStructureDataExtraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Components\GenericConfigSection\GenericConfigSection.csproj">
+      <Project>{26C4152C-9FC1-4821-B102-BE06A77BC131}</Project>
+      <Name>GenericConfigSection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Components\Interfaces\Interfaces.csproj">
+      <Project>{528273AB-3980-4EDD-96E4-6A9883887482}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

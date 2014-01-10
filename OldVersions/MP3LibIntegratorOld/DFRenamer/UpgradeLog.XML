@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="DFRenamer">
+</Property><Property Name="Solution File" Value="D:\Software Development\C #\Projects\DFRenamer\DFRenamer.sln">
+</Property><Property Name="User Options File" Value="D:\Software Development\C #\Projects\DFRenamer\DFRenamer.suo">
+</Property><Property Name="Date" Value="Dienstag, 11. Oktober 2011">
+</Property><Property Name="Time" Value="19:11">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="DFRenamer.sln" Description="File successfully backed up as D:\Software Development\C #\Projects\DFRenamer\Backup\DFRenamer.sln">
+</Event><Event ErrorLevel="0" Project="" Source="DFRenamer.suo" Description="File successfully backed up as D:\Software Development\C #\Projects\DFRenamer\Backup\DFRenamer.suo">
+</Event><Event ErrorLevel="0" Project="DFRenamer" Source="DFRenamer\DFRenamer.csproj" Description="Project file successfully backed up as D:\Software Development\C #\Projects\DFRenamer\Backup\DFRenamer\DFRenamer.csproj">
+</Event><Event ErrorLevel="0" Project="DFRenamer" Source="DFRenamer\FileAccess\File.cs" Description="File successfully backed up as D:\Software Development\C #\Projects\DFRenamer\Backup\DFRenamer\FileAccess\File.cs">
+</Event><Event ErrorLevel="0" Project="DFRenamer" Source="DFRenamer\FileAccess\FileFactory.cs" Description="File successfully backed up as D:\Software Development\C #\Projects\DFRenamer\Backup\DFRenamer\FileAccess\FileFactory.cs">
+</Event><Event ErrorLevel="0" Project="DFRenamer" Source="DFRenamer\FileAccess\Folder.cs" Description="File successfully backed up as D:\Software Development\C #\Projects\DFRenamer\Backup\DFRenamer\FileAccess\Folder.cs">
+</Event><Event ErrorLevel="0" Project="DFRenamer" Source="DFRenamer\FileAccess\InfoStorage.cs" Description="File successfully backed up as D:\Software Development\C #\Projects\DFRenamer\Backup\DFRenamer\FileAccess\InfoStorage.cs">
+</Event><Event ErrorLevel="0" Project="DFRenamer" Source="DFRenamer\FileAccess\MP3InfoFrame.cs" Description="File successfully backed up as D:\Software Development\C #\Projects\DFRenamer\Backup\DFRenamer\FileAccess\MP3InfoFrame.cs">
+</Event><Event ErrorLevel="0" Project="DFRenamer" Source="DFRenamer\FileAccess\MP3Tagger.cs" Description="File successfully backed up as D:\Software Development\C #\Projects\DFRenamer\Backup\DFRenamer\FileAccess\MP3Tagger.cs">
+</Event><Event ErrorLevel="0" Project="DFRenamer" Source="DFRenamer\FileAccess\Pattern.cs" Description="File successfully backed up as D:\Software Development\C #\Projects\DFRenamer\Backup\DFRenamer\FileAccess\Pattern.cs">
+</Event><Event ErrorLevel="0" Project="DFRenamer" Source="DFRenamer\Program.cs" Description="File successfully backed up as D:\Software Development\C #\Projects\DFRenamer\Backup\DFRenamer\Program.cs">
+</Event><Event ErrorLevel="0" Project="DFRenamer" Source="DFRenamer\Properties\AssemblyInfo.cs" Description="File successfully backed up as D:\Software Development\C #\Projects\DFRenamer\Backup\DFRenamer\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="DFRenamer" Source="DFRenamer\ClassDiagram1.cd" Description="File successfully backed up as D:\Software Development\C #\Projects\DFRenamer\Backup\DFRenamer\ClassDiagram1.cd">
+</Event><Event ErrorLevel="0" Project="DFRenamer" Source="DFRenamer\DFRenamer.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="DFRenamer" Source="DFRenamer\DFRenamer.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="DFRenamer.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="DFRenamer.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="DFRenamer" Source="DFRenamer\DFRenamer.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

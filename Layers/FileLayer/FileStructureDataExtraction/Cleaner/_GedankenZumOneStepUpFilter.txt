@@ -1,0 +1,103 @@
+﻿
+
+
+DatenStrukturen 
+=======================================================================================================================
+
+wenn sich das album ändert wirdf der iterator neu angestoßen 
+das letzte item rauswerfen und ein neus rein bauen 
+das schreit doch nach nem stack ! 
+auch wenn ich das pzush und pop verhalten ansivch nicht brauch 
+ist er doch hoffentlich wenigstens update optimiert 
+nein kein stack ich denke ne liste reicht 
+theoretisch reicht sogar ein array der länge 2 
+denn es ist nicht davon auszugehen das mehr als 2 item nämlich künstler und album darin enthalten sind 
+der algorithmus bekommt bereits die werte die entfernt werden müssen fertig in correcter reihenfolge 
+also reicht ein ienumable 
+denn es wird nur iteriert und entfernt 
+keine notwendigkeit für add/remove 
+nur iterieren 
+es wird also ein array gz 
+
+
+Reihenfolge 
+=======================================================================================================================
+ich muss oben anfangen 
+und nach unten arbeiten 
+also song mit album - künstler mit song -  album mit künstler
+
+das ist falsch 
+im song sollte sowenig information wie möglich erhalten bleiben 
+die mögliche redundanz zwischen album und song daten verringern die prezision des filters - denke ich 
+einfach weil die qualität der album daten dann potenzioell niedriger ist als wenn erst der künsztern gefilteret worden wäre
+
+die zugrunde liegend annahme ist das qualitativ hochwertige daten qualitativ höher wertige daten erzeugen 
+gegen beweis durch beispiel daten 
+
+führt das zurück zu iteratoren ?
+ ==> Iteratoren 
+
+
+
+Iteratoren  
+=======================================================================================================================
+ ist es sinnvoll auch CD 1 rauszuwerfen ? 
+ cd istz ein einfach zu findendes kriterium um auf multi cd alben zu schließen 
+ ausserdem sind die bäume normalisiert => alle ham cd drin 
+ => iteriere also nur das 2 te level und die obersten blätter 
+ wie komm ich an die level ? maxlvl iterator 
+ mit den ein einzeln alben al root ? 
+ dann brauch ich ja "anzahl der alben" + 1 iteratoren 
+ vorallem brauch ich auch die einzelnen knoten - nicht nur die iteratoren 
+ um daten setzen ztu können 
+
+alternativen ? 
+kann der path iterator das allein leisten ? 
+ja
+grupiere nach dem album 
+
+extraktions qualität 
+=> 
+warum sollte es ? 
+hab ich dadurch eine andere reihenfolge wie ich iteriere ?! 
+ja 
+der filter ist nicht für mengen verarbeitung 
+er vergleicht einzeln 
+also kein problem 
+ein wenig asnders muss ich dennoch iterieren 
+bzw anders extrahieren / filter 
+
+
+
+===> TU ES !!!
+
+Extraktions Algorithmus 
+================================
+/ iterier so lange bis du den ersten match findest 
+// wenn du einen match gefunden hast müssen beide gleich mässig hoch gezählt werden 
+// bis i oder j / und am ende sind  
+
+// gibt es die gefahr das ein longest match nach einem short match vorkommt ? => testcase ?!
+// dh ich such eigentlich ALLE MXN matches die möglich sind ? 
+// ich merke mir ALLE MXN matches 
+// und suche im resultat nach sequenzen 
+
+// dann muss ich 3 mal iterieren 
+// erst mXn schritte dann nochmnal über die matches 
+
+// egal tu es 
+                    
+// das kann ich nicht tun 
+// dadurch würde etwas relvantes zerstört werden 
+// die reihenfolge 
+// berzerk on rampage würde on berzerk rampage matchen 
+                     
+// => ich kann nur genau einen match suchen ?! 
+
+/> 
+
+longest match 
+reihenfolge 
+finde alle matches 
+wirf die raus für die nicht i >= j
+

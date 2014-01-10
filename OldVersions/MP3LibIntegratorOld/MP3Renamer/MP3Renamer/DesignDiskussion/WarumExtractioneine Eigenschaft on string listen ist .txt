@@ -1,0 +1,75 @@
+﻿
+            // filelist runreichen ist doof => extraktion ist eine eigenschadt der liste 
+            // => kein rumreichen mehr 
+            // + variable anzahl on filtern plugin mässig hinzufügbar 
+            // nachteile ?! 
+            // extraction ist keine iegenschaft von strings 
+            // wie werden spätere lvl gemacht ?! 
+            // gibt es extraction für alben / songs usw extra ? 
+            // ist das ein vorteil ? 
+
+? otrteil ? 
+die flexible ein und ausbau stufe bietet orteile 
+weil jedes "" plugin kann erschieden stufen der extraktion übernehmen im hintergrund jedoch die gleich methoden wie 
+stufen höher verwenden
+
+den filtern muss dennoch die liste übergeben werden es sein denn es wird mit vererbung imüplemtiert was noch schlimmer wäre 
+=> abgelehnt 
+
+statisch ist nicht objectorientiert => abgelehnt 
+
+wie führt man eine liste on klassen auf einer anderen klasse aus ? 
+das artet doch wieder in übergeben=> bearbeiten => zurück kopieren => alten +überschreiben aus => uncool
+ohne pointer und referenzen bleibt nur kopieren 
+
+interfaces kann man nicht per refernc übergeben 
+
+=> alternatien ?> 
+ka 
+
+das würde bedeuten das extraction eine eigenschaft on IstringPartmanger wird => abgelehnt 
+
+warum ? 
+
+wenn filtern eine eigenschaft einer menge on strings ist ist das erstens reichlich sinnfrei denn woo bau ich dann die 
+equal seek and destroy methode ein ? 
+wo bau ich die extraction ein ? 
+wo bau ich die filter ein die in zukunft noch dazu kommen ? 
+das kann keine eigenschaft vom string part manager sein denn er kann nicht unterascheiden zwischen album / song / artist usw 
+=> das artet dann wieder in schalter ariablen aus => uncool => abgelehnt
+
+=> alternatien ?! 
+keine 
+
+gi b jmd eine liste on filtern und sag ihm wende sie auf die gegeben informationen an gib mir das resultat zurück => 
+copy 
+
+=> keine alternativen zu wildem rumkopieren 
+
+=> liste on filtern => wildes rumkopieren => keine alternativen
+
+=> hierachie denn es muss dann eine definierte folge der filter geben denn es ist sinnvoller erst zu filtewrn dann zu extrahieren  +
+
+=> i Root ?!?!
+wer sonst 
+muss es dann subroot auch können ? 
+und leaf ?! 
+
+wo bau ich das ein wen lass ich das machen ? 
+FLVM ?!?!?!
+
+hat teile dieser funktionalität bereits 
+
+=> abbruch weil am nafang ?! 
+
+=> filter nach lvl setzen 
+=> ausführen wie krieg ich die reihenfolge da rein ? 
+=> delegates ?! ^^
+
+=> erzeuge für alle filter ein interface 
+=> 2 methoden und konstruktor 
+=> konstruktor überniommt die filelist 
+=> set filter
+=> exectute wendet die filter an und kopiert filelist zurück 
+
+ 

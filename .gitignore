@@ -1,0 +1,5 @@
+*.dll
+
+/Components/Common/bin/Debug/*.pdb
+
+/Components/Common/obj/Debug/*.pdb

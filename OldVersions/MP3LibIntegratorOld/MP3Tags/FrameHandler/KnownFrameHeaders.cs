@@ -1,0 +1,91 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace FrameHandler
+{
+    public enum FrameHeader : byte 
+    {
+        ZUKN    =  0,    // Unknown
+        AENC    =  1,    // [#sec4.20 Audio encryption] 
+        APIC    =  2,    // [#sec4.15 Attached picture]
+        COMM    =  3,    // [#sec4.11 Comments]
+        COMR    =  4,    // [#sec4.25 Commercial frame]
+        ENCR    =  5,    // [#sec4.26 Encryption method registration]
+        EQUA    =  6,    // [#sec4.13 Equalization]
+        ETCO    =  7,    // [#sec4.6 Event timing codes]
+        GEOB    =  8,    // [#sec4.16 General encapsulated object]
+        GRID    =  9,    // [#sec4.27 Group identification registration]
+        IPLS    = 10,    // [#sec4.4 Involved people list]
+        LINK    = 11,    // [#sec4.21 Linked information]
+        MCDI    = 12,    // [#sec4.5 Music CD identifier]
+        MLLT    = 13,    // [#sec4.7 MPEG location lookup table]
+        OWNE    = 14,    // [#sec4.24 Ownership frame]
+        PRIV    = 15,    // [#sec4.28 Private frame]
+        PCNT    = 16,    // [#sec4.17 Play counter]
+        POPM    = 17,    // [#sec4.18 Popularimeter]
+        POSS    = 18,    // [#sec4.22 Position synchronisation frame]
+        RBUF    = 19,    // [#sec4.19 Recommended buffer size]
+        RVAD    = 20,    // [#sec4.12 Relative volume adjustment]
+        RVRB    = 21,    // [#sec4.14 Reverb]
+        SYLT    = 22,    // [#sec4.10 Synchronized lyric/text]
+        SYTC    = 23,    // [#sec4.8 Synchronized tempo codes]
+        
+        UFID    = 63,    // [#sec4.1 Unique file identifier]
+        USER    = 64,    // [#sec4.23 Terms of use]
+        USLT    = 65,    // [#sec4.9 Unsychronized lyric/text transcription]
+        WCOM    = 66,    // [#WCOM Commercial information]
+        WCOP    = 67,    // [#WCOP Copyright/Legal information]
+        WOAF    = 68,    // [#WOAF Official audio file webpage]
+        WOAR    = 69,    // [#WOAR Official artist/performer webpage]
+        WOAS    = 70,    // [#WOAS Official audio source webpage]
+        WORS    = 71,    // [#WORS Official internet radio station homepage]
+        WPAY    = 72,    // [#WPAY Payment]
+        WPUB    = 73,    // [#WPUB Publishers official webpage]
+        WXXX    = 74,     // [#WXXX User defined URL link frame]        
+        
+        TALB    = 100,    // [#TALB Album/Movie/Show title]
+        TBPM    = 101,    // [#TBPM BPM (beats per minute)]
+        TCOM    = 102,    // [#TCOM Composer]
+        TCON    = 103,    // [#TCON Content type]
+        TCOP    = 104,    // [#TCOP Copyright message]
+        TDAT    = 105,    // [#TDAT Date]
+        TDLY    = 106,    // [#TDLY Playlist delay]
+        TENC    = 107,    // [#TENC Encoded by]
+        TEXT    = 108,    // [#TEXT Lyricist/Text writer]
+        TFLT    = 109,    // [#TFLT File type]
+        TIME    = 110,    // [#TIME Time]
+        TIT1    = 111,    // [#TIT1 Content group description]
+        TIT2    = 112,    // [#TIT2 Title/songname/content description]
+        TIT3    = 113,    // [#TIT3 Subtitle/Description refinement]
+        TKEY    = 114,    // [#TKEY Initial key]
+        TLAN    = 115,    // [#TLAN Language(s)]
+        TLEN    = 116,    // [#TLEN Length]
+        TMED    = 117,    // [#TMED Media type]
+        TOAL    = 118,    // [#TOAL Original album/movie/show title]
+        TOFN    = 119,    // [#TOFN Original filename]
+        TOLY    = 120,    // [#TOLY Original lyricist(s)/text writer(s)]
+        TOPE    = 121,    // [#TOPE Original artist(s)/performer(s)]
+        TORY    = 122,    // [#TORY Original release year]
+        TOWN    = 123,    // [#TOWN File owner/licensee]
+        TPE1    = 124,    // [#TPE1 Lead performer(s)/Soloist(s)]
+        TPE2    = 125,    // [#TPE2 Band/orchestra/accompaniment]
+        TPE3    = 126,    // [#TPE3 Conductor/performer refinement]
+        TPE4    = 127,    // [#TPE4 Interpreted, remixed, or otherwise modified by]
+        TPOS    = 128,    // [#TPOS Part of a set]
+        TPUB    = 129,    // [#TPUB Publisher]
+        TRCK    = 130,    // [#TRCK Track number/Position in set]
+        TRDA    = 131,    // [#TRDA Recording dates]
+        TRSN    = 132,    // [#TRSN Internet radio station name]
+        TRSO    = 133,    // [#TRSO Internet radio station owner]
+        TSIZ    = 134,    // [#TSIZ Size]
+        TSRC    = 135,    // [#TSRC ISRC (international standard recording code)]
+        TSSE    = 136,    // [#TSEE Software/Hardware and settings used for encoding]
+        TYER    = 137,    // [#TYER Year]
+        TXXX    = 138,    // [#TXXX User defined text information frame]
+
+
+    }
+
+}

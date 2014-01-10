@@ -1,0 +1,10 @@
+VirtualFileProvider
+	SourceProviderFactory
+		Reset()
+		Get()
+	ISourceProvider	
+	SourceProvider
+		XMLSourceProvider
+		DirectorySourceProvider
+		
+	VirtualFileAccessor

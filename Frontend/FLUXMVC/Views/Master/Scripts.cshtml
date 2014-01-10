@@ -1,0 +1,33 @@
+﻿<script type="text/javascript">
+
+    $(document).ready(function () {
+        var exe = $('#exe');
+
+        exe.click(function () {
+            //exe.prop('disabled', true);
+
+            $.get('@Url.Action("StartProgress", "Home")')
+                .always(function () {
+                    writeLog('StartingProgress');
+                })
+                .done(function () {
+                    var count = 0;
+                    var timer = setInterval(function () {
+                        clearInterval(timer);
+                        count++;
+                        if (count < 10) {
+                            $.get('@Url.Action("Index", "DataDelivery")')
+                                .done(function (data) {
+                                    $('#DataContainer').html(data);
+                                });
+                        }
+                        else {
+                            clearInterval(timer);
+                        }
+                    }, 200);
+                });
+        })
+    });
+    
+
+</script>

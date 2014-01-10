@@ -1,0 +1,68 @@
+﻿
+.Artist 
+{
+    margin:25px 250px;
+    
+}
+
+.Al bum 
+{
+    width : 600px;
+    float:left;
+}
+
+.Container
+{
+    display:block;
+    border : 3px solid #696969;    
+    border-radius: 10px;
+    -moz-border-radius : 10px;
+    background-color : #EBEBEB;    
+    float:left;
+    margin: 1px;   
+    
+}
+
+.Container .Key
+{
+    display:block;
+    float:left;   
+    width:10px;   
+    text-align:center; 
+    border:none;   
+    font:14px/13px Verdana;    
+    background-color: Gray;
+    padding:6px;
+    border-radius:10px;
+    margin:3px;
+}
+
+
+.Container .Wrapper 
+{
+     float:left;
+     max-width:70%;
+     margin : 1px 5px 1px 5px;
+}
+
+.border 
+{
+    display:block;
+    border : 3px solid #696969;    
+    border-radius: 10px;
+    -moz-border-radius : 10px;
+}
+
+
+.LayerValueKey.empty
+{     
+    width:auto;
+}
+
+.LayerValue
+{
+     display:block;
+     float:right;     
+     padding-left:10px;
+     bac kground : white;
+}

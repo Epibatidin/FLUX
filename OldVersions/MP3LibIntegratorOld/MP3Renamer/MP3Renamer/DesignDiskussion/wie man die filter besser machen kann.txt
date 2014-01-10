@@ -1,0 +1,42 @@
+﻿filter 
+
+mh filter 
+wwas kann man dagegen tun ?! 
+was ist das ziel ? 
+multifilter müssen besser werden 
+denn das immer alle zahlen sterben müssen nervt mich 
+
+also was dagegen tun ?!
+kann mir linq helfen ?
+
+könnte man das sql ähnlich durchziehen ? 
+dh ? ka 
+zurück zum ziel 
+globales lösen jetzt nicht sinnvoll weil ?! keine ahnung ich nicht weiß wie ichsw machen kann 
+
+ich würd halt einfach nen subroot reinwerfen und schauen was am ende raus kommt 
+2 stufiges filtern pro filter ermöglichen ?! 
+erst zahlen extrahieren dann kontrolle welche sinnvoll sind ? 
+damit ist das problem nicht reduziert 
+die zentrale frage ist wie ich multifilter erlauben kann 
+und zwar für leafs und subroots 
+ohne es doppelt zu machen 
+
+worauf bezieht sich die gesammelte datenmenge ? 
+den extraktionsfilter kann ich ja über jahre und musiktitel laufen lassen 
+nicht kann sondern willFilter
+also WIE ?!
+
+2 filter die unterschiedlich aufgerufen werden intern aber sehr ähnlich funktionieren 
+diese ähnlichkeit lager ich dann in nen extra algo aus 
+
+das okay so
+
+
+
+
+kandidaten
+
+
+
+

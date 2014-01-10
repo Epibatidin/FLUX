@@ -1,0 +1,26 @@
+﻿           
+// hol dir nur die die updated = true haben 
+// parse die zu layerdata 
+// returne
+
+// joinen über ids 
+// gruppieren nach ? 
+
+
+// => result : TreeItem<IEnumerable>
+
+
+// verwende die gruppierung der file items über die id bleibts eindeutig 
+
+
+	// alle daten aus allen layern sind ISongs
+            
+// aber das resultat muss MultiSongData sein
+// eine menge von key Value Pairs 
+// Album : IEnumerable<string> 
+// dann wird das nur ein temp object 
+// dass muss in einem blokc passieren 
+
+// durch das umarbeiten zu einem baum müssen eventuell auch datenb nach 'unten' oder 'oben'
+// wandern 
+

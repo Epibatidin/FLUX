@@ -1,0 +1,107 @@
+﻿
+            // okay fertig gefiltered und extrahiert jetzt muss ich mir jedes einzelne 
+            // subroot nochmal anschauen und leaf extraktion durchführen 
+            // sind das andere filter `? 
+            // muss ich die extra setzen ? 
+            // oder sind das die gleichen wie bei subroots ?
+            // sind es die gleichen ?
+            // also mindestens jahr und track nummer muss anders exxtrahiert werden 
+            // dh worst cae 
+            // es gibt filter für alles und filter für einzelne 
+
+wie geht das also ? 
+kann ich die filter bestimmen lassen worauf sie atrbeiten ? 
+nein alle filter arbeiten auf IStringÜPArtmanager
+=> dh keine unteraschiede 
+ich brauch also 3 enums oder 4 
+besser 4 dann kann man einstellen das die subroots und leafs unterschiedlich extrahiert werde 
+
+=> doof 
+weil redudant 
+=> gibt es dann noch die unterscheidung zwischen single und multifiltern ? 
+müsste das extra sein quasi 8 enums ihhhhhh
+
+man kann die filter einfach nur öfter anwenden ohne sie als enum extra zu handeln 
+option ? 
+wie kann ich dann entscheiden das bestimmte filter nutr auf leafs bzw subroot angewendet werden ? 
+=> garnioxht 
+das doch doof 
+
+
+auf benutzer ebene muss es 4 enums geben 
+2 - leaf filter und extract 
+2 - subroot filter und extract
+
+gleiche enums mappen dann auf die gleichen filterklassen 
+
+
+wie unterscheide ich zwischen benutzer lvl und "codebehindf" ? 
+
+mit unnötig viel aufwand 
+=> 4 ENUMS !
+das immernoch doof weil redundant 
+ich könnte mir auch beide enums merken und dann auf welchem ll sie ausgeführt werden sollen 
+das ist iel besser hust nicht 
+
+das gibts das zeug halt doppelt mimimimimimimimimimimimimimimi!
+
+
+
+
+das doof 
+wenn ich mehrere enums mache muss jeder extractor wieder 2 leels haben 
+und dann sollte man eigentlich mit ereerbung arbetien 
+
+
+sonst müssen auch die interfaces mehrere setfilter mehrtoden implemtieren 
+
+wenn man generisch macht kann man es nicht in einer liste speichern 
+oder man macht eine 3 stugfen hierachie draus => doof 
+
+ist auch bescheuert das alles gleich behandeln zu wollen es arbeitet unterschiedlich bzw auf unterschiedlichen stufen 
+allein die felder von iroot und i leaf sind völlig anders 
+
+
+ahahahhahahah+
+
+und nu ß ß
+alternatien ? 
+optione ? 
+möglichkeiten ß 
+lösungsansätze ? 
+pattern ?
+
+
+nix ? 
+
+keine generics 
+wenig vererbung und gut 
+
+die filter anwendung ist immer die selbe ist also nicht abhängig worauf sie angewendet wird 
+
+extraction ist erstmal zur seite geschoben 
+
+ // was teilen sich die beiden filter stufen ? 
+                    // workunit 
+                    // setfilter 
+                    // execute 
+                    // quasi alles 
+                    // nur den typ nicht 
+                    // also 2 mal das slebe mahcne nur wegen nem anderem typ ? 
+                    // mh nö 
+
+mit generics ja für genau 2 interfaces ist ein wenig oerkill ausserdem kann ich dann nicht mehr 
+müssen 2 werden gibt keinen weg dran vorbei auch wenn sie quasi das selbe sidn 
+abgesehn vom typ 
+
+alterbnatien ? 
+immernoch nicht 
+das doch doof 
+generics sind doof 
+
+und abstracte klassen bzw methoden die man generic mahct und nicht generic nicht überschrieben werden können 
+
+
+
+
+ 
