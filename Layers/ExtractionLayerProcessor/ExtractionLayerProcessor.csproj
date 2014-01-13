@@ -74,11 +74,13 @@
       <Name>Interfaces</Name>
     </ProjectReference>
   </ItemGroup>  
-  <ItemGroup>
-    <Config Include=".\Layer.config"></Config>
-  </ItemGroup>
+  
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-    <Target Name="AfterBuild">
+  <ItemGroup>
+    <Config Include="Layer.config"></Config>
+  </ItemGroup>
+  
+    <Target Name="AfterBuild" Condition="'$(NCrunch)'!='1'">
 	<Message Text="=======================$(SolutionDir)FrontEnd\FluxMVC===============" Importance="High" />
 	
 	<Copy SourceFiles="@(Config)"
