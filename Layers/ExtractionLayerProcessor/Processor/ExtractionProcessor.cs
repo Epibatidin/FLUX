@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using AbstractDataExtraction;
+using ConfigurationExtensions.Interfaces;
 using Extensions;
 using ExtractionLayerProcessor.Config;
 using Interfaces.Config;
@@ -13,43 +14,43 @@ namespace ExtractionLayerProcessor.Processor
     {
         private static readonly Dictionary<Guid, ExtractionProcessor> Instances = new Dictionary<Guid, ExtractionProcessor>();
 
-        public static ExtractionProcessor Get(Guid Key)
-        {
-            return Instances.GetOrCreate(Key, Create);
-        }
-
-        private static ExtractionProcessor Create()
-        {
-            var section = (ExtractionLayerConfig)ConfigurationManager.GetSection("ExtractionLayer");
-            
-            ExtractionProcessor processor;
-            if (section.ASync)
-                processor = null;
-            else
-                processor = new SequentielExtractionProcessor();
-            
-            //processor.Setup(new ExtractionLayerFactory(section.Layers));
-            return processor;
-        }
-        
         public DataStore DataStore { get; private set; }
 
         public Progress Progress { get; protected set; }
 
-
-        private void Setup(ExtractionLayerFactory fac)
+        public static ExtractionProcessor Get(Guid key, IConfigurationLocator configLocator)
         {
-            DataStore = new DataStore();
-            int layerCount = 0;
-            foreach (var item in fac.GetConfiguredLayers(DataStore))
+            ExtractionProcessor processor;
+            if (Instances.ContainsKey(key))
+                processor = Instances[key];
+            else
             {
-                AddLayer(item);
-                layerCount++;
+                processor = Create(configLocator);
+                Instances.Add(key, processor);
             }
-            Progress = new Progress(layerCount);            
+            return processor;
+        }
+        
+        private static ExtractionProcessor Create(IConfigurationLocator configLocator)
+        {
+            var config = configLocator.Locate().GetSection("ExtractionLayer") as ExtractionLayerConfig;
+            var factory = new ExtractionProcessorFactory();
+            return factory.Create(config);
         }
 
-        protected abstract void AddLayer(IDataExtractionLayer layer);
+        public void Init(IList<IDataExtractionLayer> configuredLayers, DataStore dataStore)
+        {
+            AddLayers(configuredLayers);
+
+            Progress = new Progress(configuredLayers.Count);
+
+            DataStore = dataStore;
+        }
+
+        public abstract void Execute();
+
+        protected abstract void AddLayers(IList<IDataExtractionLayer> layers);
+
 
         public void Refresh(IVirtualFileProvider reader)
         {
@@ -69,6 +70,8 @@ namespace ExtractionLayerProcessor.Processor
 
         protected abstract void InternalSetData(int constPathLength, Dictionary<int, IVirtualFile> _data); 
 
-        public abstract void Execute();
+        
+
+        
     }
 }

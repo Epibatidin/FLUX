@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Configuration;
+using System.Xml;
 using ConfigurationExtensions.Interfaces;
 
 namespace ExtractionLayerProcessor.Config
 {
-    public class ExtractionLayerConfigItem : ConfigurationElement,IKeyedElement, IExtractionLayerConfigItem
+    public class ExtractionLayerConfigItem : ConfigurationElement, IKeyedElement , IExtractionLayerConfigItem
     {
         [ConfigurationProperty("Name", IsRequired = true, IsKey = true)]
         public string Key
@@ -15,35 +16,33 @@ namespace ExtractionLayerProcessor.Config
             }
         }
 
-        private Type _layertype;
-        public Type LayerType
+        [ConfigurationProperty("ExtractorType", IsRequired = true)]
+        public string ExtractorType
         {
             get
             {
-                if(_layertype == null)
-                {
-                    _layertype = Type.GetType(layer, true, true);
-                }
-                return _layertype;
+                return (string)base["ExtractorType"];
             }
         }
 
-        [ConfigurationProperty("LayerType", IsRequired = true)]
-        private string layer
+        [ConfigurationProperty("active")]
+        public bool IsActive
         {
             get
             {
-                return (string)base["LayerType"];
+                return (bool)base["active"];
             }
         }
 
-        [ConfigurationProperty("ConfigSectionName", IsRequired = false)]
-        public string ConfigSectionName
+        public XmlNode SectionData { get; private set; }
+
+        protected override bool OnDeserializeUnrecognizedElement(string elementName, XmlReader reader)
         {
-            get
-            {
-                return (string)base["ConfigSectionName"];
-            }
+            XmlDocument doc = new XmlDocument();
+            SectionData = doc.ReadNode(reader);
+            return SectionData != null;
         }
+
+        
     }
 }

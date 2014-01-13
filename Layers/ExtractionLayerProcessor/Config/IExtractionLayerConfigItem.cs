@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Xml;
 
 namespace ExtractionLayerProcessor.Config
 {
     public interface IExtractionLayerConfigItem
     {
+        bool IsActive { get; }
         string Key { get; }
-        Type LayerType { get; }
-        string ConfigSectionName { get; }
+        string ExtractorType { get; }
+        XmlNode SectionData { get; }
     }
 }

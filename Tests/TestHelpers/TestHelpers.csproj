@@ -67,7 +67,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Config\Layer.config" />
+    <None Include="Config\Layer.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Config\SectionGroupSingletonHelper.config" />
     <None Include="Config\VirtualFileAccessor.config">
       <SubType>Designer</SubType>

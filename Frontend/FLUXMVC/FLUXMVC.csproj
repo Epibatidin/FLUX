@@ -144,9 +144,6 @@
     <None Include="Views\FileProvider\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Master.cshtml" />
-    <Content Include="VirtualFileProvider.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Views\FileProvider\ProviderSelection.cshtml" />
     <Content Include="Views\Master\Scripts.cshtml" />
   </ItemGroup>

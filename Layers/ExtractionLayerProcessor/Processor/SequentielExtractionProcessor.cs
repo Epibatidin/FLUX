@@ -6,34 +6,27 @@ namespace ExtractionLayerProcessor.Processor
 {
     public class SequentielExtractionProcessor : ExtractionProcessor
     {
-        private List<IDataExtractionLayer> layers;
+        private IList<IDataExtractionLayer> _layers;
 
-        public SequentielExtractionProcessor()
+        protected override void AddLayers(IList<IDataExtractionLayer> layer)
         {
-            layers = new List<IDataExtractionLayer>();
-        }
-
-        protected override void AddLayer(IDataExtractionLayer layer)
-        {
-            layers.Add(layer);
+            _layers = layer;
         }
 
         protected override void InternalSetData(int constPathLength, Dictionary<int, IVirtualFile> _data)
         {
-            foreach (var item in layers)
+            foreach (var item in _layers)
             {
                 item.InitData(constPathLength, _data);
             }
         }
 
-
         public override void Execute()
         {
-            foreach (var item in layers)
+            foreach (var item in _layers)
             {
                 item.Execute();                
             }
-
         }
     }
 }

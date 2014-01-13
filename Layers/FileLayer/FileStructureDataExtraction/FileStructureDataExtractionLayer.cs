@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Xml;
 using AbstractDataExtraction;
 using Common.StringManipulation;
 using FileStructureDataExtraction.Builder;
 using FileStructureDataExtraction.Cleaner;
 using FileStructureDataExtraction.Config;
 using FileStructureDataExtraction.Extraction;
-using Interfaces;
 using Interfaces.VirtualFile;
 using Tree.Iterate;
 using FileItem = Tree.TreeItem<FileStructureDataExtraction.Builder.FileLayerSongDO>;
@@ -24,20 +24,25 @@ namespace FileStructureDataExtraction
 
         private List<Action> work;
 
-
-        public override void Configure(ConfigurationSection config)
+        protected override void ConfigureInternal(XmlReader reader)
         {
-            _config = (FileLayerConfig)config;
+            _config = new FileLayerConfig(reader);
+            //    work = new List<Action>();
+            //    work.Add(InternetStuff);
+            //    work.Add(BlackList);
+            //    work.Add(ExtractTrack);
+            //    work.Add(ExtractYear);
 
-            work = new List<Action>();
-            work.Add(InternetStuff);
-            work.Add(BlackList);
-            work.Add(ExtractTrack);
-            work.Add(ExtractYear);
+
+            //    CreateProgress(work.Count);
+        }
+
+        //public override void Configure(ConfigurationSection config)
+        //{
             
 
-            CreateProgress(work.Count);
-        }
+    
+        //}
 
         protected override object Data()
         {

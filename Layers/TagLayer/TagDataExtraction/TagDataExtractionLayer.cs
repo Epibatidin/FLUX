@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.Remoting.Metadata;
+using System.Xml;
 using AbstractDataExtraction;
 using Interfaces;
 using FrameHandler;
@@ -22,9 +24,9 @@ namespace TagDataExtraction
 
         ContainerFactory fac;
 
-        public override void Configure(ConfigurationSection config)
+        protected override void ConfigureInternal(XmlReader reader)
         {
-            var _config = (TagLayerConfig)config;
+            var _config = new TagLayerConfig(reader);
             fac = new ContainerFactory(_config.IgnorePrivateData);        
         }
 

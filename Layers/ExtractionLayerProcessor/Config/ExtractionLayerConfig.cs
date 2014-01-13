@@ -1,22 +1,28 @@
 ﻿using System.Configuration;
+using ConfigurationExtensions;
 using FileStructureDataExtraction.Config;
 
 namespace ExtractionLayerProcessor.Config
 {
-    public class ExtractionLayerConfig : ConfigurationSectionGroup
+    public class ExtractionLayerConfig : ConfigurationSection
     {
         [ConfigurationProperty("ASync")]
-        public bool ASync { get; set; }
+        public bool ASync
+        {
+            get
+            {
+                return (bool)base["ASync"];
+            }
+        }
 
-
-        //public FileLayerConfig FileLayer
-        //{
-        //    get
-        //    {
-        //        return Sections["FileLayer"] as FileLayerConfig;
-        //    }
-        //}
-        
-
+        [ConfigurationProperty("LayerCollection")]
+        [ConfigurationCollection(typeof(ExtractionLayerConfigItem), AddItemName = "Layer")]
+        public GenericElementCollection<ExtractionLayerConfigItem> LayerCollection
+        {
+            get
+            {
+                return base["LayerCollection"] as GenericElementCollection<ExtractionLayerConfigItem>;
+            }
+        }
     }
 }

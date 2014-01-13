@@ -6,6 +6,7 @@ namespace FLUXMVC.Controllers
     {
         public ViewResult Index()
         {
+            var processor = GetProcessor();
             return View();
         }
     }

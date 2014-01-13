@@ -15,7 +15,7 @@ namespace FLUXMVC.Controllers
         {
             base.Initialize(requestContext);
             SessionHandler = new VirtualFileProviderSessionHandler(requestContext.HttpContext.Session,
-                new WebConfigurationLocator(requestContext.HttpContext));
+                new WebConfigurationLocator(requestContext.HttpContext, "VirtualFileProvider"));
         }
 
         protected ExtractionProcessor GetProcessor()
@@ -33,7 +33,7 @@ namespace FLUXMVC.Controllers
             {
                 Key = new Guid(cookie.Value);
             }
-            return ExtractionProcessor.Get(Key);
+            return ExtractionProcessor.Get(Key, new WebConfigurationLocator(HttpContext, "Layer"));
         }
 
     }

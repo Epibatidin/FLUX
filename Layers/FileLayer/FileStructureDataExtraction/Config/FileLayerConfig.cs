@@ -1,9 +1,20 @@
 ﻿using System.Configuration;
+using System.Xml;
 
 namespace FileStructureDataExtraction.Config
 {
     public class FileLayerConfig : ConfigurationSection
     {
+        public FileLayerConfig(XmlReader reader)
+        {
+            DeserializeSection(reader);
+        }
+
+        //public void Init(XmlReader reader)
+        //{
+        //    DeserializeElement(reader, false);
+        //}
+
         [ConfigurationProperty("BlackList")]
         public BlackListConfig BlackListConfig
         {

@@ -4,9 +4,9 @@ using ConfigurationExtensions.Interfaces;
 
 namespace ExtractionLayerProcessor.Config
 {
-    public class ExtractionLayerConfigResolver
+    public class ExtractionLayerConfigResolver 
     {
-        private static readonly SectionGroupSingletonHelper<ExtractionLayerConfig> Helper = new SectionGroupSingletonHelper<ExtractionLayerConfig>("ExtractionLayer");
+        private static readonly SectionSingletonHelper<ExtractionLayerConfig> Helper = new SectionSingletonHelper<ExtractionLayerConfig>("ExtractionLayer");
         
         public void Reset()
         {

@@ -1,15 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Configuration;
-
+using System.Xml;
 using Interfaces.VirtualFile;
 
 namespace AbstractDataExtraction
 {
     public abstract class DataExtractionLayerBase : IDataExtractionLayer
     {
-        public virtual void Configure(ConfigurationSection config)
+        public void Configure(XmlNode config)
         {
+            ConfigureInternal(new XmlNodeReader(config));
         }
+
+        protected abstract void ConfigureInternal(XmlReader reader);
 
         public abstract void InitData(int constPathLength, Dictionary<int, IVirtualFile> _dirtyData);
         

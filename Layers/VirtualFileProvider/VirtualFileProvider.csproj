@@ -72,13 +72,25 @@
       <Name>Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Config Include=".\VirtualFileProvider.config"></Config>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="AfterBuild">
+	<Message Text="=======================$(SolutionDir)FrontEnd\FluxMVC===============" Importance="High" />
+	
+	<Copy SourceFiles="@(Config)"
+          DestinationFolder="$(SolutionDir)FrontEnd\FluxMVC" 
+		  SkipUnchangedFiles="false" />			  
+  </Target> 
+  
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
+  
   <Target Name="AfterBuild">
   </Target>
   -->
+  
 </Project>
