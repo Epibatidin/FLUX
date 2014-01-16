@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace Tree
@@ -21,9 +22,7 @@ namespace Tree
 
         public T Value { get; set; }
 
-
         private List<TreeItem<T>> _childs;
-
 
         public IEnumerable<ITreeItem<T>> Children 
         {

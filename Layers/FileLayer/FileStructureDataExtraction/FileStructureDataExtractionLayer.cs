@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Xml;
 using AbstractDataExtraction;
 using Common.StringManipulation;
@@ -10,9 +9,7 @@ using FileStructureDataExtraction.Config;
 using FileStructureDataExtraction.Extraction;
 using Interfaces.VirtualFile;
 using Tree.Iterate;
-using FileItem = Tree.TreeItem<FileStructureDataExtraction.Builder.FileLayerSongDO>;
-
-
+using FileItem = Tree.TreeItem<FileStructureDataExtraction.FileLayerSongDO>;
 
 namespace FileStructureDataExtraction
 {
@@ -22,56 +19,48 @@ namespace FileStructureDataExtraction
 
         private FileItem _data;
 
-        private List<Action> work;
+        private List<Action> _work;
+        
+        public override void Execute()
+        {
+            foreach (var item in _work)
+            {
+                item();
+                Update();
+            }
+        }
 
         protected override void ConfigureInternal(XmlReader reader)
         {
             _config = new FileLayerConfig(reader);
-            //    work = new List<Action>();
-            //    work.Add(InternetStuff);
-            //    work.Add(BlackList);
-            //    work.Add(ExtractTrack);
-            //    work.Add(ExtractYear);
+            _work = new List<Action>();
+            _work.Add(InternetStuff); // internet zeug entfernen ist wahrscheinlich das leichteste und fehlerfreiste 
+            _work.Add(BlackList);
+            _work.Add(ExtractTrack);
+            _work.Add(ExtractYear);
 
 
-            //    CreateProgress(work.Count);
+            CreateProgress(_work.Count);
         }
-
-        //public override void Configure(ConfigurationSection config)
-        //{
-            
-
-    
-        //}
 
         protected override object Data()
         {
             return _data;
         }
      
-        public override void InitData(int constPathLength, Dictionary<int, IVirtualFile> _baseData)
+        public override void InitData(Dictionary<int, IVirtualFile> dirtyData)
         {
             // daten aufbereiten 
             // wird nich neu gelesen ! 
             // bau den baum 
             TreeBuilder builder = new TreeBuilder();
-            _data = builder.Build(constPathLength, _baseData.Values);
+            _data = builder.Build(dirtyData.Values);
             Update();
             // dem data store bescheid geben ? 
         }
 
 
 
-
-        public override void Execute()
-        {
-            // internet zeug entfernen ist wahrscheinlich das leichteste und fehlerfreiste 
-            foreach (var item in work)
-            {
-                item();
-                Update();
-            }
-        }
 
         private void ForeachPartedStringInTree(FileItem root, Func<PartedString, PartedString> Func)
         {

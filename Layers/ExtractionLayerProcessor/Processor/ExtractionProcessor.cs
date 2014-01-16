@@ -52,24 +52,21 @@ namespace ExtractionLayerProcessor.Processor
         protected abstract void AddLayers(IList<IDataExtractionLayer> layers);
 
 
-        public void Refresh(IVirtualFileProvider reader)
+        public void Refresh(IVirtualFileProvider fileProvider)
         {
-            //if (!reader.MoveNext()) throw new ArgumentOutOfRangeException("Cant Move Next No Data to handle");
-            //if (reader.constPathLength == 0) throw new NotSupportedException("Please specify a root Path Length");
+            var _data = fileProvider[fileProvider.RootNames[0]];
 
-            //var _data = reader.Current;
+            if(_data == null)
+                throw new ArgumentNullException("No LayerData to Handle");
+            if (_data.Count == 0)
+                throw new ArgumentOutOfRangeException("LayerData contains no Elements");
 
-            //if (_data == null)
-            //    throw new ArgumentNullException("No LayerData to Handle");
-
-            //if (!_data.Any())
-            //    throw new ArgumentOutOfRangeException("LayerData contains no Elements");
-            //DataStore.Register("Init").UpdateData(_data);
-            //InternalSetData(reader.constPathLength, _data);
+            DataStore.Register("Init").UpdateData(_data);
+            InternalSetData(_data);
         }
 
-        protected abstract void InternalSetData(int constPathLength, Dictionary<int, IVirtualFile> _data); 
-
+        protected abstract void InternalSetData(Dictionary<int, IVirtualFile> data); 
+        
         
 
         

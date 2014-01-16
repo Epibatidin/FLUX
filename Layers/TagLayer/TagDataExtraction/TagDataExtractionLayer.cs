@@ -1,14 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.Remoting.Metadata;
+using System.Linq;
 using System.Xml;
 using AbstractDataExtraction;
-using Interfaces;
 using FrameHandler;
-using System.Configuration;
+using Interfaces;
 using Interfaces.VirtualFile;
 using TagDataExtraction.Config;
-using System.Linq;
-using Common;
 
 namespace TagDataExtraction
 {
@@ -36,9 +33,9 @@ namespace TagDataExtraction
         }
                
 
-        public override void InitData(int constPathLength, Dictionary<int, IVirtualFile> _dirtyData)
+        public override void InitData(Dictionary<int, IVirtualFile> dirtyData)
         {
-            _initdata = _dirtyData;
+            _initdata = dirtyData;
             //_result = new Dictionary<int, ISong>();
             CreateProgress(_initdata.Count);
         }

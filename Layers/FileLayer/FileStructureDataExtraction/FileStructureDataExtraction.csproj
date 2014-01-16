@@ -37,7 +37,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builder\FileLayerSongDO.cs" />
+    <Compile Include="FileLayerSongDO.cs" />
     <Compile Include="Builder\TreeBuilder.cs" />
     <Compile Include="Cleaner\BlacklistCleaner.cs" />
     <Compile Include="Cleaner\CursesRepair\FuckRepair.cs" />

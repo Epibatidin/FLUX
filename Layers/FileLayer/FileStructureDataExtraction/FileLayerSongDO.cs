@@ -1,7 +1,7 @@
 ﻿using Common.StringManipulation;
 using Interfaces;
 
-namespace FileStructureDataExtraction.Builder
+namespace FileStructureDataExtraction
 {
     public class FileLayerSongDO : ISong
     {

@@ -13,11 +13,11 @@ namespace ExtractionLayerProcessor.Processor
             _layers = layer;
         }
 
-        protected override void InternalSetData(int constPathLength, Dictionary<int, IVirtualFile> _data)
+        protected override void InternalSetData(Dictionary<int, IVirtualFile> data)
         {
             foreach (var item in _layers)
             {
-                item.InitData(constPathLength, _data);
+                item.InitData(data);
             }
         }
 

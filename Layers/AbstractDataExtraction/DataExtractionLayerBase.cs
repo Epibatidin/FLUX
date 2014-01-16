@@ -14,7 +14,7 @@ namespace AbstractDataExtraction
 
         protected abstract void ConfigureInternal(XmlReader reader);
 
-        public abstract void InitData(int constPathLength, Dictionary<int, IVirtualFile> _dirtyData);
+        public abstract void InitData(Dictionary<int, IVirtualFile> dirtyData);
         
         public Progress Progress { get; private set; }
 
@@ -38,6 +38,5 @@ namespace AbstractDataExtraction
         }
 
         public abstract void Execute();
-
     }
 }

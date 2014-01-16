@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Common.ISSC;
-using Interfaces.VirtualFile;
-using Tree;
-using AbstractDataExtraction;
-using FileItem = Tree.TreeItem<FileStructureDataExtraction.Builder.FileLayerSongDO>;
-using Common;
 using System.IO;
-using Interfaces;
+using System.Linq;
+using Interfaces.VirtualFile;
+using FileItem = Tree.TreeItem<FileStructureDataExtraction.FileLayerSongDO>;
 
 namespace FileStructureDataExtraction.Builder
 {
@@ -20,51 +14,55 @@ namespace FileStructureDataExtraction.Builder
         }
              
  
-        private List<Tuple<int, List<string>>> prepareData(int constPathLength, IEnumerable<IVirtualFile> _data)
+        private List<Tuple<int, List<string>>> prepareData(IEnumerable<IVirtualFile> _data)
         {
             // an dieser stelle empfehle ich den baum auf eine constante größe zu bluben 
             // dh wenn parts.length < 3 
             // add CD1 
             var z = from item in _data
-                    select Tuple.Create(0, ConvertFileNameToTreeableData(constPathLength, item));
+                    select Tuple.Create(item.ID, ConvertFileNameToTreeableData(item));
 
             return z.ToList();
         }
 
-        private List<string> ConvertFileNameToTreeableData(int path, IVirtualFile fi)
+        private List<string> ConvertFileNameToTreeableData(IVirtualFile fi)
         {
-            List<string> result = fi.VirtualPath.Substring(path + 1, fi.VirtualPath.Length - path -2- fi.Name.Length).Split('\\').ToList();
-            if (result.Count < 3)
+            List<string> result = fi.VirtualPath.Split('\\').ToList();
+            if(result.Count < 3)
                 result.Add("CD1");
 
-            result.Add(Path.GetFileNameWithoutExtension(fi.Name));
-
+            result.Add(fi.Name);
             return result;
         }
-        
 
-        private List<FileItem> BuildTree(IEnumerable<Tuple<int,List<string>>> _data, int depth)
+
+        private List<FileItem> BuildTree(IEnumerable<Tuple<int, List<string>>> data, int depth)
         {
             // wenn depth == items2.length 
             // break;
 
-            var grped = from r in (from item in _data
-                                   where item.Item2.Count > depth
-                                   select item)
-                        group r by r.Item2[depth] into grp 
+            var grped = from r in
+                            (from item in data
+                             where item.Item2.Count > depth
+                             select item)
+                        group r by r.Item2[depth] into grp
                         select grp;
 
             List<FileItem> result = null;
             if (grped.Any())
             {
                 result = new List<FileItem>();
+                
                 foreach (var item in grped)
                 {
                     var child = new FileItem();
                     child.Level = depth;
                     var temp = new FileLayerSongDO();
                     temp.SetByDepth(depth, item.Key);
+                    temp.ID = item.First().Item1;
+                    
                     child.Value = temp;
+
                     var childs = BuildTree(item, depth + 1);
                     if (childs != null)
                         child.SetChildren(childs);
@@ -76,9 +74,9 @@ namespace FileStructureDataExtraction.Builder
         }
         
 
-        public FileItem Build(int constPathLength, IEnumerable<IVirtualFile> _data)
+        public FileItem Build(IEnumerable<IVirtualFile> data)
         {
-            var preparedData = prepareData(constPathLength, _data);
+            var preparedData = prepareData(data);
 
             FileItem item = new FileItem();
 

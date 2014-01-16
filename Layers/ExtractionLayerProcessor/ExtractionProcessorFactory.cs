@@ -21,16 +21,16 @@ namespace ExtractionLayerProcessor
             DataStore dataStore = new DataStore();
             List<IDataExtractionLayer> configuredLayers = CreateConfiguredLayers(layerconfig, dataStore);
 
-            ExtractionProcessor processor = null;
+            ExtractionProcessor processor = new SequentielExtractionProcessor();
 
-            if (layerconfig.ASync)
-                ;
-            else 
-                processor = new SequentielExtractionProcessor();
+            //if (layerconfig.ASync)
+            //    ;
+            //else 
+            //    processor = new SequentielExtractionProcessor();
 
             processor.Init(configuredLayers, dataStore);
 
-            return null;
+            return processor;
         }
 
         private List<IDataExtractionLayer> CreateConfiguredLayers(ExtractionLayerConfig layerconfig, DataStore dataStore)

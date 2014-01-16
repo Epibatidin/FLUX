@@ -7,9 +7,8 @@ namespace AbstractDataExtraction
     public interface IDataExtractionLayer
     {
         void Configure(XmlNode config);
-        void InitData(int constPathLength, Dictionary<int, IVirtualFile> _dirtyData);
+        void InitData(Dictionary<int, IVirtualFile> dirtyData);
         void SetUpdater(UpdateObject uo);
         void Execute();
-
     }
 }
