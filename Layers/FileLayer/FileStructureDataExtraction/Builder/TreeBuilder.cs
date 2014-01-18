@@ -59,7 +59,10 @@ namespace FileStructureDataExtraction.Builder
                     child.Level = depth;
                     var temp = new FileLayerSongDO();
                     temp.SetByDepth(depth, item.Key);
-                    temp.ID = item.First().Item1;
+                    var current = item.First();
+
+                    if (depth == current.Item2.Count - 1)
+                        temp.ID = item.First().Item1;
                     
                     child.Value = temp;
 
