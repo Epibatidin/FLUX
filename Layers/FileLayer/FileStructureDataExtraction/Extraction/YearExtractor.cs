@@ -1,9 +1,7 @@
-﻿using FileStructureDataExtraction.Helper;
+﻿using System;
 using System.Collections.Generic;
-using System;
 using System.Linq;
-using Common.StringManipulation;
-using FileStructureDataExtraction.Builder;
+using FileStructureDataExtraction.Helper;
 
 namespace FileStructureDataExtraction.Extraction
 {

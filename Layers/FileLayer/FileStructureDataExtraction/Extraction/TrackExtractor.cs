@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using FileStructureDataExtraction.Builder;
+using FileStructureDataExtraction.Annotations;
 using FileStructureDataExtraction.Helper;
 using Common.StringManipulation;
 using System;
@@ -43,7 +43,7 @@ namespace FileStructureDataExtraction.Extraction
 
 
         List<TreeItem<FileLayerSongDO>> _data;
-        Func<TreeItem<FileLayerSongDO>, PartedString> _getter;
+        readonly Func<TreeItem<FileLayerSongDO>, PartedString> _getter;
 
         public TrackExtractor(Func<TreeItem<FileLayerSongDO>, PartedString> fun)
         {
@@ -80,8 +80,8 @@ namespace FileStructureDataExtraction.Extraction
             if (nothing) return null;
             return result;
         }
-
-        private bool checkIfAllTitlesHasExactlyOneNumber(List<Container> numbers)
+        
+        private bool CheckIfAllTitlesHasExactlyOneNumber(List<Container> numbers)
         {
             foreach (var item in numbers)
             {
@@ -115,8 +115,6 @@ namespace FileStructureDataExtraction.Extraction
                 value.TrackNr = item.Track;
                 value.LevelValue.RemoveAt(item.FoundAt);
             }
-
-
         }
 
         /// <summary>

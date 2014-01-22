@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using FileStructureDataExtraction.Builder;
 using Interfaces.VirtualFile;
 using NUnit.Framework;
 using TestHelpers;

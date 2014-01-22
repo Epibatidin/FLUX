@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using Interfaces.VirtualFile;
-using FileItem = Tree.TreeItem<FileStructureDataExtraction.FileLayerSongDO>;
+using Tree;
 
-namespace FileStructureDataExtraction.Builder
+namespace FileStructureDataExtraction
 {
     public class TreeBuilder
     {
@@ -14,12 +13,12 @@ namespace FileStructureDataExtraction.Builder
         }
              
  
-        private List<Tuple<int, List<string>>> prepareData(IEnumerable<IVirtualFile> _data)
+        private List<Tuple<int, List<string>>> PrepareData(IEnumerable<IVirtualFile> data)
         {
             // an dieser stelle empfehle ich den baum auf eine constante größe zu bluben 
             // dh wenn parts.length < 3 
             // add CD1 
-            var z = from item in _data
+            var z = from item in data
                     select Tuple.Create(item.ID, ConvertFileNameToTreeableData(item));
 
             return z.ToList();
@@ -36,7 +35,7 @@ namespace FileStructureDataExtraction.Builder
         }
 
 
-        private List<FileItem> BuildTree(IEnumerable<Tuple<int, List<string>>> data, int depth)
+        private List<TreeItem<FileLayerSongDO>> BuildTree(IEnumerable<Tuple<int, List<string>>> data, int depth)
         {
             // wenn depth == items2.length 
             // break;
@@ -48,14 +47,14 @@ namespace FileStructureDataExtraction.Builder
                         group r by r.Item2[depth] into grp
                         select grp;
 
-            List<FileItem> result = null;
+            List<TreeItem<FileLayerSongDO>> result = null;
             if (grped.Any())
             {
-                result = new List<FileItem>();
+                result = new List<TreeItem<FileLayerSongDO>>();
                 
                 foreach (var item in grped)
                 {
-                    var child = new FileItem();
+                    var child = new TreeItem<FileLayerSongDO>();
                     child.Level = depth;
                     var temp = new FileLayerSongDO();
                     temp.SetByDepth(depth, item.Key);
@@ -77,11 +76,9 @@ namespace FileStructureDataExtraction.Builder
         }
         
 
-        public FileItem Build(IEnumerable<IVirtualFile> data)
+        public TreeItem<FileLayerSongDO> Build(IEnumerable<IVirtualFile> data)
         {
-            var preparedData = prepareData(data);
-
-            FileItem item = new FileItem();
+            var preparedData = PrepareData(data);
 
             return BuildTree(preparedData, 0)[0];
         }

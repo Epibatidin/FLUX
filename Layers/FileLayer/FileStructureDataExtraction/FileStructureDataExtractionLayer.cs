@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Xml;
 using AbstractDataExtraction;
 using Common.StringManipulation;
-using FileStructureDataExtraction.Builder;
 using FileStructureDataExtraction.Cleaner;
 using FileStructureDataExtraction.Config;
 using FileStructureDataExtraction.Extraction;

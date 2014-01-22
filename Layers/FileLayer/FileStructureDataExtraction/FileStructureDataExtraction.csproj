@@ -38,7 +38,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileLayerSongDO.cs" />
-    <Compile Include="Builder\TreeBuilder.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="TreeBuilder.cs" />
     <Compile Include="Cleaner\BlacklistCleaner.cs" />
     <Compile Include="Cleaner\CursesRepair\FuckRepair.cs" />
     <Compile Include="Cleaner\CursesRepair\ICursesRepair.cs" />

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 namespace FileStructureDataExtraction.Cleaner.CursesRepair
 {
-    internal class ShitRepair : ICursesRepair
+    public class ShitRepair : ICursesRepair
     {
         public bool Fixed { get; private set; }
 
@@ -15,7 +11,7 @@ namespace FileStructureDataExtraction.Cleaner.CursesRepair
             {
                 if (posShit.Length >= 4)
                 {
-                    if (posShit.Substring(1, 3).IndexOf('*') > -1)
+                    if (posShit.Substring(1, 3).IndexOf('*') > -1 && posShit[3] == 't')
                     {
                         posShit = "shit" + posShit.Remove(0, 4);
                         Fixed = true;

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Common.StringManipulation;
 
-namespace FileStructureDataExtraction.Cleaner
+namespace FileStructureDataExtraction.Inferfaces
 {
     public interface ICleaner
     {

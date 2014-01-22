@@ -2,6 +2,7 @@
 using System.Linq;
 using Common.StringManipulation;
 using FileStructureDataExtraction.Config;
+using FileStructureDataExtraction.Inferfaces;
 
 namespace FileStructureDataExtraction.Cleaner
 {
