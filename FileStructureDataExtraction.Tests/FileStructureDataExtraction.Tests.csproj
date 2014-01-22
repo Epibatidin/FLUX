@@ -43,10 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cleaner\InterstuffCleanerTests.cs" />
     <Compile Include="TreeBuilderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Components\Common\Common.csproj">
+      <Project>{F7CE969C-81D6-465F-A2D9-8811E4C50CF0}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Components\Interfaces\Interfaces.csproj">
       <Project>{528273AB-3980-4EDD-96E4-6A9883887482}</Project>
       <Name>Interfaces</Name>

@@ -2,8 +2,7 @@
 using System.Text.RegularExpressions;
 using Common.StringManipulation;
 
-
-namespace FileStructureDataExtraction.Extraction
+namespace FileStructureDataExtraction.Cleaner
 {
     /// <summary>
     /// WORKS AND IS BOUND SO WILL BE CALLED 
@@ -24,33 +23,27 @@ namespace FileStructureDataExtraction.Extraction
                 | RegexOptions.IgnoreCase);
         }
 
+        // just look for macthing string 
+        // hand remove this part 
 
-        // iteriere durch alle stufen durch und such dir die dinger die nach internet
-        // addressen aussehen also klumpen des formats 
-        // www.blub.de => googlen wie urls korrekt mit regex gefunden werdne => punkte usw reichen nicht 
-        // relvant sind endungen wie : 'org,de,net,com' 
-        // suche diese endungen - mit punkt - iteriere dann rückwärts bis du den punkt findest 
-        private PartedString execute(PartedString parts)        
+        private void execute(PartedString parted)
         {
-            var part = parts.ToString();
-            var matches = Reg.Matches(part);
-            if (matches.Count > 0)
+            for (int i = 0; i < parted.Count; i++)
             {
-                int removed = 0;
-                StringBuilder b = new StringBuilder(part);
-                foreach (Match item in matches)
+                var part = parted[i];
+                var match = Reg.Match(parted[i]);
+                if (match.Success)
                 {
-                    b.Remove(item.Index - removed, item.Length);
-                    removed += item.Length;
+                    parted.RemoveAt(i);
+                    i--;
                 }
-                parts = new PartedString(b.ToString());
             }
-            return parts;
         }
+
 
         public PartedString Filter(PartedString part)
         {
-            part = execute(part);
+            execute(part);
             part.ReSplit(true);
 
             return part;

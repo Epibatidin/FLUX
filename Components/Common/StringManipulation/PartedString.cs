@@ -12,50 +12,50 @@ namespace Common.StringManipulation
         {
             get
             {
-                if (rawDataParts == null)
+                if (_rawDataParts == null)
                     return 0;
                 else
-                    return rawDataParts.Count();
+                    return _rawDataParts.Count();
             }
         }
 
         public bool Changed {get; private set;}
 
-        private string rawData;
-        private List<string> rawDataParts;
+        private string _rawData;
+        private List<string> _rawDataParts;
 
 
         //-----------------------------------------------------------------------------------------------------------------------
-        public PartedString(string RawData)
+        public PartedString(string rawData)
         //-----------------------------------------------------------------------------------------------------------------------
         {
-            InitFromString(RawData);
+            InitFromString(rawData);
 
         }
 
-        public void ReSplit(bool ByDot)
+        public void ReSplit(bool byDot)
         {
-            this.rawDataParts = Splitter.Split(ToString(), ByDot);
+            this._rawDataParts = Splitter.Split(ToString(), byDot);
             Changed = true;
 
         }
 
-        public void InitFromString(string Rawdata)
+        public void InitFromString(string rawdata)
         {
-            this.rawData = Rawdata;            
-            this.rawDataParts = Splitter.Split(Rawdata);
+            this._rawData = rawdata;            
+            this._rawDataParts = Splitter.Split(rawdata);
         }
 
-        public void RemoveAt(int Position)
+        public void RemoveAt(int position)
         {
             Changed = true;
-            rawDataParts.RemoveAt(Position);
+            _rawDataParts.RemoveAt(position);
         }
 
-        public void RemoveRange(int Position, int length)
+        public void RemoveRange(int position, int length)
         {
             Changed = true;
-            rawDataParts.RemoveRange(Position, length);
+            _rawDataParts.RemoveRange(position, length);
         }
 
 
@@ -64,22 +64,22 @@ namespace Common.StringManipulation
             if (Changed)
             {
                 Changed = false;
-                rawData = Splitter.Join(rawDataParts, ' ');
+                _rawData = Splitter.Join(_rawDataParts, ' ');
             }
 
-            return rawData;
+            return _rawData;
         }
 
         public string this[int i]
         {
             get
             {
-                return rawDataParts[i];
+                return _rawDataParts[i];
             }
             set
             {
                 Changed = true;
-                rawDataParts[i] = value;
+                _rawDataParts[i] = value;
             }
         }
 
