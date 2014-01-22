@@ -30,7 +30,6 @@ namespace FileStructureDataExtraction.Cleaner
         {
             for (int i = 0; i < parted.Count; i++)
             {
-                var part = parted[i];
                 var match = Reg.Match(parted[i]);
                 if (match.Success)
                 {
