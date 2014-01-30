@@ -4,3 +4,4 @@
 
 /Components/Common/obj/Debug/*.pdb
 packages
+/Frontend/FLUXMVC/*.config
