@@ -2,6 +2,7 @@
 *.pdb
 *.user
 *.suo
+*.ncrunchsolution
 *.DotSettings
 packages
 /Frontend/FLUXMVC/Layer.config
