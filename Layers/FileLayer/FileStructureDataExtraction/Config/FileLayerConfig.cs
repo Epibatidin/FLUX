@@ -9,12 +9,7 @@ namespace FileStructureDataExtraction.Config
         {
             DeserializeSection(reader);
         }
-
-        //public void Init(XmlReader reader)
-        //{
-        //    DeserializeElement(reader, false);
-        //}
-
+        
         [ConfigurationProperty("BlackList")]
         public BlackListConfig BlackListConfig
         {
