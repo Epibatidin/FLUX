@@ -7,6 +7,8 @@ namespace AbstractDataExtraction
     {
         private readonly Dictionary<string, UpdateObject> _dataCollection;
 
+        public IList<int> Keys { get; set; }
+
         public DataStore()
         {
             _dataCollection = new Dictionary<string, UpdateObject>();

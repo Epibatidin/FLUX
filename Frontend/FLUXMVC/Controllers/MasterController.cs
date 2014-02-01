@@ -2,7 +2,7 @@
 
 namespace FLUXMVC.Controllers
 {
-    public class MasterController : ProcessorCoupledController 
+    public class MasterController : ProcessorCoupledControllerBase 
     {
         public ViewResult Index()
         {

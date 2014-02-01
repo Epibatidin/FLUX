@@ -3,7 +3,7 @@ using FLUXMVC.ViewModels;
 
 namespace FLUXMVC.Controllers
 {
-    public class DataDeliveryController : ProcessorCoupledController
+    public class DataDeliveryController : ProcessorCoupledControllerBase
     {
         private DataStoreMVCAdapter GetAdapter()
         {
@@ -13,8 +13,7 @@ namespace FLUXMVC.Controllers
 
         public PartialViewResult Index()
         {
-            return null;
-            //return PartialView("MainDataTable", GetAdapter().LayerData);
+            return PartialView("MainDataTable", GetAdapter().LayerData);
         }
         
     }

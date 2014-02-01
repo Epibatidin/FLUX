@@ -1,11 +1,8 @@
 ﻿using System.Web.Mvc;
-using System.Web.Routing;
-using FLUXMVC.Components;
-using Interfaces.Frontend;
 
 namespace FLUXMVC.Controllers
 {
-    public class FileProviderController : ProcessorCoupledController
+    public class FileProviderController : ProcessorCoupledControllerBase
     {
         public PartialViewResult Index()
         {

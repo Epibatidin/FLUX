@@ -40,6 +40,7 @@
     <Compile Include="DataExtractionLayerBase.cs" />
     <Compile Include="IDataExtractionLayer.cs" />
     <Compile Include="DataStore.cs" />
+    <Compile Include="IByKeyAccessor.cs" />
     <Compile Include="LayerDataResultBase.cs" />
     <Compile Include="Progress.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

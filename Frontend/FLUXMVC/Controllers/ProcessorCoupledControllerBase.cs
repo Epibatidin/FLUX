@@ -8,7 +8,7 @@ using Interfaces.Frontend;
 
 namespace FLUXMVC.Controllers
 {
-    public class ProcessorCoupledController : Controller
+    public class ProcessorCoupledControllerBase : Controller
     {
         protected IVirtualFileProviderSessionHandler SessionHandler;
         protected override void Initialize(RequestContext requestContext)

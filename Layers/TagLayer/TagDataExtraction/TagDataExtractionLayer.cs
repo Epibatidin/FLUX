@@ -19,17 +19,17 @@ namespace TagDataExtraction
         private Dictionary<int, ISong> _result;
         private Dictionary<int, IVirtualFile> _initdata;
 
-        ContainerFactory fac;
+        ContainerFactory _fac;
 
         protected override void ConfigureInternal(XmlReader reader)
         {
-            var _config = new TagLayerConfig(reader);
-            fac = new ContainerFactory(_config.IgnorePrivateData);        
+            var config = new TagLayerConfig(reader);
+            _fac = new ContainerFactory(config.IgnorePrivateData);        
         }
 
-        protected override object Data()
+        protected override ISongByKeyAccessor Data()
         {
-            return _result;                
+            return null;                
         }
                
 
@@ -56,7 +56,7 @@ namespace TagDataExtraction
             var result = new MP3TagSong();
 
             result.ID = file.ID;
-            var frame = fac.Create(file.Open());
+            var frame = _fac.Create(file.Open());
             var frames = frame.Frames;
 
             result.Artist = findArtist(frames);

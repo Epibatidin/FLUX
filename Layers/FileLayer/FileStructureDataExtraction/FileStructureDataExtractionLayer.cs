@@ -42,9 +42,9 @@ namespace FileStructureDataExtraction
             CreateProgress(_work.Count);
         }
 
-        protected override object Data()
+        protected override ISongByKeyAccessor Data()
         {
-            return _data;
+            return null;
         }
      
         public override void InitData(Dictionary<int, IVirtualFile> dirtyData)

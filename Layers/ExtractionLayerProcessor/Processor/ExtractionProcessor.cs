@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
 using AbstractDataExtraction;
 using ConfigurationExtensions.Interfaces;
 using Extensions;
@@ -61,7 +62,7 @@ namespace ExtractionLayerProcessor.Processor
             if (_data.Count == 0)
                 throw new ArgumentOutOfRangeException("LayerData contains no Elements");
 
-            DataStore.Register("Init").UpdateData(_data);
+            DataStore.Keys = _data.Keys.ToArray();
             InternalSetData(_data);
         }
 

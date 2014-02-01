@@ -29,7 +29,7 @@ namespace AbstractDataExtraction
             _uo = uo;
         }
 
-        protected abstract object Data();
+        protected abstract ISongByKeyAccessor Data();
 
         protected virtual void Update()
         {
