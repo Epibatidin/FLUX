@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using Interfaces.FileSystem;
 using Interfaces.VirtualFile;
 
@@ -75,9 +74,5 @@ namespace Common.FileSystem
         {
             return _di.EnumerateDirectories(searchPattern, searchOption).Select(c => new RealDirectory(c));
         }
-
-
-
-       
     }
 }

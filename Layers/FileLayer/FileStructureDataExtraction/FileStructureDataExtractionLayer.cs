@@ -44,7 +44,7 @@ namespace FileStructureDataExtraction
 
         protected override ISongByKeyAccessor Data()
         {
-            return null;
+            return new TreeByKeyAccessor(_data);
         }
      
         public override void InitData(Dictionary<int, IVirtualFile> dirtyData)
@@ -57,10 +57,7 @@ namespace FileStructureDataExtraction
             Update();
             // dem data store bescheid geben ? 
         }
-
-
-
-
+        
         private void ForeachPartedStringInTree(FileItem root, Func<PartedString, PartedString> Func)
         {
             foreach (var item in TreeIterator.IterateDepthGetTreeItems(root))
@@ -68,8 +65,7 @@ namespace FileStructureDataExtraction
                 item.Value.LevelValue = Func(item.Value.LevelValue); 
             }
         }
-
-
+        
         ///<summary>
         /// Die Erste Funktion die ausgeführt - 
         /// Entfernt Urls

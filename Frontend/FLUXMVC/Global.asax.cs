@@ -1,17 +1,17 @@
 ﻿using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Castle.Windsor;
+using FLUXMVC.App_Start;
 
 namespace FLUXMVC
 {
     public class MvcApplication : HttpApplication
     {
+        private static ApplicationStarter _applicationStarter;
+        
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();           
-
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            _applicationStarter = new ApplicationStarter(new WindsorContainer());
+            _applicationStarter.Setup();
         }
     }
 }

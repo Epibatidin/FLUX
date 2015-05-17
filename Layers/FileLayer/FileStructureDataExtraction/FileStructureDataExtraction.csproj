@@ -61,6 +61,7 @@
     <Compile Include="FileStructureDataExtractionLayer.cs" />
     <Compile Include="Inferfaces\ICleaner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TreeByKeyAccessor.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

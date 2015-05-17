@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Interfaces.FileSystem;
-using Rhino.Mocks;
+using Moq;
 
 namespace TestHelpers
 {
@@ -17,9 +17,9 @@ namespace TestHelpers
 
         public static IVirtualDirectory CreateDirectory(string name)
         {
-            var vd = MockRepository.GenerateMock<IVirtualDirectory>();
-            vd.Stub(c => c.DirectoryName).Return(name);
-            return vd;
+            var vd = new Mock<IVirtualDirectory>();
+            vd.Setup(c => c.DirectoryName).Returns(name);
+            return vd.Object;
         }
 
         public static List<IVirtualDirectory> CreateDirList(int count)

@@ -70,6 +70,7 @@ namespace VirtualFileProvider.Tests
             }
 
             _provider.Init(folders, null);
+
             _root.AssertWasCalled(c => c.GetDirectories());
             Assert.That(_provider.RootNames.Length, Is.EqualTo(2));
 
@@ -78,13 +79,10 @@ namespace VirtualFileProvider.Tests
                 Assert.That(_provider.RootNames[i], Is.EqualTo(folders[i]));
             }
         }
-
-
-
-       
     }
 
-    [TestFixture, Explicit]
+    [TestFixture]
+    [Category("Integration")]
     public class AbstractVirtualFileProviderIntegration
     {
         private IVirtualDirectory _root;
@@ -110,10 +108,6 @@ namespace VirtualFileProvider.Tests
             _provider.Init(fol, null);
 
             Assert.That(_provider.RootNames.Length, Is.EqualTo(2));
-
         }
-
-
     }
-
 }

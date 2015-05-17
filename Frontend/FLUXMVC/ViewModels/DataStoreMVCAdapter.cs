@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using AbstractDataExtraction;
-using Tree;
 using Interfaces;
+using Tree;
 
 namespace FLUXMVC.ViewModels
 {
@@ -27,7 +25,7 @@ namespace FLUXMVC.ViewModels
             }
 
             LayerData = recursivlyMergeData(trees[0], enums);
-            var k = LayerData;
+            //var k = LayerData;
         }
 
         private TreeItem<MultiLayerDataContainer> recursivlyMergeData(ITreeItem<ISong> tree, List<Dictionary<int, ISong>> layers)
