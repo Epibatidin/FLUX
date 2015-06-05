@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using TestHelpers;
 using VirtualFileProvider.Config;
 using VirtualFileProvider.Directory;
 

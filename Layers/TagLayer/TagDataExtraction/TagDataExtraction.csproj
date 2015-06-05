@@ -37,27 +37,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\TagLayerConfig.cs" />
-    <Compile Include="MP3TagSong.cs" />
-    <Compile Include="TagDataExtractionLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\InFileDataProzessor\InFileDataProzessor.csproj">
-      <Project>{4891E19A-2611-4F5F-AC3F-B981878DB36D}</Project>
-      <Name>InFileDataProzessor</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\AbstractDataExtraction\AbstractDataExtraction.csproj">
-      <Project>{FC452E20-1B12-4747-941C-D10775E42B32}</Project>
-      <Name>AbstractDataExtraction</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\Components\Common\Common.csproj">
       <Project>{F7CE969C-81D6-465F-A2D9-8811E4C50CF0}</Project>
       <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Components\Interfaces\Interfaces.csproj">
-      <Project>{528273AB-3980-4EDD-96E4-6A9883887482}</Project>
-      <Name>Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

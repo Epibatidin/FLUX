@@ -54,18 +54,6 @@
       <Project>{F7CE969C-81D6-465F-A2D9-8811E4C50CF0}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Components\Interfaces\Interfaces.csproj">
-      <Project>{528273AB-3980-4EDD-96E4-6A9883887482}</Project>
-      <Name>Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Components\Tree\Tree.csproj">
-      <Project>{D56A5A9D-4CCB-4384-9732-EFD3640801CA}</Project>
-      <Name>Tree</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Layers\FileLayer\FileStructureDataExtraction\FileStructureDataExtraction.csproj">
-      <Project>{9750009D-98E8-499A-9A2C-7F9E95CAF8D2}</Project>
-      <Name>FileStructureDataExtraction</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Tests\TestHelpers\TestHelpers.csproj">
       <Project>{2D82EF2E-CF63-4461-9DCF-1D40616EB15D}</Project>
       <Name>TestHelpers</Name>

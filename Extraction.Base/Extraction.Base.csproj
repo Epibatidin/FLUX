@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{22CE846D-8342-45E7-BEE7-531EEF54CC34}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Extraction.Base</RootNamespace>
+    <AssemblyName>Extraction.Base</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net40\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\ExtractionLayerConfig.cs" />
+    <Compile Include="Config\ExtractionLayerConfigItem.cs" />
+    <Compile Include="Config\IExtractionLayerConfigurationProvider.cs" />
+    <Compile Include="DataExtractionLayerBase.cs" />
+    <Compile Include="DataStoreProvider.cs" />
+    <Compile Include="ExtractionProcessorFactory.cs" />
+    <Compile Include="ExtractionResultSelector.cs" />
+    <Compile Include="LayerDataResultBase.cs" />
+    <Compile Include="Processor\ExtractionProcessor.cs" />
+    <Compile Include="Processor\ParallelExtractionProcessor.cs" />
+    <Compile Include="Processor\SequentielExtractionProcessor.cs" />
+    <Compile Include="Progress.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess.Interfaces\DataAccess.Interfaces.csproj">
+      <Project>{A0437D38-57DD-4EF8-ADF7-822F42598117}</Project>
+      <Name>DataAccess.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extension.Configuration\Extension.Configuration.csproj">
+      <Project>{2A1184EB-1625-4549-B748-17A7140E69CB}</Project>
+      <Name>Extension.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extraction.Interfaces\Extraction.Interfaces.csproj">
+      <Project>{E9D82E8B-F60E-4805-888D-47EEA0D85E5E}</Project>
+      <Name>Extraction.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

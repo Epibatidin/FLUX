@@ -37,57 +37,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\ExtractionLayerConfigResolver.cs" />
-    <Compile Include="Config\ExtractionLayerConfigItem.cs" />
-    <Compile Include="Config\ExtractionLayerConfig.cs" />
-    <Compile Include="ExtractionProcessorFactory.cs" />
-    <Compile Include="Config\IExtractionLayerConfigItem.cs" />
-    <Compile Include="Processor\ExtractionProcessor.cs" />
-    <Compile Include="ExtractionResultSelector.cs" />
-    <Compile Include="Processor\ParallelExtractionProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Processor\SequentielExtractionProcessor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Components\ConfigurationExtensions\ConfigurationExtensions.csproj">
-      <Project>{A59BC728-953B-439E-A912-C685DAC85AC1}</Project>
-      <Name>ConfigurationExtensions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AbstractDataExtraction\AbstractDataExtraction.csproj">
-      <Project>{FC452E20-1B12-4747-941C-D10775E42B32}</Project>
-      <Name>AbstractDataExtraction</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Components\Common\Common.csproj">
       <Project>{F7CE969C-81D6-465F-A2D9-8811E4C50CF0}</Project>
       <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Components\Extensions\Extensions.csproj">
-      <Project>{407FA9A1-1751-47CD-A680-B56BC6B735EF}</Project>
-      <Name>Extensions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FileLayer\FileStructureDataExtraction\FileStructureDataExtraction.csproj">
-      <Project>{9750009D-98E8-499A-9A2C-7F9E95CAF8D2}</Project>
-      <Name>FileStructureDataExtraction</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Components\Interfaces\Interfaces.csproj">
       <Project>{528273AB-3980-4EDD-96E4-6A9883887482}</Project>
       <Name>Interfaces</Name>
     </ProjectReference>
-  </ItemGroup>  
-  
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Config Include="Layer.config"></Config>
   </ItemGroup>
-  
-    <Target Name="AfterBuild" Condition="'$(NCrunch)'!='1'">
-	<Message Text="=======================$(SolutionDir)FrontEnd\FluxMVC===============" Importance="High" />
-	
-	<Copy SourceFiles="@(Config)"
-          DestinationFolder="$(SolutionDir)FrontEnd\FluxMVC" 
-		  SkipUnchangedFiles="false" />			  
-  </Target> 
-  
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="AfterBuild" Condition="'$(NCrunch)'!='1'">
+    <Message Text="=======================$(SolutionDir)FrontEnd\FluxMVC===============" Importance="High" />
+    <Copy SourceFiles="@(Config)" DestinationFolder="$(SolutionDir)FrontEnd\FluxMVC" SkipUnchangedFiles="false" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -1,0 +1,31 @@
+﻿@model Tree.TreeItem<FLUX.Web.MVC.ViewModels.MultiLayerDataContainer>
+
+@{
+    <tr>
+        <td rowspan="@(Model.Children.Sum(c => c.Children.Count() + 1)+1)">
+            @Html.Partial("LayerValue", Model.Value.Data["Year"])
+        </td>
+         <td rowspan="@(Model.Children.Sum(c => c.Children.Count() + 1)+1)">
+            @Html.Partial("LayerValue", Model.Value.Data["Album"])
+        </td>
+    </tr>
+    foreach (var cd in Model.Children)
+    {
+        <tr>
+            <td rowspan="@(cd.Children.Count() +1)">
+                @Html.Partial("LayerValue", cd.Value.Data["CD"])
+            </td>
+        </tr>  
+        foreach (var song in cd.Children)
+        {
+            <tr>
+                <td>
+                    @Html.Partial("LayerValue", song.Value.Data["Track"])
+                </td>
+                <td title='@song.Value.Path'>                    
+                    @Html.Partial("LayerValue", song.Value.Data["Title"])
+                </td>
+            </tr>
+        }      
+    }
+}

@@ -73,13 +73,13 @@
       <Project>{F7CE969C-81D6-465F-A2D9-8811E4C50CF0}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Components\ConfigurationExtensions\ConfigurationExtensions.csproj">
-      <Project>{A59BC728-953B-439E-A912-C685DAC85AC1}</Project>
-      <Name>ConfigurationExtensions</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Components\Interfaces\Interfaces.csproj">
       <Project>{528273AB-3980-4EDD-96E4-6A9883887482}</Project>
       <Name>Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Extension.Configuration\Extension.Configuration.csproj">
+      <Project>{2A1184EB-1625-4549-B748-17A7140E69CB}</Project>
+      <Name>Extension.Configuration</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Layers\VirtualFileProvider\VirtualFileProvider.csproj">
       <Project>{540FF4BD-4531-414B-B559-A7948F9412AE}</Project>

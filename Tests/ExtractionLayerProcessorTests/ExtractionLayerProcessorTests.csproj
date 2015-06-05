@@ -53,18 +53,6 @@
     <Compile Include="Config\ExtractionLayerConfigTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Components\ConfigurationExtensions\ConfigurationExtensions.csproj">
-      <Project>{A59BC728-953B-439E-A912-C685DAC85AC1}</Project>
-      <Name>ConfigurationExtensions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Components\Interfaces\Interfaces.csproj">
-      <Project>{528273AB-3980-4EDD-96E4-6A9883887482}</Project>
-      <Name>Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Layers\ExtractionLayerProcessor\ExtractionLayerProcessor.csproj">
-      <Project>{1655F2FB-7D3F-46EA-8E2A-1BEE4815EDC5}</Project>
-      <Name>ExtractionLayerProcessor</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TestHelpers\TestHelpers.csproj">
       <Project>{2D82EF2E-CF63-4461-9DCF-1D40616EB15D}</Project>
       <Name>TestHelpers</Name>

@@ -31,29 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AbstractVirtualFileProvider.cs" />
-    <Compile Include="Config\DebugSection.cs" />
-    <Compile Include="Directory\DirectoryVirtualFileProvider.cs" />
-    <Compile Include="XML\Serialization\Group.cs" />
-    <Compile Include="XML\Serialization\LayerResults.cs" />
-    <Compile Include="XML\Serialization\Root.cs" />
-    <Compile Include="XML\Serialization\Source.cs" />
-    <Compile Include="XML\Serialization\SourceItem.cs" />
-    <Compile Include="XML\Serialization\TagData.cs" />
-    <Compile Include="XML\Serialization\TagFakeStream.cs" />
-    <Compile Include="Directory\FolderSource.cs" />
-    <Compile Include="Config\GeneralSection.cs" />
-    <Compile Include="Directory\DirectorySourcesCollection.cs" />
-    <Compile Include="Config\SourcesSection.cs" />
-    <Compile Include="Config\VirtualFileAccessorSectionGroup.cs" />
-    <Compile Include="XML\XMLSource.cs" />
-    <Compile Include="XML\XMLSourcesCollection.cs" />
-    <Compile Include="VirtualFileFactory.cs" />
-    <Compile Include="XML\XMLVirtualFileProvider.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Xml" />
@@ -63,28 +40,20 @@
       <Project>{F7CE969C-81D6-465F-A2D9-8811E4C50CF0}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Components\ConfigurationExtensions\ConfigurationExtensions.csproj">
-      <Project>{A59BC728-953B-439E-A912-C685DAC85AC1}</Project>
-      <Name>ConfigurationExtensions</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Components\Interfaces\Interfaces.csproj">
       <Project>{528273AB-3980-4EDD-96E4-6A9883887482}</Project>
       <Name>Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Extension.Configuration\Extension.Configuration.csproj">
+      <Project>{2A1184EB-1625-4549-B748-17A7140E69CB}</Project>
+      <Name>Extension.Configuration</Name>
+    </ProjectReference>
   </ItemGroup>
-  
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Config Include=".\VirtualFileProvider.config"></Config>
-  </ItemGroup>  
   <Target Name="AfterBuild" Condition="'$(NCrunch)'!='1'">
-	<Message Text="=======================$(SolutionDir)FrontEnd\FluxMVC===============" Importance="High" />
-	
-	<Copy SourceFiles="@(Config)"
-          DestinationFolder="$(SolutionDir)FrontEnd\FluxMVC" 
-		  SkipUnchangedFiles="false" />			  
-  </Target> 
-  
+    <Message Text="=======================$(SolutionDir)FrontEnd\FluxMVC===============" Importance="High" />
+    <Copy SourceFiles="@(Config)" DestinationFolder="$(SolutionDir)FrontEnd\FluxMVC" SkipUnchangedFiles="false" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -93,5 +62,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
 </Project>

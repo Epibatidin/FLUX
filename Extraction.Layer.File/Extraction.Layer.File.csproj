@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{62F93C06-B607-4499-AD10-70A57843B4A2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Extraction.Layer.File</RootNamespace>
+    <AssemblyName>Extraction.Layer.File</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cleaner\BlacklistCleaner.cs" />
+    <Compile Include="Cleaner\CursesRepair\FuckRepair.cs" />
+    <Compile Include="Cleaner\CursesRepair\ICursesRepair.cs" />
+    <Compile Include="Cleaner\CursesRepair\ShitRepair.cs" />
+    <Compile Include="Cleaner\EqualityCleaner.cs" />
+    <Compile Include="Cleaner\InternetStuffCleaner.cs" />
+    <Compile Include="Cleaner\Schrott\CleanerStageSchrott.cs" />
+    <Compile Include="Cleaner\Schrott\InternetStuffCleanerSchrott.cs" />
+    <Compile Include="Cleaner\Schrott\OneStepUpCleanerSchrott.cs" />
+    <Compile Include="Cleaner\ShortWordCleaner.cs" />
+    <Compile Include="Config\BlackListConfig.cs" />
+    <Compile Include="Config\FileLayerConfig.cs" />
+    <Compile Include="Config\IBlackListConfig.cs" />
+    <Compile Include="Config\IWhiteListConfig.cs" />
+    <Compile Include="Config\WhiteListConfig.cs" />
+    <Compile Include="Extraction\TrackExtractor.cs" />
+    <Compile Include="Extraction\YearExtractor.cs" />
+    <Compile Include="FileLayerSongDO.cs" />
+    <Compile Include="FileStructureDataExtractionLayer.cs" />
+    <Compile Include="Helper\NumberExtractor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TreeBuilder.cs" />
+    <Compile Include="TreeByKeyAccessor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cleaner\_EnumeratorMitTreesGetundSet.txt" />
+    <Content Include="Cleaner\_GedankenZumOneStepUpFilter.txt" />
+    <Content Include="Extraction\ThinkAboutTrackExtractor.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess.Interfaces\DataAccess.Interfaces.csproj">
+      <Project>{A0437D38-57DD-4EF8-ADF7-822F42598117}</Project>
+      <Name>DataAccess.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extension.Configuration\Extension.Configuration.csproj">
+      <Project>{2A1184EB-1625-4549-B748-17A7140E69CB}</Project>
+      <Name>Extension.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extension.Tree\Extension.Tree.csproj">
+      <Project>{8943B9F4-90B2-41C0-BB99-1AA956F70A90}</Project>
+      <Name>Extension.Tree</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extraction.Base\Extraction.Base.csproj">
+      <Project>{22CE846D-8342-45E7-BEE7-531EEF54CC34}</Project>
+      <Name>Extraction.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extraction.DomainObjects\Extraction.DomainObjects.csproj">
+      <Project>{F6FE94A3-BEA4-411C-ABC9-A9DFEC32760B}</Project>
+      <Name>Extraction.DomainObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extraction.Interfaces\Extraction.Interfaces.csproj">
+      <Project>{E9D82E8B-F60E-4805-888D-47EEA0D85E5E}</Project>
+      <Name>Extraction.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
