@@ -16,8 +16,9 @@ namespace Extension.Test
         {
             Fixture = new Fixture();
             Fixture.Customize(new MultipleCustomization()).Customize(new AutoMoqCustomization());
-            Fixture.Customizations.Add(new MethodInvoker(new GreedyConstructorQuery()));
 
+            // Fixture.Customize<TSystemUnderTest>(r => new MethodInvoker(new GreedyConstructorQuery()));
+            
             Customize();
 
             SUT = CreateSUT();

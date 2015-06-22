@@ -49,12 +49,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationStarter.cs" />
-    <Compile Include="Config\ConfigurationData.cs" />
-    <Compile Include="Config\ConfigurationFactory.cs" />
     <Compile Include="Config\WebConfigurationLocator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Windsor\Lifestyle\PerCookieLifestyleAdapter.cs" />
     <Compile Include="Windsor\Lifestyle\PerCookieLifestyleCacheFacade.cs" />
+    <Compile Include="Windsor\RequiresMockingInstaller.cs" />
     <Compile Include="Windsor\WindsorControllerFactory.cs" />
     <Compile Include="Windsor\WindsorInstaller.cs" />
   </ItemGroup>
@@ -62,12 +61,22 @@
     <Content Include="Config\Layer.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Config\VirtualFileProvider.config" />
+    <Content Include="Config\VirtualFileProvider.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess.Base\DataAccess.Base.csproj">
       <Project>{B38C55EA-35BD-4D9D-AFD5-BCC7A466C961}</Project>
       <Name>DataAccess.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess.Interfaces\DataAccess.Interfaces.csproj">
+      <Project>{A0437D38-57DD-4EF8-ADF7-822F42598117}</Project>
+      <Name>DataAccess.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extension.Configuration\Extension.Configuration.csproj">
+      <Project>{2A1184EB-1625-4549-B748-17A7140E69CB}</Project>
+      <Name>Extension.Configuration</Name>
     </ProjectReference>
     <ProjectReference Include="..\Extraction.Base\Extraction.Base.csproj">
       <Project>{22CE846D-8342-45E7-BEE7-531EEF54CC34}</Project>
@@ -80,6 +89,10 @@
     <ProjectReference Include="..\FLUX.Interfaces\FLUX.Interfaces.csproj">
       <Project>{A99B5C20-6F46-477D-84B2-06FD51538259}</Project>
       <Name>FLUX.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FLUX.Web.Logic\FLUX.Web.Logic.csproj">
+      <Project>{5E23686A-677E-4823-A088-006FC6BC9494}</Project>
+      <Name>FLUX.Web.Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -15,7 +15,7 @@ namespace DataAccess.Base
 
         public AvailableVirtualFileProviderDO ReadToDO()
         {
-            var section = _sectionGroupProvider.VirtualFileAccessorConfig;
+            var section = _sectionGroupProvider.Configuration;
 
             var result = new AvailableVirtualFileProviderDO
             {

@@ -1,4 +1,5 @@
-﻿namespace FLUX.Interfaces.Configuration
+﻿
+namespace Extension.Configuration
 {
     public interface IConfigurationLocator
     {

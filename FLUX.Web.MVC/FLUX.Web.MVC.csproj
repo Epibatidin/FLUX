@@ -37,7 +37,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.Windsor">
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net35\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net40\Castle.Windsor.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -105,11 +109,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HtmlHelperEx\InputListHelpers.cs" />
-    <Compile Include="Models\VirtualFileProviderFormModel.cs" />
-    <Compile Include="Models\VirtualFileProviderFormModelBuilder.cs" />
-    <Compile Include="Models\ConfigurationFormModelBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\ConfigurationFormModel.cs" />
     <Compile Include="ViewModels\DataStoreMVCAdapter.cs" />
     <Compile Include="ViewModels\LayerViewModel.cs" />
     <Compile Include="ViewModels\MultiLayerDataContainer.cs" />

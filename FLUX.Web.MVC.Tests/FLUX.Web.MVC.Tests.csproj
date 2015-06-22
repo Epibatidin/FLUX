@@ -47,15 +47,19 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\VirtualFileProviderSelectionBuilderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess.Base\DataAccess.Base.csproj">
       <Project>{B38C55EA-35BD-4D9D-AFD5-BCC7A466C961}</Project>
       <Name>DataAccess.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess.Interfaces\DataAccess.Interfaces.csproj">
+      <Project>{A0437D38-57DD-4EF8-ADF7-822F42598117}</Project>
+      <Name>DataAccess.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\Extension.Test\Extension.Test.csproj">
       <Project>{644063E5-9894-45B0-BD0D-B7574846BAC8}</Project>

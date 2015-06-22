@@ -1,3 +1,8 @@
 ﻿@model FLUX.Web.MVC.ViewModels.ConfigurationFormModel
 
-@Html.DropDownList("CurrentProviderKey", Model.AvailableProviders)
+<select name="@Html.NameFor(c => c.AvailableProviders.Value)">
+    @foreach (var item in Model.AvailableProviders.Items)
+    {
+        <option selected="@Model.AvailableProviders.IsSelected(item)" value="@item">@item</option>
+    }
+</select>

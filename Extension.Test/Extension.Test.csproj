@@ -51,7 +51,6 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StaticConfigurationLocator.cs" />
     <Compile Include="FixtureBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,6 +58,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Extension.Configuration\Extension.Configuration.csproj">
+      <Project>{2A1184EB-1625-4549-B748-17A7140E69CB}</Project>
+      <Name>Extension.Configuration</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Extraction.Interfaces\Extraction.Interfaces.csproj">
       <Project>{E9D82E8B-F60E-4805-888D-47EEA0D85E5E}</Project>
       <Name>Extraction.Interfaces</Name>

@@ -64,6 +64,10 @@
       <Project>{A0437D38-57DD-4EF8-ADF7-822F42598117}</Project>
       <Name>DataAccess.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Extension.Configuration\Extension.Configuration.csproj">
+      <Project>{2A1184EB-1625-4549-B748-17A7140E69CB}</Project>
+      <Name>Extension.Configuration</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Extension.Test\Extension.Test.csproj">
       <Project>{644063E5-9894-45B0-BD0D-B7574846BAC8}</Project>
       <Name>Extension.Test</Name>

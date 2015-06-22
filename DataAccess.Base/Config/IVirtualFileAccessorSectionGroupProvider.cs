@@ -1,7 +1,14 @@
-﻿namespace DataAccess.Base.Config
+﻿using Extension.Configuration;
+
+namespace DataAccess.Base.Config
 {
     public interface IVirtualFileAccessorSectionGroupProvider
     {
-        VirtualFileAccessorSectionGroup VirtualFileAccessorConfig { get; set; }
+        VirtualFileAccessorSectionGroup Configuration { get; set; }
+    }
+
+    public class VirtualFileAccessorSectionGroupProvider :
+        ConfigurationHolder<VirtualFileAccessorSectionGroup>, IVirtualFileAccessorSectionGroupProvider
+    {
     }
 }

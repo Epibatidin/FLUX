@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 using System.Web.Hosting;
-using FLUX.Interfaces.Configuration;
+using Extension.Configuration;
 
 namespace FLUX.Configuration.Config
 {
@@ -17,7 +17,7 @@ namespace FLUX.Configuration.Config
 
             var config = ConfigurationManager.OpenMappedExeConfiguration(map, ConfigurationUserLevel.None);
 
-            if(config == null)
+            if(config == null || !config.HasFile)
                 throw new ConfigurationErrorsException("Cant find config " + exePath);
 
             return config;

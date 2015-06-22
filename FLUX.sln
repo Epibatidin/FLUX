@@ -79,6 +79,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConfigFilesFor.Tests", "Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestResources", "TestResources\TestResources.csproj", "{08286663-7997-483A-A8EF-72DDFD2B6C77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FLUX.Web.Logic", "FLUX.Web.Logic\FLUX.Web.Logic.csproj", "{5E23686A-677E-4823-A088-006FC6BC9494}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FLUX.DomainObjects", "FLUX.DomainObjects\FLUX.DomainObjects.csproj", "{25FB8F21-2C53-4AE7-9943-B15420DA4086}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FLUX.Web.Logic.Tests", "FLUX.Web.Logic.Tests\FLUX.Web.Logic.Tests.csproj", "{75D001DF-4D8E-46D9-84EB-2247A0404A19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -427,6 +433,42 @@ Global
 		{08286663-7997-483A-A8EF-72DDFD2B6C77}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{08286663-7997-483A-A8EF-72DDFD2B6C77}.Release|Win32.ActiveCfg = Release|Any CPU
 		{08286663-7997-483A-A8EF-72DDFD2B6C77}.Release|x86.ActiveCfg = Release|Any CPU
+		{5E23686A-677E-4823-A088-006FC6BC9494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E23686A-677E-4823-A088-006FC6BC9494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E23686A-677E-4823-A088-006FC6BC9494}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5E23686A-677E-4823-A088-006FC6BC9494}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5E23686A-677E-4823-A088-006FC6BC9494}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{5E23686A-677E-4823-A088-006FC6BC9494}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5E23686A-677E-4823-A088-006FC6BC9494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E23686A-677E-4823-A088-006FC6BC9494}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E23686A-677E-4823-A088-006FC6BC9494}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5E23686A-677E-4823-A088-006FC6BC9494}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5E23686A-677E-4823-A088-006FC6BC9494}.Release|Win32.ActiveCfg = Release|Any CPU
+		{5E23686A-677E-4823-A088-006FC6BC9494}.Release|x86.ActiveCfg = Release|Any CPU
+		{25FB8F21-2C53-4AE7-9943-B15420DA4086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25FB8F21-2C53-4AE7-9943-B15420DA4086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25FB8F21-2C53-4AE7-9943-B15420DA4086}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{25FB8F21-2C53-4AE7-9943-B15420DA4086}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{25FB8F21-2C53-4AE7-9943-B15420DA4086}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{25FB8F21-2C53-4AE7-9943-B15420DA4086}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{25FB8F21-2C53-4AE7-9943-B15420DA4086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25FB8F21-2C53-4AE7-9943-B15420DA4086}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25FB8F21-2C53-4AE7-9943-B15420DA4086}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{25FB8F21-2C53-4AE7-9943-B15420DA4086}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{25FB8F21-2C53-4AE7-9943-B15420DA4086}.Release|Win32.ActiveCfg = Release|Any CPU
+		{25FB8F21-2C53-4AE7-9943-B15420DA4086}.Release|x86.ActiveCfg = Release|Any CPU
+		{75D001DF-4D8E-46D9-84EB-2247A0404A19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75D001DF-4D8E-46D9-84EB-2247A0404A19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75D001DF-4D8E-46D9-84EB-2247A0404A19}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{75D001DF-4D8E-46D9-84EB-2247A0404A19}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{75D001DF-4D8E-46D9-84EB-2247A0404A19}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{75D001DF-4D8E-46D9-84EB-2247A0404A19}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{75D001DF-4D8E-46D9-84EB-2247A0404A19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75D001DF-4D8E-46D9-84EB-2247A0404A19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75D001DF-4D8E-46D9-84EB-2247A0404A19}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{75D001DF-4D8E-46D9-84EB-2247A0404A19}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{75D001DF-4D8E-46D9-84EB-2247A0404A19}.Release|Win32.ActiveCfg = Release|Any CPU
+		{75D001DF-4D8E-46D9-84EB-2247A0404A19}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

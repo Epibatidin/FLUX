@@ -16,7 +16,7 @@ namespace FLUX.Configuration
 
         public void Setup()
         {
-            Container.Install(new WindsorInstaller());
+            Container.Install(new WindsorInstaller(), new RequiresMockingInstaller());
 
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(Container.Kernel));
 

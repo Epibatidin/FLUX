@@ -1,5 +1,6 @@
 ﻿using DataAccess.Base;
 using DataAccess.Base.Config;
+using Extension.Configuration;
 using Extension.Test;
 using Moq;
 using NUnit.Framework;
@@ -16,16 +17,16 @@ namespace DataAccess.Tests
         public void FixtureSetup()
         {
             var locator =
-                new StaticConfigurationLocator(@"E:\Develop\FLUX\ConfigFilesFor.Tests\ConfigReaderTest.config");
+                new StaticConfigurationLocator(@"E:\Develop\FLUX\ConfigFilesFor.Tests");
 
-            var config = locator.Locate("");
+            var config = locator.Locate("ConfigReaderTest");
             _section = config.GetSectionGroup("VirtualFileAccessor") as VirtualFileAccessorSectionGroup;
         }
 
         protected override void Customize()
         {
             _configProvider = Fixture.Freeze<Mock<IVirtualFileAccessorSectionGroupProvider>>();
-            _configProvider.Setup(c => c.VirtualFileAccessorConfig).Returns(_section);
+            _configProvider.Setup(c => c.Configuration).Returns(_section);
         }
 
         [Test]

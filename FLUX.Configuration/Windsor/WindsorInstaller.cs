@@ -1,13 +1,20 @@
 ﻿using System.Web.Mvc;
+using Castle.Core.Configuration;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
+using DataAccess.Base;
+using DataAccess.Base.Config;
+using DataAccess.Interfaces;
+using Extension.Configuration;
 using Extraction.Base;
 using Extraction.Base.Config;
 using Extraction.Interfaces;
 using Extraction.Interfaces.Layer;
 using FLUX.Configuration.Config;
 using FLUX.Configuration.Windsor.Lifestyle;
+using FLUX.Interfaces.Web;
+using FLUX.Web.Logic;
 
 namespace FLUX.Configuration.Windsor
 {
@@ -20,14 +27,8 @@ namespace FLUX.Configuration.Windsor
                 .Configure(component => component.Named(component.Implementation.Name.Replace("Controller", ""))));
 
             //container.Register(Component.For<IHttpContextProvider>().ImplementedBy<HttpContextProvider>());
-
-            container.Register(Component.For<IConfigurationFactory>().ImplementedBy<ConfigurationFactory>());
-            container.Register(Component.For<ConfigurationData, IExtractionLayerConfigurationProvider>()
-                .ImplementedBy<ConfigurationData>()
-                .UsingFactory<ConfigurationFactory, ConfigurationData>(c => c.Build()));
-
             Layer(container);
-
+            Configuration(container);
         }
 
         private void Layer(IWindsorContainer container)
@@ -37,7 +38,22 @@ namespace FLUX.Configuration.Windsor
             container.Register(Component.For<IExtractionProcessorFactory>().ImplementedBy<ExtractionProcessorFactory>());
             container.Register(Component.For<IExtractionProcessor>()
                      .UsingFactory<ExtractionProcessorFactory, IExtractionProcessor>(r => r.Create()));
+        }
 
+        private void Configuration(IWindsorContainer container)
+        {
+            container.Register(Component.For<IConfigurationFormModelBuilder>().ImplementedBy<ConfigurationFormModelBuilder>());
+            container.Register(Component.For<IVirtualFileConfigurationReader>().ImplementedBy<VirtualFileConfigurationReader>());
+            //container.Register(Component.For<IVirtualFileAccessorSectionGroupProvider>().ImplementedBy<VirtualFileAccessorSectionGroupProvider>());
+
+            container.Register(Component.For<IConfigurationLoader>().ImplementedBy<ConfigurationLoader>());
+            
+            container.Register(Component.For<ConfigurationHolderFactory>());
+
+            container.Register(Component.For<IVirtualFileAccessorSectionGroupProvider>()
+                .UsingFactory<ConfigurationHolderFactory, VirtualFileAccessorSectionGroupProvider>
+                (r => r.BuildGroup<VirtualFileAccessorSectionGroupProvider, VirtualFileAccessorSectionGroup>
+                    ("Config/VirtualFileProvider", "VirtualFileAccessor")));
         }
     }
 
