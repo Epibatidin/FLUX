@@ -1,7 +1,7 @@
 ﻿using System.Configuration;
 using Extension.Configuration;
 
-namespace Extraction.DataAccess.XMLStub
+namespace DataAccess.XMLStub.Config
 {
     public class XMLSource : ConfigurationElement, IKeyedElement
     {

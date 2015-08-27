@@ -43,39 +43,10 @@ namespace FLUX.Web.Logic.Tests
             var providerDO = Fixture.Create<AvailableVirtualFileProviderDO>();
             _configurationProvider.Setup(c => c.ReadToDO()).Returns(providerDO);
 
-            var model = SUT.BuildFormModel().AvailableProviders.Items;
-            int i = 0;
-            for (; i < providerDO.VirtualFileProviderNames.Count; i++)
-            {
-                Assert.That(model[i], Is.EqualTo(providerDO.VirtualFileProviderNames[i]));
-            }
-            Assert.That(i, Is.GreaterThan(1));
-        }
+            var model = SUT.BuildFormModel();
 
-        [Test]
-        public void should_set_value_by_active_provider()
-        {
-            var providerDO = Fixture.Create<AvailableVirtualFileProviderDO>();
-
-            _configurationProvider.Setup(c => c.ReadToDO()).Returns(providerDO);
-
-            var model = SUT.BuildFormModel().AvailableProviders;
-
-            Assert.That(model.Value, Is.EqualTo(providerDO.CurrentProviderName));
-        }
-        
-        [Test]
-        public void should_find_selected_item()
-        {
-            var providerDO = Fixture.Create<AvailableVirtualFileProviderDO>();
-            providerDO.CurrentProviderName = providerDO.VirtualFileProviderNames[1];
-
-            _configurationProvider.Setup(c => c.ReadToDO()).Returns(providerDO);
-
-            var model = SUT.BuildFormModel().AvailableProviders;
-
-            var selectedItem = model.GetSelectedItem();
-            Assert.That(selectedItem, Is.EqualTo(providerDO.VirtualFileProviderNames[1]));
+            Assert.That(model.VirtualFileProvider.CurrentProviderName, Is.EqualTo(providerDO.CurrentProviderName));
+            Assert.That(model.VirtualFileProvider.ProviderNames, Is.EqualTo(providerDO.ProviderNames));
         }
     }
 }

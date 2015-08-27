@@ -36,9 +36,16 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AvailableVirtualFileProviderFormModel.cs" />
     <Compile Include="ConfigurationFormModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UpdateableSelectList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess.Interfaces\DataAccess.Interfaces.csproj">
+      <Project>{A0437D38-57DD-4EF8-ADF7-822F42598117}</Project>
+      <Name>DataAccess.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

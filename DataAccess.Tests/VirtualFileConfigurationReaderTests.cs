@@ -17,7 +17,7 @@ namespace DataAccess.Tests
         public void FixtureSetup()
         {
             var locator =
-                new StaticConfigurationLocator(@"E:\Develop\FLUX\ConfigFilesFor.Tests");
+                new StaticConfigurationLocator(@"F:\Develop\FLUX\ConfigFilesFor.Tests");
 
             var config = locator.Locate("ConfigReaderTest");
             _section = config.GetSectionGroup("VirtualFileAccessor") as VirtualFileAccessorSectionGroup;
@@ -38,12 +38,23 @@ namespace DataAccess.Tests
         }
 
         [Test]
+        public void should_build_list_of_available_provider_groups()
+        {
+            var result = SUT.ReadToDO();
+
+            Assert.That(result.ProviderNames[0].GroupName, Is.EqualTo("XML"));
+            Assert.That(result.ProviderNames[1].GroupName, Is.EqualTo("Directory"));
+        }
+
+
+        [Test]
         public void should_build_list_of_available_providers()
         {
             var result = SUT.ReadToDO();
 
-            Assert.That(result.VirtualFileProviderNames[0], Is.EqualTo("XML"));
-            Assert.That(result.VirtualFileProviderNames[1], Is.EqualTo("Directory"));
+            Assert.That(result.ProviderNames[0].VirtualFileProviderNames[0], Is.EqualTo("XMLSource"));
+            Assert.That(result.ProviderNames[1].VirtualFileProviderNames[0], Is.EqualTo("Normal"));
+            Assert.That(result.ProviderNames[1].VirtualFileProviderNames[1], Is.EqualTo("MOQ"));
         }
 
         [Test]
@@ -53,7 +64,7 @@ namespace DataAccess.Tests
 
             var result = SUT.ReadToDO();
 
-            Assert.That(result.VirtualFileProviderNames.Count, Is.EqualTo(2));
+            Assert.That(result.ProviderNames.Count, Is.EqualTo(2));
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Configuration;
 using Extension.Configuration;
-using Extraction.DataAccess.XMLStub;
 
 namespace DataAccess.XMLStub.Config
 {

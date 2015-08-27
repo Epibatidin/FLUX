@@ -1,7 +1,6 @@
-﻿using System.Web.Mvc;
-using System.Web.Routing;
-using Castle.Windsor;
+﻿using Castle.Windsor;
 using FLUX.Configuration.Windsor;
+using System.Web.Mvc;
 
 namespace FLUX.Configuration
 {
@@ -18,9 +17,7 @@ namespace FLUX.Configuration
         {
             Container.Install(new WindsorInstaller(), new RequiresMockingInstaller());
 
-            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(Container.Kernel));
-
-            
+            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(Container.Kernel));            
         }
     }
 }

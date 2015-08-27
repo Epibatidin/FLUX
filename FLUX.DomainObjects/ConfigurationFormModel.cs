@@ -1,7 +1,10 @@
-﻿namespace FLUX.DomainObjects
+﻿
+namespace FLUX.DomainObjects
 {
     public class ConfigurationFormModel
     {
-        public UpdateableSelectList<string, string> AvailableProviders { get; set; }
+        public AvailableVirtualFileProviderFormModel VirtualFileProvider { get; set; }
+
+
     }
 }

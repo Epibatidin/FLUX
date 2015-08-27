@@ -1,8 +1,14 @@
-﻿@model FLUX.Web.MVC.ViewModels.ConfigurationFormModel
+﻿@model FLUX.DomainObjects.AvailableVirtualFileProviderFormModel
 
-<select name="@Html.NameFor(c => c.AvailableProviders.Value)">
-    @foreach (var item in Model.AvailableProviders.Items)
+<select name="@Html.NameFor(c => c.CurrentProviderName)">
+    @foreach (var group in Model.ProviderNames)
     {
-        <option selected="@Model.AvailableProviders.IsSelected(item)" value="@item">@item</option>
+        <optgroup label="@group.GroupName">
+            @foreach (var item in group.VirtualFileProviderNames)
+            {
+                 <option selected="@Model.IsCurrentProviderSelected(item)" value="@item">@item</option>
+            }
+
+        </optgroup>
     }
 </select>

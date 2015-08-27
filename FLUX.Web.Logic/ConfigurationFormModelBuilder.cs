@@ -17,15 +17,21 @@ namespace FLUX.Web.Logic
         public ConfigurationFormModel BuildFormModel()
         {
             var result = new ConfigurationFormModel();
-            var configFromProvider = _configProvider.ReadToDO();
-            result.AvailableProviders = new UpdateableSelectList<string, string>()
-            {
-                IsSelectedEvaluator =
-                    (val, item) => string.Equals(val, item, StringComparison.InvariantCultureIgnoreCase),
-                Value = configFromProvider.CurrentProviderName,
-                Items = configFromProvider.VirtualFileProviderNames
 
-            };
+            var configuration = _configProvider.ReadToDO();
+
+            var formModel = new AvailableVirtualFileProviderFormModel();
+            formModel.CurrentProviderName = configuration.CurrentProviderName;
+            formModel.ProviderNames = configuration.ProviderNames;
+
+            result.VirtualFileProvider = formModel;
+            //{
+            //    IsSelectedEvaluator =
+            //        (val, item) => string.Equals(val, item, StringComparison.InvariantCultureIgnoreCase),
+            //    Value = configFromProvider.CurrentProviderName,
+            //    Items = configFromProvider.ProviderNames
+
+            //};
             return result;
         }
     }

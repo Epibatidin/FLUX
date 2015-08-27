@@ -1,6 +1,4 @@
-﻿using System.Web.Mvc;
-using Castle.Core.Configuration;
-using Castle.MicroKernel.Registration;
+﻿using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using DataAccess.Base;
@@ -8,13 +6,12 @@ using DataAccess.Base.Config;
 using DataAccess.Interfaces;
 using Extension.Configuration;
 using Extraction.Base;
-using Extraction.Base.Config;
 using Extraction.Interfaces;
 using Extraction.Interfaces.Layer;
-using FLUX.Configuration.Config;
 using FLUX.Configuration.Windsor.Lifestyle;
 using FLUX.Interfaces.Web;
 using FLUX.Web.Logic;
+using System.Web.Mvc;
 
 namespace FLUX.Configuration.Windsor
 {
@@ -53,7 +50,7 @@ namespace FLUX.Configuration.Windsor
             container.Register(Component.For<IVirtualFileAccessorSectionGroupProvider>()
                 .UsingFactory<ConfigurationHolderFactory, VirtualFileAccessorSectionGroupProvider>
                 (r => r.BuildGroup<VirtualFileAccessorSectionGroupProvider, VirtualFileAccessorSectionGroup>
-                    ("Config/VirtualFileProvider", "VirtualFileAccessor")));
+                    ("VirtualFileProvider", "VirtualFileAccessor")));
         }
     }
 

@@ -1,27 +1,17 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{46823F85-8B9F-4B9D-A96F-28433F6004A8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6DAF5C7D-86FE-4B82-9CAF-2233F9D7A07F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Components\Common\Common.csproj", "{F7CE969C-81D6-465F-A2D9-8811E4C50CF0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHelpers", "Tests\TestHelpers\TestHelpers.csproj", "{2D82EF2E-CF63-4461-9DCF-1D40616EB15D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualFileProvider.Tests", "Tests\VirtualFileProvider.Tests\VirtualFileProvider.Tests.csproj", "{51DD695B-824C-42D2-8301-CB0BFA235E90}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A0BA381B-4922-479B-8533-83EE49C0E332}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FLUXMVC.Tests", "Tests\FLUXMVC.Tests\FLUXMVC.Tests.csproj", "{6BC236CE-CFB8-4B1E-B649-4A0A1721071A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Layers", "Layers", "{C2E186C7-8A83-4D5D-9C45-FEB719B00258}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtractionLayerProcessorTests", "Tests\ExtractionLayerProcessorTests\ExtractionLayerProcessorTests.csproj", "{6254278D-52F8-4766-882D-E001984DE297}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FileLayer", "FileLayer", "{6F376C0C-CB8E-47A2-B880-E10467721171}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileStructureDataExtraction.Tests", "FileStructureDataExtraction.Tests\FileStructureDataExtraction.Tests.csproj", "{35FEEE30-36D6-4AD2-8ABB-F3237011D174}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9E2BB3BE-AA4F-4E62-A08B-1ECFD3819954}"
 	ProjectSection(SolutionItems) = preProject
@@ -29,6 +19,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9E2BB3
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConfigFilesFor.Tests", "ConfigFilesFor.Tests", "{1F6DC2E4-F3AA-463E-8A69-E78AD112CB36}"
+	ProjectSection(SolutionItems) = preProject
+		ConfigFilesFor.Tests\ConfigReaderTest.config = ConfigFilesFor.Tests\ConfigReaderTest.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Components\Common\Common.csproj", "{F7CE969C-81D6-465F-A2D9-8811E4C50CF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHelpers", "Tests\TestHelpers\TestHelpers.csproj", "{2D82EF2E-CF63-4461-9DCF-1D40616EB15D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualFileProvider.Tests", "Tests\VirtualFileProvider.Tests\VirtualFileProvider.Tests.csproj", "{51DD695B-824C-42D2-8301-CB0BFA235E90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FLUXMVC.Tests", "Tests\FLUXMVC.Tests\FLUXMVC.Tests.csproj", "{6BC236CE-CFB8-4B1E-B649-4A0A1721071A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtractionLayerProcessorTests", "Tests\ExtractionLayerProcessorTests\ExtractionLayerProcessorTests.csproj", "{6254278D-52F8-4766-882D-E001984DE297}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileStructureDataExtraction.Tests", "FileStructureDataExtraction.Tests\FileStructureDataExtraction.Tests.csproj", "{35FEEE30-36D6-4AD2-8ABB-F3237011D174}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FLUX.Configuration", "FLUX.Configuration\FLUX.Configuration.csproj", "{D98DE674-9918-4FCC-8A0F-BBC73570F60B}"
 EndProject
@@ -71,11 +78,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Tests", "DataAccess.Tests\DataAccess.Tests.csproj", "{10920C4B-34C5-4552-B58A-63FB9663A5F9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.XMLStub", "DataAccess.XMLStub\DataAccess.XMLStub.csproj", "{B3E43E36-144F-46E6-A07C-7E2F976B6EA3}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConfigFilesFor.Tests", "ConfigFilesFor.Tests", "{1F6DC2E4-F3AA-463E-8A69-E78AD112CB36}"
-	ProjectSection(SolutionItems) = preProject
-		ConfigFilesFor.Tests\ConfigReaderTest.config = ConfigFilesFor.Tests\ConfigReaderTest.config
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestResources", "TestResources\TestResources.csproj", "{08286663-7997-483A-A8EF-72DDFD2B6C77}"
 EndProject
@@ -474,14 +476,14 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{A0BA381B-4922-479B-8533-83EE49C0E332} = {6DAF5C7D-86FE-4B82-9CAF-2233F9D7A07F}
+		{C2E186C7-8A83-4D5D-9C45-FEB719B00258} = {6DAF5C7D-86FE-4B82-9CAF-2233F9D7A07F}
+		{6F376C0C-CB8E-47A2-B880-E10467721171} = {C2E186C7-8A83-4D5D-9C45-FEB719B00258}
 		{F7CE969C-81D6-465F-A2D9-8811E4C50CF0} = {46823F85-8B9F-4B9D-A96F-28433F6004A8}
 		{2D82EF2E-CF63-4461-9DCF-1D40616EB15D} = {6DAF5C7D-86FE-4B82-9CAF-2233F9D7A07F}
 		{51DD695B-824C-42D2-8301-CB0BFA235E90} = {6DAF5C7D-86FE-4B82-9CAF-2233F9D7A07F}
-		{A0BA381B-4922-479B-8533-83EE49C0E332} = {6DAF5C7D-86FE-4B82-9CAF-2233F9D7A07F}
 		{6BC236CE-CFB8-4B1E-B649-4A0A1721071A} = {6DAF5C7D-86FE-4B82-9CAF-2233F9D7A07F}
-		{C2E186C7-8A83-4D5D-9C45-FEB719B00258} = {6DAF5C7D-86FE-4B82-9CAF-2233F9D7A07F}
 		{6254278D-52F8-4766-882D-E001984DE297} = {C2E186C7-8A83-4D5D-9C45-FEB719B00258}
-		{6F376C0C-CB8E-47A2-B880-E10467721171} = {C2E186C7-8A83-4D5D-9C45-FEB719B00258}
 		{35FEEE30-36D6-4AD2-8ABB-F3237011D174} = {6F376C0C-CB8E-47A2-B880-E10467721171}
 	EndGlobalSection
 EndGlobal

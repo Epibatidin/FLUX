@@ -11,7 +11,7 @@ namespace FLUX.Configuration.Tests.Windsor
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(Component.For<IConfigurationLocator>()
-                .Instance(new StaticConfigurationLocator(@"E:\Develop\FLUX\FLUX.Configuration")));
+                .Instance(new StaticConfigurationLocator(@"F:\Develop\FLUX\FLUX.Configuration\Config")));
             
         }
     }

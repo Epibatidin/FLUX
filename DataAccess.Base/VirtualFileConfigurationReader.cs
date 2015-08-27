@@ -21,16 +21,23 @@ namespace DataAccess.Base
             {
                 CurrentProviderName = section.General.Active
             };
+
             
-            var availProviders = new List<string>();
             var sources = section.Sources;
             sources.Reset();
 
             while (sources.MoveNext())
             {
-                availProviders.Add(sources.Current);
+                var group = new ProviderGroupDO();
+                group.GroupName = sources.Current.Name;
+
+                foreach (var keyedElement in sources.GetPropertyAsKeyedElements(sources.Current))
+                {
+                    group.VirtualFileProviderNames.Add(keyedElement.Key);
+                }
+                
+                result.ProviderNames.Add(group);
             }
-            result.VirtualFileProviderNames = availProviders;
             return result;
         }
 

@@ -1,12 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using DataAccess.FileSystem.Config;
 using DataAccess.XMLStub.Config;
+using Extension.Configuration;
 
 namespace DataAccess.Base.Config
 {
-    public class SourcesSection : ConfigurationSection, IEnumerator<string>
+    public class SourcesSection : ConfigurationSection, IEnumerator<ConfigurationProperty>
     {
         [ConfigurationProperty("XML", IsRequired = true)]
         public XMLSourcesCollection XML
@@ -27,13 +29,21 @@ namespace DataAccess.Base.Config
         }
         
         private IEnumerator _enumerator;
-        public string Current
+        public ConfigurationProperty Current
         {
             get
             {
-                var prop = _enumerator.Current as ConfigurationProperty;
-                return prop.Name;
+                return _enumerator.Current as ConfigurationProperty;
+               
             }
+        }
+
+        public IEnumerable<IKeyedElement> GetPropertyAsKeyedElements(ConfigurationProperty property)
+        {
+            if (property == null)
+                throw new ArgumentNullException("ConfigurationProperty is null in Iterator");
+
+            return base[property] as IEnumerable<IKeyedElement>;
         }
 
         public bool MoveNext()
@@ -53,6 +63,8 @@ namespace DataAccess.Base.Config
 
         public void Reset()
         {
+            if(_enumerator != null)
+                _enumerator.Reset();
             _enumerator = null;
         }
 
