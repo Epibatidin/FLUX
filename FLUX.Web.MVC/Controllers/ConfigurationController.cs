@@ -9,7 +9,8 @@ namespace FLUX.Web.MVC.Controllers
         private readonly IConfigurationFormModelBuilder _selectionBuilder;
         private readonly IVirtualFileConfigurationReader _configurationReader;
 
-        public ConfigurationController(IConfigurationFormModelBuilder selectionBuilder, IVirtualFileConfigurationReader configurationReader)
+        public ConfigurationController(IConfigurationFormModelBuilder selectionBuilder, 
+            IVirtualFileConfigurationReader configurationReader)
         {
             _selectionBuilder = selectionBuilder;
             _configurationReader = configurationReader;
@@ -18,6 +19,8 @@ namespace FLUX.Web.MVC.Controllers
         public PartialViewResult Index()
         {
             var availableProviders = _configurationReader.ReadToDO();
+            var fm = _selectionBuilder.BuildFormModel();
+            
 
             return null;
         }

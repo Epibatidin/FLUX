@@ -142,6 +142,10 @@
       <Project>{D98DE674-9918-4FCC-8A0F-BBC73570F60B}</Project>
       <Name>FLUX.Configuration</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FLUX.DomainObjects\FLUX.DomainObjects.csproj">
+      <Project>{25FB8F21-2C53-4AE7-9943-B15420DA4086}</Project>
+      <Name>FLUX.DomainObjects</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FLUX.Interfaces\FLUX.Interfaces.csproj">
       <Project>{A99B5C20-6F46-477D-84B2-06FD51538259}</Project>
       <Name>FLUX.Interfaces</Name>
