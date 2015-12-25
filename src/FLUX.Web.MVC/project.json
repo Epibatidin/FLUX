@@ -1,0 +1,52 @@
+﻿{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "dnx451": { },
+    "dnxcore50": {
+      "dependencies": {
+        "System.Runtime":"4.0.21-*",
+      }
+
+    }
+  },
+  "compilationOptions": {
+    "emitEntryPoint": true
+  },
+
+  "dependencies": {
+
+    "FLUX.Interfaces": "1.0.0-*",
+    "FLUX.Configuration": "1.0.0-*",
+
+    "Microsoft.AspNet.Diagnostics": "1.0.0-*",
+    "Microsoft.AspNet.IISPlatformHandler": "1.0.0-*",
+    "Microsoft.AspNet.Mvc": "6.0.0-*",
+    "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-*",
+    "Microsoft.AspNet.Server.Kestrel": "1.0.0-*",
+    "Microsoft.AspNet.StaticFiles": "1.0.0-*",
+    "Microsoft.AspNet.Tooling.Razor": "1.0.0-*",
+    "Microsoft.Extensions.Configuration.FileProviderExtensions": "1.0.0-*",
+    "Microsoft.Extensions.Configuration.Json": "1.0.0-*",
+    "Microsoft.Extensions.Logging": "1.0.0-*",
+    "Microsoft.Extensions.Logging.Console": "1.0.0-*",
+    "Microsoft.Extensions.Logging.Debug": "1.0.0-*",
+    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-*"
+  },
+
+  "commands": {
+    "web": "Microsoft.AspNet.Server.Kestrel"
+  },
+
+  "exclude": [
+    "wwwroot",
+    "node_modules"
+  ],
+  "publishExclude": [
+    "**.user",
+    "**.vspscc"
+  ],
+  "scripts": {
+    "prepublish": [ "npm install", "bower install", "gulp clean", "gulp min" ]
+  }
+}
+

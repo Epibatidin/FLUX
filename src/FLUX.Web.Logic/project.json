@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "dnxcore50": {
+      
+    },
+    "dnx451": {
+    }
+  },
+  "dependencies": {
+    "DataAccess.Interfaces": "1.0.0-*",
+    "FLUX.DomainObjects": "1.0.0-*",
+    "FLUX.Interfaces": "1.0.0-*"
+	
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {    
+    "dnxcore50": {
+      "dependencies": {
+        "System.Linq": "4.0.1-*"
+      }
+    },
+    "dnx451": {
+      "dependencies": {
+
+      }
+    }
+  },
+  "dependencies": {
+    "Microsoft.Extensions.OptionsModel": "1.0.0-*",
+
+    "Facade.Configuration": "1.0.0-*",
+    "DataAccess.Interfaces": "1.0.0-*"
+  },
+}

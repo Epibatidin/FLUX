@@ -1,0 +1,41 @@
+{
+
+  "General": {
+    "Active": "General"
+  },
+
+  "Debug": {
+    "RootNames": [ "Amduscia" ],
+    "SubRootPos": [ 0, 1, 2 ]
+  },
+  "Sources": [
+    {
+      "SetionName": "Directory",
+      "Type": "DataAccess.FileSystem.Config.FileDataAccessInstaller, DataAccess.FileSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "SetionName": "XML",
+      "Type": ""
+    }
+  ],
+  "XML": [
+    {
+      "Name": "XMLSource",
+      "XMLFolder": "E:\\Develop\\FLUX\\DATA\\XMLSourceProviderSource"
+    }
+  ],
+  "Directory": {
+    "Root": "E:\\FluxWorkBenchFiles",
+    "Folder": [
+      {
+        "Name":"Normal",
+        "SubFolder":"Working"
+      },
+      {
+        "Name" :"MOQ",
+        "SubFolder" : "MOQ"
+      }
+    ]
+  }
+}  
+

@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "dnxcore50": {
+      "dependencies": {
+        "System.Linq": "4.0.1-*",
+		"System.Runtime": "4.0.21-*",
+      }
+    },
+    "dnx451": {
+
+    }
+
+  },
+  "dependencies": {
+    "DataAccess.Interfaces": "1.0.0-*",
+	
+  }
+}
