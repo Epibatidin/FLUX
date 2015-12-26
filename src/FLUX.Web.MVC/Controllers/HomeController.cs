@@ -10,5 +10,10 @@ namespace FLUX.Web.MVC.Controllers
 
             return View();
         }
+
+        public IActionResult Configuration()
+        {
+            return ViewComponent("Configuration");
+        }
     }
 }

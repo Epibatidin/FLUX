@@ -62,14 +62,15 @@ namespace FLUX.Web.Logic.Tests
         [Fact]
         public void should_invoke_model_binder_if_is_postback()
         {
-            var controller = new Mock<Controller>();
+            var controller = new Mock<HttpRequest>();
 
             _postbackHelper.Setup(c => c.IsPostback(It.IsAny<HttpRequest>())).Returns(true);
 
+            var bindingContext = new ModelBinderContext();
             var configurationFormModel = new ConfigurationFormModel();
-            SUT.Update(configurationFormModel, controller.Object);
+            SUT.Update(configurationFormModel, controller.Object, c => bindingContext);
 
-            _modelBinder.Verify(c => c.TryUpdateModel(configurationFormModel, controller.Object));
+            _modelBinder.Verify(c => c.TryUpdateModel(configurationFormModel, bindingContext));
         }
 
     }

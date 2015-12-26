@@ -73,6 +73,7 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
           "Microsoft.AspNet.Mvc": "6.0.0"
         }
@@ -1828,6 +1829,7 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
+          "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
           "Microsoft.AspNet.Mvc": "6.0.0"
         }
@@ -3515,7 +3517,7 @@
           "ref/dotnet5.1/System.IO.FileSystem.Watcher.dll": {}
         }
       },
-      "System.Linq/4.0.1-beta-23516": {
+      "System.Linq/4.0.1-rc2-23623": {
         "type": "package",
         "dependencies": {
           "System.Collections": "4.0.10",
@@ -3639,7 +3641,7 @@
           "lib/DNXCore50/System.Private.Networking.dll": {}
         }
       },
-      "System.Private.Uri/4.0.1-beta-23516": {
+      "System.Private.Uri/4.0.1-rc2-23623": {
         "type": "package",
         "compile": {
           "ref/dnxcore50/_._": {}
@@ -3784,10 +3786,10 @@
           "lib/DNXCore50/System.Resources.ResourceManager.dll": {}
         }
       },
-      "System.Runtime/4.0.21-beta-23516": {
+      "System.Runtime/4.0.21-rc2-23623": {
         "type": "package",
         "dependencies": {
-          "System.Private.Uri": "4.0.1-beta-23516"
+          "System.Private.Uri": "4.0.1-rc2-23623"
         },
         "compile": {
           "ref/dotnet5.4/System.Runtime.dll": {}
@@ -4203,6 +4205,7 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
           "Microsoft.AspNet.Mvc": "6.0.0"
         }
@@ -5950,6 +5953,7 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
           "Microsoft.AspNet.Mvc": "6.0.0"
         }
@@ -7708,6 +7712,7 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
+          "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
           "Microsoft.AspNet.Mvc": "6.0.0"
         }
@@ -9192,7 +9197,7 @@
           "lib/DNXCore50/System.Net.Primitives.dll": {}
         }
       },
-      "runtime.win7.System.Private.Uri/4.0.1-beta-23516": {
+      "runtime.win7.System.Private.Uri/4.0.1-rc2-23623": {
         "type": "package",
         "compile": {
           "ref/dotnet/_._": {}
@@ -9654,7 +9659,7 @@
           "ref/dotnet5.1/System.IO.FileSystem.Watcher.dll": {}
         }
       },
-      "System.Linq/4.0.1-beta-23516": {
+      "System.Linq/4.0.1-rc2-23623": {
         "type": "package",
         "dependencies": {
           "System.Collections": "4.0.10",
@@ -9780,7 +9785,7 @@
           "lib/DNXCore50/System.Private.Networking.dll": {}
         }
       },
-      "System.Private.Uri/4.0.1-beta-23516": {
+      "System.Private.Uri/4.0.1-rc2-23623": {
         "type": "package",
         "compile": {
           "ref/dnxcore50/_._": {}
@@ -9940,10 +9945,10 @@
           "lib/DNXCore50/System.Resources.ResourceManager.dll": {}
         }
       },
-      "System.Runtime/4.0.21-beta-23516": {
+      "System.Runtime/4.0.21-rc2-23623": {
         "type": "package",
         "dependencies": {
-          "System.Private.Uri": "4.0.1-beta-23516"
+          "System.Private.Uri": "4.0.1-rc2-23623"
         },
         "compile": {
           "ref/dotnet5.4/System.Runtime.dll": {}
@@ -10428,6 +10433,7 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
+          "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
           "Microsoft.AspNet.Mvc": "6.0.0"
         }
@@ -11912,7 +11918,7 @@
           "lib/DNXCore50/System.Net.Primitives.dll": {}
         }
       },
-      "runtime.win7.System.Private.Uri/4.0.1-beta-23516": {
+      "runtime.win7.System.Private.Uri/4.0.1-rc2-23623": {
         "type": "package",
         "compile": {
           "ref/dotnet/_._": {}
@@ -12374,7 +12380,7 @@
           "ref/dotnet5.1/System.IO.FileSystem.Watcher.dll": {}
         }
       },
-      "System.Linq/4.0.1-beta-23516": {
+      "System.Linq/4.0.1-rc2-23623": {
         "type": "package",
         "dependencies": {
           "System.Collections": "4.0.10",
@@ -12500,7 +12506,7 @@
           "lib/DNXCore50/System.Private.Networking.dll": {}
         }
       },
-      "System.Private.Uri/4.0.1-beta-23516": {
+      "System.Private.Uri/4.0.1-rc2-23623": {
         "type": "package",
         "compile": {
           "ref/dnxcore50/_._": {}
@@ -12660,10 +12666,10 @@
           "lib/DNXCore50/System.Resources.ResourceManager.dll": {}
         }
       },
-      "System.Runtime/4.0.21-beta-23516": {
+      "System.Runtime/4.0.21-rc2-23623": {
         "type": "package",
         "dependencies": {
-          "System.Private.Uri": "4.0.1-beta-23516"
+          "System.Private.Uri": "4.0.1-rc2-23623"
         },
         "compile": {
           "ref/dotnet5.4/System.Runtime.dll": {}
@@ -14476,14 +14482,14 @@
         "runtimes/win7/lib/netcore50/System.Net.Primitives.dll"
       ]
     },
-    "runtime.win7.System.Private.Uri/4.0.1-beta-23516": {
+    "runtime.win7.System.Private.Uri/4.0.1-rc2-23623": {
       "type": "package",
       "serviceable": true,
-      "sha512": "dENjtxxx1L+OXWnxGRzeAD8mJC//NljPPLXNWg1H5BG6IB4YTLzBSzfeCOZQVpQaKfCYE7Mzjq12uCVZpBG4vg==",
+      "sha512": "fs37J5CLspn4uskv3svOaz18i03jMrEXxr63Pk3iV6wIBQN+T5btwjchJFtvaMAqolTCGz/DB+a4iyi4El5eng==",
       "files": [
         "ref/dotnet/_._",
-        "runtime.win7.System.Private.Uri.4.0.1-beta-23516.nupkg",
-        "runtime.win7.System.Private.Uri.4.0.1-beta-23516.nupkg.sha512",
+        "runtime.win7.System.Private.Uri.4.0.1-rc2-23623.nupkg",
+        "runtime.win7.System.Private.Uri.4.0.1-rc2-23623.nupkg.sha512",
         "runtime.win7.System.Private.Uri.nuspec",
         "runtimes/win7/lib/DNXCore50/System.Private.Uri.dll",
         "runtimes/win7/lib/netcore50/System.Private.Uri.dll",
@@ -15900,17 +15906,21 @@
         "System.Linq.nuspec"
       ]
     },
-    "System.Linq/4.0.1-beta-23516": {
+    "System.Linq/4.0.1-rc2-23623": {
       "type": "package",
       "serviceable": true,
-      "sha512": "AJaoyeAHLpurbTWnmvOhK/QC2sswKJrIA5RlPea+UdfXpHOw3srPNEPpseZDMV/EviVqAwUfFNkc5QxpGZtsLA==",
+      "sha512": "MDTKzq4KjW1pw2xavgJeVEcc9peCe2bId9r75hBavr+dX45HlCJYUJFd07hW5dCRR/3LoFoK+42b3tO1xWQKNg==",
       "files": [
         "lib/dotnet5.4/System.Linq.dll",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
         "lib/net45/_._",
         "lib/netcore50/System.Linq.dll",
         "lib/win8/_._",
         "lib/wp80/_._",
         "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
         "ref/dotnet5.1/de/System.Linq.xml",
         "ref/dotnet5.1/es/System.Linq.xml",
         "ref/dotnet5.1/fr/System.Linq.xml",
@@ -15922,6 +15932,8 @@
         "ref/dotnet5.1/System.Linq.xml",
         "ref/dotnet5.1/zh-hans/System.Linq.xml",
         "ref/dotnet5.1/zh-hant/System.Linq.xml",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
         "ref/net45/_._",
         "ref/netcore50/de/System.Linq.xml",
         "ref/netcore50/es/System.Linq.xml",
@@ -15937,8 +15949,10 @@
         "ref/win8/_._",
         "ref/wp80/_._",
         "ref/wpa81/_._",
-        "System.Linq.4.0.1-beta-23516.nupkg",
-        "System.Linq.4.0.1-beta-23516.nupkg.sha512",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "System.Linq.4.0.1-rc2-23623.nupkg",
+        "System.Linq.4.0.1-rc2-23623.nupkg.sha512",
         "System.Linq.nuspec"
       ]
     },
@@ -16219,15 +16233,15 @@
         "System.Private.Networking.nuspec"
       ]
     },
-    "System.Private.Uri/4.0.1-beta-23516": {
+    "System.Private.Uri/4.0.1-rc2-23623": {
       "type": "package",
-      "sha512": "PISxTW5FSZw8cQ8DOvq2pHHz48mok3ex0/QU2gcHG5PACvobxaXQl2oR345vqOx6C15l10bJPVkKZlgi2Ic4KQ==",
+      "sha512": "7VjuQcSa9LAhjxOJWrExcftjJo3nZVzcmE50L98Lxx0hC1NlB4S0p8tbNEIvy8d+7fwLGz6m97Et8iO2WKFlpw==",
       "files": [
         "ref/dnxcore50/_._",
         "ref/netcore50/_._",
         "runtime.json",
-        "System.Private.Uri.4.0.1-beta-23516.nupkg",
-        "System.Private.Uri.4.0.1-beta-23516.nupkg.sha512",
+        "System.Private.Uri.4.0.1-rc2-23623.nupkg",
+        "System.Private.Uri.4.0.1-rc2-23623.nupkg.sha512",
         "System.Private.Uri.nuspec"
       ]
     },
@@ -16739,10 +16753,10 @@
         "System.Runtime.nuspec"
       ]
     },
-    "System.Runtime/4.0.21-beta-23516": {
+    "System.Runtime/4.0.21-rc2-23623": {
       "type": "package",
       "serviceable": true,
-      "sha512": "ToYWwDgwR8fR9/8aaV+7PMFBfG2tEgGWED0l9OC9DQieaKEMAzXV3c6fOkK8FTd9YPjFcYnvx73tg21w6GuNDA==",
+      "sha512": "mDZ4yMdPOn4j5oplsRXwfSAwmKFIjyzaYXCijZUGayWgDHQEnahMfJmOkqc54EmmZfDAvBFyrj1vKhsBsmgJCA==",
       "files": [
         "lib/DNXCore50/System.Runtime.dll",
         "lib/MonoAndroid10/_._",
@@ -16807,8 +16821,8 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtimes/win8-aot/lib/netcore50/System.Runtime.dll",
-        "System.Runtime.4.0.21-beta-23516.nupkg",
-        "System.Runtime.4.0.21-beta-23516.nupkg.sha512",
+        "System.Runtime.4.0.21-rc2-23623.nupkg",
+        "System.Runtime.4.0.21-rc2-23623.nupkg.sha512",
         "System.Runtime.nuspec"
       ]
     },
@@ -18094,7 +18108,7 @@
       "Microsoft.AspNet.Tooling.Razor >= 1.0.0-*",
       "Microsoft.Extensions.Configuration.FileProviderExtensions >= 1.0.0-*",
       "Microsoft.Extensions.Configuration.Json >= 1.0.0-*",
-      "Microsoft.Extensions.Logging >= 1.0.0-*",
+      "Microsoft.Extensions.Logging >= 1.0.0-rc1-final",
       "Microsoft.Extensions.Logging.Console >= 1.0.0-*",
       "Microsoft.Extensions.Logging.Debug >= 1.0.0-*",
       "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-*"

@@ -5,6 +5,8 @@ using FLUX.DomainObjects;
 using FLUX.Interfaces.Web;
 using Microsoft.AspNet.Mvc;
 using Facade.MVC;
+using Microsoft.AspNet.Http;
+using Microsoft.AspNet.Mvc.ModelBinding;
 
 namespace FLUX.Web.Logic
 {
@@ -36,10 +38,18 @@ namespace FLUX.Web.Logic
             return result;
         }
 
+        public void Update(ConfigurationFormModel formModel, HttpRequest httpRequest, Func<IModelBinderFacade, ModelBinderContext> controller)
+        {
+            if (_postbackHelper.IsPostback(httpRequest))
+            {
+                var bindingContext = controller(_modelBinder);
+                _modelBinder.TryUpdateModel(formModel, bindingContext);
+            }
+        }
+
         public void Update(ConfigurationFormModel formModel, Controller controller)
         {
-            if (_postbackHelper.IsPostback(controller.Request))
-                _modelBinder.TryUpdateModel(formModel, controller);
+            
         }
 
         public void Process(ConfigurationFormModel formModel)

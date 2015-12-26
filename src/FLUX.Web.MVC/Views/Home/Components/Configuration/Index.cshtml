@@ -1,6 +1,6 @@
 ﻿@model FLUX.DomainObjects.ConfigurationFormModel
 
-@using(Html.BeginForm("Index", "Configuration", FormMethod.Post, new { @class = "context"}))
+@using(Html.BeginForm("Configuration", "Home", FormMethod.Post, new { @class = "context"}))
 {
     <div class="loadHere">
         @Html.EditorFor(c => c.VirtualFileProvider)
