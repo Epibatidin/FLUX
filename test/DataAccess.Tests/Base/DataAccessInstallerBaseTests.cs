@@ -16,7 +16,7 @@ namespace DataAccess.Tests.Base
 {
     public class VirtualFileRootConfigurationDummy : IVirtualFileRootConfiguration
     {
-        public string Root { get; set; }
+        public string ID { get; set; }
         public IEnumerable<string> Keys { get; }
     }
 
@@ -61,7 +61,6 @@ namespace DataAccess.Tests.Base
                 .Returns(obj);
             
             var service = new Mock<IServiceCollection>();
-
             
             Assert.Throws<NotImplementedException>(() => SUT.Configure(configuration.Object, "sectionName", service.Object));
         }

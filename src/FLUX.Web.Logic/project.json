@@ -8,9 +8,12 @@
     }
   },
   "dependencies": {
+
+    "Facade.MVC": "1.0.0-*",
+
     "DataAccess.Interfaces": "1.0.0-*",
     "FLUX.DomainObjects": "1.0.0-*",
     "FLUX.Interfaces": "1.0.0-*"
-	
+
   }
 }

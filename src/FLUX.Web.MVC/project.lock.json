@@ -41,6 +41,13 @@
           "Microsoft.Extensions.Configuration.Binder": "1.0.0"
         }
       },
+      "Facade.MVC/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Microsoft.AspNet.Mvc": "6.0.0"
+        }
+      },
       "FLUX.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -75,6 +82,7 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
           "FLUX.Interfaces": "1.0.0"
         }
@@ -1784,6 +1792,13 @@
           "Microsoft.Extensions.Configuration.Binder": "1.0.0"
         }
       },
+      "Facade.MVC/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "Microsoft.AspNet.Mvc": "6.0.0"
+        }
+      },
       "FLUX.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
@@ -1822,6 +1837,7 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
           "FLUX.Interfaces": "1.0.0"
         }
@@ -4155,6 +4171,13 @@
           "Microsoft.Extensions.Configuration.Binder": "1.0.0"
         }
       },
+      "Facade.MVC/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Microsoft.AspNet.Mvc": "6.0.0"
+        }
+      },
       "FLUX.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -4189,6 +4212,7 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
           "FLUX.Interfaces": "1.0.0"
         }
@@ -5894,6 +5918,13 @@
           "Microsoft.Extensions.Configuration.Binder": "1.0.0"
         }
       },
+      "Facade.MVC/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Microsoft.AspNet.Mvc": "6.0.0"
+        }
+      },
       "FLUX.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -5928,6 +5959,7 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
           "FLUX.Interfaces": "1.0.0"
         }
@@ -7640,6 +7672,13 @@
           "Microsoft.Extensions.Configuration.Binder": "1.0.0"
         }
       },
+      "Facade.MVC/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "Microsoft.AspNet.Mvc": "6.0.0"
+        }
+      },
       "FLUX.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
@@ -7678,6 +7717,7 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
           "FLUX.Interfaces": "1.0.0"
         }
@@ -10352,6 +10392,13 @@
           "Microsoft.Extensions.Configuration.Binder": "1.0.0"
         }
       },
+      "Facade.MVC/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "Microsoft.AspNet.Mvc": "6.0.0"
+        }
+      },
       "FLUX.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
@@ -10390,6 +10437,7 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
           "FLUX.Interfaces": "1.0.0"
         }
@@ -13035,6 +13083,10 @@
     "Facade.Configuration/1.0.0": {
       "type": "project",
       "path": "../../ext/Facade.Configuration/project.json"
+    },
+    "Facade.MVC/1.0.0": {
+      "type": "project",
+      "path": "../../ext/Facade.MVC/project.json"
     },
     "FLUX.Configuration/1.0.0": {
       "type": "project",

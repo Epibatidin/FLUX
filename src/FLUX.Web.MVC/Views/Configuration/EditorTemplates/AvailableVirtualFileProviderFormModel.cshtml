@@ -3,7 +3,7 @@
 <select name="@Html.NameFor(c => c.CurrentProviderName)">
     @foreach (var group in Model.ProviderNames)
     {
-        <optgroup label="@group.GroupName">
+        <optgroup label="@group.ProviderKey">
             @foreach (var item in group.VirtualFileProviderNames)
             {
                  <option selected="@Model.IsSelected(item)" value="@item">@item</option>

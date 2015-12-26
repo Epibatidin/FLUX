@@ -20,7 +20,11 @@
     "DataAccess.Interfaces": "1.0.0-*",
     "FLUX.DomainObjects": "1.0.0-*",
     "FLUX.Interfaces": "1.0.0-*",
-    "FLUX.Web.Logic": "1.0.0-*"
+    "FLUX.Web.Logic": "1.0.0-*",
+
+    "Microsoft.AspNet.Http.Abstractions" : "1.0.0-*"
+
+
   },
   "commands": {
     "test": "xunit.runner.dnx"

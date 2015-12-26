@@ -14,5 +14,6 @@ namespace FLUX.Interfaces.Web
 
         void Update(TFormModel formModel, Controller controller);
 
+        void Process(ConfigurationFormModel formModel);
     }
 }

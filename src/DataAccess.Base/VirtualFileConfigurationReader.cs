@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using DataAccess.Base.Config;
 using DataAccess.Interfaces;
 using Microsoft.Extensions.OptionsModel;
@@ -9,12 +11,14 @@ namespace DataAccess.Base
     {
         private readonly IOptions<VirtualFileAccessorSectionGroup> _sectionGroupAccessor;
         private readonly IEnumerable<IVirtualFileRootConfiguration> _virtualFileRootConfigurations;
+        private readonly IEnumerable<IVirtualFileFactory> _providerFactories;
 
         public VirtualFileConfigurationReader(IOptions<VirtualFileAccessorSectionGroup> sectionGroupAccessor, 
-            IEnumerable<IVirtualFileRootConfiguration> virtualFileRootConfigurations )
+            IEnumerable<IVirtualFileRootConfiguration> virtualFileRootConfigurations, IEnumerable<IVirtualFileFactory> providerFactories)
         {
             _sectionGroupAccessor = sectionGroupAccessor;
             _virtualFileRootConfigurations = virtualFileRootConfigurations;
+            _providerFactories = providerFactories;
         }
 
         public AvailableVirtualFileProviderDo ReadToDO()
@@ -28,8 +32,7 @@ namespace DataAccess.Base
 
             foreach (var virtualFileRootConfiguration in _virtualFileRootConfigurations)
             {
-                var providergroup = new ProviderGroupDo();
-                providergroup.GroupName = virtualFileRootConfiguration.Root;
+                var providergroup = new ProviderGroupDo(virtualFileRootConfiguration.ID);
 
                 foreach (var key in virtualFileRootConfiguration.Keys)
                 {
@@ -40,23 +43,19 @@ namespace DataAccess.Base
             return result;
         }
 
-        public IVirtualFileProvider GetProvider(string providerKey)
+        public IDictionary<int, IVirtualFile> GetVirtualFiles(string selectedSource, string activeProviderGrp)
         {
-            //var sources = _virtualFileAccessorSectionGroup.Sources;
-            //sources.Reset();
-            //while (sources.MoveNext())
-            //{
-            //    var cur = sources.Current;
-            //    var provider = cur.Create(providerKey);
-            //    if(provider == null) continue;
-            //    var debug = _virtualFileAccessorSectionGroup.Debug;
+            var activeFactory = _providerFactories.FirstOrDefault(c => c.CanHandleProviderKey(activeProviderGrp));
+            if(activeFactory == null)
+                throw new NotSupportedException(string.Format("ProviderKey : {0} is not supported by any ProviderFactory", activeProviderGrp));
 
-            //    provider.Init(debug.RootNames, debug.SubRootPos);
-            //    return provider;
-            //}
+            var debugConfig = _sectionGroupAccessor.Value.Debug;
 
-            return null;
+            var providerContext = new VirtualFileFactoryContext();
+            providerContext.OverrideRootnames = debugConfig.RootNames;
+            providerContext.SubRoots = debugConfig.SubRootPos;
+            providerContext.SelectedSource = selectedSource;
+            return activeFactory.RetrieveVirtualFiles(providerContext);
         }
     }
-
 }

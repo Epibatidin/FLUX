@@ -4,6 +4,7 @@ using DataAccess.Interfaces;
 using DataAccess.Base;
 using Microsoft.Extensions.Configuration;
 using Facade.Configuration;
+using Facade.MVC;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FLUX.Configuration.DependencyInjection
@@ -14,6 +15,16 @@ namespace FLUX.Configuration.DependencyInjection
         {
             Layer(container);
             Configuration(container, configurationRoot);
+
+            RegisterBusinessComponents(container);
+        }
+
+        private void RegisterBusinessComponents(IServiceCollection container)
+        {
+            container.AddSingleton<IPostbackHelper, PostbackHelper>();
+            container.AddSingleton<IModelBinderFacade, ModelBinderFacade>();
+
+            container.AddSingleton<IConfigurationFormModelBuilder, ConfigurationFormModelBuilder>();
         }
 
 
@@ -31,7 +42,6 @@ namespace FLUX.Configuration.DependencyInjection
 
         private void Configuration(IServiceCollection container, IConfigurationRoot configurationRoot)
         {
-            container.AddSingleton<IConfigurationFormModelBuilder, ConfigurationFormModelBuilder>();
             container.AddSingleton<IVirtualFileConfigurationReader, VirtualFileConfigurationReader>();
             container.AddSingleton<IConfigurationBinderFacade, ConfigurationBinderFacade>();
 

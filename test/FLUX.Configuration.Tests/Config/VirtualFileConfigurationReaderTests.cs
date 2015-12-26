@@ -16,7 +16,7 @@ namespace FLUX.Configuration.Tests.Config
 {
     public class VirtualFileRootConfiguration : IVirtualFileRootConfiguration
     {
-        public string Root { get; set; }
+        public string ID { get; set; }
         public IEnumerable<string> Keys { get; set; }
     }
 
@@ -29,8 +29,6 @@ namespace FLUX.Configuration.Tests.Config
 
         protected override void Customize()
         {
-            var mokc = new Mock<IOptions<VirtualFileAccessorSectionGroup>>();
-
             var virtualFileSectionGroup = Fixture.Freeze<Mock<IOptions<VirtualFileAccessorSectionGroup>>>();
             _virtualFileAccessorSectionGroup = Fixture.Create<VirtualFileAccessorSectionGroup>();
             virtualFileSectionGroup.Setup(c => c.Value).Returns(_virtualFileAccessorSectionGroup);
@@ -67,7 +65,7 @@ namespace FLUX.Configuration.Tests.Config
         {
             var result = SUT.ReadToDO();
             
-            Assert.That(result.ProviderNames[0].GroupName, Is.EqualTo(_firstRootConfig.Root));
+            Assert.That(result.ProviderNames[0].ProviderKey, Is.EqualTo(_firstRootConfig.ID));
 
             Assert.That(result.ProviderNames[0].VirtualFileProviderNames.Count, Is.EqualTo(_firstRootConfig.Keys.Count()));
         }

@@ -1,11 +1,11 @@
 {
 
   "General": {
-    "Active": "General"
+    "Active": "Normal"
   },
 
   "Debug": {
-    "RootNames": [ "Amduscia" ],
+    "RootNames": [ "Amduscia", "Ashbury Heights" ],
     "SubRootPos": [ 0, 1, 2 ]
   },
   "Sources": [
@@ -21,11 +21,11 @@
   "XML": [
     {
       "Name": "XMLSource",
-      "XMLFolder": "E:\\Develop\\FLUX\\DATA\\XMLSourceProviderSource"
+      "XMLFolder": "D:\\Develop\\FLUX\\DATA\\XMLSourceProviderSource"
     }
   ],
   "Directory": {
-    "Root": "E:\\FluxWorkBenchFiles",
+    "Root": "D:\\FluxWorkBenchFiles",
     "Folder": [
       {
         "Name":"Normal",

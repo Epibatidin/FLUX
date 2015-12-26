@@ -9,7 +9,7 @@ namespace DataAccess.FileSystem.Config
     {
         public override void RegisterServices(IServiceCollection serviceCollection)
         {
-            //serviceCollection.AddSingleton<IVirtualFileRootConfiguration, DirectoryVirtualFileBuilder>();
+            serviceCollection.AddSingleton<IVirtualFileFactory, DirectoryVirtualFileFactory>();
         }
     }
 }

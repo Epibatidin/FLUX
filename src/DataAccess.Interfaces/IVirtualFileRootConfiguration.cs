@@ -4,8 +4,8 @@ namespace DataAccess.Interfaces
 {
     public interface IVirtualFileRootConfiguration
     {
-        string Root { get; set; }
-
+        string ID { get; set; }
+        
         IEnumerable<string> Keys { get; }
     }
 }

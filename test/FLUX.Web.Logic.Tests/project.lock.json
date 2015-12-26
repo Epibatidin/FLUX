@@ -89,6 +89,7 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
           "FLUX.Interfaces": "1.0.0"
         }
@@ -1638,6 +1639,7 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
           "FLUX.Interfaces": "1.0.0"
         }
@@ -3187,6 +3189,7 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
           "FLUX.Interfaces": "1.0.0"
         }
@@ -6580,7 +6583,8 @@
       "DataAccess.Interfaces >= 1.0.0-*",
       "FLUX.DomainObjects >= 1.0.0-*",
       "FLUX.Interfaces >= 1.0.0-*",
-      "FLUX.Web.Logic >= 1.0.0-*"
+      "FLUX.Web.Logic >= 1.0.0-*",
+      "Microsoft.AspNet.Http.Abstractions >= 1.0.0-*"
     ],
     "DNX,Version=v4.5.1": []
   }

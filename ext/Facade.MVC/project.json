@@ -2,14 +2,12 @@
   "version": "1.0.0-*",
   "frameworks": {
      "dnxcore50": {
-      "dependencies": {
-       
+      "dependencies": {   
       }
-
     },
     "dnx451": {
-		"dependencies": {
-		}
+      "dependencies": {
+      }
     }
   },
   "dependencies": {

@@ -12,8 +12,9 @@ namespace DataAccess.Base
         public void Configure(IConfiguration configuration, string sectionName, IServiceCollection services)
         {
             var config = ConfigurationBinder.Bind<TConfigurationSection>(configuration, sectionName);
-            
-            services.AddSingleton(typeof( TConfigurationSection), config.GetType());
+            config.ID = sectionName;
+
+            services.Add(new ServiceDescriptor(typeof(TConfigurationSection), config));
             services.Add(new ServiceDescriptor(typeof(IVirtualFileRootConfiguration), config));
 
             RegisterServices(services);

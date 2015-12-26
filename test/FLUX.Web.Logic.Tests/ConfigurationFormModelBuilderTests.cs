@@ -3,6 +3,7 @@ using Extension.Test;
 using Facade.MVC;
 using FLUX.DomainObjects;
 using FLUX.Interfaces.Web;
+using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Mvc;
 using Moq;
 using NUnit.Framework;
@@ -63,7 +64,7 @@ namespace FLUX.Web.Logic.Tests
         {
             var controller = new Mock<Controller>();
 
-            _postbackHelper.Setup(c => c.IsPostback()).Returns(true);
+            _postbackHelper.Setup(c => c.IsPostback(It.IsAny<HttpRequest>())).Returns(true);
 
             var configurationFormModel = new ConfigurationFormModel();
             SUT.Update(configurationFormModel, controller.Object);
