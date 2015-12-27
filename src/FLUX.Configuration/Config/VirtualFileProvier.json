@@ -15,15 +15,17 @@
     },
     {
       "SetionName": "XML",
-      "Type": ""
+      "Type": "DataAccess.XMLStub.Config.XMLSourcesInstaller, DataAccess.XMLStub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
     }
   ],
-  "XML": [
-    {
-      "Name": "XMLSource",
-      "XMLFolder": "D:\\Develop\\FLUX\\DATA\\XMLSourceProviderSource"
-    }
-  ],
+  "XML": {
+    "XmlSources": [
+      {
+        "Name": "XMLSource",
+        "XMLFolder": "D:\\FluxWorkBenchFiles\\XML\\XMLSourceProviderSource"
+      }
+    ]
+  },
   "Directory": {
     "Root": "D:\\FluxWorkBenchFiles",
     "Folder": [

@@ -9,7 +9,7 @@
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.OptionsModel": "1.0.0"
+          "Microsoft.Extensions.OptionsModel": "1.0.0-rc1"
         }
       },
       "DataAccess.FileSystem/1.0.0": {
@@ -18,10 +18,10 @@
         "dependencies": {
           "DataAccess.Base": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "DataAccess.Interfaces/1.0.0": {
@@ -29,23 +29,36 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
+      },
+      "DataAccess.XMLStub/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataAccess.Base": "1.0.0",
+          "DataAccess.Interfaces": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
+        },
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
       },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Facade.MVC/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.Configuration/1.0.0": {
@@ -55,11 +68,12 @@
           "DataAccess.Base": "1.0.0",
           "DataAccess.FileSystem": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
+          "DataAccess.XMLStub": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
           "FLUX.Web.Logic": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "FLUX.DomainObjects/1.0.0": {
@@ -75,7 +89,7 @@
         "dependencies": {
           "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.Web.Logic/1.0.0": {
@@ -1754,7 +1768,7 @@
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.OptionsModel": "1.0.0",
+          "Microsoft.Extensions.OptionsModel": "1.0.0-rc1",
           "System.Linq": "4.0.1"
         }
       },
@@ -1764,10 +1778,10 @@
         "dependencies": {
           "DataAccess.Base": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.IO": "4.0.10",
           "System.IO.FileSystem": "4.0.0",
           "System.Linq": "4.0.1"
@@ -1778,26 +1792,37 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.IO": "4.0.10",
           "System.Linq": "4.0.1",
           "System.Runtime": "4.0.21"
+        }
+      },
+      "DataAccess.XMLStub/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "DataAccess.Base": "1.0.0",
+          "DataAccess.Interfaces": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
+          "System.Xml.XmlSerializer": "4.0.10"
         }
       },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Facade.MVC/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.Configuration/1.0.0": {
@@ -1807,11 +1832,12 @@
           "DataAccess.Base": "1.0.0",
           "DataAccess.FileSystem": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
+          "DataAccess.XMLStub": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
           "FLUX.Web.Logic": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.Linq": "4.0.1",
           "System.Runtime": "4.0.21"
         }
@@ -1831,7 +1857,7 @@
         "dependencies": {
           "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.Web.Logic/1.0.0": {
@@ -4132,6 +4158,54 @@
         "runtime": {
           "lib/dotnet5.4/System.Xml.XDocument.dll": {}
         }
+      },
+      "System.Xml.XmlDocument/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.10",
+          "System.Diagnostics.Debug": "4.0.10",
+          "System.Globalization": "4.0.10",
+          "System.IO": "4.0.10",
+          "System.Resources.ResourceManager": "4.0.0",
+          "System.Runtime": "4.0.20",
+          "System.Runtime.Extensions": "4.0.10",
+          "System.Text.Encoding": "4.0.10",
+          "System.Threading": "4.0.10",
+          "System.Xml.ReaderWriter": "4.0.10"
+        },
+        "compile": {
+          "ref/dotnet/System.Xml.XmlDocument.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/System.Xml.XmlDocument.dll": {}
+        }
+      },
+      "System.Xml.XmlSerializer/4.0.10": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.10",
+          "System.Diagnostics.Debug": "4.0.10",
+          "System.Globalization": "4.0.10",
+          "System.IO": "4.0.10",
+          "System.Linq": "4.0.0",
+          "System.Reflection": "4.0.10",
+          "System.Reflection.Extensions": "4.0.0",
+          "System.Reflection.Primitives": "4.0.0",
+          "System.Reflection.TypeExtensions": "4.0.0",
+          "System.Resources.ResourceManager": "4.0.0",
+          "System.Runtime": "4.0.20",
+          "System.Runtime.Extensions": "4.0.10",
+          "System.Text.RegularExpressions": "4.0.10",
+          "System.Threading": "4.0.10",
+          "System.Xml.ReaderWriter": "4.0.10",
+          "System.Xml.XmlDocument": "4.0.0"
+        },
+        "compile": {
+          "ref/dotnet/System.Xml.XmlSerializer.dll": {}
+        },
+        "runtime": {
+          "lib/DNXCore50/System.Xml.XmlSerializer.dll": {}
+        }
       }
     },
     "DNX,Version=v4.5.1/win7-x86": {
@@ -4141,7 +4215,7 @@
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.OptionsModel": "1.0.0"
+          "Microsoft.Extensions.OptionsModel": "1.0.0-rc1"
         }
       },
       "DataAccess.FileSystem/1.0.0": {
@@ -4150,10 +4224,10 @@
         "dependencies": {
           "DataAccess.Base": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "DataAccess.Interfaces/1.0.0": {
@@ -4161,23 +4235,36 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
+      },
+      "DataAccess.XMLStub/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataAccess.Base": "1.0.0",
+          "DataAccess.Interfaces": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
+        },
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
       },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Facade.MVC/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.Configuration/1.0.0": {
@@ -4187,11 +4274,12 @@
           "DataAccess.Base": "1.0.0",
           "DataAccess.FileSystem": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
+          "DataAccess.XMLStub": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
           "FLUX.Web.Logic": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "FLUX.DomainObjects/1.0.0": {
@@ -4207,7 +4295,7 @@
         "dependencies": {
           "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.Web.Logic/1.0.0": {
@@ -5889,7 +5977,7 @@
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.OptionsModel": "1.0.0"
+          "Microsoft.Extensions.OptionsModel": "1.0.0-rc1"
         }
       },
       "DataAccess.FileSystem/1.0.0": {
@@ -5898,10 +5986,10 @@
         "dependencies": {
           "DataAccess.Base": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "DataAccess.Interfaces/1.0.0": {
@@ -5909,23 +5997,36 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
+      },
+      "DataAccess.XMLStub/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataAccess.Base": "1.0.0",
+          "DataAccess.Interfaces": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
+        },
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
       },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Facade.MVC/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.Configuration/1.0.0": {
@@ -5935,11 +6036,12 @@
           "DataAccess.Base": "1.0.0",
           "DataAccess.FileSystem": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
+          "DataAccess.XMLStub": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
           "FLUX.Web.Logic": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "FLUX.DomainObjects/1.0.0": {
@@ -5955,7 +6057,7 @@
         "dependencies": {
           "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.Web.Logic/1.0.0": {
@@ -7637,7 +7739,7 @@
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.OptionsModel": "1.0.0",
+          "Microsoft.Extensions.OptionsModel": "1.0.0-rc1",
           "System.Linq": "4.0.1"
         }
       },
@@ -7647,10 +7749,10 @@
         "dependencies": {
           "DataAccess.Base": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.IO": "4.0.10",
           "System.IO.FileSystem": "4.0.0",
           "System.Linq": "4.0.1"
@@ -7661,26 +7763,37 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.IO": "4.0.10",
           "System.Linq": "4.0.1",
           "System.Runtime": "4.0.21"
+        }
+      },
+      "DataAccess.XMLStub/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "DataAccess.Base": "1.0.0",
+          "DataAccess.Interfaces": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
+          "System.Xml.XmlSerializer": "4.0.10"
         }
       },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Facade.MVC/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.Configuration/1.0.0": {
@@ -7690,11 +7803,12 @@
           "DataAccess.Base": "1.0.0",
           "DataAccess.FileSystem": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
+          "DataAccess.XMLStub": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
           "FLUX.Web.Logic": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.Linq": "4.0.1",
           "System.Runtime": "4.0.21"
         }
@@ -7714,7 +7828,7 @@
         "dependencies": {
           "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.Web.Logic/1.0.0": {
@@ -10349,6 +10463,54 @@
         "runtime": {
           "lib/dotnet5.4/System.Xml.XDocument.dll": {}
         }
+      },
+      "System.Xml.XmlDocument/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.10",
+          "System.Diagnostics.Debug": "4.0.10",
+          "System.Globalization": "4.0.10",
+          "System.IO": "4.0.10",
+          "System.Resources.ResourceManager": "4.0.0",
+          "System.Runtime": "4.0.20",
+          "System.Runtime.Extensions": "4.0.10",
+          "System.Text.Encoding": "4.0.10",
+          "System.Threading": "4.0.10",
+          "System.Xml.ReaderWriter": "4.0.10"
+        },
+        "compile": {
+          "ref/dotnet/System.Xml.XmlDocument.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/System.Xml.XmlDocument.dll": {}
+        }
+      },
+      "System.Xml.XmlSerializer/4.0.10": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.10",
+          "System.Diagnostics.Debug": "4.0.10",
+          "System.Globalization": "4.0.10",
+          "System.IO": "4.0.10",
+          "System.Linq": "4.0.0",
+          "System.Reflection": "4.0.10",
+          "System.Reflection.Extensions": "4.0.0",
+          "System.Reflection.Primitives": "4.0.0",
+          "System.Reflection.TypeExtensions": "4.0.0",
+          "System.Resources.ResourceManager": "4.0.0",
+          "System.Runtime": "4.0.20",
+          "System.Runtime.Extensions": "4.0.10",
+          "System.Text.RegularExpressions": "4.0.10",
+          "System.Threading": "4.0.10",
+          "System.Xml.ReaderWriter": "4.0.10",
+          "System.Xml.XmlDocument": "4.0.0"
+        },
+        "compile": {
+          "ref/dotnet/System.Xml.XmlSerializer.dll": {}
+        },
+        "runtime": {
+          "lib/DNXCore50/System.Xml.XmlSerializer.dll": {}
+        }
       }
     },
     "DNXCore,Version=v5.0/win7-x64": {
@@ -10358,7 +10520,7 @@
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.OptionsModel": "1.0.0",
+          "Microsoft.Extensions.OptionsModel": "1.0.0-rc1",
           "System.Linq": "4.0.1"
         }
       },
@@ -10368,10 +10530,10 @@
         "dependencies": {
           "DataAccess.Base": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.IO": "4.0.10",
           "System.IO.FileSystem": "4.0.0",
           "System.Linq": "4.0.1"
@@ -10382,26 +10544,37 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.IO": "4.0.10",
           "System.Linq": "4.0.1",
           "System.Runtime": "4.0.21"
+        }
+      },
+      "DataAccess.XMLStub/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "DataAccess.Base": "1.0.0",
+          "DataAccess.Interfaces": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
+          "System.Xml.XmlSerializer": "4.0.10"
         }
       },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Facade.MVC/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.Configuration/1.0.0": {
@@ -10411,11 +10584,12 @@
           "DataAccess.Base": "1.0.0",
           "DataAccess.FileSystem": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
+          "DataAccess.XMLStub": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
           "FLUX.Web.Logic": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.Linq": "4.0.1",
           "System.Runtime": "4.0.21"
         }
@@ -10435,7 +10609,7 @@
         "dependencies": {
           "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.Web.Logic/1.0.0": {
@@ -13070,6 +13244,54 @@
         "runtime": {
           "lib/dotnet5.4/System.Xml.XDocument.dll": {}
         }
+      },
+      "System.Xml.XmlDocument/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.10",
+          "System.Diagnostics.Debug": "4.0.10",
+          "System.Globalization": "4.0.10",
+          "System.IO": "4.0.10",
+          "System.Resources.ResourceManager": "4.0.0",
+          "System.Runtime": "4.0.20",
+          "System.Runtime.Extensions": "4.0.10",
+          "System.Text.Encoding": "4.0.10",
+          "System.Threading": "4.0.10",
+          "System.Xml.ReaderWriter": "4.0.10"
+        },
+        "compile": {
+          "ref/dotnet/System.Xml.XmlDocument.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/System.Xml.XmlDocument.dll": {}
+        }
+      },
+      "System.Xml.XmlSerializer/4.0.10": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.10",
+          "System.Diagnostics.Debug": "4.0.10",
+          "System.Globalization": "4.0.10",
+          "System.IO": "4.0.10",
+          "System.Linq": "4.0.0",
+          "System.Reflection": "4.0.10",
+          "System.Reflection.Extensions": "4.0.0",
+          "System.Reflection.Primitives": "4.0.0",
+          "System.Reflection.TypeExtensions": "4.0.0",
+          "System.Resources.ResourceManager": "4.0.0",
+          "System.Runtime": "4.0.20",
+          "System.Runtime.Extensions": "4.0.10",
+          "System.Text.RegularExpressions": "4.0.10",
+          "System.Threading": "4.0.10",
+          "System.Xml.ReaderWriter": "4.0.10",
+          "System.Xml.XmlDocument": "4.0.0"
+        },
+        "compile": {
+          "ref/dotnet/System.Xml.XmlSerializer.dll": {}
+        },
+        "runtime": {
+          "lib/DNXCore50/System.Xml.XmlSerializer.dll": {}
+        }
       }
     }
   },
@@ -13085,6 +13307,10 @@
     "DataAccess.Interfaces/1.0.0": {
       "type": "project",
       "path": "../DataAccess.Interfaces/project.json"
+    },
+    "DataAccess.XMLStub/1.0.0": {
+      "type": "project",
+      "path": "../DataAccess.XMLStub/project.json"
     },
     "Facade.Configuration/1.0.0": {
       "type": "project",
@@ -18093,25 +18319,92 @@
         "System.Xml.XDocument.4.0.11-beta-23516.nupkg.sha512",
         "System.Xml.XDocument.nuspec"
       ]
+    },
+    "System.Xml.XmlDocument/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "H5qTx2+AXgaKE5wehU1ZYeYPFpp/rfFh69/937NvwCrDqbIkvJRmIFyKKpkoMI6gl9hGfuVizfIudVTMyowCXw==",
+      "files": [
+        "lib/dotnet/System.Xml.XmlDocument.dll",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Xml.XmlDocument.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "ref/dotnet/de/System.Xml.XmlDocument.xml",
+        "ref/dotnet/es/System.Xml.XmlDocument.xml",
+        "ref/dotnet/fr/System.Xml.XmlDocument.xml",
+        "ref/dotnet/it/System.Xml.XmlDocument.xml",
+        "ref/dotnet/ja/System.Xml.XmlDocument.xml",
+        "ref/dotnet/ko/System.Xml.XmlDocument.xml",
+        "ref/dotnet/ru/System.Xml.XmlDocument.xml",
+        "ref/dotnet/System.Xml.XmlDocument.dll",
+        "ref/dotnet/System.Xml.XmlDocument.xml",
+        "ref/dotnet/zh-hans/System.Xml.XmlDocument.xml",
+        "ref/dotnet/zh-hant/System.Xml.XmlDocument.xml",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Xml.XmlDocument.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "System.Xml.XmlDocument.4.0.0.nupkg",
+        "System.Xml.XmlDocument.4.0.0.nupkg.sha512",
+        "System.Xml.XmlDocument.nuspec"
+      ]
+    },
+    "System.Xml.XmlSerializer/4.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "OKhE6vruk88z/hl0lmfrMvXteTASgJUagu6PT6S10i9uLbvDR3pTwB6jVgiwa2D2qtTB+eneZbS9jljhPXhTtg==",
+      "files": [
+        "lib/DNXCore50/System.Xml.XmlSerializer.dll",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/_._",
+        "lib/netcore50/System.Xml.XmlSerializer.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "ref/dotnet/de/System.Xml.XmlSerializer.xml",
+        "ref/dotnet/es/System.Xml.XmlSerializer.xml",
+        "ref/dotnet/fr/System.Xml.XmlSerializer.xml",
+        "ref/dotnet/it/System.Xml.XmlSerializer.xml",
+        "ref/dotnet/ja/System.Xml.XmlSerializer.xml",
+        "ref/dotnet/ko/System.Xml.XmlSerializer.xml",
+        "ref/dotnet/ru/System.Xml.XmlSerializer.xml",
+        "ref/dotnet/System.Xml.XmlSerializer.dll",
+        "ref/dotnet/System.Xml.XmlSerializer.xml",
+        "ref/dotnet/zh-hans/System.Xml.XmlSerializer.xml",
+        "ref/dotnet/zh-hant/System.Xml.XmlSerializer.xml",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "runtime.json",
+        "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll",
+        "System.Xml.XmlSerializer.4.0.10.nupkg",
+        "System.Xml.XmlSerializer.4.0.10.nupkg.sha512",
+        "System.Xml.XmlSerializer.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "": [
       "FLUX.Interfaces >= 1.0.0-*",
       "FLUX.Configuration >= 1.0.0-*",
-      "Microsoft.AspNet.Diagnostics >= 1.0.0-*",
-      "Microsoft.AspNet.IISPlatformHandler >= 1.0.0-*",
-      "Microsoft.AspNet.Mvc >= 6.0.0-*",
-      "Microsoft.AspNet.Mvc.TagHelpers >= 6.0.0-*",
-      "Microsoft.AspNet.Server.Kestrel >= 1.0.0-*",
-      "Microsoft.AspNet.StaticFiles >= 1.0.0-*",
-      "Microsoft.AspNet.Tooling.Razor >= 1.0.0-*",
-      "Microsoft.Extensions.Configuration.FileProviderExtensions >= 1.0.0-*",
-      "Microsoft.Extensions.Configuration.Json >= 1.0.0-*",
-      "Microsoft.Extensions.Logging >= 1.0.0-rc1-final",
-      "Microsoft.Extensions.Logging.Console >= 1.0.0-*",
-      "Microsoft.Extensions.Logging.Debug >= 1.0.0-*",
-      "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-*"
+      "Microsoft.AspNet.Diagnostics >= 1.0.0-rc1-*",
+      "Microsoft.AspNet.IISPlatformHandler >= 1.0.0-rc1-*",
+      "Microsoft.AspNet.Mvc >= 6.0.0-rc1-*",
+      "Microsoft.AspNet.Mvc.TagHelpers >= 6.0.0-rc1-*",
+      "Microsoft.AspNet.Server.Kestrel >= 1.0.0-rc1-*",
+      "Microsoft.AspNet.StaticFiles >= 1.0.0-rc1-*",
+      "Microsoft.AspNet.Tooling.Razor >= 1.0.0-rc1-*",
+      "Microsoft.Extensions.Configuration.FileProviderExtensions >= 1.0.0-rc1-*",
+      "Microsoft.Extensions.Configuration.Json >= 1.0.0-rc1-*",
+      "Microsoft.Extensions.Logging >= 1.0.0-rc1-*",
+      "Microsoft.Extensions.Logging.Console >= 1.0.0-rc1-*",
+      "Microsoft.Extensions.Logging.Debug >= 1.0.0-rc1-*",
+      "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-rc1-*"
     ],
     "DNX,Version=v4.5.1": [],
     "DNXCore,Version=v5.0": [

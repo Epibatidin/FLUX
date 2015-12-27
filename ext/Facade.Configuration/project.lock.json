@@ -2553,8 +2553,8 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Microsoft.Extensions.Configuration >= 1.0.0-*",
-      "Microsoft.Extensions.Configuration.Binder >= 1.0.0-*"
+      "Microsoft.Extensions.Configuration >= 1.0.0-rc1-*",
+      "Microsoft.Extensions.Configuration.Binder >= 1.0.0-rc1-*"
     ],
     "DNXCore,Version=v5.0": [],
     "DNX,Version=v4.5.1": []

@@ -6,17 +6,22 @@
         "System.Xml.XmlSerializer": "4.0.10"
       }
     },
-
     "dnx451": {
       "dependencies": {
+
+      },
+      "frameworkAssemblies": {
+        "System.Xml": "",
       }
     }
-  },
+  }, 
+
   "dependencies": {
 
+    "DataAccess.Base": "1.0.0-*",
     "DataAccess.Interfaces": "1.0.0-*",
 
-    "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-*",
-    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-*"
+    "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1-*",
+    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1-*"
   }
 }

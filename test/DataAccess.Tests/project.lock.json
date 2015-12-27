@@ -40,7 +40,7 @@
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.OptionsModel": "1.0.0"
+          "Microsoft.Extensions.OptionsModel": "1.0.0-rc1"
         }
       },
       "DataAccess.FileSystem/1.0.0": {
@@ -49,10 +49,10 @@
         "dependencies": {
           "DataAccess.Base": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "DataAccess.Interfaces/1.0.0": {
@@ -60,8 +60,8 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "Extension.Test/1.0.0": {
@@ -79,8 +79,8 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Microsoft.Dnx.Compilation.Abstractions/1.0.0-rc1-final": {
@@ -477,7 +477,7 @@
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.OptionsModel": "1.0.0"
+          "Microsoft.Extensions.OptionsModel": "1.0.0-rc1"
         }
       },
       "DataAccess.FileSystem/1.0.0": {
@@ -486,10 +486,10 @@
         "dependencies": {
           "DataAccess.Base": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "DataAccess.Interfaces/1.0.0": {
@@ -497,8 +497,8 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "Extension.Test/1.0.0": {
@@ -516,8 +516,8 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Microsoft.Dnx.Compilation.Abstractions/1.0.0-rc1-final": {
@@ -914,7 +914,7 @@
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.OptionsModel": "1.0.0"
+          "Microsoft.Extensions.OptionsModel": "1.0.0-rc1"
         }
       },
       "DataAccess.FileSystem/1.0.0": {
@@ -923,10 +923,10 @@
         "dependencies": {
           "DataAccess.Base": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "DataAccess.Interfaces/1.0.0": {
@@ -934,8 +934,8 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "Extension.Test/1.0.0": {
@@ -953,8 +953,8 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Microsoft.Dnx.Compilation.Abstractions/1.0.0-rc1-final": {
@@ -1802,7 +1802,7 @@
       "NUnit >= 3.0.1",
       "xunit >= 2.1.0",
       "xunit.runner.dnx >= 2.1.0-rc1-build204",
-      "Microsoft.Extensions.Configuration >= 1.0.0-*",
+      "Microsoft.Extensions.Configuration >= 1.0.0-rc1-*",
       "Extension.Test >= 1.0.0-*",
       "DataAccess.Base >= 1.0.0-*",
       "DataAccess.FileSystem >= 1.0.0-*"

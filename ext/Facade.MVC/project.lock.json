@@ -14296,7 +14296,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Microsoft.AspNet.Mvc >= 6.0.0-*"
+      "Microsoft.AspNet.Mvc >= 6.0.0-rc1-*"
     ],
     "DNXCore,Version=v5.0": [],
     "DNX,Version=v4.5.1": []

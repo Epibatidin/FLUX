@@ -1,41 +1,28 @@
-﻿//using System.Collections.Generic;
-//using System.Configuration;
-//using Facade.Configuration;
+﻿using System.Collections.Generic;
+using System.Linq;
+using DataAccess.Interfaces;
 
-//namespace DataAccess.XMLStub.Config
-//{
-//    [ConfigurationCollection(typeof(XMLSource), AddItemName = "XMLSource")]
-//    public class XMLSourcesCollection : GenericElementCollection<XMLSource>
-//    {
-//        private List<string> _keys;
-//        public IEnumerable<string> Keys
-//        {
-//            get
-//            {
-//                if (_keys == null)
-//                {
-//                    _keys = new List<string>();
-//                    for (int i = 0; i < Count; i++)
-//                    {
-//                        _keys.Add(Item(i).Key);
-//                    }
-//                }
-//                return _keys;
-//            }
-//        }
+namespace DataAccess.XMLStub.Config
+{
+    public class XMLSourcesCollection : IVirtualFileRootConfiguration
+    {
+        public string ID { get; set; }
 
+        public List<XMLSource> XmlSources { get; set; }
 
-//        //public IVirtualFileProvider Create(string sourceKey)
-//        //{
-//        //    XMLVirtualFileProvider xml = null;
+        public IEnumerable<string> Keys => XmlSources.Select(c => c.Name);
 
-//        //    var item = Item(sourceKey);
-//        //    if (item != null)
-//        //    {
-//        //        xml = new XMLVirtualFileProvider();
-//        //        xml.Setup(new RealDirectory(item.XMLFolder));
-//        //    }
-//        //    return xml;
-//        //}
-//    }
-//}
+        //public IVirtualFileProvider Create(string sourceKey)
+        //{
+        //    XMLVirtualFileProvider xml = null;
+
+        //    var item = Item(sourceKey);
+        //    if (item != null)
+        //    {
+        //        xml = new XMLVirtualFileProvider();
+        //        xml.Setup(new RealDirectory(item.XMLFolder));
+        //    }
+        //    return xml;
+        //}
+    }
+}

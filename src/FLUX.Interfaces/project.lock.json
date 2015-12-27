@@ -8,8 +8,8 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.IO": "4.0.10",
           "System.Linq": "4.0.1",
           "System.Runtime": "4.0.21"
@@ -19,15 +19,15 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Facade.MVC/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.DomainObjects/1.0.0": {
@@ -1806,23 +1806,23 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Facade.MVC/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.DomainObjects/1.0.0": {
@@ -3102,8 +3102,8 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.IO": "4.0.10",
           "System.Linq": "4.0.1",
           "System.Runtime": "4.0.21"
@@ -3113,15 +3113,15 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Facade.MVC/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.DomainObjects/1.0.0": {
@@ -5318,8 +5318,8 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.IO": "4.0.10",
           "System.Linq": "4.0.1",
           "System.Runtime": "4.0.21"
@@ -5329,15 +5329,15 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Facade.MVC/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.DomainObjects/1.0.0": {
@@ -7534,23 +7534,23 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Facade.MVC/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.DomainObjects/1.0.0": {
@@ -8830,23 +8830,23 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Facade.MVC/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.DomainObjects/1.0.0": {
@@ -14523,7 +14523,7 @@
     "": [
       "FLUX.DomainObjects >= 1.0.0-*",
       "Facade.MVC >= 1.0.0-*",
-      "Microsoft.AspNet.Mvc >= 6.0.0-*"
+      "Microsoft.AspNet.Mvc >= 6.0.0-rc1-*"
     ],
     "DNXCore,Version=v5.0": [],
     "DNX,Version=v4.5.1": []

@@ -5,24 +5,28 @@
       "dependencies": {
         "System.Runtime": "4.0.21-*",
         "System.Linq": "4.0.1-*"
-      },
+      }
     },
     "dnx451": {
       "dependencies": {
+       
       }
     }
   },
   "dependencies": {
 
     "Facade.Configuration": "1.0.0-*",
-    
-    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-*",
-    "Microsoft.Extensions.Configuration": "1.0.0-*",
+
+    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1-*",
+    "Microsoft.Extensions.Configuration": "1.0.0-rc1-*",
 
     "FLUX.Interfaces": "1.0.0-*",
     "FLUX.Web.Logic": "1.0.0-*",
     "DataAccess.Interfaces": "1.0.0-*",
     "DataAccess.Base": "1.0.0-*",
-    "DataAccess.FileSystem": "1.0.0-*"
+
+    "DataAccess.FileSystem": { "version": "1.0.0-*", "options": "private" },
+    "DataAccess.XMLStub": { "version": "1.0.0-*", "options": "private" },
+    
   }
 }

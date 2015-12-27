@@ -40,7 +40,7 @@
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.OptionsModel": "1.0.0"
+          "Microsoft.Extensions.OptionsModel": "1.0.0-rc1"
         }
       },
       "DataAccess.FileSystem/1.0.0": {
@@ -49,10 +49,10 @@
         "dependencies": {
           "DataAccess.Base": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "DataAccess.Interfaces/1.0.0": {
@@ -60,9 +60,22 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
+      },
+      "DataAccess.XMLStub/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataAccess.Base": "1.0.0",
+          "DataAccess.Interfaces": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
+        },
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
       },
       "Extension.Test/1.0.0": {
         "type": "project",
@@ -79,15 +92,15 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Facade.MVC/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.Configuration/1.0.0": {
@@ -97,11 +110,12 @@
           "DataAccess.Base": "1.0.0",
           "DataAccess.FileSystem": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
+          "DataAccess.XMLStub": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
           "FLUX.Web.Logic": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "FLUX.DomainObjects/1.0.0": {
@@ -117,7 +131,7 @@
         "dependencies": {
           "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.Web.Logic/1.0.0": {
@@ -136,19 +150,19 @@
         "dependencies": {
           "FLUX.Configuration": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
-          "Microsoft.AspNet.Diagnostics": "1.0.0",
-          "Microsoft.AspNet.IISPlatformHandler": "1.0.0",
-          "Microsoft.AspNet.Mvc": "6.0.0",
-          "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0",
-          "Microsoft.AspNet.Server.Kestrel": "1.0.0",
-          "Microsoft.AspNet.StaticFiles": "1.0.0",
-          "Microsoft.AspNet.Tooling.Razor": "1.0.0",
-          "Microsoft.Extensions.Configuration.FileProviderExtensions": "1.0.0",
-          "Microsoft.Extensions.Configuration.Json": "1.0.0",
-          "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
-          "Microsoft.Extensions.Logging.Console": "1.0.0",
-          "Microsoft.Extensions.Logging.Debug": "1.0.0",
-          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0"
+          "Microsoft.AspNet.Diagnostics": "1.0.0-rc1",
+          "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1",
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1",
+          "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-rc1",
+          "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1",
+          "Microsoft.AspNet.StaticFiles": "1.0.0-rc1",
+          "Microsoft.AspNet.Tooling.Razor": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.FileProviderExtensions": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1",
+          "Microsoft.Extensions.Logging": "1.0.0-rc1",
+          "Microsoft.Extensions.Logging.Console": "1.0.0-rc1",
+          "Microsoft.Extensions.Logging.Debug": "1.0.0-rc1",
+          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-rc1"
         }
       },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
@@ -2022,7 +2036,7 @@
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.OptionsModel": "1.0.0"
+          "Microsoft.Extensions.OptionsModel": "1.0.0-rc1"
         }
       },
       "DataAccess.FileSystem/1.0.0": {
@@ -2031,10 +2045,10 @@
         "dependencies": {
           "DataAccess.Base": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "DataAccess.Interfaces/1.0.0": {
@@ -2042,9 +2056,22 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
+      },
+      "DataAccess.XMLStub/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataAccess.Base": "1.0.0",
+          "DataAccess.Interfaces": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
+        },
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
       },
       "Extension.Test/1.0.0": {
         "type": "project",
@@ -2061,15 +2088,15 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Facade.MVC/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.Configuration/1.0.0": {
@@ -2079,11 +2106,12 @@
           "DataAccess.Base": "1.0.0",
           "DataAccess.FileSystem": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
+          "DataAccess.XMLStub": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
           "FLUX.Web.Logic": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "FLUX.DomainObjects/1.0.0": {
@@ -2099,7 +2127,7 @@
         "dependencies": {
           "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.Web.Logic/1.0.0": {
@@ -2118,19 +2146,19 @@
         "dependencies": {
           "FLUX.Configuration": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
-          "Microsoft.AspNet.Diagnostics": "1.0.0",
-          "Microsoft.AspNet.IISPlatformHandler": "1.0.0",
-          "Microsoft.AspNet.Mvc": "6.0.0",
-          "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0",
-          "Microsoft.AspNet.Server.Kestrel": "1.0.0",
-          "Microsoft.AspNet.StaticFiles": "1.0.0",
-          "Microsoft.AspNet.Tooling.Razor": "1.0.0",
-          "Microsoft.Extensions.Configuration.FileProviderExtensions": "1.0.0",
-          "Microsoft.Extensions.Configuration.Json": "1.0.0",
-          "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
-          "Microsoft.Extensions.Logging.Console": "1.0.0",
-          "Microsoft.Extensions.Logging.Debug": "1.0.0",
-          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0"
+          "Microsoft.AspNet.Diagnostics": "1.0.0-rc1",
+          "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1",
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1",
+          "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-rc1",
+          "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1",
+          "Microsoft.AspNet.StaticFiles": "1.0.0-rc1",
+          "Microsoft.AspNet.Tooling.Razor": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.FileProviderExtensions": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1",
+          "Microsoft.Extensions.Logging": "1.0.0-rc1",
+          "Microsoft.Extensions.Logging.Console": "1.0.0-rc1",
+          "Microsoft.Extensions.Logging.Debug": "1.0.0-rc1",
+          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-rc1"
         }
       },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
@@ -4007,7 +4035,7 @@
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.OptionsModel": "1.0.0"
+          "Microsoft.Extensions.OptionsModel": "1.0.0-rc1"
         }
       },
       "DataAccess.FileSystem/1.0.0": {
@@ -4016,10 +4044,10 @@
         "dependencies": {
           "DataAccess.Base": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "DataAccess.Interfaces/1.0.0": {
@@ -4027,9 +4055,22 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
+      },
+      "DataAccess.XMLStub/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataAccess.Base": "1.0.0",
+          "DataAccess.Interfaces": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
+        },
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
       },
       "Extension.Test/1.0.0": {
         "type": "project",
@@ -4046,15 +4087,15 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Facade.MVC/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.Configuration/1.0.0": {
@@ -4064,11 +4105,12 @@
           "DataAccess.Base": "1.0.0",
           "DataAccess.FileSystem": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
+          "DataAccess.XMLStub": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
           "FLUX.Web.Logic": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "FLUX.DomainObjects/1.0.0": {
@@ -4084,7 +4126,7 @@
         "dependencies": {
           "Facade.MVC": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
-          "Microsoft.AspNet.Mvc": "6.0.0"
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
       "FLUX.Web.Logic/1.0.0": {
@@ -4103,19 +4145,19 @@
         "dependencies": {
           "FLUX.Configuration": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
-          "Microsoft.AspNet.Diagnostics": "1.0.0",
-          "Microsoft.AspNet.IISPlatformHandler": "1.0.0",
-          "Microsoft.AspNet.Mvc": "6.0.0",
-          "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0",
-          "Microsoft.AspNet.Server.Kestrel": "1.0.0",
-          "Microsoft.AspNet.StaticFiles": "1.0.0",
-          "Microsoft.AspNet.Tooling.Razor": "1.0.0",
-          "Microsoft.Extensions.Configuration.FileProviderExtensions": "1.0.0",
-          "Microsoft.Extensions.Configuration.Json": "1.0.0",
-          "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
-          "Microsoft.Extensions.Logging.Console": "1.0.0",
-          "Microsoft.Extensions.Logging.Debug": "1.0.0",
-          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0"
+          "Microsoft.AspNet.Diagnostics": "1.0.0-rc1",
+          "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1",
+          "Microsoft.AspNet.Mvc": "6.0.0-rc1",
+          "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-rc1",
+          "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1",
+          "Microsoft.AspNet.StaticFiles": "1.0.0-rc1",
+          "Microsoft.AspNet.Tooling.Razor": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.FileProviderExtensions": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1",
+          "Microsoft.Extensions.Logging": "1.0.0-rc1",
+          "Microsoft.Extensions.Logging.Console": "1.0.0-rc1",
+          "Microsoft.Extensions.Logging.Debug": "1.0.0-rc1",
+          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-rc1"
         }
       },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
@@ -5967,6 +6009,10 @@
     "DataAccess.Interfaces/1.0.0": {
       "type": "project",
       "path": "../../src/DataAccess.Interfaces/project.json"
+    },
+    "DataAccess.XMLStub/1.0.0": {
+      "type": "project",
+      "path": "../../src/DataAccess.XMLStub/project.json"
     },
     "Extension.Test/1.0.0": {
       "type": "project",

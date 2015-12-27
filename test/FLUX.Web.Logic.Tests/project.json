@@ -22,7 +22,7 @@
     "FLUX.Interfaces": "1.0.0-*",
     "FLUX.Web.Logic": "1.0.0-*",
 
-    "Microsoft.AspNet.Http.Abstractions" : "1.0.0-*"
+    "Microsoft.AspNet.Http.Abstractions" : "1.0.0-rc1-*"
 
 
   },

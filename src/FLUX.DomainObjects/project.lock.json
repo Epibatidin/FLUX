@@ -8,8 +8,8 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.IO": "4.0.10",
           "System.Linq": "4.0.1",
           "System.Runtime": "4.0.21"
@@ -19,8 +19,8 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Microsoft.Extensions.Configuration/1.0.0-rc1-final": {
@@ -388,16 +388,16 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Microsoft.Extensions.Configuration/1.0.0-rc1-final": {
@@ -491,8 +491,8 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.IO": "4.0.10",
           "System.Linq": "4.0.1",
           "System.Runtime": "4.0.21"
@@ -502,8 +502,8 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Microsoft.Extensions.Configuration/1.0.0-rc1-final": {
@@ -1059,8 +1059,8 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.IO": "4.0.10",
           "System.Linq": "4.0.1",
           "System.Runtime": "4.0.21"
@@ -1070,8 +1070,8 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Microsoft.Extensions.Configuration/1.0.0-rc1-final": {
@@ -1627,16 +1627,16 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Microsoft.Extensions.Configuration/1.0.0-rc1-final": {
@@ -1730,16 +1730,16 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1"
         }
       },
       "Microsoft.Extensions.Configuration/1.0.0-rc1-final": {

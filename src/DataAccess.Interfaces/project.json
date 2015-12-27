@@ -3,8 +3,7 @@
   "frameworks": {
     "dnxcore50": {
       "dependencies": {
-
-		    "System.Linq": "4.0.1-*",
+		"System.Linq": "4.0.1-*",
         "System.Runtime": "4.0.21-*",
         "System.IO": "4.0.10"
       }
@@ -18,7 +17,7 @@
   "dependencies": {
     "Facade.Configuration" :  "1.0.0-*",
 
-    "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-*",
-    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-*"
+    "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1-*",
+    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1-*"
   }
 }

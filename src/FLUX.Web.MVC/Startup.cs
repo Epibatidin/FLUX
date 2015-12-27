@@ -27,7 +27,7 @@ namespace FLUX.Web.MVC
         public void ConfigureServices(IServiceCollection services)
         {
             // add strongly typed configuration
-            services.AddOptions();
+            //services.AddOptions();
 
             // Add MVC dependencies
             services.AddMvc();
