@@ -1,9 +1,9 @@
-﻿using DataAccess.Interfaces;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using DataAccess.FileSystem.Config;
+using DataAccess.Interfaces;
 
-namespace DataAccess.FileSystem.Directory
+namespace DataAccess.FileSystem
 {
     public class DirectoryVirtualFileFactory : IVirtualFileFactory
     {

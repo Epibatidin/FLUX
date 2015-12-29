@@ -5,7 +5,7 @@ using Microsoft.AspNet.Http;
 
 namespace FLUX.Interfaces.Web
 {
-    public interface IConfigurationFormModelBuilder : IFormProcessor<ConfigurationFormModel>
+    public interface IConfigurationFormProcessor : IFormProcessor<ConfigurationFormModel>
     {
     }
 

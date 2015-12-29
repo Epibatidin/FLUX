@@ -20,7 +20,7 @@ namespace DataAccess.XMLStub.Config
         //    if (item != null)
         //    {
         //        xml = new XMLVirtualFileProvider();
-        //        xml.Setup(new RealDirectory(item.XMLFolder));
+        //        xml.Setup(new RealDirectory(item.XmlFolder));
         //    }
         //    return xml;
         //}

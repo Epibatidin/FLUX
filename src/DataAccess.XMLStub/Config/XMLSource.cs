@@ -3,6 +3,6 @@
     public class XMLSource
     {
         public string Name { get; set; }
-        public string XMLFolder { get; set; }
+        public string XmlFolder { get; set; }
     }
 }

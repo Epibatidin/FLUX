@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
 using DataAccess.Interfaces;
@@ -10,20 +11,25 @@ namespace DataAccess.XMLStub
     public class XmlVirtualFileFactory : IVirtualFileFactory
     {
         private readonly XMLSourcesCollection _xmlConfig;
+        private XmlSerializer _serializer;
 
         public XmlVirtualFileFactory(XMLSourcesCollection xmlConfig)
         {
             _xmlConfig = xmlConfig;
+            _serializer = new XmlSerializer(typeof(Root));
         }
-
+        
         public bool CanHandleProviderKey(string providerId) => _xmlConfig.ID == providerId;
 
-        private int[] getCounts(IVirtualDirectory subroot, int[] subRoots)
+        private int[] getCounts(DirectoryInfo subroot, int[] subRoots)
         {
-            var index = subroot.GetFile("Index.xml");
-            XmlSerializer ser = new XmlSerializer(typeof(Root));
-            var o = ser.Deserialize(index.Open());
-            var root = o as Root;
+            var index = subroot.GetFiles("Index.xml")[0];
+            object dummy = null;
+            using (var readStream = index.OpenRead())
+            {
+                dummy = _serializer.Deserialize(readStream);
+            }
+            var root = dummy as Root;
 
             if (subRoots == null || subRoots.Length == 0)
                 subRoots = Enumerable.Range(0, root.Groups).ToArray();
@@ -31,34 +37,32 @@ namespace DataAccess.XMLStub
             return subRoots;
         }
 
-        public Dictionary<int, IVirtualFile> BuildVirtualFiles(IVirtualDirectory root, string name, int[] subRoots)
+        public IDictionary<int, IVirtualFile> RetrieveVirtualFiles(VirtualFileFactoryContext context)
         {
-            var subrootDir = root.GetDirectory(name);
-            subRoots = getCounts(subrootDir, subRoots);
+            var xmlSource = _xmlConfig.XmlSources.First(c => c.Name == context.SelectedSource);
+            var subrootDir = new DirectoryInfo(xmlSource.XmlFolder);
+
+            var subRoots = getCounts(subrootDir, context.SubRoots);
 
             XmlSerializer ser = new XmlSerializer(typeof(Group));
             var dict = new Dictionary<int, IVirtualFile>();
             foreach (var subroot in subRoots)
             {
-                var fs = subrootDir.GetFile(subroot + ".xml").Open();
-                if (fs == null) continue;
-
-                var group = ser.Deserialize(fs) as Group;
-                if (group == null) continue;
-
+                var file = subrootDir.GetFiles(subroot + ".xml")[0];
+                Group group = null;
+                using (var fs = file.OpenRead())
+                {
+                    group = ser.Deserialize(fs) as Group;
+                    if(group == null) continue;
+                }
+                
                 foreach (var item in group.Source.Items)
                 {
                     dict.Add(item.ID, item);
                 }
             }
             return dict;
-        }
 
-        
-
-        public IDictionary<int, IVirtualFile> RetrieveVirtualFiles(VirtualFileFactoryContext context)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

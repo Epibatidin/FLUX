@@ -24,7 +24,7 @@ namespace FLUX.Configuration.DependencyInjection
             container.AddSingleton<IPostbackHelper, PostbackHelper>();
             container.AddSingleton<IModelBinderFacade, ModelBinderFacade>();
 
-            container.AddSingleton<IConfigurationFormModelBuilder, ConfigurationFormModelBuilder>();
+            container.AddSingleton<IConfigurationFormProcessor, ConfigurationFormProcessor>();
         }
 
 
