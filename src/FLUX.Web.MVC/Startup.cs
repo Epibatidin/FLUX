@@ -12,11 +12,15 @@ namespace FLUX.Web.MVC
     {
         public Startup(IHostingEnvironment env)
         {
+            string configFolder = @"D:\Develop\FLUX\src\FLUX.Configuration\Files\";
+
+
             // Set up configuration sources.
             var builder = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
-                .AddJsonFile(@"D:\Develop\FLUX\src\FLUX.Configuration\Config\VirtualFileProvier.json");
-                
+                .AddJsonFile(configFolder + "VirtualFileProvier.json")
+                .AddJsonFile(configFolder + "Layer.json");
+
             Configuration = builder.Build();
             
         }

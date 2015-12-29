@@ -1,15 +1,16 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using DataAccess.Interfaces;
+using DynamicLoading;
 using Facade.Configuration;
 
 namespace DataAccess.Base
 {
-    public abstract class DataAccessInstallerBase<TConfigurationSection> : IDataAccessInstaller where TConfigurationSection : class , IVirtualFileRootConfiguration
+    public abstract class DataAccessInstallerBase<TConfigurationSection> : IDynamicExtensionInstaller where TConfigurationSection : class , IVirtualFileRootConfiguration
     {
         public IConfigurationBinderFacade ConfigurationBinder { get; set; }
 
-        public void Configure(IConfiguration configuration, string sectionName, IServiceCollection services)
+        public void Install(IConfiguration configuration, string sectionName, IServiceCollection services)
         {
             var config = ConfigurationBinder.Bind<TConfigurationSection>(configuration, sectionName);
             config.ID = sectionName;

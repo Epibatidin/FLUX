@@ -8,6 +8,7 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.OptionsModel": "1.0.0-rc1",
           "System.Linq": "4.0.1"
@@ -49,6 +50,14 @@
           "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.Xml.XmlSerializer": "4.0.10"
+        }
+      },
+      "DynamicLoading/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -1909,6 +1918,7 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.OptionsModel": "1.0.0-rc1"
         }
@@ -1946,6 +1956,14 @@
         "frameworkAssemblies": [
           "System.Xml"
         ]
+      },
+      "DynamicLoading/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
+        }
       },
       "Facade.Configuration/1.0.0": {
         "type": "project",
@@ -3258,6 +3276,7 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.OptionsModel": "1.0.0-rc1",
           "System.Linq": "4.0.1"
@@ -3299,6 +3318,14 @@
           "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.Xml.XmlSerializer": "4.0.10"
+        }
+      },
+      "DynamicLoading/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -5577,6 +5604,7 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.OptionsModel": "1.0.0-rc1",
           "System.Linq": "4.0.1"
@@ -5618,6 +5646,14 @@
           "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.Xml.XmlSerializer": "4.0.10"
+        }
+      },
+      "DynamicLoading/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -7896,6 +7932,7 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.OptionsModel": "1.0.0-rc1"
         }
@@ -7933,6 +7970,14 @@
         "frameworkAssemblies": [
           "System.Xml"
         ]
+      },
+      "DynamicLoading/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
+        }
       },
       "Facade.Configuration/1.0.0": {
         "type": "project",
@@ -9245,6 +9290,7 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.OptionsModel": "1.0.0-rc1"
         }
@@ -9282,6 +9328,14 @@
         "frameworkAssemblies": [
           "System.Xml"
         ]
+      },
+      "DynamicLoading/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
+        }
       },
       "Facade.Configuration/1.0.0": {
         "type": "project",
@@ -10605,6 +10659,10 @@
     "DataAccess.XMLStub/1.0.0": {
       "type": "project",
       "path": "../DataAccess.XMLStub/project.json"
+    },
+    "DynamicLoading/1.0.0": {
+      "type": "project",
+      "path": "../../ext/DynamicLoading/project.json"
     },
     "Facade.Configuration/1.0.0": {
       "type": "project",
@@ -15076,6 +15134,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "DynamicLoading >= 1.0.0-*",
       "Facade.Configuration >= 1.0.0-*",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 1.0.0-rc1-*",
       "Microsoft.Extensions.Configuration >= 1.0.0-rc1-*",

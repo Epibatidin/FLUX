@@ -39,6 +39,7 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.OptionsModel": "1.0.0-rc1"
         }
@@ -77,6 +78,14 @@
           "System.Xml"
         ]
       },
+      "DynamicLoading/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
+        }
+      },
       "Extension.Test/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -111,6 +120,7 @@
           "DataAccess.FileSystem": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
           "DataAccess.XMLStub": "1.0.0",
+          "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
           "FLUX.Web.Logic": "1.0.0",
@@ -1697,6 +1707,7 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.OptionsModel": "1.0.0-rc1"
         }
@@ -1735,6 +1746,14 @@
           "System.Xml"
         ]
       },
+      "DynamicLoading/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
+        }
+      },
       "Extension.Test/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -1769,6 +1788,7 @@
           "DataAccess.FileSystem": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
           "DataAccess.XMLStub": "1.0.0",
+          "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
           "FLUX.Web.Logic": "1.0.0",
@@ -3355,6 +3375,7 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.OptionsModel": "1.0.0-rc1"
         }
@@ -3393,6 +3414,14 @@
           "System.Xml"
         ]
       },
+      "DynamicLoading/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
+        }
+      },
       "Extension.Test/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -3427,6 +3456,7 @@
           "DataAccess.FileSystem": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
           "DataAccess.XMLStub": "1.0.0",
+          "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
           "FLUX.Web.Logic": "1.0.0",
@@ -4993,6 +5023,10 @@
     "DataAccess.XMLStub/1.0.0": {
       "type": "project",
       "path": "../../src/DataAccess.XMLStub/project.json"
+    },
+    "DynamicLoading/1.0.0": {
+      "type": "project",
+      "path": "../../ext/DynamicLoading/project.json"
     },
     "Extension.Test/1.0.0": {
       "type": "project",

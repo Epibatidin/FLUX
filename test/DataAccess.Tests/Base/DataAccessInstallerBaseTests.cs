@@ -45,7 +45,7 @@ namespace DataAccess.Tests.Base
 
             var service = new Mock<IServiceCollection>();
 
-            SUT.Configure(configuration.Object, "sectionName", service.Object);
+            SUT.Install(configuration.Object, "sectionName", service.Object);
            
             _configurationBinder.Verify(c => c.Bind<VirtualFileRootConfigurationDummy>(configuration.Object, "sectionName"));
         }
@@ -62,7 +62,7 @@ namespace DataAccess.Tests.Base
             
             var service = new Mock<IServiceCollection>();
             
-            Assert.Throws<NotImplementedException>(() => SUT.Configure(configuration.Object, "sectionName", service.Object));
+            Assert.Throws<NotImplementedException>(() => SUT.Install(configuration.Object, "sectionName", service.Object));
         }
 
     }

@@ -1,0 +1,24 @@
+﻿{
+  "Async": "false",
+  "Layers": [
+    {
+      "Name": "File",
+      "ExtractorType": "FileStructureDataExtraction.FileStructureDataExtractionLayer,FileStructureDataExtraction,Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Active": "true"
+    },
+    {
+      "Name": "Tag",
+      "ExtractorType": "TagDataExtraction.TagDataExtractionLayer,TagDataExtraction,Version=1.0.0.0, Culture=neutral,PublicKeyToken=null",      
+    }
+  ],
+  "File": {
+    "WhiteList": "the,a,you,die,an",
+    "BlackList": "ftyh,promo,cdm",
+    "RepairCurses": "true"
+  },
+
+  "Tag": {
+    "IgnorePrivateData": "true"
+  }
+
+}

@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "dnxcore50": {
+		"dependencies": {
+		}
+    },
+
+    "dnx451": {
+		"dependencies": {
+		}
+    }
+  },
+  "dependencies": {
+    "Facade.Configuration": "1.0.0-*",
+
+    "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1-*"
+  }
+}
