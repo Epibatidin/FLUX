@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Builder;
+﻿using System;
+using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -41,6 +42,14 @@ namespace FLUX.Web.MVC
 
             var sectionGrp = new VirtualFileAccessorSectionGroupReader();
             sectionGrp.Startup(services, Configuration);
+
+            services.AddCaching();
+
+            services.AddSession(o =>
+            {
+                o.IdleTimeout = TimeSpan.FromMinutes(30);
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,6 +69,8 @@ namespace FLUX.Web.MVC
             }
 
             app.UseIISPlatformHandler();
+
+            app.UseSession();
 
             app.UseStaticFiles();
 

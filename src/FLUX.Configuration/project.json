@@ -16,6 +16,7 @@
   "dependencies": {
     "DynamicLoading": "1.0.0-*",
     "Facade.Configuration": "1.0.0-*",
+    "Facade.Session": "1.0.0-*",
 
     "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1-*",
     "Microsoft.Extensions.Configuration": "1.0.0-rc1-*",

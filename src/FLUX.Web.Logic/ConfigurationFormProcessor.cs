@@ -4,6 +4,7 @@ using FLUX.DomainObjects;
 using FLUX.Interfaces.Web;
 using Microsoft.AspNet.Mvc;
 using Facade.MVC;
+using Facade.Session;
 using Microsoft.AspNet.Http;
 
 namespace FLUX.Web.Logic
@@ -13,12 +14,17 @@ namespace FLUX.Web.Logic
         private readonly IVirtualFileConfigurationReader _configProvider;
         private readonly IPostbackHelper _postbackHelper;
         private readonly IModelBinderFacade _modelBinder;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly ISessionFacade _sessionFacade;
 
-        public ConfigurationFormProcessor(IVirtualFileConfigurationReader configProvider, IPostbackHelper postbackHelper, IModelBinderFacade modelBinder)
+        public ConfigurationFormProcessor(IVirtualFileConfigurationReader configProvider, 
+            IPostbackHelper postbackHelper, IModelBinderFacade modelBinder, IHttpContextAccessor httpContextAccessor, ISessionFacade sessionFacade)
         {
             _configProvider = configProvider;
             _postbackHelper = postbackHelper;
             _modelBinder = modelBinder;
+            _httpContextAccessor = httpContextAccessor;
+            _sessionFacade = sessionFacade;
         }
 
         public ConfigurationFormModel Build()
@@ -70,11 +76,8 @@ namespace FLUX.Web.Logic
             if(activeGrp == null)
                 throw new NotSupportedException(string.Format( "No providers found for {0}", providers.CurrentProviderName));
 
-            var files = _configProvider.GetVirtualFiles(providers.CurrentProviderName, activeGrp.ProviderKey);
-            
-            
-
+            var context = _httpContextAccessor.HttpContext;
+            context.Items["Files"] = _configProvider.GetVirtualFiles(providers.CurrentProviderName, activeGrp.ProviderKey);
         }
-        
     }
 }

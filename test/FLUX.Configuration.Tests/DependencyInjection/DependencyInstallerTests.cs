@@ -1,5 +1,4 @@
 ﻿using System;
-using DataAccess.Base.Config;
 using DataAccess.Interfaces;
 using Facade.MVC;
 using FLUX.Configuration.DependencyInjection;
@@ -31,7 +30,7 @@ namespace FLUX.Configuration.Tests.Windsor
         }
 
         [Theory]
-        [InlineData(typeof(IConfigurationFormModelBuilder))]
+        [InlineData(typeof(IConfigurationFormProcessor))]
         [InlineData(typeof(IVirtualFileConfigurationReader))]
         //[TestCase(typeof(IVirtualFileAccessorSectionGroupProvider))]
 

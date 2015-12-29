@@ -4,7 +4,6 @@ using Facade.MVC;
 using FLUX.DomainObjects;
 using FLUX.Interfaces.Web;
 using Microsoft.AspNet.Http;
-using Microsoft.AspNet.Mvc;
 using Moq;
 using NUnit.Framework;
 using Ploeh.AutoFixture;
@@ -13,7 +12,7 @@ using Assert = NUnit.Framework.Assert;
 
 namespace FLUX.Web.Logic.Tests
 {
-    public class ConfigurationFormModelBuilderTests : FixtureBase<ConfigurationFormModelBuilder>
+    public class ConfigurationFormModelBuilderTests : FixtureBase<ConfigurationFormProcessor>
     {
         private Mock<IVirtualFileConfigurationReader> _configurationProvider;
         private Mock<IModelBinderFacade> _modelBinder;

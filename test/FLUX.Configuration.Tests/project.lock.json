@@ -112,6 +112,15 @@
           "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
+      "Facade.Session/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Microsoft.AspNet.Http": "1.0.0-rc1",
+          "Microsoft.AspNet.Http.Extensions": "1.0.0-rc1",
+          "Newtonsoft.Json": "8.0.1"
+        }
+      },
       "FLUX.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -122,6 +131,7 @@
           "DataAccess.XMLStub": "1.0.0",
           "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
+          "Facade.Session": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
           "FLUX.Web.Logic": "1.0.0",
           "Microsoft.Extensions.Configuration": "1.0.0-rc1",
@@ -150,6 +160,7 @@
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
           "Facade.MVC": "1.0.0",
+          "Facade.Session": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
           "FLUX.Interfaces": "1.0.0"
         }
@@ -363,6 +374,26 @@
         },
         "runtime": {
           "lib/net451/Microsoft.AspNet.Html.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Http/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Http.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.AspNet.WebUtilities": "1.0.0-rc1-final",
+          "Microsoft.Net.Http.Headers": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.AspNet.Http.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.AspNet.Http.dll": {}
         }
       },
       "Microsoft.AspNet.Http.Abstractions/1.0.0-rc1-final": {
@@ -1340,7 +1371,7 @@
           "lib/net40/Moq.dll": {}
         }
       },
-      "Newtonsoft.Json/7.0.1": {
+      "Newtonsoft.Json/8.0.1": {
         "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {}
@@ -1780,6 +1811,15 @@
           "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
+      "Facade.Session/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Microsoft.AspNet.Http": "1.0.0-rc1",
+          "Microsoft.AspNet.Http.Extensions": "1.0.0-rc1",
+          "Newtonsoft.Json": "8.0.1"
+        }
+      },
       "FLUX.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -1790,6 +1830,7 @@
           "DataAccess.XMLStub": "1.0.0",
           "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
+          "Facade.Session": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
           "FLUX.Web.Logic": "1.0.0",
           "Microsoft.Extensions.Configuration": "1.0.0-rc1",
@@ -1818,6 +1859,7 @@
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
           "Facade.MVC": "1.0.0",
+          "Facade.Session": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
           "FLUX.Interfaces": "1.0.0"
         }
@@ -2031,6 +2073,26 @@
         },
         "runtime": {
           "lib/net451/Microsoft.AspNet.Html.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Http/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Http.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.AspNet.WebUtilities": "1.0.0-rc1-final",
+          "Microsoft.Net.Http.Headers": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.AspNet.Http.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.AspNet.Http.dll": {}
         }
       },
       "Microsoft.AspNet.Http.Abstractions/1.0.0-rc1-final": {
@@ -3008,7 +3070,7 @@
           "lib/net40/Moq.dll": {}
         }
       },
-      "Newtonsoft.Json/7.0.1": {
+      "Newtonsoft.Json/8.0.1": {
         "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {}
@@ -3448,6 +3510,15 @@
           "Microsoft.AspNet.Mvc": "6.0.0-rc1"
         }
       },
+      "Facade.Session/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Microsoft.AspNet.Http": "1.0.0-rc1",
+          "Microsoft.AspNet.Http.Extensions": "1.0.0-rc1",
+          "Newtonsoft.Json": "8.0.1"
+        }
+      },
       "FLUX.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -3458,6 +3529,7 @@
           "DataAccess.XMLStub": "1.0.0",
           "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
+          "Facade.Session": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
           "FLUX.Web.Logic": "1.0.0",
           "Microsoft.Extensions.Configuration": "1.0.0-rc1",
@@ -3486,6 +3558,7 @@
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
           "Facade.MVC": "1.0.0",
+          "Facade.Session": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
           "FLUX.Interfaces": "1.0.0"
         }
@@ -3699,6 +3772,26 @@
         },
         "runtime": {
           "lib/net451/Microsoft.AspNet.Html.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Http/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Http.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.AspNet.WebUtilities": "1.0.0-rc1-final",
+          "Microsoft.Net.Http.Headers": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.AspNet.Http.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.AspNet.Http.dll": {}
         }
       },
       "Microsoft.AspNet.Http.Abstractions/1.0.0-rc1-final": {
@@ -4676,7 +4769,7 @@
           "lib/net40/Moq.dll": {}
         }
       },
-      "Newtonsoft.Json/7.0.1": {
+      "Newtonsoft.Json/8.0.1": {
         "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {}
@@ -5040,6 +5133,10 @@
       "type": "project",
       "path": "../../ext/Facade.MVC/project.json"
     },
+    "Facade.Session/1.0.0": {
+      "type": "project",
+      "path": "../../ext/Facade.Session/project.json"
+    },
     "FLUX.Configuration/1.0.0": {
       "type": "project",
       "path": "../../src/FLUX.Configuration/project.json"
@@ -5244,6 +5341,20 @@
         "Microsoft.AspNet.Html.Abstractions.1.0.0-rc1-final.nupkg",
         "Microsoft.AspNet.Html.Abstractions.1.0.0-rc1-final.nupkg.sha512",
         "Microsoft.AspNet.Html.Abstractions.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.Http/1.0.0-rc1-final": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "2vVd6xlfDKxl7pln5VOSczVo5bdJK6VLF6LR62Tb+le6e0COju7diAPHujFcXQlX/eLq2GrctN5vbIMeQ6vRTg==",
+      "files": [
+        "lib/dotnet5.4/Microsoft.AspNet.Http.dll",
+        "lib/dotnet5.4/Microsoft.AspNet.Http.xml",
+        "lib/net451/Microsoft.AspNet.Http.dll",
+        "lib/net451/Microsoft.AspNet.Http.xml",
+        "Microsoft.AspNet.Http.1.0.0-rc1-final.nupkg",
+        "Microsoft.AspNet.Http.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.AspNet.Http.nuspec"
       ]
     },
     "Microsoft.AspNet.Http.Abstractions/1.0.0-rc1-final": {
@@ -6035,9 +6146,9 @@
         "Moq.nuspec"
       ]
     },
-    "Newtonsoft.Json/7.0.1": {
+    "Newtonsoft.Json/8.0.1": {
       "type": "package",
-      "sha512": "q3V4KLetMLnt1gpAVWgtXnHjKs0UG/RalBc29u2ZKxd5t5Ze4JBL5WiiYIklJyK/5CRiIiNwigVQUo0FgbsuWA==",
+      "sha512": "qFzqzune1D7hDz8kNavFwrJ0fv8qkwANGyUOPjP0I67DmNH04nmSCRB0g0LCIqogMKrBXjsiP43Z0E1huBvxOg==",
       "files": [
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
@@ -6051,8 +6162,8 @@
         "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll",
         "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.xml",
-        "Newtonsoft.Json.7.0.1.nupkg",
-        "Newtonsoft.Json.7.0.1.nupkg.sha512",
+        "Newtonsoft.Json.8.0.1.nupkg",
+        "Newtonsoft.Json.8.0.1.nupkg.sha512",
         "Newtonsoft.Json.nuspec",
         "tools/install.ps1"
       ]
