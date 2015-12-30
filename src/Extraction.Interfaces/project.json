@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "dnxcore50": {
+      "dependencies": {
+       
+      }
+    },
+    "dnx451": {
+      "dependencies": {
+
+      },
+      "frameworkAssemblies": {
+        
+      }
+    }
+  },
+
+  "dependencies": {
+    "DataStructure.Tree":  "1.0.0-*",
+  }
+}

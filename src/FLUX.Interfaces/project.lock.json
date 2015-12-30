@@ -15,6 +15,30 @@
           "System.Runtime": "4.0.21"
         }
       },
+      "DataStructure.Tree/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Linq": "4.0.1",
+          "System.Runtime": "4.0.21"
+        }
+      },
+      "Extension.IEnumerable/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Runtime": "4.0.21"
+        }
+      },
+      "Extraction.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "DataStructure.Tree": "1.0.0"
+        }
+      },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
@@ -35,6 +59,8 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.Interfaces": "1.0.0",
           "System.Linq": "4.0.1",
           "System.Runtime": "4.0.21"
         }
@@ -1035,10 +1061,10 @@
           "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.dll": {}
         }
       },
-      "System.Collections/4.0.11-beta-23516": {
+      "System.Collections/4.0.11-rc2-23623": {
         "type": "package",
         "dependencies": {
-          "System.Runtime": "4.0.21-beta-23516"
+          "System.Runtime": "4.0.21-rc2-23623"
         },
         "compile": {
           "ref/dotnet5.4/System.Collections.dll": {}
@@ -1810,6 +1836,21 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
+      "DataStructure.Tree/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
+      },
+      "Extension.IEnumerable/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
+      },
+      "Extraction.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataStructure.Tree": "1.0.0"
+        }
+      },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -1829,7 +1870,9 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "DataAccess.Interfaces": "1.0.0"
+          "DataAccess.Interfaces": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.Interfaces": "1.0.0"
         }
       },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
@@ -3109,6 +3152,30 @@
           "System.Runtime": "4.0.21"
         }
       },
+      "DataStructure.Tree/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Linq": "4.0.1",
+          "System.Runtime": "4.0.21"
+        }
+      },
+      "Extension.IEnumerable/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Runtime": "4.0.21"
+        }
+      },
+      "Extraction.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "DataStructure.Tree": "1.0.0"
+        }
+      },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
@@ -3129,6 +3196,8 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.Interfaces": "1.0.0",
           "System.Linq": "4.0.1",
           "System.Runtime": "4.0.21"
         }
@@ -4354,10 +4423,10 @@
           "runtimes/win7/lib/DNXCore50/System.Threading.dll": {}
         }
       },
-      "System.Collections/4.0.11-beta-23516": {
+      "System.Collections/4.0.11-rc2-23623": {
         "type": "package",
         "dependencies": {
-          "System.Runtime": "4.0.21-beta-23516"
+          "System.Runtime": "4.0.21-rc2-23623"
         },
         "compile": {
           "ref/dotnet5.4/System.Collections.dll": {}
@@ -5325,6 +5394,30 @@
           "System.Runtime": "4.0.21"
         }
       },
+      "DataStructure.Tree/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Linq": "4.0.1",
+          "System.Runtime": "4.0.21"
+        }
+      },
+      "Extension.IEnumerable/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Runtime": "4.0.21"
+        }
+      },
+      "Extraction.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "DataStructure.Tree": "1.0.0"
+        }
+      },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
@@ -5345,6 +5438,8 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.Interfaces": "1.0.0",
           "System.Linq": "4.0.1",
           "System.Runtime": "4.0.21"
         }
@@ -6570,10 +6665,10 @@
           "runtimes/win7/lib/DNXCore50/System.Threading.dll": {}
         }
       },
-      "System.Collections/4.0.11-beta-23516": {
+      "System.Collections/4.0.11-rc2-23623": {
         "type": "package",
         "dependencies": {
-          "System.Runtime": "4.0.21-beta-23516"
+          "System.Runtime": "4.0.21-rc2-23623"
         },
         "compile": {
           "ref/dotnet5.4/System.Collections.dll": {}
@@ -7538,6 +7633,21 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
+      "DataStructure.Tree/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
+      },
+      "Extension.IEnumerable/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
+      },
+      "Extraction.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataStructure.Tree": "1.0.0"
+        }
+      },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -7557,7 +7667,9 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "DataAccess.Interfaces": "1.0.0"
+          "DataAccess.Interfaces": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.Interfaces": "1.0.0"
         }
       },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
@@ -8834,6 +8946,21 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
+      "DataStructure.Tree/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
+      },
+      "Extension.IEnumerable/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
+      },
+      "Extraction.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataStructure.Tree": "1.0.0"
+        }
+      },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -8853,7 +8980,9 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "DataAccess.Interfaces": "1.0.0"
+          "DataAccess.Interfaces": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.Interfaces": "1.0.0"
         }
       },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
@@ -10126,6 +10255,18 @@
       "type": "project",
       "path": "../DataAccess.Interfaces/project.json"
     },
+    "DataStructure.Tree/1.0.0": {
+      "type": "project",
+      "path": "../../ext/DataStructure.Tree/project.json"
+    },
+    "Extension.IEnumerable/1.0.0": {
+      "type": "project",
+      "path": "../../ext/Extension.IEnumerable/project.json"
+    },
+    "Extraction.Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../Extraction.Interfaces/project.json"
+    },
     "Facade.Configuration/1.0.0": {
       "type": "project",
       "path": "../../ext/Facade.Configuration/project.json"
@@ -11327,10 +11468,10 @@
         "System.Collections.nuspec"
       ]
     },
-    "System.Collections/4.0.11-beta-23516": {
+    "System.Collections/4.0.11-rc2-23623": {
       "type": "package",
       "serviceable": true,
-      "sha512": "FSd5zsGfmG2pidC3CVizQPNGTK1Q3A2HEuRqwUPLU/AArjELLC5p4l6XIAlJ9ZBPdbp6V8vFQAxUHzkFfyVkYA==",
+      "sha512": "zuC3WR3U3pqiesm9IYcV8V90I1jhjNUXIp+vLP8JStiyb4WdUImE2xgs79RVZNvevcWOy3vmSKq5bfT+Y/OIPQ==",
       "files": [
         "lib/DNXCore50/System.Collections.dll",
         "lib/MonoAndroid10/_._",
@@ -11384,8 +11525,8 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtimes/win8-aot/lib/netcore50/System.Collections.dll",
-        "System.Collections.4.0.11-beta-23516.nupkg",
-        "System.Collections.4.0.11-beta-23516.nupkg.sha512",
+        "System.Collections.4.0.11-rc2-23623.nupkg",
+        "System.Collections.4.0.11-rc2-23623.nupkg.sha512",
         "System.Collections.nuspec"
       ]
     },

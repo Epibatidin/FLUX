@@ -1,0 +1,13 @@
+﻿@model FLUX.DomainObjects.MultiLayerDataContainer
+
+
+@if (Model?.Data != null)
+{
+    foreach (var item in Model.Data)
+    {
+        for (int i = 0; i < item.Value.Count; i++)
+        {
+            <span class="Container @("l" + i)">@item.Value[i] </span>
+        }
+    }
+}

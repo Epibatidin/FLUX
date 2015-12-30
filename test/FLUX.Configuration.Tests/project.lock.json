@@ -78,6 +78,10 @@
           "System.Xml"
         ]
       },
+      "DataStructure.Tree/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
+      },
       "DynamicLoading/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -85,6 +89,10 @@
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
         }
+      },
+      "Extension.IEnumerable/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
       },
       "Extension.Test/1.0.0": {
         "type": "project",
@@ -95,6 +103,13 @@
           "Moq": "4.1.1308.2120",
           "xunit": "2.1.0",
           "xunit.runner.dnx": "2.1.0-rc1-build204"
+        }
+      },
+      "Extraction.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataStructure.Tree": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -142,7 +157,9 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "DataAccess.Interfaces": "1.0.0"
+          "DataAccess.Interfaces": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.Interfaces": "1.0.0"
         }
       },
       "FLUX.Interfaces/1.0.0": {
@@ -159,6 +176,8 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.Interfaces": "1.0.0",
           "Facade.MVC": "1.0.0",
           "Facade.Session": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
@@ -1777,6 +1796,10 @@
           "System.Xml"
         ]
       },
+      "DataStructure.Tree/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
+      },
       "DynamicLoading/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -1784,6 +1807,10 @@
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
         }
+      },
+      "Extension.IEnumerable/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
       },
       "Extension.Test/1.0.0": {
         "type": "project",
@@ -1794,6 +1821,13 @@
           "Moq": "4.1.1308.2120",
           "xunit": "2.1.0",
           "xunit.runner.dnx": "2.1.0-rc1-build204"
+        }
+      },
+      "Extraction.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataStructure.Tree": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -1841,7 +1875,9 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "DataAccess.Interfaces": "1.0.0"
+          "DataAccess.Interfaces": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.Interfaces": "1.0.0"
         }
       },
       "FLUX.Interfaces/1.0.0": {
@@ -1858,6 +1894,8 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.Interfaces": "1.0.0",
           "Facade.MVC": "1.0.0",
           "Facade.Session": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
@@ -3476,6 +3514,10 @@
           "System.Xml"
         ]
       },
+      "DataStructure.Tree/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
+      },
       "DynamicLoading/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -3483,6 +3525,10 @@
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
         }
+      },
+      "Extension.IEnumerable/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
       },
       "Extension.Test/1.0.0": {
         "type": "project",
@@ -3493,6 +3539,13 @@
           "Moq": "4.1.1308.2120",
           "xunit": "2.1.0",
           "xunit.runner.dnx": "2.1.0-rc1-build204"
+        }
+      },
+      "Extraction.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataStructure.Tree": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -3540,7 +3593,9 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "DataAccess.Interfaces": "1.0.0"
+          "DataAccess.Interfaces": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.Interfaces": "1.0.0"
         }
       },
       "FLUX.Interfaces/1.0.0": {
@@ -3557,6 +3612,8 @@
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.Interfaces": "1.0.0",
           "Facade.MVC": "1.0.0",
           "Facade.Session": "1.0.0",
           "FLUX.DomainObjects": "1.0.0",
@@ -5117,13 +5174,25 @@
       "type": "project",
       "path": "../../src/DataAccess.XMLStub/project.json"
     },
+    "DataStructure.Tree/1.0.0": {
+      "type": "project",
+      "path": "../../ext/DataStructure.Tree/project.json"
+    },
     "DynamicLoading/1.0.0": {
       "type": "project",
       "path": "../../ext/DynamicLoading/project.json"
     },
+    "Extension.IEnumerable/1.0.0": {
+      "type": "project",
+      "path": "../../ext/Extension.IEnumerable/project.json"
+    },
     "Extension.Test/1.0.0": {
       "type": "project",
       "path": "../../ext/Extension.Test/project.json"
+    },
+    "Extraction.Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../../src/Extraction.Interfaces/project.json"
     },
     "Facade.Configuration/1.0.0": {
       "type": "project",

@@ -15,6 +15,9 @@
 
   "dependencies": {
 
+    "DataStructure.Tree": "1.0.0-*",
+
+
     "FLUX.Interfaces": "1.0.0-*",
     "FLUX.Configuration": "1.0.0-*",
 

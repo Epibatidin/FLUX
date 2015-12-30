@@ -11,5 +11,7 @@ namespace DataStructure.Tree
         IEnumerable<ITreeItem<T>> Children { get; }
 
         bool HasChildren { get; }
+
+        int Count { get; }
     }
 }
