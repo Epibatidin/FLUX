@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using Facade.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,15 +21,26 @@ namespace DynamicLoading
         {
             foreach (var loadableExtensionConfiguration in loadableExtensionConfigurations)
             {
-                var installerType = Type.GetType(loadableExtensionConfiguration.Type);
-                if (installerType == null) continue;
-
-                var installer = Activator.CreateInstance(installerType) as IDynamicExtensionInstaller;
+                var installer = LoadInstaller(loadableExtensionConfiguration.Type); 
                 if (installer == null) continue;
 
                 installer.ConfigurationBinder = _configurationBinder;
                 installer.Install(config, loadableExtensionConfiguration.SetionName, services);
             }
+        }
+
+
+        private IDynamicExtensionInstaller LoadInstaller(string type)
+        {
+            //var typeParts = type.Split(new[] { ',' });
+            //var assembly = Assembly.Load(new AssemblyName(typeParts[1])
+            //{
+            //    CodeBase = ""
+            //});
+
+            var installertype = Type.GetType(type);
+            if (installertype == null) return null;
+            return Activator.CreateInstance(installertype) as IDynamicExtensionInstaller;
         }
     }
 }

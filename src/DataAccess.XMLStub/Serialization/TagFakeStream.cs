@@ -27,14 +27,15 @@ namespace DataAccess.XMLStub.Serialization
         {
         }
 
-        private long NullDataLength;
+        
         private long _length;
         
 
         private readonly MemoryStream _dataAtBegin;
         private readonly MemoryStream _dataAtEnd;
 
-        private long startLength;
+        //private long startLength;
+        //private long NullDataLength;
 
         private long _position;
         public override long Position
