@@ -15,7 +15,7 @@ namespace DynamicLoading.Tests
     }
 
 
-    public class DynamicExtensionInstallerImpl : DynamicExtensionInstallerBase<VirtualFileRootConfigurationDummy, ISectionNameHolder>
+    public class DynamicExtensionInstallerImpl : DynamicExtensionInstallerBase<VirtualFileRootConfigurationDummy>
     {
         public override void RegisterServices(IServiceCollection serviceCollection)
         {

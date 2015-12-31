@@ -1,13 +1,16 @@
-﻿using Facade.Configuration;
+﻿using System;
+using Facade.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DynamicLoading
 {
-    public abstract class DynamicExtensionInstallerBase<TConfigurationSection, TConfigSectionInterface> : IDynamicExtensionInstaller where TConfigurationSection : class, TConfigSectionInterface
+    public abstract class DynamicExtensionInstallerBase<TConfigurationSection> : IDynamicExtensionInstaller where TConfigurationSection : class
     {
         public IConfigurationBinderFacade ConfigurationBinder { get; set; }
-        
+
+        protected Type InterfaceType { get; set; }
+
         public void Install(IConfiguration configuration, string sectionName, IServiceCollection services)
         {
             var config = ConfigurationBinder.Bind<TConfigurationSection>(configuration, sectionName);
@@ -17,7 +20,9 @@ namespace DynamicLoading
                 assectionHolder.SectionName = sectionName;
 
             services.Add(new ServiceDescriptor(typeof(TConfigurationSection), config));
-            services.Add(new ServiceDescriptor(typeof(TConfigSectionInterface), config));
+
+            if(InterfaceType != null)
+                services.Add(new ServiceDescriptor(InterfaceType, config));
 
             RegisterServices(services);
         }
