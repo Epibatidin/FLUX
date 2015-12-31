@@ -3,12 +3,70 @@
   "version": 2,
   "targets": {
     "DNXCore,Version=v5.0": {
+      "DataAccess.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "DynamicLoading": "1.0.0",
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
+          "System.IO": "4.0.10",
+          "System.Linq": "4.0.1",
+          "System.Runtime": "4.0.21"
+        }
+      },
+      "DataStructure.Tree/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Linq": "4.0.1",
+          "System.Runtime": "4.0.21"
+        }
+      },
       "DynamicLoading/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
+        }
+      },
+      "Extension.IEnumerable/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Runtime": "4.0.21"
+        }
+      },
+      "Extraction.Base/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
+          "Extraction.Interfaces": "1.0.0"
+        }
+      },
+      "Extraction.DomainObjects/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "Extension.IEnumerable": "1.0.0",
+          "System.Collections": "4.0.11",
+          "System.Linq": "4.0.1",
+          "System.Runtime": "4.0.21"
+        }
+      },
+      "Extraction.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "DataStructure.Tree": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.DomainObjects": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -264,7 +322,7 @@
           "lib/dotnet/System.IO.FileSystem.Primitives.dll": {}
         }
       },
-      "System.Linq/4.0.1-beta-23516": {
+      "System.Linq/4.0.1-rc2-23623": {
         "type": "package",
         "dependencies": {
           "System.Collections": "4.0.10",
@@ -406,6 +464,23 @@
           "ref/dotnet/System.Text.Encoding.dll": {}
         }
       },
+      "System.Text.RegularExpressions/4.0.10": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.10",
+          "System.Globalization": "4.0.10",
+          "System.Resources.ResourceManager": "4.0.0",
+          "System.Runtime": "4.0.20",
+          "System.Runtime.Extensions": "4.0.10",
+          "System.Threading": "4.0.10"
+        },
+        "compile": {
+          "ref/dotnet/System.Text.RegularExpressions.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/System.Text.RegularExpressions.dll": {}
+        }
+      },
       "System.Threading/4.0.11-beta-23516": {
         "type": "package",
         "dependencies": {
@@ -430,12 +505,55 @@
       }
     },
     "DNX,Version=v4.5.1": {
+      "DataAccess.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DynamicLoading": "1.0.0",
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
+        }
+      },
+      "DataStructure.Tree/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
+      },
       "DynamicLoading/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
+        }
+      },
+      "Extension.IEnumerable/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
+      },
+      "Extraction.Base/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
+          "Extraction.Interfaces": "1.0.0"
+        }
+      },
+      "Extraction.DomainObjects/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Extension.IEnumerable": "1.0.0"
+        }
+      },
+      "Extraction.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataStructure.Tree": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.DomainObjects": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -550,12 +668,70 @@
       }
     },
     "DNXCore,Version=v5.0/win7-x86": {
+      "DataAccess.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "DynamicLoading": "1.0.0",
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
+          "System.IO": "4.0.10",
+          "System.Linq": "4.0.1",
+          "System.Runtime": "4.0.21"
+        }
+      },
+      "DataStructure.Tree/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Linq": "4.0.1",
+          "System.Runtime": "4.0.21"
+        }
+      },
       "DynamicLoading/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
+        }
+      },
+      "Extension.IEnumerable/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Runtime": "4.0.21"
+        }
+      },
+      "Extraction.Base/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
+          "Extraction.Interfaces": "1.0.0"
+        }
+      },
+      "Extraction.DomainObjects/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "Extension.IEnumerable": "1.0.0",
+          "System.Collections": "4.0.11",
+          "System.Linq": "4.0.1",
+          "System.Runtime": "4.0.21"
+        }
+      },
+      "Extraction.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "DataStructure.Tree": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.DomainObjects": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -899,7 +1075,7 @@
           "lib/dotnet/System.IO.FileSystem.Primitives.dll": {}
         }
       },
-      "System.Linq/4.0.1-beta-23516": {
+      "System.Linq/4.0.1-rc2-23623": {
         "type": "package",
         "dependencies": {
           "System.Collections": "4.0.10",
@@ -1126,6 +1302,23 @@
         },
         "runtime": {
           "lib/DNXCore50/System.Text.Encoding.Extensions.dll": {}
+        }
+      },
+      "System.Text.RegularExpressions/4.0.10": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.10",
+          "System.Globalization": "4.0.10",
+          "System.Resources.ResourceManager": "4.0.0",
+          "System.Runtime": "4.0.20",
+          "System.Runtime.Extensions": "4.0.10",
+          "System.Threading": "4.0.10"
+        },
+        "compile": {
+          "ref/dotnet/System.Text.RegularExpressions.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/System.Text.RegularExpressions.dll": {}
         }
       },
       "System.Threading/4.0.11-beta-23516": {
@@ -1165,12 +1358,70 @@
       }
     },
     "DNXCore,Version=v5.0/win7-x64": {
+      "DataAccess.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "DynamicLoading": "1.0.0",
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
+          "System.IO": "4.0.10",
+          "System.Linq": "4.0.1",
+          "System.Runtime": "4.0.21"
+        }
+      },
+      "DataStructure.Tree/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Linq": "4.0.1",
+          "System.Runtime": "4.0.21"
+        }
+      },
       "DynamicLoading/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
+        }
+      },
+      "Extension.IEnumerable/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Runtime": "4.0.21"
+        }
+      },
+      "Extraction.Base/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
+          "Extraction.Interfaces": "1.0.0"
+        }
+      },
+      "Extraction.DomainObjects/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "Extension.IEnumerable": "1.0.0",
+          "System.Collections": "4.0.11",
+          "System.Linq": "4.0.1",
+          "System.Runtime": "4.0.21"
+        }
+      },
+      "Extraction.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "DataStructure.Tree": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.DomainObjects": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -1514,7 +1765,7 @@
           "lib/dotnet/System.IO.FileSystem.Primitives.dll": {}
         }
       },
-      "System.Linq/4.0.1-beta-23516": {
+      "System.Linq/4.0.1-rc2-23623": {
         "type": "package",
         "dependencies": {
           "System.Collections": "4.0.10",
@@ -1743,6 +1994,23 @@
           "lib/DNXCore50/System.Text.Encoding.Extensions.dll": {}
         }
       },
+      "System.Text.RegularExpressions/4.0.10": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.10",
+          "System.Globalization": "4.0.10",
+          "System.Resources.ResourceManager": "4.0.0",
+          "System.Runtime": "4.0.20",
+          "System.Runtime.Extensions": "4.0.10",
+          "System.Threading": "4.0.10"
+        },
+        "compile": {
+          "ref/dotnet/System.Text.RegularExpressions.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/System.Text.RegularExpressions.dll": {}
+        }
+      },
       "System.Threading/4.0.11-beta-23516": {
         "type": "package",
         "dependencies": {
@@ -1780,12 +2048,55 @@
       }
     },
     "DNX,Version=v4.5.1/win7-x86": {
+      "DataAccess.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DynamicLoading": "1.0.0",
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
+        }
+      },
+      "DataStructure.Tree/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
+      },
       "DynamicLoading/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
+        }
+      },
+      "Extension.IEnumerable/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
+      },
+      "Extraction.Base/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
+          "Extraction.Interfaces": "1.0.0"
+        }
+      },
+      "Extraction.DomainObjects/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Extension.IEnumerable": "1.0.0"
+        }
+      },
+      "Extraction.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataStructure.Tree": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.DomainObjects": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -1900,12 +2211,55 @@
       }
     },
     "DNX,Version=v4.5.1/win7-x64": {
+      "DataAccess.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DynamicLoading": "1.0.0",
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
+        }
+      },
+      "DataStructure.Tree/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
+      },
       "DynamicLoading/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
+        }
+      },
+      "Extension.IEnumerable/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
+      },
+      "Extraction.Base/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
+          "Extraction.Interfaces": "1.0.0"
+        }
+      },
+      "Extraction.DomainObjects/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Extension.IEnumerable": "1.0.0"
+        }
+      },
+      "Extraction.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataStructure.Tree": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.DomainObjects": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -2021,9 +2375,33 @@
     }
   },
   "libraries": {
+    "DataAccess.Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../DataAccess.Interfaces/project.json"
+    },
+    "DataStructure.Tree/1.0.0": {
+      "type": "project",
+      "path": "../../ext/DataStructure.Tree/project.json"
+    },
     "DynamicLoading/1.0.0": {
       "type": "project",
       "path": "../../ext/DynamicLoading/project.json"
+    },
+    "Extension.IEnumerable/1.0.0": {
+      "type": "project",
+      "path": "../../ext/Extension.IEnumerable/project.json"
+    },
+    "Extraction.Base/1.0.0": {
+      "type": "project",
+      "path": "../Extraction.Base/project.json"
+    },
+    "Extraction.DomainObjects/1.0.0": {
+      "type": "project",
+      "path": "../Extraction.DomainObjects/project.json"
+    },
+    "Extraction.Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../Extraction.Interfaces/project.json"
     },
     "Facade.Configuration/1.0.0": {
       "type": "project",
@@ -2729,17 +3107,21 @@
         "System.IO.FileSystem.Primitives.nuspec"
       ]
     },
-    "System.Linq/4.0.1-beta-23516": {
+    "System.Linq/4.0.1-rc2-23623": {
       "type": "package",
       "serviceable": true,
-      "sha512": "AJaoyeAHLpurbTWnmvOhK/QC2sswKJrIA5RlPea+UdfXpHOw3srPNEPpseZDMV/EviVqAwUfFNkc5QxpGZtsLA==",
+      "sha512": "MDTKzq4KjW1pw2xavgJeVEcc9peCe2bId9r75hBavr+dX45HlCJYUJFd07hW5dCRR/3LoFoK+42b3tO1xWQKNg==",
       "files": [
         "lib/dotnet5.4/System.Linq.dll",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
         "lib/net45/_._",
         "lib/netcore50/System.Linq.dll",
         "lib/win8/_._",
         "lib/wp80/_._",
         "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
         "ref/dotnet5.1/de/System.Linq.xml",
         "ref/dotnet5.1/es/System.Linq.xml",
         "ref/dotnet5.1/fr/System.Linq.xml",
@@ -2751,6 +3133,8 @@
         "ref/dotnet5.1/System.Linq.xml",
         "ref/dotnet5.1/zh-hans/System.Linq.xml",
         "ref/dotnet5.1/zh-hant/System.Linq.xml",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
         "ref/net45/_._",
         "ref/netcore50/de/System.Linq.xml",
         "ref/netcore50/es/System.Linq.xml",
@@ -2766,8 +3150,10 @@
         "ref/win8/_._",
         "ref/wp80/_._",
         "ref/wpa81/_._",
-        "System.Linq.4.0.1-beta-23516.nupkg",
-        "System.Linq.4.0.1-beta-23516.nupkg.sha512",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "System.Linq.4.0.1-rc2-23623.nupkg",
+        "System.Linq.4.0.1-rc2-23623.nupkg.sha512",
         "System.Linq.nuspec"
       ]
     },
@@ -3443,6 +3829,38 @@
         "System.Text.Encoding.Extensions.nuspec"
       ]
     },
+    "System.Text.RegularExpressions/4.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "0vDuHXJePpfMCecWBNOabOKCvzfTbFMNcGgklt3l5+RqHV5SzmF7RUVpuet8V0rJX30ROlL66xdehw2Rdsn2DA==",
+      "files": [
+        "lib/dotnet/System.Text.RegularExpressions.dll",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "ref/dotnet/de/System.Text.RegularExpressions.xml",
+        "ref/dotnet/es/System.Text.RegularExpressions.xml",
+        "ref/dotnet/fr/System.Text.RegularExpressions.xml",
+        "ref/dotnet/it/System.Text.RegularExpressions.xml",
+        "ref/dotnet/ja/System.Text.RegularExpressions.xml",
+        "ref/dotnet/ko/System.Text.RegularExpressions.xml",
+        "ref/dotnet/ru/System.Text.RegularExpressions.xml",
+        "ref/dotnet/System.Text.RegularExpressions.dll",
+        "ref/dotnet/System.Text.RegularExpressions.xml",
+        "ref/dotnet/zh-hans/System.Text.RegularExpressions.xml",
+        "ref/dotnet/zh-hant/System.Text.RegularExpressions.xml",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "System.Text.RegularExpressions.4.0.10.nupkg",
+        "System.Text.RegularExpressions.4.0.10.nupkg.sha512",
+        "System.Text.RegularExpressions.nuspec"
+      ]
+    },
     "System.Threading/4.0.11-beta-23516": {
       "type": "package",
       "serviceable": true,
@@ -3593,11 +4011,14 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "DynamicLoading >= 1.0.0-*"
+      "DynamicLoading >= 1.0.0-*",
+      "Extraction.Interfaces >= 1.0.0-*",
+      "Extraction.Base >= 1.0.0-*"
     ],
     "DNXCore,Version=v5.0": [
       "System.Runtime >= 4.0.21-*",
-      "System.Collections >= 4.0.11-*"
+      "System.Collections >= 4.0.11-*",
+      "System.Text.RegularExpressions >= 4.0.10"
     ],
     "DNX,Version=v4.5.1": []
   }

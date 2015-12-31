@@ -6,7 +6,7 @@ namespace FLUX.Web.Logic.Tests
 {
     public class PostbackHelperTests
     {
-        [Fact]
+        [Theory]
         [InlineData("POST")]
         [InlineData("pOsT")]
         public void should_be_postback_for_(string value)

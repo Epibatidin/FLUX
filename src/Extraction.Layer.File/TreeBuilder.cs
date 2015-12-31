@@ -34,7 +34,7 @@
 //        }
 
 
-//        private List<TreeItem<FileLayerSongDO>> BuildTree(IEnumerable<Tuple<int, List<string>>> data, int depth)
+//        private List<TreeItem<FileLayerSongDo>> BuildTree(IEnumerable<Tuple<int, List<string>>> data, int depth)
 //        {
 //            // wenn depth == items2.length 
 //            // break;
@@ -46,16 +46,16 @@
 //                        group r by r.Item2[depth] into grp
 //                        select grp;
 
-//            List<TreeItem<FileLayerSongDO>> result = null;
+//            List<TreeItem<FileLayerSongDo>> result = null;
 //            if (grped.Any())
 //            {
-//                result = new List<TreeItem<FileLayerSongDO>>();
+//                result = new List<TreeItem<FileLayerSongDo>>();
                 
 //                foreach (var item in grped)
 //                {
-//                    var child = new TreeItem<FileLayerSongDO>();
+//                    var child = new TreeItem<FileLayerSongDo>();
 //                    child.Level = depth;
-//                    var temp = new FileLayerSongDO();
+//                    var temp = new FileLayerSongDo();
 //                    temp.SetByDepth(depth, item.Key);
 //                    var current = item.First();
 
@@ -75,7 +75,7 @@
 //        }
         
 
-//        public TreeItem<FileLayerSongDO> Build(IEnumerable<IVirtualFile> data)
+//        public TreeItem<FileLayerSongDo> Build(IEnumerable<IVirtualFile> data)
 //        {
 //            var preparedData = PrepareData(data);
 

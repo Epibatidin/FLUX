@@ -4,11 +4,23 @@
 "DataAccess.FileSystem": "1.0.0-*",
 "DynamicLoading": "1.0.0-*",
 "Extension.Test": "1.0.0-*",
+"FLUX.Configuration": "1.0.0-*",
+"Extraction.Interfaces" : "1.0.0-*",
 
 "Microsoft.Extensions.Configuration": "1.0.0-rc1-*",
 "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1-*",
 "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1-*",
+"Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-*",
+"Microsoft.Extensions.Configuration.FileProviderExtensions": "1.0.0-rc1-*",
+
+"Microsoft.Extensions.DependencyInjection": "1.0.0-rc1-*",
 "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1-*"
+
+"Microsoft.Extensions.OptionsModel": "1.0.0-rc1-*",
+
+
+
+
 
 "System.Runtime": "4.0.21-*",
 "System.Linq": "4.0.1-*",
@@ -16,6 +28,7 @@
 "System.IO.FileSystem": "4.0.0",
 "System.Xml.XmlSerializer": "4.0.10",
 "System.Collections": "4.0.11-*",
+"System.Text.RegularExpressions": "4.0.10"
 
 
 

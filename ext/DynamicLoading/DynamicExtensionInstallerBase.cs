@@ -27,6 +27,6 @@ namespace DynamicLoading
             RegisterServices(services);
         }
         
-        public abstract void RegisterServices(IServiceCollection serviceCollection);
+        public abstract void RegisterServices(IServiceCollection services);
     }
 }

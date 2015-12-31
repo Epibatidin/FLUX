@@ -15,7 +15,7 @@ namespace FLUX.Configuration.Tests.Config
         public VirtualFileAccessorSectionGroupTests()
         {
             IConfigurationBuilder configBuilder = new ConfigurationBuilder();
-            configBuilder.AddJsonFile(@"D:\Develop\FLUX\src\FLUX.Configuration\Config\VirtualFileProvier.json");
+            configBuilder.AddJsonFile(@"D:\Develop\FLUX\src\FLUX.Configuration\Files\VirtualFileProvier.json");
 
             _config = configBuilder.Build();            
         }
@@ -76,6 +76,5 @@ namespace FLUX.Configuration.Tests.Config
             Assert.That(first.Type, Is.Not.Empty);
             Assert.That(first.SetionName, Is.Not.Empty);
         }
-
     }
 }

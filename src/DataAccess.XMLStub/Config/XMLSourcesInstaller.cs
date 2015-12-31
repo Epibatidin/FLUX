@@ -11,9 +11,9 @@ namespace DataAccess.XMLStub.Config
             InterfaceType = typeof(IVirtualFileRootConfiguration);
         }
 
-        public override void RegisterServices(IServiceCollection serviceCollection)
+        public override void RegisterServices(IServiceCollection services)
         {
-            serviceCollection.AddSingleton<IVirtualFileFactory, XmlVirtualFileFactory>();
+            services.AddSingleton<IVirtualFileFactory, XmlVirtualFileFactory>();
         }
     }
 }

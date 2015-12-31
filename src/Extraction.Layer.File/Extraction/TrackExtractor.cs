@@ -41,20 +41,20 @@
 //        }
 
 
-//        List<TreeItem<FileLayerSongDO>> _data;
-//        readonly Func<TreeItem<FileLayerSongDO>, PartedString> _getter;
+//        List<TreeItem<FileLayerSongDo>> _data;
+//        readonly Func<TreeItem<FileLayerSongDo>, PartedString> _getter;
 
-//        public TrackExtractor(Func<TreeItem<FileLayerSongDO>, PartedString> fun)
+//        public TrackExtractor(Func<TreeItem<FileLayerSongDo>, PartedString> fun)
 //        {
 //            _getter = fun;
 //        }
 
-//        public void CurrentData(List<TreeItem<FileLayerSongDO>> data)
+//        public void CurrentData(List<TreeItem<FileLayerSongDo>> data)
 //        {
 //            _data = data;
 //        }
 
-//        private List<Container> ExtractNumbers(List<TreeItem<FileLayerSongDO>> data, Func<TreeItem<FileLayerSongDO>, PartedString> fun)
+//        private List<Container> ExtractNumbers(List<TreeItem<FileLayerSongDo>> data, Func<TreeItem<FileLayerSongDo>, PartedString> fun)
 //        {
 //            List<Container> result = new List<Container>();
 //            bool nothing = true;

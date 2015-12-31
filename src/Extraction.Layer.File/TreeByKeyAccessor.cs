@@ -1,21 +1,20 @@
-﻿//using Extension.Tree;
-//using Extraction.Interfaces;
+﻿using DataStructure.Tree;
+using Extraction.Interfaces;
 
-//namespace Extraction.Layer.File
-//{
-//    public class TreeByKeyAccessor : ISongByKeyAccessor
-//    {
-//        private readonly TreeItem<FileLayerSongDO> _tree;
+namespace Extraction.Layer.File
+{
+    public class TreeByKeyAccessor : ISongByKeyAccessor
+    {
+        private readonly TreeItem<FileLayerSongDo> _tree;
 
-//        public TreeByKeyAccessor(TreeItem<FileLayerSongDO> tree)
-//        {
-//            _tree = tree;
-//        }
+        public TreeByKeyAccessor(TreeItem<FileLayerSongDo> tree)
+        {
+            _tree = tree;
+        }
 
-
-//        public ISong GetByKey(int key)
-//        {
-//            return _tree[key].Value;
-//        }
-//    }
-//}
+        public ISong GetByKey(int key)
+        {
+            return _tree[key].Value;
+        }
+    }
+}

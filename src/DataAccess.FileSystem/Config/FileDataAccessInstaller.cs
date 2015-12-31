@@ -11,9 +11,9 @@ namespace DataAccess.FileSystem.Config
             InterfaceType = typeof (IVirtualFileRootConfiguration);
         }
 
-        public override void RegisterServices(IServiceCollection serviceCollection)
+        public override void RegisterServices(IServiceCollection services)
         {
-            serviceCollection.AddSingleton<IVirtualFileFactory, DirectoryVirtualFileFactory>();
+            services.AddSingleton<IVirtualFileFactory, DirectoryVirtualFileFactory>();
         }
     }
 }
