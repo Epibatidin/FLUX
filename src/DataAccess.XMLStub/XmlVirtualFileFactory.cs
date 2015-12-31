@@ -40,27 +40,41 @@ namespace DataAccess.XMLStub
         public IDictionary<int, IVirtualFile> RetrieveVirtualFiles(VirtualFileFactoryContext context)
         {
             var xmlSource = _xmlConfig.XmlSources.First(c => c.Name == context.SelectedSource);
-            var subrootDir = new DirectoryInfo(xmlSource.XmlFolder);
-
-            var subRoots = getCounts(subrootDir, context.SubRoots);
-
-            XmlSerializer ser = new XmlSerializer(typeof(Group));
-            var dict = new Dictionary<int, IVirtualFile>();
-            foreach (var subroot in subRoots)
+            var root = new DirectoryInfo(xmlSource.XmlFolder);
+            
+            var temp = root.GetDirectories();
+            IEnumerable<DirectoryInfo> dirs;
+            if (context.OverrideRootnames == null)
+                dirs = temp;
+            else
             {
-                var file = subrootDir.GetFiles(subroot + ".xml")[0];
-                Group group = null;
-                using (var fs = file.OpenRead())
+                dirs = from d in temp
+                       join over in context.OverrideRootnames on d.Name equals over
+                       select d;
+            }
+
+            XmlSerializer groupSerializer = new XmlSerializer(typeof(Group));
+            var dict = new Dictionary<int, IVirtualFile>();
+            foreach (var subrootDir in dirs.OrderBy(c => c.Name))
+            {
+                var subRoots = getCounts(subrootDir, context.SubRoots);
+                foreach (var subroot in subRoots)
                 {
-                    group = ser.Deserialize(fs) as Group;
-                    if(group == null) continue;
-                }
-                
-                foreach (var item in group.Source.Items)
-                {
-                    dict.Add(item.ID, item);
+                    var file = subrootDir.GetFiles(subroot + ".xml")[0];
+                    Group group = null;
+                    using (var fs = file.OpenRead())
+                    {
+                        group = groupSerializer.Deserialize(fs) as Group;
+                        if (group == null) continue;
+                    }
+
+                    foreach (var item in group.Source.Items)
+                    {
+                        dict.Add(item.ID, item);
+                    }
                 }
             }
+            
             return dict;
         }
     }
