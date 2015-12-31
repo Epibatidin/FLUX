@@ -1,0 +1,81 @@
+﻿unzälhige optionen 
+
+1. jeder titel hat genau eine nummer 
+
+2. nicht jeder titel hat eine nummer 
+	2.1. genau 1 Track hat keine Nummer
+		2.1.1. der Track fehlt am anfang oder am ende - nicht entscheidbar 
+		2.1.2. der Track fehlt in der mitte einer continuierlichen reihe von zahlen 
+	2.2. viele titel haben keine nummer 
+		2.2.1. die Tracks fehlen am anfang
+		2.2.2. die tracks fehlen am ende 
+		2.2.3. die tracks fehlen in der mitte einer continuierlichen reihe 
+		2.2.4. die tracks fehlen am anfang, am ende, in der mitte 
+
+3. einige/alle titel haben mehrere nummern
+	3.1. 
+
+4. einige title haben mehrere nummern, einige haben keine
+
+
+einige punkte können zusammen gefasst werden 
+ich muss zb immer kontrollieren ob es eine continuierliche reihe von zahlen gibt - wenn nicht jeder track eine nummer hat 
+
+wenn es continuerliches zeug gibt bin ich bei jeder track eine nummer 
+
+================================================================================
+wie findet man heraus welche der extrahierten zahlen im Title ein track ist 
+
+1. Position - CD unabhängig
+	1.1. der track steht immer am anfang 
+	1.2. der track steht nach einer constanten anzahl von strings - Album zb 
+	1.3. der track steht immer am ende - Relativ 
+
+2. Größe 
+	zahlen über 500?, 1000? werden aussortiert 
+
+3. continuität 
+	2.1. am anfang oder am ende - nur entscheidbar wenn anfang = 2 oder ende = length -1 
+	2.2. in der mitte 
+
+4. Statistik 
+	3.1. Durchschnitte und ausreißer 
+
+
+
+================================================================================
+das funktioniert alles nur wenn ich VORHER! herausgefunden habe welche gruppen eine cd ist
+aber wie ? 
+
+continuität mit lücken ? 
+
+lücken als cd break ?
+wenn zwischen 2 tracks der abstand - welcher abstand ?, der ersten, 5ten, 10ten zahl ? - größer ist als 
+sagen wir 50 
+
+position ist das EINZIGE CD unabhängige 
+
+kann man stochastik so biegen das sie auch cd unabhängig ist ?
+- find ausreißer in interval ? 
+	http://de.wikipedia.org/wiki/Local_Outlier_Factor
+
+
+
+================================================================================
+vorgehen 
+
+	- extrahiere zahlen aus jedem titel 
+	- if(keine tracks) return 
+	- if(jeder track hat genau 1 track)
+			nimm das
+	  else 
+			if(extractTrackByPosition)
+				nimm das 
+		
+			 
+
+
+
+
+
+

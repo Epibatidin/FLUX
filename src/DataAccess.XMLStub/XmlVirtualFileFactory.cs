@@ -62,7 +62,6 @@ namespace DataAccess.XMLStub
                 }
             }
             return dict;
-
         }
     }
 }

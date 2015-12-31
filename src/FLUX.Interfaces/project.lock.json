@@ -32,11 +32,23 @@
           "System.Runtime": "4.0.21"
         }
       },
+      "Extraction.DomainObjects/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "Extension.IEnumerable": "1.0.0",
+          "System.Collections": "4.0.11",
+          "System.Linq": "4.0.1",
+          "System.Runtime": "4.0.21"
+        }
+      },
       "Extraction.Interfaces/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "DataStructure.Tree": "1.0.0"
+          "DataStructure.Tree": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.DomainObjects": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -1844,11 +1856,20 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1"
       },
+      "Extraction.DomainObjects/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Extension.IEnumerable": "1.0.0"
+        }
+      },
       "Extraction.Interfaces/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "DataStructure.Tree": "1.0.0"
+          "DataStructure.Tree": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.DomainObjects": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -3169,11 +3190,23 @@
           "System.Runtime": "4.0.21"
         }
       },
+      "Extraction.DomainObjects/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "Extension.IEnumerable": "1.0.0",
+          "System.Collections": "4.0.11",
+          "System.Linq": "4.0.1",
+          "System.Runtime": "4.0.21"
+        }
+      },
       "Extraction.Interfaces/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "DataStructure.Tree": "1.0.0"
+          "DataStructure.Tree": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.DomainObjects": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -5411,11 +5444,23 @@
           "System.Runtime": "4.0.21"
         }
       },
+      "Extraction.DomainObjects/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "Extension.IEnumerable": "1.0.0",
+          "System.Collections": "4.0.11",
+          "System.Linq": "4.0.1",
+          "System.Runtime": "4.0.21"
+        }
+      },
       "Extraction.Interfaces/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "DataStructure.Tree": "1.0.0"
+          "DataStructure.Tree": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.DomainObjects": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -7641,11 +7686,20 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1"
       },
+      "Extraction.DomainObjects/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Extension.IEnumerable": "1.0.0"
+        }
+      },
       "Extraction.Interfaces/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "DataStructure.Tree": "1.0.0"
+          "DataStructure.Tree": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.DomainObjects": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -8954,11 +9008,20 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1"
       },
+      "Extraction.DomainObjects/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Extension.IEnumerable": "1.0.0"
+        }
+      },
       "Extraction.Interfaces/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "DataStructure.Tree": "1.0.0"
+          "DataStructure.Tree": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.DomainObjects": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -10262,6 +10325,10 @@
     "Extension.IEnumerable/1.0.0": {
       "type": "project",
       "path": "../../ext/Extension.IEnumerable/project.json"
+    },
+    "Extraction.DomainObjects/1.0.0": {
+      "type": "project",
+      "path": "../Extraction.DomainObjects/project.json"
     },
     "Extraction.Interfaces/1.0.0": {
       "type": "project",

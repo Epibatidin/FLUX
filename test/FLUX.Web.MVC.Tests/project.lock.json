@@ -105,11 +105,20 @@
           "xunit.runner.dnx": "2.1.0-rc1-build204"
         }
       },
+      "Extraction.DomainObjects/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Extension.IEnumerable": "1.0.0"
+        }
+      },
       "Extraction.Interfaces/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "DataStructure.Tree": "1.0.0"
+          "DataStructure.Tree": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.DomainObjects": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -2165,11 +2174,20 @@
           "xunit.runner.dnx": "2.1.0-rc1-build204"
         }
       },
+      "Extraction.DomainObjects/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Extension.IEnumerable": "1.0.0"
+        }
+      },
       "Extraction.Interfaces/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "DataStructure.Tree": "1.0.0"
+          "DataStructure.Tree": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.DomainObjects": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -4228,11 +4246,20 @@
           "xunit.runner.dnx": "2.1.0-rc1-build204"
         }
       },
+      "Extraction.DomainObjects/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Extension.IEnumerable": "1.0.0"
+        }
+      },
       "Extraction.Interfaces/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "DataStructure.Tree": "1.0.0"
+          "DataStructure.Tree": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.DomainObjects": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -6221,6 +6248,10 @@
     "Extension.Test/1.0.0": {
       "type": "project",
       "path": "../../ext/Extension.Test/project.json"
+    },
+    "Extraction.DomainObjects/1.0.0": {
+      "type": "project",
+      "path": "../../src/Extraction.DomainObjects/project.json"
     },
     "Extraction.Interfaces/1.0.0": {
       "type": "project",

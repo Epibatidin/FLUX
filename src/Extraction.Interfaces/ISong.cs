@@ -1,5 +1,4 @@
-﻿
-using DataStructure.Tree;
+﻿using DataStructure.Tree;
 
 namespace Extraction.Interfaces
 {
