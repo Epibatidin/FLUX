@@ -1,46 +1,16 @@
-﻿//using System.Configuration;
-//using System.Xml;
-//using Extension.Configuration;
-//using Extraction.Interfaces.Config;
+﻿using DataAccess.Interfaces;
+using DynamicLoading;
 
-//namespace Extraction.Base.Config
-//{
-//    public class ExtractionLayerConfigItem : ConfigurationElement, IKeyedElement , IExtractionLayerConfigItem
-//    {
-//        [ConfigurationProperty("Name", IsRequired = true, IsKey = true)]
-//        public string Key
-//        {
-//            get
-//            {
-//                return (string)base["Name"];
-//            }
-//        }
+namespace Extraction.Base.Config
+{
+    public class ExtractionLayerConfigItem :  IKeyedElement, IDynamicLoadableExtensionConfiguration
+    {
+        public string Name { get; set; }
+        public string ExtractorType { get; set; }
+        public bool Active { get; set; } = true;
 
-//        [ConfigurationProperty("ExtractorType", IsRequired = true)]
-//        public string ExtractorType
-//        {
-//            get
-//            {
-//                return (string)base["ExtractorType"];
-//            }
-//        }
-
-//        [ConfigurationProperty("active")]
-//        public bool IsActive
-//        {
-//            get
-//            {
-//                return (bool)base["active"];
-//            }
-//        }
-
-//        public XmlNode SectionData { get; private set; }
-
-//        protected override bool OnDeserializeUnrecognizedElement(string elementName, XmlReader reader)
-//        {
-//            XmlDocument doc = new XmlDocument();
-//            SectionData = doc.ReadNode(reader);
-//            return SectionData != null;
-//        }
-//    }
-//}
+        public string Key => Name;
+        public string SetionName => Name;
+        public string Type => ExtractorType;
+    }
+}

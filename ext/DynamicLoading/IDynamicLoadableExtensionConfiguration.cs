@@ -4,5 +4,6 @@
     {
         string SetionName { get; }
         string Type { get; }
+        bool Active { get; }
     }
 }

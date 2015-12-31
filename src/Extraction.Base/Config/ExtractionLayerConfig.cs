@@ -1,27 +1,11 @@
-﻿//using System.Configuration;
-//using Extension.Configuration;
+﻿using System.Collections.Generic;
 
-//namespace Extraction.Base.Config
-//{
-//    public class ExtractionLayerConfig : ConfigurationSection
-//    {
-//        [ConfigurationProperty("ASync")]
-//        public bool ASync
-//        {
-//            get
-//            {
-//                return (bool)base["ASync"];
-//            }
-//        }
+namespace Extraction.Base.Config
+{
+    public class ExtractionLayerConfig 
+    {
+        public bool ASync { get; set; }
 
-//        [ConfigurationProperty("LayerCollection")]
-//        [ConfigurationCollection(typeof(ExtractionLayerConfigItem), AddItemName = "Layer")]
-//        public GenericElementCollection<ExtractionLayerConfigItem> LayerCollection
-//        {
-//            get
-//            {
-//                return base["LayerCollection"] as GenericElementCollection<ExtractionLayerConfigItem>;
-//            }
-//        }
-//    }
-//}
+        public List<ExtractionLayerConfigItem> Layers { get; set; }
+    }
+}

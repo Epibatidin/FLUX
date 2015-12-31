@@ -7,7 +7,6 @@ namespace DataAccess.Base.Config
         public string SetionName { get; set; }
 
         public string Type { get; set; }
+        public bool Active { get; set; } = true;
     }
-
-    
 }

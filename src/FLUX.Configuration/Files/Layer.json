@@ -3,12 +3,12 @@
   "Layers": [
     {
       "Name": "File",
-      "ExtractorType": "FileStructureDataExtraction.FileStructureDataExtractionLayer,FileStructureDataExtraction,Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "Active": "true"
+      "ExtractorType": "FileStructureDataExtraction.FileStructureDataExtractionLayer,FileStructureDataExtraction,Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",      
     },
     {
       "Name": "Tag",
-      "ExtractorType": "TagDataExtraction.TagDataExtractionLayer,TagDataExtraction,Version=1.0.0.0, Culture=neutral,PublicKeyToken=null",      
+      "ExtractorType": "TagDataExtraction.TagDataExtractionLayer,TagDataExtraction,Version=1.0.0.0, Culture=neutral,PublicKeyToken=null",
+      "Active": "false"
     }
   ],
   "File": {

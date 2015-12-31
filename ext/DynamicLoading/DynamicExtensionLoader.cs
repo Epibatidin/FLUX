@@ -21,6 +21,7 @@ namespace DynamicLoading
         {
             foreach (var loadableExtensionConfiguration in loadableExtensionConfigurations)
             {
+                if(!loadableExtensionConfiguration.Active) continue;
                 var installer = LoadInstaller(loadableExtensionConfiguration.Type); 
                 if (installer == null) continue;
 
