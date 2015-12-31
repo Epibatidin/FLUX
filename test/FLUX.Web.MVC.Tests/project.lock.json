@@ -108,6 +108,15 @@
           "xunit.runner.dnx": "2.1.0-rc1-build204"
         }
       },
+      "Extraction.Base/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
+          "Extraction.Interfaces": "1.0.0"
+        }
+      },
       "Extraction.DomainObjects/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -119,9 +128,20 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
           "DataStructure.Tree": "1.0.0",
           "Extension.IEnumerable": "1.0.0",
           "Extraction.DomainObjects": "1.0.0"
+        }
+      },
+      "Extraction.Layer.File/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
+          "Extraction.Base": "1.0.0",
+          "Extraction.Interfaces": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -157,6 +177,8 @@
           "DataAccess.Interfaces": "1.0.0",
           "DataAccess.XMLStub": "1.0.0",
           "DynamicLoading": "1.0.0",
+          "Extraction.Base": "1.0.0",
+          "Extraction.Layer.File": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "Facade.Session": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
@@ -2180,6 +2202,15 @@
           "xunit.runner.dnx": "2.1.0-rc1-build204"
         }
       },
+      "Extraction.Base/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
+          "Extraction.Interfaces": "1.0.0"
+        }
+      },
       "Extraction.DomainObjects/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -2191,9 +2222,20 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
           "DataStructure.Tree": "1.0.0",
           "Extension.IEnumerable": "1.0.0",
           "Extraction.DomainObjects": "1.0.0"
+        }
+      },
+      "Extraction.Layer.File/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
+          "Extraction.Base": "1.0.0",
+          "Extraction.Interfaces": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -2229,6 +2271,8 @@
           "DataAccess.Interfaces": "1.0.0",
           "DataAccess.XMLStub": "1.0.0",
           "DynamicLoading": "1.0.0",
+          "Extraction.Base": "1.0.0",
+          "Extraction.Layer.File": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "Facade.Session": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
@@ -4255,6 +4299,15 @@
           "xunit.runner.dnx": "2.1.0-rc1-build204"
         }
       },
+      "Extraction.Base/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
+          "Extraction.Interfaces": "1.0.0"
+        }
+      },
       "Extraction.DomainObjects/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -4266,9 +4319,20 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
           "DataStructure.Tree": "1.0.0",
           "Extension.IEnumerable": "1.0.0",
           "Extraction.DomainObjects": "1.0.0"
+        }
+      },
+      "Extraction.Layer.File/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
+          "Extraction.Base": "1.0.0",
+          "Extraction.Interfaces": "1.0.0"
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -4304,6 +4368,8 @@
           "DataAccess.Interfaces": "1.0.0",
           "DataAccess.XMLStub": "1.0.0",
           "DynamicLoading": "1.0.0",
+          "Extraction.Base": "1.0.0",
+          "Extraction.Layer.File": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "Facade.Session": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
@@ -6258,6 +6324,10 @@
       "type": "project",
       "path": "../../ext/Extension.Test/project.json"
     },
+    "Extraction.Base/1.0.0": {
+      "type": "project",
+      "path": "../../src/Extraction.Base/project.json"
+    },
     "Extraction.DomainObjects/1.0.0": {
       "type": "project",
       "path": "../../src/Extraction.DomainObjects/project.json"
@@ -6265,6 +6335,10 @@
     "Extraction.Interfaces/1.0.0": {
       "type": "project",
       "path": "../../src/Extraction.Interfaces/project.json"
+    },
+    "Extraction.Layer.File/1.0.0": {
+      "type": "project",
+      "path": "../../src/Extraction.Layer.File/project.json"
     },
     "Facade.Configuration/1.0.0": {
       "type": "project",

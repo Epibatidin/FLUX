@@ -82,6 +82,7 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
           "DataStructure.Tree": "1.0.0",
           "Extension.IEnumerable": "1.0.0",
           "Extraction.DomainObjects": "1.0.0"
@@ -1700,6 +1701,7 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
           "DataStructure.Tree": "1.0.0",
           "Extension.IEnumerable": "1.0.0",
           "Extraction.DomainObjects": "1.0.0"
@@ -3318,6 +3320,7 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
           "DataStructure.Tree": "1.0.0",
           "Extension.IEnumerable": "1.0.0",
           "Extraction.DomainObjects": "1.0.0"

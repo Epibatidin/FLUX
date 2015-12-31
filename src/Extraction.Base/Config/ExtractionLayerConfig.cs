@@ -6,6 +6,6 @@ namespace Extraction.Base.Config
     {
         public bool ASync { get; set; }
 
-        public List<ExtractionLayerConfigItem> Layers { get; set; }
+        public ExtractionLayerConfigItem[] Layers { get; set; }
     }
 }

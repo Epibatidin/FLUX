@@ -3,7 +3,7 @@
   "Layers": [
     {
       "Name": "File",
-      "ExtractorType": "FileStructureDataExtraction.FileStructureDataExtractionLayer,FileStructureDataExtraction,Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",      
+      "ExtractorType": "Extraction.Layer.File.FileStructureInstaller,Extraction.Layer.File,Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
     },
     {
       "Name": "Tag",

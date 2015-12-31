@@ -33,7 +33,14 @@
     "DataAccess.XMLStub": {
       "version": "1.0.0-*",
       "options": "private"
-    }
+    },
+
+    "Extraction.Base": "1.0.0-*",
+    "Extraction.Layer.File": {
+      "version": "1.0.0-*",
+      "options": "private"
+    },
+
 
   }
 }

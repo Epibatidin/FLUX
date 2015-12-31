@@ -17,7 +17,6 @@ using DataStructure.Tree.Iterate;
 using Extraction.Base;
 using Extraction.DomainObjects.StringManipulation;
 using Extraction.Interfaces;
-using Extraction.Layer.File.Config;
 using FileItem = DataStructure.Tree.TreeItem<Extraction.Layer.File.FileLayerSongDo>;
 
 namespace Extraction.Layer.File
@@ -33,9 +32,13 @@ namespace Extraction.Layer.File
 
         public override void Execute(DataStore store)
         {
+            var tree = new TreeBuilder().Build(store.SourceValues.Values);
+            var updateObject = store.Register("File");
+            updateObject.UpdateData(new TreeByKeyAccessor(tree));
+
             foreach (var cleaner in _cleaners)
             {
-                
+                ForeachPartedStringInTree(tree, cleaner.Filter);
             }
 
         }

@@ -1,11 +1,11 @@
 ﻿using System;
+using FLUX.Configuration;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using FLUX.Configuration.DependencyInjection;
-using FLUX.Configuration.Config;
 
 namespace FLUX.Web.MVC
 {
@@ -40,7 +40,7 @@ namespace FLUX.Web.MVC
             var di = new DependencyInstaller();
             di.Install(services, Configuration);
 
-            var sectionGrp = new VirtualFileAccessorSectionGroupReader();
+            var sectionGrp = new ApplicationStarter();
             sectionGrp.Startup(services, Configuration);
 
             services.AddCaching();

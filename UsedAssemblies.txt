@@ -6,6 +6,7 @@
 "Extension.Test": "1.0.0-*",
 "FLUX.Configuration": "1.0.0-*",
 "Extraction.Interfaces" : "1.0.0-*",
+"Extraction.Layer.File" : "1.0.0-*",
 
 "Microsoft.Extensions.Configuration": "1.0.0-rc1-*",
 "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1-*",

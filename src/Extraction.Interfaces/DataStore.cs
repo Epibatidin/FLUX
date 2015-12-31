@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DataAccess.Interfaces;
 using Extension.IEnumerable;
 
 namespace Extraction.Interfaces
@@ -6,6 +7,8 @@ namespace Extraction.Interfaces
     public class DataStore
     {
         private readonly Dictionary<string, UpdateObject> _dataCollection;
+
+        public IDictionary<int, IVirtualFile> SourceValues { get; set; }
 
         public IList<int> Keys { get; set; }
 

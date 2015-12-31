@@ -19,7 +19,7 @@
   "dependencies": {
     "DataStructure.Tree": "1.0.0-*",
     "Extension.IEnumerable": "1.0.0-*",
-
+    "DataAccess.Interfaces": "1.0.0-*",
     "Extraction.DomainObjects": "1.0.0-*",
   }
 }
