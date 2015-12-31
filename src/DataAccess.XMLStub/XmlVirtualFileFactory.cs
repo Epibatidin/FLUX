@@ -19,7 +19,7 @@ namespace DataAccess.XMLStub
             _serializer = new XmlSerializer(typeof(Root));
         }
         
-        public bool CanHandleProviderKey(string providerId) => _xmlConfig.ID == providerId;
+        public bool CanHandleProviderKey(string providerId) => _xmlConfig.SectionName == providerId;
 
         private int[] getCounts(DirectoryInfo subroot, int[] subRoots)
         {

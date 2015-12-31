@@ -1,27 +1,21 @@
-﻿using Extension.Test;
-using Moq;
-using Xunit;
-using DataAccess.Base;
-using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using DataAccess.Interfaces;
+﻿using System;
+using Extension.Test;
 using Facade.Configuration;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Moq;
+using Xunit;
 using Assert = NUnit.Framework.Assert;
-using Is = NUnit.Framework.Is;
 
-namespace DataAccess.Tests.Base
+namespace DynamicLoading.Tests
 {
-    public class VirtualFileRootConfigurationDummy : IVirtualFileRootConfiguration
+    public class VirtualFileRootConfigurationDummy : ISectionNameHolder
     {
-        public string ID { get; set; }
-        public IEnumerable<string> Keys { get; }
+        public string SectionName { get; set; }
     }
 
 
-    public class DataAccessInstallerImpl : DataAccessInstallerBase<VirtualFileRootConfigurationDummy>
+    public class DynamicExtensionInstallerImpl : DynamicExtensionInstallerBase<VirtualFileRootConfigurationDummy, ISectionNameHolder>
     {
         public override void RegisterServices(IServiceCollection serviceCollection)
         {
@@ -29,7 +23,7 @@ namespace DataAccess.Tests.Base
     }
 
 
-    public class DataAccessInstallerBaseTests : FixtureBase<DataAccessInstallerImpl>
+    public class DynamicExtensionInstallerBaseTests : FixtureBase<DynamicExtensionInstallerImpl>
     {
         private Mock<IConfigurationBinderFacade> _configurationBinder;
 

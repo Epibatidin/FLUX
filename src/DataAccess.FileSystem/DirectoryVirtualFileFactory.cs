@@ -14,7 +14,7 @@ namespace DataAccess.FileSystem
             _config = config;
         }
 
-        public bool CanHandleProviderKey(string providerId) => _config.ID == providerId;
+        public bool CanHandleProviderKey(string providerId) => _config.SectionName == providerId;
 
         public IDictionary<int, IVirtualFile> RetrieveVirtualFiles(VirtualFileFactoryContext context)
         {

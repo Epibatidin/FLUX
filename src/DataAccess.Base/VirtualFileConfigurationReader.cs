@@ -32,7 +32,7 @@ namespace DataAccess.Base
 
             foreach (var virtualFileRootConfiguration in _virtualFileRootConfigurations)
             {
-                var providergroup = new ProviderGroupDo(virtualFileRootConfiguration.ID);
+                var providergroup = new ProviderGroupDo(virtualFileRootConfiguration.SectionName);
 
                 foreach (var key in virtualFileRootConfiguration.Keys)
                 {

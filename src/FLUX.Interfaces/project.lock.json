@@ -7,6 +7,7 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
+          "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
@@ -22,6 +23,14 @@
           "System.Collections": "4.0.11",
           "System.Linq": "4.0.1",
           "System.Runtime": "4.0.21"
+        }
+      },
+      "DynamicLoading/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
         }
       },
       "Extension.IEnumerable/1.0.0": {
@@ -1843,6 +1852,7 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
@@ -1851,6 +1861,14 @@
       "DataStructure.Tree/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1"
+      },
+      "DynamicLoading/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
+        }
       },
       "Extension.IEnumerable/1.0.0": {
         "type": "project",
@@ -3165,6 +3183,7 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
+          "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
@@ -3180,6 +3199,14 @@
           "System.Collections": "4.0.11",
           "System.Linq": "4.0.1",
           "System.Runtime": "4.0.21"
+        }
+      },
+      "DynamicLoading/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
         }
       },
       "Extension.IEnumerable/1.0.0": {
@@ -5419,6 +5446,7 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
+          "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
@@ -5434,6 +5462,14 @@
           "System.Collections": "4.0.11",
           "System.Linq": "4.0.1",
           "System.Runtime": "4.0.21"
+        }
+      },
+      "DynamicLoading/1.0.0": {
+        "type": "project",
+        "framework": "DNXCore,Version=v5.0",
+        "dependencies": {
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
         }
       },
       "Extension.IEnumerable/1.0.0": {
@@ -7673,6 +7709,7 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
@@ -7681,6 +7718,14 @@
       "DataStructure.Tree/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1"
+      },
+      "DynamicLoading/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
+        }
       },
       "Extension.IEnumerable/1.0.0": {
         "type": "project",
@@ -8995,6 +9040,7 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
@@ -9003,6 +9049,14 @@
       "DataStructure.Tree/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1"
+      },
+      "DynamicLoading/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "Facade.Configuration": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1"
+        }
       },
       "Extension.IEnumerable/1.0.0": {
         "type": "project",
@@ -10321,6 +10375,10 @@
     "DataStructure.Tree/1.0.0": {
       "type": "project",
       "path": "../../ext/DataStructure.Tree/project.json"
+    },
+    "DynamicLoading/1.0.0": {
+      "type": "project",
+      "path": "../../ext/DynamicLoading/project.json"
     },
     "Extension.IEnumerable/1.0.0": {
       "type": "project",

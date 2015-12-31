@@ -1,10 +1,10 @@
-﻿using DataAccess.Base;
-using DataAccess.Interfaces;
+﻿using DataAccess.Interfaces;
+using DynamicLoading;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DataAccess.XMLStub.Config
 {
-    public class XMLSourcesInstaller : DataAccessInstallerBase<XMLSourcesCollection>
+    public class XMLSourcesInstaller : DynamicExtensionInstallerBase<XMLSourcesCollection, IVirtualFileRootConfiguration>
     {
         public override void RegisterServices(IServiceCollection serviceCollection)
         {

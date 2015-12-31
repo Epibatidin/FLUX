@@ -15,7 +15,6 @@ namespace DynamicLoading
             _configurationBinder = configurationBinder;
         }
 
-
         public void LoadExtension(IConfiguration config, IServiceCollection services,
             params IDynamicLoadableExtensionConfiguration[] loadableExtensionConfigurations)
         {

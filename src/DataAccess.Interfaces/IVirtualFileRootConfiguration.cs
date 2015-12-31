@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
+using DynamicLoading;
 
 namespace DataAccess.Interfaces
 {
-    public interface IVirtualFileRootConfiguration
+    public interface IVirtualFileRootConfiguration : ISectionNameHolder
     {
-        string ID { get; set; }
-        
         IEnumerable<string> Keys { get; }
     }
 }

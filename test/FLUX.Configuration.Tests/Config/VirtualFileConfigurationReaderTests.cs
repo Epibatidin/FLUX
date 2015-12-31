@@ -16,7 +16,7 @@ namespace FLUX.Configuration.Tests.Config
 {
     public class VirtualFileRootConfiguration : IVirtualFileRootConfiguration
     {
-        public string ID { get; set; }
+        public string SectionName { get; set; }
         public IEnumerable<string> Keys { get; set; }
     }
 
@@ -65,7 +65,7 @@ namespace FLUX.Configuration.Tests.Config
         {
             var result = SUT.ReadToDO();
             
-            Assert.That(result.ProviderNames[0].ProviderKey, Is.EqualTo(_firstRootConfig.ID));
+            Assert.That(result.ProviderNames[0].ProviderKey, Is.EqualTo(_firstRootConfig.SectionName));
 
             Assert.That(result.ProviderNames[0].VirtualFileProviderNames.Count, Is.EqualTo(_firstRootConfig.Keys.Count()));
         }

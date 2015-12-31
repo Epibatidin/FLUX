@@ -6,7 +6,7 @@ namespace DataAccess.FileSystem.Config
 {
     public class DirectorySourcesCollection : IVirtualFileRootConfiguration
     {
-        public string ID { get; set; }
+        public string SectionName { get; set; }
 
         public string Root { get; set; }
 

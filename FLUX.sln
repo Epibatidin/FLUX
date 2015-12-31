@@ -64,6 +64,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Extraction.DomainObjects", 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Extraction.Layer.File", "src\Extraction.Layer.File\Extraction.Layer.File.xproj", "{96B08F70-3626-4620-9299-3E4B18727630}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DynamicLoading.Tests", "test\DynamicLoading.Tests\DynamicLoading.Tests.xproj", "{34683D4C-82FD-4778-8013-405D993B3B0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -170,6 +172,10 @@ Global
 		{96B08F70-3626-4620-9299-3E4B18727630}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96B08F70-3626-4620-9299-3E4B18727630}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96B08F70-3626-4620-9299-3E4B18727630}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34683D4C-82FD-4778-8013-405D993B3B0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34683D4C-82FD-4778-8013-405D993B3B0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34683D4C-82FD-4778-8013-405D993B3B0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34683D4C-82FD-4778-8013-405D993B3B0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -200,5 +206,6 @@ Global
 		{E9C9AAB2-BB97-47A9-BB42-E34D29C4DC38} = {FDCA3ECD-C0AF-4AA5-A4BE-9A00316150B3}
 		{DB4913E8-2ECC-42E9-8A46-608ED9A1AF91} = {FDCA3ECD-C0AF-4AA5-A4BE-9A00316150B3}
 		{96B08F70-3626-4620-9299-3E4B18727630} = {FDCA3ECD-C0AF-4AA5-A4BE-9A00316150B3}
+		{34683D4C-82FD-4778-8013-405D993B3B0E} = {7F4EF6CF-7AB7-4F00-A7C2-7B2507C911C9}
 	EndGlobalSection
 EndGlobal

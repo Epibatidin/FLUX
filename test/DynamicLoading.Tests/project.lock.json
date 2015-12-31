@@ -34,39 +34,6 @@
           "lib/net40/Ploeh.AutoFixture.AutoMoq.dll": {}
         }
       },
-      "DataAccess.Base/1.0.0": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.1",
-        "dependencies": {
-          "DataAccess.Interfaces": "1.0.0",
-          "DynamicLoading": "1.0.0",
-          "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.OptionsModel": "1.0.0-rc1"
-        }
-      },
-      "DataAccess.FileSystem/1.0.0": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.1",
-        "dependencies": {
-          "DataAccess.Base": "1.0.0",
-          "DataAccess.Interfaces": "1.0.0",
-          "DynamicLoading": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
-        }
-      },
-      "DataAccess.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.1",
-        "dependencies": {
-          "DynamicLoading": "1.0.0",
-          "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
-        }
-      },
       "DynamicLoading/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -272,26 +239,6 @@
           "lib/net451/Microsoft.Extensions.Logging.Abstractions.dll": {}
         }
       },
-      "Microsoft.Extensions.OptionsModel/1.0.0-rc1-final": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1-final",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1-final",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1-final"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/Microsoft.Extensions.OptionsModel.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Extensions.OptionsModel.dll": {}
-        }
-      },
       "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc1-final": {
         "type": "package",
         "frameworkAssemblies": [
@@ -349,7 +296,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "NUnit/3.0.1": {
+      "NUnit/3.0.0": {
         "type": "package",
         "compile": {
           "lib/net45/nunit.framework.dll": {}
@@ -500,39 +447,6 @@
           "lib/net40/Ploeh.AutoFixture.AutoMoq.dll": {}
         }
       },
-      "DataAccess.Base/1.0.0": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.1",
-        "dependencies": {
-          "DataAccess.Interfaces": "1.0.0",
-          "DynamicLoading": "1.0.0",
-          "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.OptionsModel": "1.0.0-rc1"
-        }
-      },
-      "DataAccess.FileSystem/1.0.0": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.1",
-        "dependencies": {
-          "DataAccess.Base": "1.0.0",
-          "DataAccess.Interfaces": "1.0.0",
-          "DynamicLoading": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
-        }
-      },
-      "DataAccess.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.1",
-        "dependencies": {
-          "DynamicLoading": "1.0.0",
-          "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
-        }
-      },
       "DynamicLoading/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -738,26 +652,6 @@
           "lib/net451/Microsoft.Extensions.Logging.Abstractions.dll": {}
         }
       },
-      "Microsoft.Extensions.OptionsModel/1.0.0-rc1-final": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1-final",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1-final",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1-final"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/Microsoft.Extensions.OptionsModel.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Extensions.OptionsModel.dll": {}
-        }
-      },
       "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc1-final": {
         "type": "package",
         "frameworkAssemblies": [
@@ -815,7 +709,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "NUnit/3.0.1": {
+      "NUnit/3.0.0": {
         "type": "package",
         "compile": {
           "lib/net45/nunit.framework.dll": {}
@@ -966,39 +860,6 @@
           "lib/net40/Ploeh.AutoFixture.AutoMoq.dll": {}
         }
       },
-      "DataAccess.Base/1.0.0": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.1",
-        "dependencies": {
-          "DataAccess.Interfaces": "1.0.0",
-          "DynamicLoading": "1.0.0",
-          "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.OptionsModel": "1.0.0-rc1"
-        }
-      },
-      "DataAccess.FileSystem/1.0.0": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.1",
-        "dependencies": {
-          "DataAccess.Base": "1.0.0",
-          "DataAccess.Interfaces": "1.0.0",
-          "DynamicLoading": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
-        }
-      },
-      "DataAccess.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.1",
-        "dependencies": {
-          "DynamicLoading": "1.0.0",
-          "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
-        }
-      },
       "DynamicLoading/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -1204,26 +1065,6 @@
           "lib/net451/Microsoft.Extensions.Logging.Abstractions.dll": {}
         }
       },
-      "Microsoft.Extensions.OptionsModel/1.0.0-rc1-final": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1-final",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1-final",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1-final"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/Microsoft.Extensions.OptionsModel.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Extensions.OptionsModel.dll": {}
-        }
-      },
       "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc1-final": {
         "type": "package",
         "frameworkAssemblies": [
@@ -1281,7 +1122,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "NUnit/3.0.1": {
+      "NUnit/3.0.0": {
         "type": "package",
         "compile": {
           "lib/net45/nunit.framework.dll": {}
@@ -1402,18 +1243,6 @@
     }
   },
   "libraries": {
-    "DataAccess.Base/1.0.0": {
-      "type": "project",
-      "path": "../../src/DataAccess.Base/project.json"
-    },
-    "DataAccess.FileSystem/1.0.0": {
-      "type": "project",
-      "path": "../../src/DataAccess.FileSystem/project.json"
-    },
-    "DataAccess.Interfaces/1.0.0": {
-      "type": "project",
-      "path": "../../src/DataAccess.Interfaces/project.json"
-    },
     "DynamicLoading/1.0.0": {
       "type": "project",
       "path": "../../ext/DynamicLoading/project.json"
@@ -1617,22 +1446,6 @@
         "Microsoft.Extensions.Logging.Abstractions.nuspec"
       ]
     },
-    "Microsoft.Extensions.OptionsModel/1.0.0-rc1-final": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "IhK5pNqRgakrwiv5OrB6hv7e6+TZzYqfJr40Qri0Xgi+oXJklNgbA5eHvzZrghdHfqfSqcvLWtWD0ri6e8Eo1w==",
-      "files": [
-        "lib/dotnet5.4/Microsoft.Extensions.OptionsModel.dll",
-        "lib/dotnet5.4/Microsoft.Extensions.OptionsModel.xml",
-        "lib/net451/Microsoft.Extensions.OptionsModel.dll",
-        "lib/net451/Microsoft.Extensions.OptionsModel.xml",
-        "lib/netcore50/Microsoft.Extensions.OptionsModel.dll",
-        "lib/netcore50/Microsoft.Extensions.OptionsModel.xml",
-        "Microsoft.Extensions.OptionsModel.1.0.0-rc1-final.nupkg",
-        "Microsoft.Extensions.OptionsModel.1.0.0-rc1-final.nupkg.sha512",
-        "Microsoft.Extensions.OptionsModel.nuspec"
-      ]
-    },
     "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc1-final": {
       "type": "package",
       "serviceable": true,
@@ -1715,9 +1528,9 @@
         "tools/install.ps1"
       ]
     },
-    "NUnit/3.0.1": {
+    "NUnit/3.0.0": {
       "type": "package",
-      "sha512": "Fhz2Flnzlb+HjVxTK+W3dNAb9FUIbGxUp/G6jTTL487lBxInaDOWigNGzWbj1Ipjb87ix77heBCzrsVhk8+X8w==",
+      "sha512": "Jmy5XR04eXxHR0vkh1JC1EeohkoOtWo+0RGKH4eQ9jwBmjStS6MqlSmLIIqrluQ5yWVJ01UsH2//YQt3HjNWTA==",
       "files": [
         "CHANGES.txt",
         "lib/dotnet/nunit.framework.dll",
@@ -1732,8 +1545,8 @@
         "lib/portable-net45+win8+wp8+wpa81+Xamarin.Mac+MonoAndroid10+MonoTouch10+Xamarin.iOS10/nunit.framework.xml",
         "LICENSE.txt",
         "NOTICES.txt",
-        "NUnit.3.0.1.nupkg",
-        "NUnit.3.0.1.nupkg.sha512",
+        "NUnit.3.0.0.nupkg",
+        "NUnit.3.0.0.nupkg.sha512",
         "NUnit.nuspec"
       ]
     },
@@ -1903,16 +1716,14 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Moq >= 4.1.1308.2120",
+      "DynamicLoading >= 1.0.0-*",
+      "Extension.Test >= 1.0.0-*",
       "AutoFixture >= 3.37.0",
       "AutoFixture.AutoMoq >= 3.37.0",
-      "NUnit >= 3.0.1",
+      "NUnit >= 3.0.0",
+      "Moq >= 4.1.1308.2120",
       "xunit >= 2.1.0",
-      "xunit.runner.dnx >= 2.1.0-rc1-build204",
-      "Microsoft.Extensions.Configuration >= 1.0.0-rc1-*",
-      "Extension.Test >= 1.0.0-*",
-      "DataAccess.Base >= 1.0.0-*",
-      "DataAccess.FileSystem >= 1.0.0-*"
+      "xunit.runner.dnx >= 2.1.0-rc1-build204"
     ],
     "DNX,Version=v4.5.1": []
   }
