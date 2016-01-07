@@ -1,64 +1,104 @@
-﻿//using System;
-//using System.IO;
-//using System.Runtime.Serialization.Formatters.Binary;
-//using DataAccess.FileSystem;
-//using DataAccess.Interfaces;
-//using Extension.Test;
-//using Newtonsoft.Json;
-//using Newtonsoft.Json.Converters;
-//using Xunit;
-//using Assert = NUnit.Framework.Assert;
-//using Is = NUnit.Framework.Is;
+﻿using System.Collections.Generic;
+using System.IO;
+using DataAccess.FileSystem;
+using DataAccess.XMLStub.Serialization;
+using DataAccess.Interfaces;
+using Extension.Test;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Bson;
+using Newtonsoft.Json.Converters;
+using Xunit;
+using Assert = NUnit.Framework.Assert;
+using Is = NUnit.Framework.Is;
 
-//namespace Facade.Tests
-//{
-//    public class SerializerTests : FixtureBase<object>
-//    {
-//        [Fact]
-//        public void should_can_serialize_single_item_as_json()
-//        {
-//            IVirtualFile file = Create<RealFile>();
+namespace Facade.Tests
+{
+    public class SerializerTests : FixtureBase<object>
+    {
+        [Fact]
+        public void should_can_serialize_single_RealFile_as_json()
+        {
+            IVirtualFile file = Create<RealFile>();
 
-//            var serialzed = JsonConvert.SerializeObject(file);
+            var serialzed = JsonConvert.SerializeObject(file);
+
+            var ob = JsonConvert.DeserializeObject(serialzed, typeof(RealFile));
+            var deserialized = ob as RealFile;
+
+            Assert.That(file.ID, Is.EqualTo(deserialized.ID));
+            Assert.That(file.Name, Is.EqualTo(deserialized.Name));
+            Assert.That(file.VirtualPath, Is.EqualTo(deserialized.VirtualPath));
+        }
+
+        [Fact]
+        public void should_can_serialize_single_SourceItem_as_json()
+        {
+            IVirtualFile file = Create<SourceItem>();
+
+            var serialzed = JsonConvert.SerializeObject(file);
+
+            var ob = JsonConvert.DeserializeObject(serialzed, typeof(SourceItem));
+            var deserialized = ob as SourceItem;
+
+            Assert.That(file.ID, Is.EqualTo(deserialized.ID));
+            Assert.That(file.Name, Is.EqualTo(deserialized.Name));
+            Assert.That(file.VirtualPath, Is.EqualTo(deserialized.VirtualPath));
+            Assert.That(deserialized.TagData, Is.Not.Null);
+        }
+
+        [Fact]
+        public void should_can_serialize_collection_SourceItem_as_json()
+        {
+            var file = Create<SourceItem>();
+            IList<IVirtualFile> collection = new List<IVirtualFile>()
+            {
+                file,
+                Create<SourceItem>()
+            };
             
-//            var ob = JsonConvert.DeserializeObject<RealFile>(serialzed);
-//            var deserialized  = ob as RealFile;
+            var serialzed = JsonConvert.SerializeObject(collection);
 
-//            Assert.That(file.Id, Is.EqualTo(deserialized.Id));
-//            Assert.That(file.Name, Is.EqualTo(deserialized.Name));
-//            Assert.That(file.VirtualPath, Is.EqualTo(deserialized.VirtualPath));
-//        }
+            var ob = JsonConvert.DeserializeObject(serialzed, typeof(List<SourceItem>));
+            var deserialized = (ob as List<SourceItem>)[0];
 
-//        [Serializable]
-//        public class RealFileSub : IVirtualFile
-//        {
-//            public int Id { get; set; }
-//            public string Name { get; set; }
-//            public string VirtualPath { get; set; }
-//            public Stream Open()
-//            {
-//                throw new NotImplementedException();
-//            }
-//        } 
+            Assert.That(file.ID, Is.EqualTo(deserialized.ID));
+            Assert.That(file.Name, Is.EqualTo(deserialized.Name));
+            Assert.That(file.VirtualPath, Is.EqualTo(deserialized.VirtualPath));
+            Assert.That(deserialized.TagData, Is.Not.Null);
+        }
 
+        public class WhatEver
+        {
+            public string Property { get; set; }
+        }
 
-//        [Fact]
-//        public void should_can_serialize_single_item_as_binary()
-//        {
-//            IVirtualFile file = Create<RealFileSub>();
-//            var formatter = new BinaryFormatter();
+        [Fact]
+        public void should_can_serialize_collection_SourceItem_as_binary()
+        {
+            var file = Create<SourceItem>();
+            var collection = new List<SourceItem>()
+            {
+                Create<SourceItem>(),
+                file
+            };
 
-//            var stream = new MemoryStream();
+            var jsonSerializer = JsonSerializer.CreateDefault(new JsonSerializerSettings());
+            var memoryStream = new MemoryStream();
+            var jsonWritr = new BsonWriter(memoryStream);
 
-//            formatter.Serialize(stream, file);
-//            stream.Position = 0;
-//            var ob = formatter.Deserialize(stream);
-//            var deserialized = ob as RealFileSub;
+            jsonSerializer.Serialize(jsonWritr, collection);
+            memoryStream.Position = 0;
 
-//            Assert.That(file.Id, Is.EqualTo(deserialized.Id));
-//            Assert.That(file.Name, Is.EqualTo(deserialized.Name));
-//            Assert.That(file.VirtualPath, Is.EqualTo(deserialized.VirtualPath));
-//        }
+            var reader = new BsonReader(memoryStream);
+            reader.ReadRootValueAsArray = true;
+            var deserialized = jsonSerializer.Deserialize<SourceItem[]>(reader)[1];
 
-//    }
-//}
+            Assert.That(file.ID, Is.EqualTo(deserialized.ID));
+            Assert.That(file.Name, Is.EqualTo(deserialized.Name));
+            Assert.That(file.VirtualPath, Is.EqualTo(deserialized.VirtualPath));
+            Assert.That(deserialized.TagData, Is.Not.Null);
+
+        }
+
+    }
+}

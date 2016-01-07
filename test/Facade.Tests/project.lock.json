@@ -67,6 +67,20 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
+      "DataAccess.XMLStub/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataAccess.Base": "1.0.0",
+          "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
+        },
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
+      },
       "DynamicLoading/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -667,6 +681,20 @@
           "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
+      },
+      "DataAccess.XMLStub/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataAccess.Base": "1.0.0",
+          "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
+        },
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
       },
       "DynamicLoading/1.0.0": {
         "type": "project",
@@ -1269,6 +1297,20 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
         }
       },
+      "DataAccess.XMLStub/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "DataAccess.Base": "1.0.0",
+          "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
+        },
+        "frameworkAssemblies": [
+          "System.Xml"
+        ]
+      },
       "DynamicLoading/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
@@ -1818,6 +1860,10 @@
     "DataAccess.Interfaces/1.0.0": {
       "type": "project",
       "path": "../../src/DataAccess.Interfaces/project.json"
+    },
+    "DataAccess.XMLStub/1.0.0": {
+      "type": "project",
+      "path": "../../src/DataAccess.XMLStub/project.json"
     },
     "DynamicLoading/1.0.0": {
       "type": "project",
@@ -2420,7 +2466,8 @@
       "Extension.Test >= 1.0.0-*",
       "Facade.Session >= 1.0.0-*",
       "DataAccess.Interfaces >= 1.0.0-*",
-      "DataAccess.FileSystem >= 1.0.0-*"
+      "DataAccess.FileSystem >= 1.0.0-*",
+      "DataAccess.XMLStub >= 1.0.0-*"
     ],
     "DNX,Version=v4.5.1": []
   }

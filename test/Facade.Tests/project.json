@@ -22,7 +22,8 @@
     "Extension.Test": "1.0.0-*",
     "Facade.Session": "1.0.0-*",
     "DataAccess.Interfaces": "1.0.0-*",
-    "DataAccess.FileSystem": "1.0.0-*"
+    "DataAccess.FileSystem": "1.0.0-*",
+    "DataAccess.XMLStub" :  "1.0.0-*",
 
   },
   "commands": {
