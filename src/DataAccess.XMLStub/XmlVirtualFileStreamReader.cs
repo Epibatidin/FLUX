@@ -7,6 +7,8 @@ namespace DataAccess.XMLStub
 {
     public class XmlVirtualFileStreamReader : IVirtualFileStreamReader
     {
+        public Type GetVirtualFileType() => typeof (SourceItem);
+
         public Stream OpenStreamForReadAccess(IVirtualFile virtualFile)
         {
             var asxml = virtualFile as SourceItem;

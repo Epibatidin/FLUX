@@ -25,7 +25,17 @@ namespace DataAccess.FileSystem
         public IVirtualFile GetFile(string name)
         {
             var files = _di.GetFiles(name);
-            return new RealFile(files[0]);
+            return BuildRealFileFromInfo(files[0], 0);
+        }
+
+        private RealFile BuildRealFileFromInfo(FileInfo fileInfo, int id)
+        {
+            return new RealFile()
+            {
+                ID = id,
+                VirtualPath = fileInfo.FullName,
+                Name = fileInfo.Name
+            };
         }
 
         public IEnumerable<IVirtualFile> GetFiles()
@@ -40,7 +50,7 @@ namespace DataAccess.FileSystem
 
         public IEnumerable<IVirtualFile> GetFiles(string searchPattern, bool deepSearch)
         {
-            return _di.EnumerateFiles(searchPattern, DeepToEnum( deepSearch)).Select(c => new RealFile(c));
+            return GetFiles(searchPattern, deepSearch, c => c);
         }
 
         private SearchOption DeepToEnum(bool deepSearch)
@@ -50,8 +60,7 @@ namespace DataAccess.FileSystem
 
         public IEnumerable<IVirtualFile> GetFiles(string searchPattern, bool deepSearch, Func<int, int> idGenerator)
         {
-            int pos = 0;
-            return _di.EnumerateFiles(searchPattern, DeepToEnum(deepSearch)).Select(c => new RealFile(c, idGenerator(++pos)));
+            return _di.EnumerateFiles(searchPattern, DeepToEnum(deepSearch)).Select((c, i) => BuildRealFileFromInfo(c, idGenerator(i)));
         }
 
         public IVirtualDirectory GetDirectory(string directoryName)
