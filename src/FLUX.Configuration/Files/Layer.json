@@ -12,11 +12,10 @@
     }
   ],
   "File": {
-    "WhiteList": "the,a,you,die,an",
-    "BlackList": "ftyh,promo,cdm",
+    "WhiteList": [ "the", "a", "you", "die", "an" ],
+    "BlackList": [ "ftyh", "promo", "cdm" ],
     "RepairCurses": "true"
   },
-
   "Tag": {
     "IgnorePrivateData": "true"
   }

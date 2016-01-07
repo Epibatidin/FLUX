@@ -7,7 +7,7 @@
   },
   "dependencies": {
 
-    "NUnit": "3.0.1",
+    "NUnit": "3.0.0",
 
     "Moq": "4.1.1308.2120",
     "AutoFixture": "3.37.0",

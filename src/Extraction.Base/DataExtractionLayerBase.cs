@@ -34,6 +34,6 @@ namespace Extraction.Base
         //    _uo.UpdateData(Data());
         //}
 
-        public abstract void Execute(DataStore store);
+        public abstract void Execute(ExtractionContext store);
     }
 }

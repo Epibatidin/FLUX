@@ -66,6 +66,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Extraction.Layer.File", "sr
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DynamicLoading.Tests", "test\DynamicLoading.Tests\DynamicLoading.Tests.xproj", "{34683D4C-82FD-4778-8013-405D993B3B0E}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Facade.Tests", "test\Facade.Tests\Facade.Tests.xproj", "{50A524F2-C60A-4441-A0B5-47A7733E2B27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -176,6 +178,10 @@ Global
 		{34683D4C-82FD-4778-8013-405D993B3B0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34683D4C-82FD-4778-8013-405D993B3B0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34683D4C-82FD-4778-8013-405D993B3B0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50A524F2-C60A-4441-A0B5-47A7733E2B27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50A524F2-C60A-4441-A0B5-47A7733E2B27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50A524F2-C60A-4441-A0B5-47A7733E2B27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50A524F2-C60A-4441-A0B5-47A7733E2B27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -207,5 +213,6 @@ Global
 		{DB4913E8-2ECC-42E9-8A46-608ED9A1AF91} = {FDCA3ECD-C0AF-4AA5-A4BE-9A00316150B3}
 		{96B08F70-3626-4620-9299-3E4B18727630} = {FDCA3ECD-C0AF-4AA5-A4BE-9A00316150B3}
 		{34683D4C-82FD-4778-8013-405D993B3B0E} = {7F4EF6CF-7AB7-4F00-A7C2-7B2507C911C9}
+		{50A524F2-C60A-4441-A0B5-47A7733E2B27} = {7F4EF6CF-7AB7-4F00-A7C2-7B2507C911C9}
 	EndGlobalSection
 EndGlobal

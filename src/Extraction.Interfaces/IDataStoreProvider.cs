@@ -2,6 +2,6 @@
 {
     public interface IDataStoreProvider
     {
-        DataStore Current();
+        ExtractionContext Current();
     }
 }

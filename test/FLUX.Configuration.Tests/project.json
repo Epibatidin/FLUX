@@ -16,7 +16,7 @@
     "AutoFixture": "3.37.0",
     "AutoFixture.AutoMoq": "3.37.0",
 
-    "NUnit": "3.0.1",
+    "NUnit": "3.0.0",
 
     "Extension.Test": "1.0.0-*",
 

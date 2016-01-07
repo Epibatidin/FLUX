@@ -25,7 +25,7 @@
        
 //        public IExtractionProcessor Create()
 //        {
-//            DataStore dataStore = _dataStoreProvider.Current();
+//            ExtractionContext dataStore = _dataStoreProvider.Current();
 //            List<IDataExtractionLayer> configuredLayers = CreateConfiguredLayers(_configuration.ExtractionLayerConfig, dataStore);
 
 //            ExtractionProcessor processor = new SequentielExtractionProcessor();
@@ -40,7 +40,7 @@
 //            return processor;
 //        }
 
-//        private List<IDataExtractionLayer> CreateConfiguredLayers(ExtractionLayerConfig layerconfig, DataStore dataStore)
+//        private List<IDataExtractionLayer> CreateConfiguredLayers(ExtractionLayerConfig layerconfig, ExtractionContext dataStore)
 //        {
 //            var result = new List<IDataExtractionLayer>(); 
 //            foreach (var config in layerconfig.LayerCollection)

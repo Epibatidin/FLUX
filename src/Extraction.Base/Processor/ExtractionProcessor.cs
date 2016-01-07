@@ -8,17 +8,17 @@
 //{
 //    public abstract class ExtractionProcessor : IExtractionProcessor
 //    {
-//        public DataStore DataStore { get; private set; }
+//        public ExtractionContext ExtractionContext { get; private set; }
 
 //        public Progress Progress { get; protected set; }
 
-//        public void Init(IList<IDataExtractionLayer> configuredLayers, DataStore dataStore)
+//        public void Init(IList<IDataExtractionLayer> configuredLayers, ExtractionContext dataStore)
 //        {
 //            AddLayers(configuredLayers);
 
 //            Progress = new Progress(configuredLayers.Count);
 
-//            DataStore = dataStore;
+//            ExtractionContext = dataStore;
 //        }
 
 //        public abstract void Execute();
@@ -34,7 +34,7 @@
 //        //    if (_data.Count == 0)
 //        //        throw new ArgumentOutOfRangeException("LayerData contains no Elements");
 
-//        //    DataStore.Keys = _data.Keys.ToArray();
+//        //    ExtractionContext.Keys = _data.Keys.ToArray();
 //        //    InternalSetData(_data);
 //        //}
 

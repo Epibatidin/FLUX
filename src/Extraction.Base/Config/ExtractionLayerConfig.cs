@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Extraction.Base.Config
+﻿namespace Extraction.Base.Config
 {
     public class ExtractionLayerConfig 
     {

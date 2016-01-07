@@ -13,8 +13,9 @@ namespace Extension.Test
         protected FixtureBase()
         {
             Fixture = new Fixture();
-            Fixture.Customize(new MultipleCustomization());//.Customize(new AutoMoqCustomization());
-            Fixture.Customize<TSystemUnderTest>(r => new MethodInvoker(new GreedyConstructorQuery()));
+            //Fixture.Customize(new MultipleCustomization());
+            Fixture.Customize(new AutoMoqCustomization());
+            //Fixture.Customize<TSystemUnderTest>(r => new MethodInvoker(new GreedyConstructorQuery()));
 
             Customize();
 

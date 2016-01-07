@@ -3,14 +3,14 @@ using DataAccess.Interfaces;
 using Facade.MVC;
 using FLUX.Configuration.DependencyInjection;
 using FLUX.Interfaces.Web;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using Xunit;
 using Is = NUnit.Framework.Is;
 using Assert = NUnit.Framework.Assert;
 
-namespace FLUX.Configuration.Tests.Windsor
+namespace FLUX.Configuration.Tests.DependencyInjection
 {
     public class DependencyInstallerTests
     {

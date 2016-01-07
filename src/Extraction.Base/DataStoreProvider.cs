@@ -1,5 +1,4 @@
-﻿//using Castle.Windsor;
-//using Extraction.Interfaces;
+﻿//using Extraction.Interfaces;
 
 //namespace Extraction.Base
 //{
@@ -12,9 +11,14 @@
 //            _container = container;
 //        }
 
-//        public DataStore Current()
+//        public ExtractionContext Current()
 //        {
-//            return _container.Resolve<DataStore>();
+//            return _container.Resolve<ExtractionContext>();
 //        }
+
+//        // build from session 
+//        // or create new 
+//        // 
+
 //    }
 //}

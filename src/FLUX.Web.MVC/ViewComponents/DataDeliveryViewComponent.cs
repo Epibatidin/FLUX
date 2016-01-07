@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DataAccess.Interfaces;
+using Extraction.Interfaces;
 using FLUX.Web.Logic;
 using Microsoft.AspNet.Mvc;
 

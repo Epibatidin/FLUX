@@ -1,23 +1,10 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Xml;
-//using DataAccess.Interfaces;
-//using Extension.Tree.Iterate;
-//using Extraction.Base;
-//using Extraction.DomainObjects.StringManipulation;
-//using Extraction.Interfaces;
-//using Extraction.Layer.File.Cleaner;
-//using Extraction.Layer.File.Config;
-//using Extraction.Layer.File.Extraction;
-
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using DataStructure.Tree.Iterate;
 using Extraction.Base;
 using Extraction.DomainObjects.StringManipulation;
 using Extraction.Interfaces;
-using FileItem = DataStructure.Tree.TreeItem<Extraction.Layer.File.FileLayerSongDo>;
+using FileTreeItem = DataStructure.Tree.TreeItem<Extraction.Layer.File.FileLayerSongDo>;
 
 namespace Extraction.Layer.File
 {
@@ -30,7 +17,7 @@ namespace Extraction.Layer.File
             _cleaners = cleaners;
         }
 
-        public override void Execute(DataStore store)
+        public override void Execute(ExtractionContext store)
         {
             var tree = new TreeBuilder().Build(store.SourceValues.Values);
             var updateObject = store.Register("File");
@@ -40,10 +27,9 @@ namespace Extraction.Layer.File
             {
                 ForeachPartedStringInTree(tree, cleaner.Filter);
             }
-
         }
 
-        private void ForeachPartedStringInTree(FileItem root, Func<PartedString, PartedString> func)
+        private void ForeachPartedStringInTree(FileTreeItem root, Func<PartedString, PartedString> func)
         {
             foreach (var item in TreeIterator.IterateDepthGetTreeItems(root))
             {
