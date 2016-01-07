@@ -1,5 +1,4 @@
-﻿using System.IO;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 using DataAccess.Interfaces;
 
 namespace DataAccess.XMLStub.Serialization
@@ -18,11 +17,5 @@ namespace DataAccess.XMLStub.Serialization
 
         [XmlElement("TagData")]
         public TagData TagData { get; set; }
-
-        public Stream Open()
-        {
-            //TagData.End = ByteHelper.StringToByte("TAG" + new string(' ', 125));
-            return new TagFakeStream(TagData);
-        }
     }
 }

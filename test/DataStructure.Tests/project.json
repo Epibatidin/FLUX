@@ -10,7 +10,7 @@
     "AutoFixture": "3.37.0",
     "AutoFixture.AutoMoq": "3.37.0",
 
-    "NUnit": "3.0.0",
+    "NUnit": "3.0.1",
     "Moq": "4.1.1308.2120",
 
     "xunit": "2.1.0",

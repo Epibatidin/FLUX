@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace DataAccess.Interfaces
+﻿namespace DataAccess.Interfaces
 {
     public interface IVirtualFile
     {
@@ -9,7 +7,5 @@ namespace DataAccess.Interfaces
         string Name {get;}
 
         string VirtualPath {get;}
-
-        Stream Open(); 
     }
 }

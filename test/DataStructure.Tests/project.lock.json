@@ -186,7 +186,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "NUnit/3.0.0": {
+      "NUnit/3.0.1": {
         "type": "package",
         "compile": {
           "lib/net45/nunit.framework.dll": {}
@@ -489,7 +489,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "NUnit/3.0.0": {
+      "NUnit/3.0.1": {
         "type": "package",
         "compile": {
           "lib/net45/nunit.framework.dll": {}
@@ -792,7 +792,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "NUnit/3.0.0": {
+      "NUnit/3.0.1": {
         "type": "package",
         "compile": {
           "lib/net45/nunit.framework.dll": {}
@@ -1110,9 +1110,9 @@
         "tools/install.ps1"
       ]
     },
-    "NUnit/3.0.0": {
+    "NUnit/3.0.1": {
       "type": "package",
-      "sha512": "Jmy5XR04eXxHR0vkh1JC1EeohkoOtWo+0RGKH4eQ9jwBmjStS6MqlSmLIIqrluQ5yWVJ01UsH2//YQt3HjNWTA==",
+      "sha512": "Fhz2Flnzlb+HjVxTK+W3dNAb9FUIbGxUp/G6jTTL487lBxInaDOWigNGzWbj1Ipjb87ix77heBCzrsVhk8+X8w==",
       "files": [
         "CHANGES.txt",
         "lib/dotnet/nunit.framework.dll",
@@ -1127,8 +1127,8 @@
         "lib/portable-net45+win8+wp8+wpa81+Xamarin.Mac+MonoAndroid10+MonoTouch10+Xamarin.iOS10/nunit.framework.xml",
         "LICENSE.txt",
         "NOTICES.txt",
-        "NUnit.3.0.0.nupkg",
-        "NUnit.3.0.0.nupkg.sha512",
+        "NUnit.3.0.1.nupkg",
+        "NUnit.3.0.1.nupkg.sha512",
         "NUnit.nuspec"
       ]
     },
@@ -1300,7 +1300,7 @@
     "": [
       "AutoFixture >= 3.37.0",
       "AutoFixture.AutoMoq >= 3.37.0",
-      "NUnit >= 3.0.0",
+      "NUnit >= 3.0.1",
       "Moq >= 4.1.1308.2120",
       "xunit >= 2.1.0",
       "xunit.runner.dnx >= 2.1.0-rc1-build204",
