@@ -6,7 +6,6 @@ using DataAccess.Interfaces;
 using Extension.Test;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Bson;
-using Newtonsoft.Json.Converters;
 using Xunit;
 using Assert = NUnit.Framework.Assert;
 using Is = NUnit.Framework.Is;

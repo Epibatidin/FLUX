@@ -1,62 +1,23 @@
-﻿using System;
 using Extraction.Base.Config;
-using Extraction.Layer.File.Config;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.OptionsModel;
+using NUnit.Framework;
 using Xunit;
 using Assert = NUnit.Framework.Assert;
-using Is = NUnit.Framework.Is;
 
 namespace FLUX.Configuration.Tests.Config
 {
-    public class ConfigurationTestBase<TConfigurationRootType> where TConfigurationRootType : class , new()
+    public class LayerConfigTests : ConfigurationTestBase<ExtractionLayerConfig>
     {
-        protected readonly IConfiguration Config;
-
-        public ConfigurationTestBase(string filePath, string section)
+        public LayerConfigTests() : base(@"D:\Develop\FLUX\src\FLUX.Configuration\Files\Layer.json", null)
         {
-            IConfigurationBuilder configBuilder = new ConfigurationBuilder();
-            configBuilder.AddJsonFile(filePath);
 
-            IConfiguration config = configBuilder.Build();
-
-            if (section != null)
-                config = config.GetSection(section);
-
-            Config = config;
         }
         
-        protected OptionsManager<TConfig> RetrieveFromConfig<TConfig>() where TConfig : class, new()
-        {
-            return RetrieveFromConfig<TConfig>(Config);
-        }
-
-        protected OptionsManager<TConfig> RetrieveFromConfig<TConfig>(IConfiguration configuration) where TConfig : class, new()
-        {
-            var option = new ConfigureFromConfigurationOptions<TConfig>(configuration);
-            return new OptionsManager<TConfig>(new[] { option });
-        }
-
-        protected TProperty RetrieveFromConfig<TProperty>(Func<TConfigurationRootType, TProperty> propertyAccesscor)
-        {
-            var optManager = RetrieveFromConfig<TConfigurationRootType>();
-            return propertyAccesscor(optManager.Value);
-        }
-
         [Fact]
         public void should_can_read_config_file()
         {
-            var build = RetrieveFromConfig<TConfigurationRootType>();
+            var build = RetrieveFromConfig<ExtractionLayerConfig>();
 
             Assert.That(build.Value, Is.Not.Null);
-        }
-    }
-
-    public class LayerConfigTests2 : ConfigurationTestBase<ExtractionLayerConfig>
-    {
-        public LayerConfigTests2() : base(@"D:\Develop\FLUX\src\FLUX.Configuration\Files\Layer.json", null)
-        {
-
         }
 
         [Fact]
@@ -84,30 +45,6 @@ namespace FLUX.Configuration.Tests.Config
             Assert.That(bound.Type, Is.Not.Empty);
             Assert.That(bound.Active, Is.True);
             Assert.That(bound.ExtractorType, Is.Not.Empty);
-        }
-    }
-
-    public class LayerConfigTests : ConfigurationTestBase<FileLayerConfig>
-    {
-        public LayerConfigTests() : base(@"D:\Develop\FLUX\src\FLUX.Configuration\Files\Layer.json", "File")
-        {
-           
-        }
-        
-        [Fact]
-        public void should_can_read_blacklist()
-        {
-            var blacklist = RetrieveFromConfig(c => c.BlackList);
-
-            Assert.That(blacklist.Count, Is.GreaterThan(0));
-        }
-
-        [Fact]
-        public void should_can_read_whitelist()
-        {
-            var blacklist = RetrieveFromConfig(c => c.WhiteList);
-
-            Assert.That(blacklist.Count, Is.GreaterThan(0));
         }
     }
 }

@@ -8,30 +8,14 @@ using Is = NUnit.Framework.Is;
 
 namespace FLUX.Configuration.Tests.Config
 {
-    public class VirtualFileAccessorSectionGroupTests
+    public class VirtualFileAccessorSectionGroupTests : ConfigurationTestBase<VirtualFileAccessorSectionGroup>
     {
         IConfiguration _config;
 
-        public VirtualFileAccessorSectionGroupTests()
-        {
-            IConfigurationBuilder configBuilder = new ConfigurationBuilder();
-            configBuilder.AddJsonFile(@"D:\Develop\FLUX\src\FLUX.Configuration\Files\VirtualFileProvier.json");
-
-            _config = configBuilder.Build();            
+        public VirtualFileAccessorSectionGroupTests() : base(@"D:\Develop\FLUX\src\FLUX.Configuration\Files\VirtualFileProvier.json", null)
+        {         
         }
-
-        private OptionsManager<TConfig> RetrieveFromConfig<TConfig>() where TConfig : class, new()
-        {
-            var option = new ConfigureFromConfigurationOptions<TConfig>(_config);
-            return new OptionsManager<TConfig>(new[] { option });
-        }
-
-        private TProperty RetrieveFromConfig<TProperty>(Func<VirtualFileAccessorSectionGroup ,TProperty> propertyAccesscor) where TProperty : class
-        {
-            var optManager = RetrieveFromConfig<VirtualFileAccessorSectionGroup>();
-            return propertyAccesscor(optManager.Value);
-        }
-
+        
         [Fact]
         public void should_can_read_config_file()
         {

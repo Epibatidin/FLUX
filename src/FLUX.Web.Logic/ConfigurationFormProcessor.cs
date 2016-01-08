@@ -5,6 +5,7 @@ using FLUX.Interfaces.Web;
 using Microsoft.AspNet.Mvc;
 using Facade.MVC;
 using Facade.Session;
+using FLUX.Interfaces;
 using Microsoft.AspNet.Http;
 
 namespace FLUX.Web.Logic
@@ -15,16 +16,17 @@ namespace FLUX.Web.Logic
         private readonly IPostbackHelper _postbackHelper;
         private readonly IModelBinderFacade _modelBinder;
         private readonly IHttpContextAccessor _httpContextAccessor;
-        private readonly ISessionFacade _sessionFacade;
+        private readonly IVirtualFilePeristentHelper _persistentHelper;
 
         public ConfigurationFormProcessor(IVirtualFileConfigurationReader configProvider, 
-            IPostbackHelper postbackHelper, IModelBinderFacade modelBinder, IHttpContextAccessor httpContextAccessor, ISessionFacade sessionFacade)
+            IPostbackHelper postbackHelper, IModelBinderFacade modelBinder, IHttpContextAccessor httpContextAccessor,
+            IVirtualFilePeristentHelper persistentHelper)
         {
             _configProvider = configProvider;
             _postbackHelper = postbackHelper;
             _modelBinder = modelBinder;
             _httpContextAccessor = httpContextAccessor;
-            _sessionFacade = sessionFacade;
+            _persistentHelper = persistentHelper;
         }
 
         public ConfigurationFormModel Build()

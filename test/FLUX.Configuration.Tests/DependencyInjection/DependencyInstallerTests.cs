@@ -1,10 +1,13 @@
 ﻿using System;
+using DataAccess.Base.Config;
 using DataAccess.Interfaces;
 using Facade.MVC;
 using FLUX.Configuration.DependencyInjection;
 using FLUX.Interfaces.Web;
+using Microsoft.AspNet.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.OptionsModel;
 using Moq;
 using Xunit;
 using Is = NUnit.Framework.Is;
@@ -25,8 +28,17 @@ namespace FLUX.Configuration.Tests.DependencyInjection
 
             _configurationRoot = new Mock<IConfigurationRoot>();
 
+            AddMock<IOptions<VirtualFileAccessorSectionGroup>>();
+            AddMock<IHttpContextAccessor>();
+
             installer.Install(_container, _configurationRoot.Object);
             _serviceprovider = _container.BuildServiceProvider();
+        }
+
+        private void AddMock<TInterface>() where TInterface : class
+        {
+            _container.Add(new ServiceDescriptor(typeof(TInterface), new Mock<TInterface>().Object));
+
         }
 
         [Theory]

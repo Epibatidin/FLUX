@@ -1,9 +1,9 @@
-﻿using System;
-using Extension.Test;
+﻿using Extension.Test;
 using Facade.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
+using NUnit.Framework;
 using Xunit;
 using Assert = NUnit.Framework.Assert;
 
@@ -17,8 +17,11 @@ namespace DynamicLoading.Tests
 
     public class DynamicExtensionInstallerImpl : DynamicExtensionInstallerBase<VirtualFileRootConfigurationDummy>
     {
+        public IServiceCollection Service { get; private set; }
+
         public override void RegisterServices(IServiceCollection serviceCollection)
         {
+            Service = serviceCollection;
         }
     }
 
@@ -55,9 +58,10 @@ namespace DynamicLoading.Tests
                 .Returns(obj);
             
             var service = new Mock<IServiceCollection>();
-            
-            Assert.Throws<NotImplementedException>(() => SUT.Install(configuration.Object, "sectionName", service.Object));
-        }
 
+            SUT.Install(configuration.Object, "sectionName", service.Object);
+
+            Assert.That(SUT.Service, Is.SameAs(service.Object));
+        }
     }
 }
