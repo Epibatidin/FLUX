@@ -7,5 +7,7 @@ namespace DataAccess.Interfaces
         AvailableVirtualFileProviderDo ReadToDO();
 
         IDictionary<int, IVirtualFile> GetVirtualFiles(string selectedSource, string activeProviderGrp);
+
+        IVirtualFileStreamReader RetrieveReader(string activeProviderGrp);
     }
 }

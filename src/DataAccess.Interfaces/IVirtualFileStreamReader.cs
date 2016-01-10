@@ -5,7 +5,7 @@ namespace DataAccess.Interfaces
 {
     public interface IVirtualFileStreamReader
     {
-        Type GetVirtualFileType();
+        Type GetVirtualFileArrayType();
 
         Stream OpenStreamForReadAccess(IVirtualFile virtualFile);
     }

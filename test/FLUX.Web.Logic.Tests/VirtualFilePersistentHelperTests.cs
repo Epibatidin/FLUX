@@ -66,9 +66,9 @@ namespace FLUX.Web.Logic.Tests
             {
                 ID = 2
             };
-            var virtualFiles = new Dictionary<string, IVirtualFile>()
+            var virtualFiles = new Dictionary<int, IVirtualFile>()
             {
-                { "1", source }
+                { 1, source }
             };
 
             var expectedData = GetByteArray(virtualFiles.Values);
@@ -76,6 +76,28 @@ namespace FLUX.Web.Logic.Tests
             SUT.SaveSource(virtualFiles);
             
             _session.Verify(c => c.Set("Source", It.Is<byte[]>(r => CollectionEquals(r,expectedData, (a,b) => a != b))));
+        }
+
+
+        [Fact]
+        public void should_can_deserialize_dict_from_values()
+        {
+            var item0 = Create<VFile>();
+            var item1 = Create<VFile>();
+
+            var virtualFiles = new Dictionary<int, IVirtualFile>()
+            {
+                { 1, item0 },
+                { 2, item1 }
+            };
+
+            var expectedData = GetByteArray(virtualFiles.Values);
+
+            _session.Setup(c => c.TryGetValue("Source", out expectedData)).Returns(true);
+
+            var result = SUT.LoadSource(typeof(VFile[]));
+
+            Assert.That(result[item0.ID].Name, Is.EqualTo(item0.Name));
         }
 
     }

@@ -45,9 +45,7 @@ namespace DataAccess.Base
 
         public IDictionary<int, IVirtualFile> GetVirtualFiles(string selectedSource, string activeProviderGrp)
         {
-            var activeFactory = _providerFactories.FirstOrDefault(c => c.CanHandleProviderKey(activeProviderGrp));
-            if(activeFactory == null)
-                throw new NotSupportedException(string.Format("ProviderKey : {0} is not supported by any ProviderFactory", activeProviderGrp));
+            var activeFactory = FindActiveFactory(activeProviderGrp);
 
             var debugConfig = _sectionGroupAccessor.Value.Debug;
 
@@ -56,6 +54,22 @@ namespace DataAccess.Base
             providerContext.SubRoots = debugConfig.SubRootPos;
             providerContext.SelectedSource = selectedSource;
             return activeFactory.RetrieveVirtualFiles(providerContext);
+        }
+
+        private IVirtualFileFactory FindActiveFactory(string activeProviderGrp)
+        {
+            var activeFactory = _providerFactories.FirstOrDefault(c => c.CanHandleProviderKey(activeProviderGrp));
+            if (activeFactory == null)
+                throw new NotSupportedException(string.Format("ProviderKey : {0} is not supported by any ProviderFactory", activeProviderGrp));
+
+            return activeFactory;
+        }
+
+        public IVirtualFileStreamReader RetrieveReader(string activeProviderGrp)
+        {
+            var fac = FindActiveFactory(activeProviderGrp);
+
+            return fac.GetReader();
         }
     }
 }

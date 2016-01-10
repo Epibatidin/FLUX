@@ -16,6 +16,11 @@ namespace DataAccess.FileSystem
 
         public bool CanHandleProviderKey(string providerId) => _config.SectionName == providerId;
 
+        public IVirtualFileStreamReader GetReader()
+        {
+            return new RealFileStreamReader();
+        }
+
         public IDictionary<int, IVirtualFile> RetrieveVirtualFiles(VirtualFileFactoryContext context)
         {
             var virtualFiles = new Dictionary<int, IVirtualFile>();

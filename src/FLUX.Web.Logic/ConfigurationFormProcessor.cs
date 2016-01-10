@@ -44,20 +44,21 @@ namespace FLUX.Web.Logic
             return result;
         }
 
-        public void Update(ConfigurationFormModel formModel, HttpRequest httpRequest, Func<IModelBinderFacade, ModelBinderContext> controller)
+        public void Update(ConfigurationFormModel formModel, HttpRequest httpRequest, Func<IModelBinderFacade, ModelBinderContext> modelBindingContextBuilder)
         {
             if (_postbackHelper.IsPostback(httpRequest))
             {
-                var bindingContext = controller(_modelBinder);
+                var bindingContext = modelBindingContextBuilder(_modelBinder);
                 _modelBinder.TryUpdateModel(formModel, bindingContext);
             }
+            else
+            {
+                var providerName = _persistentHelper.LoadProviderName();
+                if (providerName != null)
+                    formModel.VirtualFileProvider.CurrentProviderName = providerName;
+            }
         }
-
-        public void Update(ConfigurationFormModel formModel, Controller controller)
-        {
-            
-        }
-
+        
         public void Process(ConfigurationFormModel formModel)
         {
             var providers = formModel.VirtualFileProvider;
@@ -78,8 +79,8 @@ namespace FLUX.Web.Logic
             if(activeGrp == null)
                 throw new NotSupportedException(string.Format( "No providers found for {0}", providers.CurrentProviderName));
 
-            var context = _httpContextAccessor.HttpContext;
-            context.Items["Files"] = _configProvider.GetVirtualFiles(providers.CurrentProviderName, activeGrp.ProviderKey);
+            _persistentHelper.SaveProviderName(providers.CurrentProviderName);
+            _persistentHelper.SaveActiveGrp(activeGrp.ProviderKey);
         }
     }
 }

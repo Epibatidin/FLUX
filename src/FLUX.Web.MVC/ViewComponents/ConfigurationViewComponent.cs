@@ -22,7 +22,7 @@ namespace FLUX.Web.MVC.ViewComponents
             var fm = _configurationFormProcessor.Build();
             _configurationFormProcessor.Update(fm, Request, c => c.BuildContext(this,_actionBindingContextAccessor));
 
-            //if (_postbackHelper.IsPostback(Request))
+            if (_postbackHelper.IsPostback(Request))
                 _configurationFormProcessor.Process(fm);
 
             return View("Index", fm);

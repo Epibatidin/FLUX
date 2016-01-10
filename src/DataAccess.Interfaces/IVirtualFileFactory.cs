@@ -6,6 +6,8 @@ namespace DataAccess.Interfaces
     {
         bool CanHandleProviderKey(string providerId);
 
+        IVirtualFileStreamReader GetReader();
+
         IDictionary<int, IVirtualFile> RetrieveVirtualFiles(VirtualFileFactoryContext context);
     }
 }

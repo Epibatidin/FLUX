@@ -13,7 +13,7 @@ namespace FLUX.Interfaces.Web
     {
         TFormModel Build();
 
-        void Update(TFormModel formModel, HttpRequest request, Func<IModelBinderFacade, ModelBinderContext> controller);
+        void Update(TFormModel formModel, HttpRequest request, Func<IModelBinderFacade, ModelBinderContext> modelBindingContextBuilder);
 
         void Process(ConfigurationFormModel formModel);
     }

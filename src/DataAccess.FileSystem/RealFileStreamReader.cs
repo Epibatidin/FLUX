@@ -6,7 +6,7 @@ namespace DataAccess.FileSystem
 {
     public class RealFileStreamReader : IVirtualFileStreamReader
     {
-        public Type GetVirtualFileType() => typeof(RealFile);
+        public Type GetVirtualFileArrayType() => typeof(RealFile[]);
 
         public Stream OpenStreamForReadAccess(IVirtualFile virtualFile)
         {

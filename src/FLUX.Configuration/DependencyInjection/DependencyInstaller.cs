@@ -9,6 +9,9 @@ using Facade.Configuration;
 using Facade.MVC;
 using Facade.Session;
 using Microsoft.Extensions.DependencyInjection;
+using FLUX.Interfaces;
+using Microsoft.AspNet.Http.Features;
+using Microsoft.AspNet.Http.Features.Internal;
 
 namespace FLUX.Configuration.DependencyInjection
 {
@@ -27,6 +30,7 @@ namespace FLUX.Configuration.DependencyInjection
             container.AddSingleton<IPostbackHelper, PostbackHelper>();
             container.AddSingleton<IModelBinderFacade, ModelBinderFacade>();
             container.AddSingleton<ISessionFacade, SessionFacade>();
+            container.AddSingleton<IVirtualFilePeristentHelper, VirtualFilePeristentHelper>();
 
             container.AddSingleton<IConfigurationFormProcessor, ConfigurationFormProcessor>();
         }

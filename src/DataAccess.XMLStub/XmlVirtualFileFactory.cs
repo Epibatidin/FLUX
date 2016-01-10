@@ -21,6 +21,11 @@ namespace DataAccess.XMLStub
         
         public bool CanHandleProviderKey(string providerId) => _xmlConfig.SectionName == providerId;
 
+        public IVirtualFileStreamReader GetReader()
+        {
+            return new XmlVirtualFileStreamReader();
+        }
+
         private int[] getCounts(DirectoryInfo subroot, int[] subRoots)
         {
             var index = subroot.GetFiles("Index.xml")[0];
