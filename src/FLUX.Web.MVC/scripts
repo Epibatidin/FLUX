@@ -1,0 +1,48 @@
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var exe = $('#exe');
+
+        exe.click(function () {
+            //exe.prop('disabled', true);
+
+            $.get('@Url.Action("StartProgress", "Home")')
+                .always(function () {
+                    writeLog('StartingProgress');
+                })
+                .done(function () {
+                    var count = 0;
+                    var timer = setInterval(function () {
+                        clearInterval(timer);
+                        count++;
+                        if (count < 10) {
+                            $.get('@Url.Action("Index", "DataDelivery")')
+                                .done(function (data) {
+                                    $('#DataContainer').html(data);
+                                });
+                        }
+                        else {
+                            clearInterval(timer);
+                        }
+                    }, 200);
+                });
+        })
+    });
+    
+
+</script>
+
+
+    <script type="text/javascript" src='@Url.Content("~/Scripts/JQ20.js")' ></script>    
+    <script type="text/javascript" src='@Url.Content("~/Scripts/Notifications.js")' ></script>    
+
+    <link href='@Url.Content("~/Content/General.css")' rel="Stylesheet"  type="text/css" />
+    <link href='@Url.Content("~/Content/TableStyle.css")' rel="Stylesheet"  type="text/css" />
+    <link href='@Url.Content("~/Content/Colors.css")' rel="Stylesheet"  type="text/css" />
+	
+	
+	
+	<title dir="ltr">Der Flux ordnet deine MP3 s</title>
+    
+	
+	<div id="Notifications" style="height:0px;max-height:100px;overflow-y:scroll"></div>

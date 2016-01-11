@@ -1,16 +1,15 @@
 ﻿
-@Component.Invoke("Configuration")
-
-<input type="button" value="Execute" id="exe" />
-
-@*@Html.ActionLink("Reload", "Reload", "Home")*@
-
-
+@using (Html.BeginForm("Configuration", "Home", FormMethod.Post, new {@class = "context"}))
+{
+    <div class="loadHere">
+        @Component.Invoke("Configuration")
+    </div>
+    <input type="submit" value="Submit"/>
+}
+<hr />
 <div class="cfix"></div>
-<div id="DataContainer">
+<div id="DataContainer" data-url="@Url.Action("DataDelivery", "Home")">
 
     @Component.Invoke("DataDelivery")
-
-    @*@Html.Action("Index", "DataDelivery")*@
 
 </div>

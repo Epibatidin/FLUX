@@ -1,11 +1,40 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-  
-</head>
-    <body>
-        @RenderBody()
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
+        <link rel="stylesheet" href="~/css/site.css"/>
+    </environment>
 
-        @RenderSection("scripts", required: false)
-    </body>
+    <title dir="ltr">Der Flux ordnet deine MP3 s</title>
+</head>
+<body>
+    <div id="Notifications" style="height:0px;max-height:100px;overflow-y:scroll"></div>
+
+
+@RenderBody()
+
+<hr/>
+
+<div>
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/Notifications.js" asp-append-version="true"></script>
+
+        <script src="~/js/Configuration.js" asp-append-version="true"></script>
+        <script src="~/js/DataDelivery.js" asp-append-version="true"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("scripts", required: false)
+</div>
+
+</body>
 </html>
+
+
+
