@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Mvc;
+﻿using Extraction.Interfaces.Layer;
+using Microsoft.AspNet.Mvc;
 
 namespace FLUX.Web.MVC.Controllers
 {
@@ -6,8 +7,6 @@ namespace FLUX.Web.MVC.Controllers
     {
         public IActionResult Index()
         {
-            //HttpContext
-
             return View();
         }
 
@@ -19,6 +18,11 @@ namespace FLUX.Web.MVC.Controllers
         public IActionResult DataDelivery()
         {
             return ViewComponent("DataDelivery");
+        }
+
+        public IActionResult StartProcessing()
+        {
+            return ViewComponent("Processing");
         }
     }
 }
