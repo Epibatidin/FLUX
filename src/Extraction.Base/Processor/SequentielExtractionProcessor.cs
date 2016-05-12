@@ -1,32 +1,27 @@
-﻿//using System.Collections.Generic;
-//using DataAccess.Interfaces;
-//using Extraction.Interfaces;
+﻿using System.Collections.Generic;
+using DataAccess.Interfaces;
+using Extraction.Interfaces;
+using Extraction.Interfaces.Layer;
 
-//namespace Extraction.Base.Processor
-//{
-//    public class SequentielExtractionProcessor : ExtractionProcessor
-//    {
-//        private IList<IDataExtractionLayer> _layers;
+namespace Extraction.Base.Processor
+{
+    public class SequentielExtractionProcessor : IExtractionProcessor
+    {
+        private readonly IEnumerable<IDataExtractionLayer> _extractionLayers;
 
-//        protected override void AddLayers(IList<IDataExtractionLayer> layer)
-//        {
-//            _layers = layer;
-//        }
+        public SequentielExtractionProcessor(IEnumerable<IDataExtractionLayer> extractionLayers)
+        {
+            _extractionLayers = extractionLayers;
+        }
+        
+        public void Execute(ExtractionContext extractionContext)
+        {
+            foreach (var layer in _extractionLayers)
+            {
+                var uo = extractionContext.Register(layer.GetType().Name);
 
-//        protected override void InternalSetData(Dictionary<int, IVirtualFile> data)
-//        {
-//            foreach (var item in _layers)
-//            {
-//                item.InitData(data);
-//            }
-//        }
-
-//        public override void Execute()
-//        {
-//            foreach (var item in _layers)
-//            {
-//                item.Execute();                
-//            }
-//        }
-//    }
-//}
+                layer.Execute(extractionContext, uo);
+            }
+        }
+    }
+}

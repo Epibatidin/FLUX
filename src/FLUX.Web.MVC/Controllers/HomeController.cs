@@ -1,4 +1,9 @@
-﻿using Extraction.Interfaces.Layer;
+﻿using System.Collections.Generic;
+using DataAccess.Interfaces;
+using Extraction.Interfaces;
+using Extraction.Interfaces.Layer;
+using Facade.MVC;
+using FLUX.Interfaces;
 using Microsoft.AspNet.Mvc;
 
 namespace FLUX.Web.MVC.Controllers
@@ -14,15 +19,10 @@ namespace FLUX.Web.MVC.Controllers
         {
             return ViewComponent("Configuration");
         }
-
+        
         public IActionResult DataDelivery()
         {
             return ViewComponent("DataDelivery");
-        }
-
-        public IActionResult StartProcessing()
-        {
-            return ViewComponent("Processing");
         }
     }
 }

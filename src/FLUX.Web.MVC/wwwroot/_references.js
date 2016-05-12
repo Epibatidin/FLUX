@@ -3,7 +3,6 @@
 /// <reference path="js/configuration.js" />
 /// <reference path="js/datadelivery.js" />
 /// <reference path="js/notifications.js" />
-/// <reference path="js/site.js" />
 /// <reference path="lib/bootstrap/dist/js/bootstrap.js" />
 /// <reference path="lib/jquery/dist/jquery.js" />
 /// <reference path="lib/jquery-validation/dist/jquery.validate.js" />

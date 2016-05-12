@@ -2,7 +2,7 @@
 $("#DataContainer").on("configuration:changed", function() {
     var container = $(this);
     var url = container.data("url");
-    $.get(container.data("url"))
+    $.get(url)
         .always(function() {
             writeLog('StartingProgress');
         })

@@ -45,5 +45,10 @@ namespace FLUX.Web.Logic
                 childs.Add(childTree);
             }
         }
+
+        public void Add(ISongByKeyAccessor songByKeyAccessor)
+        {
+            
+        }
     }
 }

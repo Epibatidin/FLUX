@@ -20,7 +20,6 @@ namespace FLUX.Web.Logic
         {
             _httpContextAccessor = httpContextAccessor;
             _serializer = JsonSerializer.CreateDefault();
-            
         }
 
         private ISession Session => _httpContextAccessor.HttpContext.Session;

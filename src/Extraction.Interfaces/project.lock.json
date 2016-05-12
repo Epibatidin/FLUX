@@ -2242,7 +2242,6 @@
     },
     "Microsoft.Extensions.Configuration/1.0.0-rc1-final": {
       "type": "package",
-      "serviceable": true,
       "sha512": "2ayWzqMVGWjr8o8bOSnIsyQbi9sLz9Ya8+YM+9tM/ivSnLHuN7TNHNfJv4jTyRZvoOafdh5Ivlc/OdmsZPXlQQ==",
       "files": [
         "lib/dotnet5.4/Microsoft.Extensions.Configuration.dll",
@@ -2251,14 +2250,12 @@
         "lib/net451/Microsoft.Extensions.Configuration.xml",
         "lib/netcore50/Microsoft.Extensions.Configuration.dll",
         "lib/netcore50/Microsoft.Extensions.Configuration.xml",
-        "Microsoft.Extensions.Configuration.1.0.0-rc1-final.nupkg",
         "Microsoft.Extensions.Configuration.1.0.0-rc1-final.nupkg.sha512",
         "Microsoft.Extensions.Configuration.nuspec"
       ]
     },
     "Microsoft.Extensions.Configuration.Abstractions/1.0.0-rc1-final": {
       "type": "package",
-      "serviceable": true,
       "sha512": "xA7ObOlIswcx2qakv69kz0pnBizFJrmwxRxJyjPOHWfevF4W+OdolZsbKOc12kY7y5upqhAvNGWTblffMvADHA==",
       "files": [
         "lib/dotnet5.4/Microsoft.Extensions.Configuration.Abstractions.dll",
@@ -2267,14 +2264,12 @@
         "lib/net451/Microsoft.Extensions.Configuration.Abstractions.xml",
         "lib/netcore50/Microsoft.Extensions.Configuration.Abstractions.dll",
         "lib/netcore50/Microsoft.Extensions.Configuration.Abstractions.xml",
-        "Microsoft.Extensions.Configuration.Abstractions.1.0.0-rc1-final.nupkg",
         "Microsoft.Extensions.Configuration.Abstractions.1.0.0-rc1-final.nupkg.sha512",
         "Microsoft.Extensions.Configuration.Abstractions.nuspec"
       ]
     },
     "Microsoft.Extensions.Configuration.Binder/1.0.0-rc1-final": {
       "type": "package",
-      "serviceable": true,
       "sha512": "tuIi7cRq6lbpCybL+z9vamz/KbM+nN9nyJ2Id5bKCdxKDNMnKb9PdMxJ+0DHc8p6fP00PyQucYuN5EpxsYrX6Q==",
       "files": [
         "lib/dotnet5.4/Microsoft.Extensions.Configuration.Binder.dll",
@@ -2283,14 +2278,12 @@
         "lib/net451/Microsoft.Extensions.Configuration.Binder.xml",
         "lib/netcore50/Microsoft.Extensions.Configuration.Binder.dll",
         "lib/netcore50/Microsoft.Extensions.Configuration.Binder.xml",
-        "Microsoft.Extensions.Configuration.Binder.1.0.0-rc1-final.nupkg",
         "Microsoft.Extensions.Configuration.Binder.1.0.0-rc1-final.nupkg.sha512",
         "Microsoft.Extensions.Configuration.Binder.nuspec"
       ]
     },
     "Microsoft.Extensions.DependencyInjection/1.0.0-rc1-final": {
       "type": "package",
-      "serviceable": true,
       "sha512": "S/+s3fq85j21H5nYOvh1fIt1arl8F5lZ7Ryiw/qend83yHQwIQbBs+dip9FhqiPmAn6Dz3UhW0likQQurfEsLQ==",
       "files": [
         "lib/dotnet5.4/Microsoft.Extensions.DependencyInjection.dll",
@@ -2299,14 +2292,12 @@
         "lib/net451/Microsoft.Extensions.DependencyInjection.xml",
         "lib/netcore50/Microsoft.Extensions.DependencyInjection.dll",
         "lib/netcore50/Microsoft.Extensions.DependencyInjection.xml",
-        "Microsoft.Extensions.DependencyInjection.1.0.0-rc1-final.nupkg",
         "Microsoft.Extensions.DependencyInjection.1.0.0-rc1-final.nupkg.sha512",
         "Microsoft.Extensions.DependencyInjection.nuspec"
       ]
     },
     "Microsoft.Extensions.DependencyInjection.Abstractions/1.0.0-rc1-final": {
       "type": "package",
-      "serviceable": true,
       "sha512": "MUKexXAsRZ55C7YZ26ShePZgBeW+6FbasxeIVmZ/BZIgiG4uw6yPOdfl9WvTaUL9SFK2sEPcYLatWmLfTpsOAA==",
       "files": [
         "lib/dotnet5.4/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
@@ -2315,14 +2306,12 @@
         "lib/net451/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/netcore50/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/netcore50/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "Microsoft.Extensions.DependencyInjection.Abstractions.1.0.0-rc1-final.nupkg",
         "Microsoft.Extensions.DependencyInjection.Abstractions.1.0.0-rc1-final.nupkg.sha512",
         "Microsoft.Extensions.DependencyInjection.Abstractions.nuspec"
       ]
     },
     "Microsoft.Extensions.Primitives/1.0.0-rc1-final": {
       "type": "package",
-      "serviceable": true,
       "sha512": "oHWqBARJveyM7LctuqQqvsTC58hxoq0gGnHr6Qsxie71LIkZpfE21IklhSLOsqmv4QIpes/G6k1vZbAQ+cC/nw==",
       "files": [
         "lib/dotnet5.4/Microsoft.Extensions.Primitives.dll",
@@ -2331,7 +2320,6 @@
         "lib/net451/Microsoft.Extensions.Primitives.xml",
         "lib/netcore50/Microsoft.Extensions.Primitives.dll",
         "lib/netcore50/Microsoft.Extensions.Primitives.xml",
-        "Microsoft.Extensions.Primitives.1.0.0-rc1-final.nupkg",
         "Microsoft.Extensions.Primitives.1.0.0-rc1-final.nupkg.sha512",
         "Microsoft.Extensions.Primitives.nuspec"
       ]
@@ -2495,7 +2483,6 @@
     },
     "System.Collections.Concurrent/4.0.11-beta-23516": {
       "type": "package",
-      "serviceable": true,
       "sha512": "K+n6bC3jL5nRzwm8IM5WHxPScCnrVoPCJjpkBEmoBYY8/3j4RJdqIng/NYcpGcjvP/GIF6tAwZlh54ao2pWOvQ==",
       "files": [
         "lib/dotnet5.4/System.Collections.Concurrent.dll",
@@ -2547,14 +2534,12 @@
         "ref/wpa81/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
-        "System.Collections.Concurrent.4.0.11-beta-23516.nupkg",
         "System.Collections.Concurrent.4.0.11-beta-23516.nupkg.sha512",
         "System.Collections.Concurrent.nuspec"
       ]
     },
     "System.ComponentModel/4.0.1-beta-23516": {
       "type": "package",
-      "serviceable": true,
       "sha512": "PWlAKIWFtb0ahyK9mXkvW+8WzKfXd9n5NAtRDduoE2JETVZtWL2jUM08lVKWU+oZr3ZGBdRPPLVbUD/K9i4uzw==",
       "files": [
         "lib/dotnet5.4/System.ComponentModel.dll",
@@ -2589,14 +2574,12 @@
         "ref/win8/_._",
         "ref/wp80/_._",
         "ref/wpa81/_._",
-        "System.ComponentModel.4.0.1-beta-23516.nupkg",
         "System.ComponentModel.4.0.1-beta-23516.nupkg.sha512",
         "System.ComponentModel.nuspec"
       ]
     },
     "System.ComponentModel.Primitives/4.0.0": {
       "type": "package",
-      "serviceable": true,
       "sha512": "8xElzEmEH5G6XK7qqxRLQ/2r1IuhXlkz0ZdgKNp6ViDD1ukadd+5hccqg1G/L4AYRy96ddMdvgyJjFW87Cegbw==",
       "files": [
         "lib/dotnet/System.ComponentModel.Primitives.dll",
@@ -2621,14 +2604,12 @@
         "ref/net46/System.ComponentModel.Primitives.dll",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
-        "System.ComponentModel.Primitives.4.0.0.nupkg",
         "System.ComponentModel.Primitives.4.0.0.nupkg.sha512",
         "System.ComponentModel.Primitives.nuspec"
       ]
     },
     "System.ComponentModel.TypeConverter/4.0.1-beta-23516": {
       "type": "package",
-      "serviceable": true,
       "sha512": "VtCI6yLFRU1JcxxLBKRXkqLATN34O98wxjzlbmGV8AuGu9qTMJVeEUCOAGAuwdJRPPU+FYVAJ1Nnw6tNBAtLoQ==",
       "files": [
         "lib/dotnet5.4/System.ComponentModel.TypeConverter.dll",
@@ -2653,14 +2634,12 @@
         "ref/net46/System.ComponentModel.TypeConverter.dll",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
-        "System.ComponentModel.TypeConverter.4.0.1-beta-23516.nupkg",
         "System.ComponentModel.TypeConverter.4.0.1-beta-23516.nupkg.sha512",
         "System.ComponentModel.TypeConverter.nuspec"
       ]
     },
     "System.Diagnostics.Debug/4.0.11-beta-23516": {
       "type": "package",
-      "serviceable": true,
       "sha512": "eVfSsVOIlL2tZwA24PKduDIGrPXH1OdAnRPhU4q5nGA35kX+vnFtE+IyGfiyShwlC0ldnssmQRAm9mPKmgOpyA==",
       "files": [
         "lib/MonoAndroid10/_._",
@@ -2713,14 +2692,12 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtime.json",
-        "System.Diagnostics.Debug.4.0.11-beta-23516.nupkg",
         "System.Diagnostics.Debug.4.0.11-beta-23516.nupkg.sha512",
         "System.Diagnostics.Debug.nuspec"
       ]
     },
     "System.Diagnostics.Tracing/4.0.20": {
       "type": "package",
-      "serviceable": true,
       "sha512": "gn/wexGHc35Fv++5L1gYHMY5g25COfiZ0PGrL+3PfwzoJd4X2LbTAm/U8d385SI6BKQBI/z4dQfvneS9J27+Tw==",
       "files": [
         "lib/DNXCore50/System.Diagnostics.Tracing.dll",
@@ -2747,14 +2724,12 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtimes/win8-aot/lib/netcore50/System.Diagnostics.Tracing.dll",
-        "System.Diagnostics.Tracing.4.0.20.nupkg",
         "System.Diagnostics.Tracing.4.0.20.nupkg.sha512",
         "System.Diagnostics.Tracing.nuspec"
       ]
     },
     "System.Globalization/4.0.11-beta-23516": {
       "type": "package",
-      "serviceable": true,
       "sha512": "jctanC1VveBFsgOysiqFN/HH0qX+EvLNelcBU6Fb4w7m3BBu827k8RCNiwW+uAC5f5XZBTRpsXZk4cI15RCdYQ==",
       "files": [
         "lib/DNXCore50/System.Globalization.dll",
@@ -2809,14 +2784,12 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtimes/win8-aot/lib/netcore50/System.Globalization.dll",
-        "System.Globalization.4.0.11-beta-23516.nupkg",
         "System.Globalization.4.0.11-beta-23516.nupkg.sha512",
         "System.Globalization.nuspec"
       ]
     },
     "System.IO/4.0.10": {
       "type": "package",
-      "serviceable": true,
       "sha512": "kghf1CeYT+W2lw8a50/GxFz5HR9t6RkL4BvjxtTp1NxtEFWywnMA9W8FH/KYXiDNThcw9u/GOViDON4iJFGXIQ==",
       "files": [
         "lib/DNXCore50/System.IO.dll",
@@ -2843,14 +2816,12 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtimes/win8-aot/lib/netcore50/System.IO.dll",
-        "System.IO.4.0.10.nupkg",
         "System.IO.4.0.10.nupkg.sha512",
         "System.IO.nuspec"
       ]
     },
     "System.IO.FileSystem/4.0.1-beta-23516": {
       "type": "package",
-      "serviceable": true,
       "sha512": "xggWMgLzKnBisYTx5HW3og8qRR7TjmorQAdsAQOaMcY4I9CQA6JUxw0r2AvCC1+ToXh0CuO7J6dymX33pkmwbA==",
       "files": [
         "lib/MonoAndroid10/_._",
@@ -2875,14 +2846,12 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtime.json",
-        "System.IO.FileSystem.4.0.1-beta-23516.nupkg",
         "System.IO.FileSystem.4.0.1-beta-23516.nupkg.sha512",
         "System.IO.FileSystem.nuspec"
       ]
     },
     "System.IO.FileSystem.Primitives/4.0.0": {
       "type": "package",
-      "serviceable": true,
       "sha512": "7pJUvYi/Yq3A5nagqCCiOw3+aJp3xXc/Cjr8dnJDnER3/6kX3LEencfqmXUcPl9+7OvRNyPMNhqsLAcMK6K/KA==",
       "files": [
         "lib/dotnet/System.IO.FileSystem.Primitives.dll",
@@ -2907,7 +2876,6 @@
         "ref/net46/System.IO.FileSystem.Primitives.dll",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
-        "System.IO.FileSystem.Primitives.4.0.0.nupkg",
         "System.IO.FileSystem.Primitives.4.0.0.nupkg.sha512",
         "System.IO.FileSystem.Primitives.nuspec"
       ]
@@ -2964,7 +2932,6 @@
     },
     "System.Linq.Expressions/4.0.11-beta-23516": {
       "type": "package",
-      "serviceable": true,
       "sha512": "FtKytB13HabzrSvrAgBgOOnG2uxJO4s7zvP5Sk0NS3bwbJUyb5AP1p4897UWnLiB6C95jI4nIkZps51sa9In8g==",
       "files": [
         "lib/MonoAndroid10/_._",
@@ -3017,7 +2984,6 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtime.json",
-        "System.Linq.Expressions.4.0.11-beta-23516.nupkg",
         "System.Linq.Expressions.4.0.11-beta-23516.nupkg.sha512",
         "System.Linq.Expressions.nuspec"
       ]
@@ -3068,7 +3034,6 @@
     },
     "System.Reflection/4.1.0-beta-23225": {
       "type": "package",
-      "serviceable": true,
       "sha512": "WbLtaCxoe5XdqEyZuGpemSQ8YBJ8cj11zx+yxOxJfHbNrmu7oMQ29+J50swaqg3soUc3BVBMqfIhb/7gocDHQA==",
       "files": [
         "lib/DNXCore50/System.Reflection.dll",
@@ -3085,7 +3050,6 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtimes/win8-aot/lib/netcore50/System.Reflection.dll",
-        "System.Reflection.4.1.0-beta-23225.nupkg",
         "System.Reflection.4.1.0-beta-23225.nupkg.sha512",
         "System.Reflection.nuspec"
       ]
@@ -3172,7 +3136,6 @@
     },
     "System.Reflection.Extensions/4.0.0": {
       "type": "package",
-      "serviceable": true,
       "sha512": "dbYaZWCyFAu1TGYUqR2n+Q+1casSHPR2vVW0WVNkXpZbrd2BXcZ7cpvpu9C98CTHtNmyfMWCLpCclDqly23t6A==",
       "files": [
         "lib/DNXCore50/System.Reflection.Extensions.dll",
@@ -3199,14 +3162,12 @@
         "ref/wp80/_._",
         "ref/wpa81/_._",
         "runtimes/win8-aot/lib/netcore50/System.Reflection.Extensions.dll",
-        "System.Reflection.Extensions.4.0.0.nupkg",
         "System.Reflection.Extensions.4.0.0.nupkg.sha512",
         "System.Reflection.Extensions.nuspec"
       ]
     },
     "System.Reflection.Primitives/4.0.0": {
       "type": "package",
-      "serviceable": true,
       "sha512": "n9S0XpKv2ruc17FSnaiX6nV47VfHTZ1wLjKZlAirUZCvDQCH71mVp+Ohabn0xXLh5pK2PKp45HCxkqu5Fxn/lA==",
       "files": [
         "lib/DNXCore50/System.Reflection.Primitives.dll",
@@ -3233,7 +3194,6 @@
         "ref/wp80/_._",
         "ref/wpa81/_._",
         "runtimes/win8-aot/lib/netcore50/System.Reflection.Primitives.dll",
-        "System.Reflection.Primitives.4.0.0.nupkg",
         "System.Reflection.Primitives.4.0.0.nupkg.sha512",
         "System.Reflection.Primitives.nuspec"
       ]
@@ -3274,7 +3234,6 @@
     },
     "System.Resources.ResourceManager/4.0.1-beta-23516": {
       "type": "package",
-      "serviceable": true,
       "sha512": "KLzhgVk6aZDbU3jU+zGN3gGIU6hlhPyA8hwGqB1FmJRs/lJl7o9td34+5xm3Mk1va5vHEO8+cRj7te9WdNalHQ==",
       "files": [
         "lib/DNXCore50/System.Resources.ResourceManager.dll",
@@ -3310,7 +3269,6 @@
         "ref/wp80/_._",
         "ref/wpa81/_._",
         "runtimes/win8-aot/lib/netcore50/System.Resources.ResourceManager.dll",
-        "System.Resources.ResourceManager.4.0.1-beta-23516.nupkg",
         "System.Resources.ResourceManager.4.0.1-beta-23516.nupkg.sha512",
         "System.Resources.ResourceManager.nuspec"
       ]
@@ -3390,7 +3348,6 @@
     },
     "System.Runtime.Extensions/4.0.11-beta-23516": {
       "type": "package",
-      "serviceable": true,
       "sha512": "mpKQVIySlFSvgQkeb9qvXxHOY3jV7H9x5DmPSeNac0APFOG9ROufrMozY3VP/GxBWu4AVS/HDG1lUxg/riE4ew==",
       "files": [
         "lib/MonoAndroid10/_._",
@@ -3443,14 +3400,12 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtime.json",
-        "System.Runtime.Extensions.4.0.11-beta-23516.nupkg",
         "System.Runtime.Extensions.4.0.11-beta-23516.nupkg.sha512",
         "System.Runtime.Extensions.nuspec"
       ]
     },
     "System.Runtime.Handles/4.0.0": {
       "type": "package",
-      "serviceable": true,
       "sha512": "638VhpRq63tVcQ6HDb3um3R/J2BtR1Sa96toHo6PcJGPXEPEsleCuqhBgX2gFCz0y0qkutANwW6VPPY5wQu1XQ==",
       "files": [
         "lib/DNXCore50/System.Runtime.Handles.dll",
@@ -3477,14 +3432,12 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtimes/win8-aot/lib/netcore50/System.Runtime.Handles.dll",
-        "System.Runtime.Handles.4.0.0.nupkg",
         "System.Runtime.Handles.4.0.0.nupkg.sha512",
         "System.Runtime.Handles.nuspec"
       ]
     },
     "System.Runtime.InteropServices/4.0.21-beta-23516": {
       "type": "package",
-      "serviceable": true,
       "sha512": "3QodORMX/J/HMQgeBf62yYLESn4g+Gl9XGKEoFNCHGUb03yWqpSVPOD0gSksyb661kRdxR5K4/7I9xjz/GxkRg==",
       "files": [
         "lib/DNXCore50/System.Runtime.InteropServices.dll",
@@ -3548,7 +3501,6 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtimes/win8-aot/lib/netcore50/System.Runtime.InteropServices.dll",
-        "System.Runtime.InteropServices.4.0.21-beta-23516.nupkg",
         "System.Runtime.InteropServices.4.0.21-beta-23516.nupkg.sha512",
         "System.Runtime.InteropServices.nuspec"
       ]
@@ -3596,7 +3548,6 @@
         "ref/wpa81/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
-        "System.Text.Encoding.4.0.0.nupkg",
         "System.Text.Encoding.4.0.0.nupkg.sha512",
         "System.Text.Encoding.nuspec"
       ]
@@ -3636,7 +3587,6 @@
     },
     "System.Threading/4.0.11-beta-23516": {
       "type": "package",
-      "serviceable": true,
       "sha512": "vZNXMOIwejg9jS/AkkCs43BIDrzONbT43yhU7X2217Ypi9EZN5X16DwtqBD7eMjDBsA23IRZxuugzUnV8icaxQ==",
       "files": [
         "lib/MonoAndroid10/_._",
@@ -3689,7 +3639,6 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtime.json",
-        "System.Threading.4.0.11-beta-23516.nupkg",
         "System.Threading.4.0.11-beta-23516.nupkg.sha512",
         "System.Threading.nuspec"
       ]
@@ -3721,7 +3670,6 @@
     },
     "System.Threading.Tasks/4.0.11-beta-23516": {
       "type": "package",
-      "serviceable": true,
       "sha512": "kO+GZsJrZO+G7DA4xSuDZXaE1haJWia6TdzMt3xt9oTgh5GQ4bwI6UqBUVKhdTKxC3TI+snsbHXPy2+Qmd6i0g==",
       "files": [
         "lib/DNXCore50/System.Threading.Tasks.dll",
@@ -3776,7 +3724,6 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtimes/win8-aot/lib/netcore50/System.Threading.Tasks.dll",
-        "System.Threading.Tasks.4.0.11-beta-23516.nupkg",
         "System.Threading.Tasks.4.0.11-beta-23516.nupkg.sha512",
         "System.Threading.Tasks.nuspec"
       ]

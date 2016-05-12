@@ -10,7 +10,8 @@ namespace FLUX.Web.MVC.ViewComponents
         private readonly IPostbackHelper _postbackHelper;
         private readonly IActionBindingContextAccessor _actionBindingContextAccessor;
 
-        public ConfigurationViewComponent(IConfigurationFormProcessor configurationFormProcessor, IPostbackHelper postbackHelper, IActionBindingContextAccessor actionBindingContextAccessor)
+        public ConfigurationViewComponent(IConfigurationFormProcessor configurationFormProcessor, 
+            IPostbackHelper postbackHelper, IActionBindingContextAccessor actionBindingContextAccessor)
         {
             _configurationFormProcessor = configurationFormProcessor;
             _postbackHelper = postbackHelper;

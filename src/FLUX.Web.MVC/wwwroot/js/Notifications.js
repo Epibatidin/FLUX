@@ -1,9 +1,5 @@
 ﻿function writeLog(text) {
-
-    var elem = document.createElement("br");
-
-
-    $("#Notifications").append(text).append(elem);
+    $("#Notifications").append(text+ "<br/>");
 }
 
 $(document).ready(function () {
@@ -11,7 +7,7 @@ $(document).ready(function () {
     $.ajaxSetup({
         statusCode: {
             500: function (jqXhr) {
-                $('#Notifications').html(jqXhr.responseText);
+                $('#Notifications').append("<div/>").html(jqXhr.responseText);
             }
         }
     });

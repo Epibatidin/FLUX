@@ -31,9 +31,6 @@ namespace FLUX.Web.MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // add strongly typed configuration
-            //services.AddOptions();
-
             // Add MVC dependencies
             services.AddMvc();
 
@@ -43,11 +40,16 @@ namespace FLUX.Web.MVC
             var sectionGrp = new ApplicationStarter();
             sectionGrp.Startup(services, Configuration);
 
+            InstallSession(services);
+        }
+
+        private void InstallSession(IServiceCollection services)
+        {
             services.AddCaching();
 
             services.AddSession(o =>
             {
-                o.IdleTimeout = TimeSpan.FromMinutes(30);
+                o.IdleTimeout = TimeSpan.FromMinutes(5);
             });
 
         }

@@ -4,11 +4,12 @@ using DataStructure.Tree.Iterate;
 using Extraction.Base;
 using Extraction.DomainObjects.StringManipulation;
 using Extraction.Interfaces;
+using Extraction.Interfaces.Layer;
 using FileTreeItem = DataStructure.Tree.TreeItem<Extraction.Layer.File.FileLayerSongDo>;
 
 namespace Extraction.Layer.File
 {
-    public class FileStructureDataExtractionLayer : DataExtractionLayerBase
+    public class FileStructureDataExtractionLayer : IDataExtractionLayer
     {
         private readonly IEnumerable<ICleaner> _cleaners;
 
@@ -17,10 +18,9 @@ namespace Extraction.Layer.File
             _cleaners = cleaners;
         }
 
-        public override void Execute(ExtractionContext store)
+        public void Execute(ExtractionContext store, UpdateObject updateObject)
         {
             var tree = new TreeBuilder().Build(store.SourceValues.Values);
-            var updateObject = store.Register("File");
             updateObject.UpdateData(new TreeByKeyAccessor(tree));
 
             foreach (var cleaner in _cleaners)

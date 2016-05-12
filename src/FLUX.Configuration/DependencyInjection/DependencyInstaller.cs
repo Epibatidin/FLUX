@@ -3,7 +3,9 @@ using FLUX.Interfaces.Web;
 using FLUX.Web.Logic;
 using DataAccess.Interfaces;
 using DataAccess.Base;
+using Extraction.Base.Processor;
 using Extraction.Interfaces;
+using Extraction.Interfaces.Layer;
 using Microsoft.Extensions.Configuration;
 using Facade.Configuration;
 using Facade.MVC;
@@ -38,14 +40,7 @@ namespace FLUX.Configuration.DependencyInjection
 
         public void Layer(IServiceCollection container)
         {
-            //container.AddSingleton<IDataStoreProvider, DataStoreProvider>();
-
-           // container.AddSingleton(r => r.GetServices<IDataStoreProvider>().)
-
-            //container.Register(Component.For<ExtractionContext>().ImplementedBy<ExtractionContext>().LifestyleScoped<PerCookieLifestyleAdapter>());
-            //container.Register(Component.For<IExtractionProcessorFactory>().ImplementedBy<ExtractionProcessorFactory>());
-            //container.Register(Component.For<IExtractionProcessor>()
-            //         .UsingFactory<ExtractionProcessorFactory, IExtractionProcessor>(r => r.Create()));
+            container.AddSingleton<IExtractionProcessor, SequentielExtractionProcessor>();
         }
 
         private void Configuration(IServiceCollection container, IConfigurationRoot configurationRoot)
