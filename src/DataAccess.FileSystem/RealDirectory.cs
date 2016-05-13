@@ -33,7 +33,7 @@ namespace DataAccess.FileSystem
             return new RealFile()
             {
                 ID = id,
-                VirtualPath = fileInfo.FullName.Substring(_di.FullName.Length),
+                VirtualPath = fileInfo.FullName,
                 Name = fileInfo.Name
             };
         }

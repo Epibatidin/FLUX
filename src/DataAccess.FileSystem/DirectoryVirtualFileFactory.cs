@@ -27,7 +27,7 @@ namespace DataAccess.FileSystem
         private string getRootPath(string selectedSource)
         {
             var folder = _config.Folder.First(c => c.Key == selectedSource);
-            var rootPath = _config.Root + "\\" + folder.SubFolder + "\\Origin";
+            var rootPath = _config.Root + "\\" + folder.SubFolder + "\\Origin\\";
             return rootPath;
         }
 
@@ -67,8 +67,9 @@ namespace DataAccess.FileSystem
 
                     arrayPos++;
                     
-                    foreach (var virtualFile in subDirectory.GetFiles("*.mp3", true, c => (pos + 1)*1000 + c))
+                    foreach (RealFile virtualFile in subDirectory.GetFiles("*.mp3", true, c => (pos + 1)*1000 + c))
                     {
+                        virtualFile.VirtualPath = virtualFile.VirtualPath.Substring(rootPath.Length);
                         virtualFiles.Add(virtualFile.ID, virtualFile);
                     }
                 }
