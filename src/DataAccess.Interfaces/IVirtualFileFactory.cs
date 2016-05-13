@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace DataAccess.Interfaces
 {
@@ -6,7 +7,9 @@ namespace DataAccess.Interfaces
     {
         bool CanHandleProviderKey(string providerId);
 
-        IVirtualFileStreamReader GetReader();
+        Type GetVirtualFileArrayType();
+
+        IVirtualFileStreamReader GetReader(VirtualFileFactoryContext context);
 
         IDictionary<int, IVirtualFile> RetrieveVirtualFiles(VirtualFileFactoryContext context);
     }

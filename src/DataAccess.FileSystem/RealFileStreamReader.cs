@@ -6,11 +6,18 @@ namespace DataAccess.FileSystem
 {
     public class RealFileStreamReader : IVirtualFileStreamReader
     {
-        public Type GetVirtualFileArrayType() => typeof(RealFile[]);
+        private readonly string _rootDir;
+
+        public RealFileStreamReader(string rootDir)
+        {
+            _rootDir = rootDir;
+        }
+
+        
 
         public Stream OpenStreamForReadAccess(IVirtualFile virtualFile)
         {
-            return new FileStream(virtualFile.VirtualPath, FileMode.Open, FileAccess.Read);
+            return new FileStream(string.Concat(_rootDir,virtualFile.VirtualPath), FileMode.Open, FileAccess.Read);
         }
     }
 }

@@ -1,13 +1,11 @@
-﻿using System.Collections.Generic;
-
-namespace DataAccess.Interfaces
+﻿namespace DataAccess.Interfaces
 {
     public interface IVirtualFileConfigurationReader
     {
         AvailableVirtualFileProviderDo ReadToDO();
 
-        IDictionary<int, IVirtualFile> GetVirtualFiles(string selectedSource, string activeProviderGrp);
+        VirtualFileFactoryContext BuildContext(string selectedSource);
 
-        IVirtualFileStreamReader RetrieveReader(string activeProviderGrp);
+        IVirtualFileFactory FindActiveFactory(string activeProviderGrp);
     }
 }

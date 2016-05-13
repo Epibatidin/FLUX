@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
@@ -20,13 +21,24 @@ namespace DataAccess.XMLStub
         }
         
         public bool CanHandleProviderKey(string providerId) => _xmlConfig.SectionName == providerId;
+        public Type GetVirtualFileArrayType() => typeof(SourceItem[]);
 
-        public IVirtualFileStreamReader GetReader()
+        public IVirtualFileStreamReader GetReader(VirtualFileFactoryContext context)
         {
             return new XmlVirtualFileStreamReader();
         }
 
         private int[] getCounts(DirectoryInfo subroot, int[] subRoots)
+        {
+            var root = GetRoot(subroot);
+
+            if (subRoots == null || subRoots.Length == 0)
+                subRoots = Enumerable.Range(0, root.Groups).ToArray();
+
+            return subRoots;
+        }
+
+        private Root GetRoot(DirectoryInfo subroot)
         {
             var index = subroot.GetFiles("Index.xml")[0];
             object dummy = null;
@@ -34,12 +46,7 @@ namespace DataAccess.XMLStub
             {
                 dummy = _serializer.Deserialize(readStream);
             }
-            var root = dummy as Root;
-
-            if (subRoots == null || subRoots.Length == 0)
-                subRoots = Enumerable.Range(0, root.Groups).ToArray();
-
-            return subRoots;
+            return dummy as Root;
         }
 
         public IDictionary<int, IVirtualFile> RetrieveVirtualFiles(VirtualFileFactoryContext context)
@@ -62,7 +69,12 @@ namespace DataAccess.XMLStub
             var dict = new Dictionary<int, IVirtualFile>();
             foreach (var subrootDir in dirs.OrderBy(c => c.Name))
             {
-                var subRoots = getCounts(subrootDir, context.SubRoots);
+                var xmlRootElement = GetRoot(subrootDir);
+
+                IEnumerable<int> subRoots = context.SubRoots;
+                if (context.SubRoots == null || context.SubRoots.Length == 0)
+                    subRoots = Enumerable.Range(0, xmlRootElement.Groups);
+
                 foreach (var subroot in subRoots)
                 {
                     var file = subrootDir.GetFiles(subroot + ".xml")[0];
@@ -75,6 +87,7 @@ namespace DataAccess.XMLStub
 
                     foreach (var item in group.Source.Items)
                     {
+                        item.VirtualPath = item.VirtualPath.Substring(xmlRootElement.RootPath.Length);
                         dict.Add(item.ID, item);
                     }
                 }

@@ -1,12 +1,9 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
 namespace DataAccess.Interfaces
 {
     public interface IVirtualFileStreamReader
     {
-        Type GetVirtualFileArrayType();
-
         Stream OpenStreamForReadAccess(IVirtualFile virtualFile);
     }
 }

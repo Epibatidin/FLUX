@@ -29,15 +29,16 @@ namespace FLUX.Web.MVC.ViewComponents
             var activeGrp = _persistentHelper.LoadActiveGrp();
 
             if (providerName == null || activeGrp == null) return null;
-            
-            var reader = _configurationReader.RetrieveReader(activeGrp);
 
-            var sources = _persistentHelper.LoadSource(reader.GetVirtualFileArrayType());
+            var virtualFileFactory = _configurationReader.FindActiveFactory(activeGrp);
+
+            var sources = _persistentHelper.LoadSource(virtualFileFactory.GetVirtualFileArrayType());
             if (sources != null) return sources;
 
-            sources = _configurationReader.GetVirtualFiles(providerName, activeGrp);
+            var context = _configurationReader.BuildContext(providerName);
+            sources = virtualFileFactory.RetrieveVirtualFiles(context);
             _persistentHelper.SaveSource(sources);
-
+            
             return sources;
         } 
         

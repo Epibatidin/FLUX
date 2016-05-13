@@ -42,34 +42,26 @@ namespace DataAccess.Base
             }
             return result;
         }
-
-        public IDictionary<int, IVirtualFile> GetVirtualFiles(string selectedSource, string activeProviderGrp)
+        
+        public VirtualFileFactoryContext BuildContext(string selectedSource)
         {
-            var activeFactory = FindActiveFactory(activeProviderGrp);
-
             var debugConfig = _sectionGroupAccessor.Value.Debug;
 
             var providerContext = new VirtualFileFactoryContext();
             providerContext.OverrideRootnames = debugConfig.RootNames;
             providerContext.SubRoots = debugConfig.SubRootPos;
             providerContext.SelectedSource = selectedSource;
-            return activeFactory.RetrieveVirtualFiles(providerContext);
+            return providerContext;
         }
 
-        private IVirtualFileFactory FindActiveFactory(string activeProviderGrp)
+        public IVirtualFileFactory FindActiveFactory(string activeProviderGrp)
         {
             var activeFactory = _providerFactories.FirstOrDefault(c => c.CanHandleProviderKey(activeProviderGrp));
             if (activeFactory == null)
-                throw new NotSupportedException(string.Format("ProviderKey : {0} is not supported by any ProviderFactory", activeProviderGrp));
+                throw new NotSupportedException(
+                    string.Format("ProviderKey : {0} is not supported by any ProviderFactory", activeProviderGrp));
 
             return activeFactory;
-        }
-
-        public IVirtualFileStreamReader RetrieveReader(string activeProviderGrp)
-        {
-            var fac = FindActiveFactory(activeProviderGrp);
-
-            return fac.GetReader();
         }
     }
 }
