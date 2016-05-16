@@ -14,9 +14,10 @@
     "Moq": "4.1.1308.2120",
 
     "xunit": "2.1.0",
-    "xunit.runner.dnx": "2.1.0-rc1-build204", 
+    "xunit.runner.dnx": "2.1.0-rc1-build204",
 
     "DataStructure.Tree": "1.0.0-*",
+    "Extension.Test": "1.0.0-*"
   },
   "commands": {
     "test": "xunit.runner.dnx"

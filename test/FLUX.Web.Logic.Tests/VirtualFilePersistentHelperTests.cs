@@ -30,13 +30,6 @@ namespace FLUX.Web.Logic.Tests
             _serializer = new JsonSerializer();
         }
 
-        public class VFile : IVirtualFile
-        {
-            public int ID { get; set; }
-            public string Name { get; set; }
-            public string VirtualPath { get; set; }
-        }
-
         private byte[] GetByteArray(object o)
         {
             var memoryStream = new MemoryStream();
