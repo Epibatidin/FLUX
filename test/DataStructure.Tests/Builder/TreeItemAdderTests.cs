@@ -61,10 +61,6 @@ namespace DataStructure.Tests.Builder
         public void should_iterate_the_full_path()
         {
             var root = new TreeItem<object>();
-            var lvlOne = Create<List<TreeItem<object>>>();
-            var lvlTwo = new List<TreeItem<object>>();
-            lvlOne[0].SetChildren(lvlTwo);
-            root.SetChildren(lvlOne);
 
             var item = new object();
             SUT.Add(root, new [] {0, 3, 2}, item);
@@ -72,5 +68,17 @@ namespace DataStructure.Tests.Builder
             Assert.That(root[0][3][2].Value , Is.SameAs(item));
         }
 
+        [Fact]
+        public void should_add_new_items_with_correct_depth()
+        {
+            var root = new TreeItem<object>();
+            root.Level = 22;
+
+            var item = new object();
+            SUT.Add(root, new[] { 0, 0 }, item);
+
+            Assert.That(root[0].Level, Is.EqualTo(23));
+            Assert.That(root[0][0].Level, Is.EqualTo(24));
+        }
     }
 }

@@ -6,11 +6,12 @@ namespace DataStructure.Tree.Builder
     {
         public void Add<T>(TreeItem<T> root, IList<int> path, T item)
         {
-            int depth = 0;
+            int currentLvl = root.Level;
 
             var movingRoot = root;
             foreach (var index in path)
             {
+                currentLvl++;
                 var childs = movingRoot.GetChildren();
                 if (childs == null)
                 {
@@ -23,7 +24,10 @@ namespace DataStructure.Tree.Builder
 
                     for (int i = 0; i < itemCountToAdd; i++)
                     {
-                        childs.Add(new TreeItem<T>());
+                        childs.Add(new TreeItem<T>()
+                        {
+                            Level = currentLvl
+                        });
                     }
                 }
                 movingRoot = childs[index];
