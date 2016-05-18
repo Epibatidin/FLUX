@@ -24,11 +24,6 @@ namespace FLUX.Web.Logic
             public string SongName { get; }
         }
         
-        private IEnumerable<int> IntToDigits(int key)
-        {
-            return key.ToString().Select(c => c - 48);
-        }
-
         public LayerResultJoiner(ITreeHelper treeHelper)
         {
             _treeHelper = treeHelper;
@@ -39,24 +34,27 @@ namespace FLUX.Web.Logic
         {
             var root = new TreeItem<MultiLayerDataContainer>();
 
+            var flatListForSongs = new List<object>();
+
             foreach (var kv in virtualFiles)
             {
                 // the path is relevant 
-                var path = IntToDigits(kv.ID);
+                //var path = IntToDigits(kv.ID);
 
-                var activeTreeItem = _treeHelper.SelectItemOnPath(root, path);
+                //var activeTreeItem = _treeHelper.SelectItemOnPath(root, kv.ID);
+
+
 
                 var container = new MultiLayerDataContainer();
-
-                container.AddVirtualFile(activeTreeItem.Level, kv);
+                container.Id = kv.ID;
+                container.Path = kv.Name;
 
                 foreach (var byKeyAccessor in songByKeyAccessors)
                 {
                     var song = byKeyAccessor.GetByKey(kv.ID);
 
-                    container.AddSong(activeTreeItem.Level, song);
+                    container.AddSong(song);
                 }
-
             }
 
             //var childs = new List<TreeItem<MultiLayerDataContainer>>();

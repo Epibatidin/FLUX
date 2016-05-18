@@ -7,11 +7,13 @@ namespace FLUX.DomainObjects
 {
     public class MultiLayerDataContainer
     {
+        public int Id { get; set; }
+
         public MultiLayerDataContainer()
         {
             Data = new Dictionary<string, List<string>>();
         }
-        
+
         public Dictionary<string, List<string>> Data;
 
         public string Path { get; set; }
@@ -46,35 +48,16 @@ namespace FLUX.DomainObjects
         }
 
 
-        public void AddSong(int depth, ISong song)
+        public void AddSong(ISong song)
         {
             if (song == null) return;
 
-            switch (depth)
-            {
-                case 0:
-                    {
-                        AddValue("Artist", song.Artist);
-                        break;
-                    }
-                case 1:
-                    {
-                        AddValue("Year", song.Year);
-                        AddValue("Album", song.Album);
-                        break;
-                    }
-                case 2:
-                    {
-                        AddValue("CD", song.CD);
-                        break;
-                    }
-                case 3:
-                    {
-                        AddValue("Track", song.TrackNr);
-                        AddValue("Title", song.SongName);
-                        break;
-                    }
-            }
+            AddValue("Artist", song.Artist);
+            AddValue("Year", song.Year);
+            AddValue("Album", song.Album);
+            AddValue("CD", song.CD);
+            AddValue("Track", song.TrackNr);
+            AddValue("Title", song.SongName);
         }
 
 
