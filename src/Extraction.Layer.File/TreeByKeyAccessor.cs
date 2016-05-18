@@ -1,4 +1,6 @@
-﻿using DataStructure.Tree;
+﻿using System.Collections.Generic;
+using System.Linq;
+using DataStructure.Tree;
 using Extraction.Interfaces;
 
 namespace Extraction.Layer.File
@@ -12,9 +14,20 @@ namespace Extraction.Layer.File
             _tree = tree;
         }
 
+        private IEnumerable<int> IntToDigits(int key)
+        {
+            return key.ToString().Select(c => c - 48);
+        }
+
         public ISong GetByKey(int key)
         {
-            return _tree[key].Value;
+            var root = _tree;
+
+            foreach (var digit in IntToDigits(key))
+            {
+                root = root[digit];
+            }
+            return root.Value;
         }
     }
 }

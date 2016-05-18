@@ -8,13 +8,11 @@
         "System.Linq": "4.0.1-*"
       }
     },
-
     "dnx451": {
-		"dependencies": {
-		}
+      "dependencies": {}
     }
   },
   "dependencies": {
     "Extension.IEnumerable": "1.0.0-*"
-  },  
+  }
 }

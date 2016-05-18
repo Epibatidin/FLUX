@@ -9,7 +9,7 @@ using Assert = NUnit.Framework.Assert;
 
 namespace DataStructure.Tests.Builder
 {
-    public class TreeItemAdderTests : FixtureBase<TreeItemAdder>
+    public class TreeItemAdderTests : FixtureBase<TreeHelper>
     {
         [Fact]
         public void should_create_childs_if_has_no_childs()
@@ -79,6 +79,19 @@ namespace DataStructure.Tests.Builder
 
             Assert.That(root[0].Level, Is.EqualTo(23));
             Assert.That(root[0][0].Level, Is.EqualTo(24));
+        }
+
+        [Fact]
+        public void should_only_set_value_on_deepest_item()
+        {
+            var root = new TreeItem<object>();
+            root.Level = 22;
+
+            var item = new object();
+            SUT.Add(root, new[] { 0, 0 }, item);
+
+            Assert.That(root[0].Value, Is.Not.SameAs(item));
+            Assert.That(root[0][0].Value, Is.SameAs(item));
         }
     }
 }

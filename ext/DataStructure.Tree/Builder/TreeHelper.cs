@@ -1,10 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace DataStructure.Tree.Builder
 {
-    public class TreeItemAdder
+    public class TreeHelper : ITreeHelper 
     {
-        public void Add<T>(TreeItem<T> root, IList<int> path, T item)
+        public void Add<T>(TreeItem<T> root, IEnumerable<int> path, T item)
+        {
+            var movingRoot = SelectItemOnPath(root, path);
+            movingRoot.Value = item;
+        }
+
+        public TreeItem<T> SelectItemOnPath<T>(TreeItem<T> root, IEnumerable<int> path)
         {
             int currentLvl = root.Level;
 
@@ -18,7 +25,7 @@ namespace DataStructure.Tree.Builder
                     childs = new List<TreeItem<T>>();
                     movingRoot.SetChildren(childs);
                 }
-                if (index >= childs.Count -1)
+                if (index >= childs.Count - 1)
                 {
                     var itemCountToAdd = index + 1 - childs.Count;
 
@@ -31,11 +38,14 @@ namespace DataStructure.Tree.Builder
                     }
                 }
                 movingRoot = childs[index];
-                movingRoot.Value = item;
             }
-
-           
+            return movingRoot;
         }
 
+        public void Add<T>(TreeItem<T> root, IEnumerable<int> path, Action<T> valueConfig)
+        {
+            var movingRoot = SelectItemOnPath(root, path);
+            valueConfig(movingRoot.Value);
+        }
     }
 }

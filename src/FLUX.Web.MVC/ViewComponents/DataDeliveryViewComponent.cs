@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using DataAccess.Interfaces;
 using Extraction.Interfaces;
 using Extraction.Interfaces.Layer;
@@ -14,13 +15,16 @@ namespace FLUX.Web.MVC.ViewComponents
         private readonly IVirtualFilePeristentHelper _persistentHelper;
         private readonly IVirtualFileConfigurationReader _configurationReader;
         private readonly IExtractionProcessor _extractionProcessor;
+        private readonly ILayerResultJoiner _resultJoiner;
 
         public DataDeliveryViewComponent(IVirtualFilePeristentHelper persistentHelper, 
-            IVirtualFileConfigurationReader configurationReader, IExtractionProcessor extractionProcessor)
+            IVirtualFileConfigurationReader configurationReader, IExtractionProcessor extractionProcessor,
+            ILayerResultJoiner resultJoiner)
         {
             _persistentHelper = persistentHelper;
             _configurationReader = configurationReader;
             _extractionProcessor = extractionProcessor;
+            _resultJoiner = resultJoiner;
         }
 
         private IDictionary<int, IVirtualFile> LoadSources()
@@ -52,14 +56,10 @@ namespace FLUX.Web.MVC.ViewComponents
                 SourceValues = source
             };
             _extractionProcessor.Execute(extractionContext);
-
-            var resultjoiner = new LayerResultJoiner(source);
-
-            foreach (var uo in extractionContext.Iterate())
-            {
-                resultjoiner.Add(uo.Data);
-            }
-            return View("MainDataTable", resultjoiner.LayerData);
+            
+            var layerData = _resultJoiner.Build(source, extractionContext.Iterate().Select(c => c.Data).ToArray());
+            
+            return View("MainDataTable", layerData);
         }
     }
 }

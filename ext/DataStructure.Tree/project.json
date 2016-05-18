@@ -4,17 +4,14 @@
     "dnxcore50": {
       "dependencies": {
         "System.Runtime": "4.0.21-*",
-        "System.Collections": "4.0.11-*",
-        "System.Linq": "4.0.1-*",
-
+        "System.Collections": "4.0.11-*"
       }
     },
-
     "dnx451": {
-		"dependencies": {
-		}
+      "dependencies": {}
     }
   },
   "dependencies": {
+    "System.Linq": "4.0.1-*"
   }
 }

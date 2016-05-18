@@ -1,19 +1,16 @@
-﻿using System.ComponentModel;
-using FLUX.Interfaces.Web;
-using FLUX.Web.Logic;
+﻿using DataAccess.Base;
 using DataAccess.Interfaces;
-using DataAccess.Base;
+using DataStructure.Tree.Builder;
 using Extraction.Base.Processor;
-using Extraction.Interfaces;
 using Extraction.Interfaces.Layer;
-using Microsoft.Extensions.Configuration;
 using Facade.Configuration;
 using Facade.MVC;
 using Facade.Session;
-using Microsoft.Extensions.DependencyInjection;
 using FLUX.Interfaces;
-using Microsoft.AspNet.Http.Features;
-using Microsoft.AspNet.Http.Features.Internal;
+using FLUX.Interfaces.Web;
+using FLUX.Web.Logic;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FLUX.Configuration.DependencyInjection
 {
@@ -23,20 +20,25 @@ namespace FLUX.Configuration.DependencyInjection
         {
             Layer(container);
             Configuration(container, configurationRoot);
-
+            RegisterHelpers(container);
             RegisterBusinessComponents(container);
         }
 
         private void RegisterBusinessComponents(IServiceCollection container)
         {
-            container.AddSingleton<IPostbackHelper, PostbackHelper>();
             container.AddSingleton<IModelBinderFacade, ModelBinderFacade>();
             container.AddSingleton<ISessionFacade, SessionFacade>();
-            container.AddSingleton<IVirtualFilePeristentHelper, VirtualFilePeristentHelper>();
-
+            
             container.AddSingleton<IConfigurationFormProcessor, ConfigurationFormProcessor>();
+            container.AddSingleton<ILayerResultJoiner, LayerResultJoiner>();
         }
 
+        public void RegisterHelpers(IServiceCollection container)
+        {
+            container.AddSingleton<ITreeHelper, TreeHelper>();
+            container.AddSingleton<IVirtualFilePeristentHelper, VirtualFilePeristentHelper>();
+            container.AddSingleton<IPostbackHelper, PostbackHelper>();
+        }
 
         public void Layer(IServiceCollection container)
         {

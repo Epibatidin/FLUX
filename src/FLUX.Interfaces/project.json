@@ -2,15 +2,13 @@
   "version": "1.0.0-*",
   "frameworks": {
     "dnxcore50": {
-      "System.Linq": "4.0.1-*",
+      "System.Linq": "4.0.1-*"
     },
-    "dnx451": { }
+    "dnx451": {}
   },
   "dependencies": {
-
     "FLUX.DomainObjects": "1.0.0-*",
     "Facade.MVC": "1.0.0-*",
-
     "Microsoft.AspNet.Mvc": "6.0.0-rc1-*"
   }
 }

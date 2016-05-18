@@ -1,14 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using DataAccess.Interfaces;
 using DataStructure.Tree;
+using DataStructure.Tree.Builder;
 using Extraction.Interfaces;
 using FLUX.DomainObjects;
+using FLUX.Interfaces;
 
 namespace FLUX.Web.Logic
 {
-    public class LayerResultJoiner
+    public class LayerResultJoiner : ILayerResultJoiner
     {
-        public TreeItem<MultiLayerDataContainer> LayerData;
+        private readonly ITreeHelper _treeHelper;
 
         public class DummySong : ISong
         {
@@ -20,35 +23,60 @@ namespace FLUX.Web.Logic
             public string Album { get; set; }
             public string SongName { get; }
         }
-
-        public LayerResultJoiner(IDictionary<int, IVirtualFile> virtualFiles)
+        
+        private IEnumerable<int> IntToDigits(int key)
         {
-            BuildTreeFromDict(virtualFiles);
+            return key.ToString().Select(c => c - 48);
         }
 
-        private void BuildTreeFromDict(IDictionary<int, IVirtualFile> virtualFiles)
+        public LayerResultJoiner(ITreeHelper treeHelper)
         {
-            LayerData = new TreeItem<MultiLayerDataContainer>();
-            var childs = new List<TreeItem<MultiLayerDataContainer>>();
-            LayerData.SetChildren(childs);
+            _treeHelper = treeHelper;
+        }
 
-            foreach (var virtualFile in virtualFiles.Values)
+        public TreeItem<MultiLayerDataContainer> Build(IDictionary<int, IVirtualFile> virtualFiles, 
+            IList<ISongByKeyAccessor> songByKeyAccessors)
+        {
+            var root = new TreeItem<MultiLayerDataContainer>();
+
+            foreach (var kv in virtualFiles)
             {
-                var childData = new MultiLayerDataContainer();
-                childData.AddSong(1, new DummySong()
-                {
-                    Id = virtualFile.ID,
-                    Album = virtualFile.VirtualPath
-                });
-                var childTree = new TreeItem<MultiLayerDataContainer>();
-                childTree.Value = childData;
-                childs.Add(childTree);
-            }
-        }
+                // the path is relevant 
+                var path = IntToDigits(kv.Key);
 
-        public void Add(ISongByKeyAccessor songByKeyAccessor)
-        {
-            
+                var activeTreeItem = _treeHelper.SelectItemOnPath(root, path);
+
+                var container = new MultiLayerDataContainer();
+
+                container.AddVirtualFile(activeTreeItem.Level, kv.Value);
+
+                foreach (var byKeyAccessor in songByKeyAccessors)
+                {
+                    var song = byKeyAccessor.GetByKey(kv.Key);
+
+                    container.AddSong(activeTreeItem.Level, song);
+                }
+
+            }
+
+            //var childs = new List<TreeItem<MultiLayerDataContainer>>();
+            //LayerData.SetChildren(childs);
+
+            //foreach (var virtualFile in virtualFiles.Values)
+            //{
+            //    var childData = new MultiLayerDataContainer();
+            //    childData.AddSong(1, new DummySong()
+            //    {
+            //        Id = virtualFile.ID,
+            //        Album = virtualFile.VirtualPath
+            //    });
+            //    var childTree = new TreeItem<MultiLayerDataContainer>();
+            //    childTree.Value = childData;
+            //    childs.Add(childTree);
+            //}
+
+
+            return null;
         }
     }
 }

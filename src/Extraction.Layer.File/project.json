@@ -4,22 +4,19 @@
     "dnxcore50": {
       "dependencies": {
         "System.Runtime": "4.0.21-*",
-        "System.Collections": "4.0.11-*",
-        "System.Text.RegularExpressions": "4.0.10",
+        "System.Text.RegularExpressions": "4.0.10"
       }
     },
-
     "dnx451": {
-      "dependencies": {
-      }
+      "dependencies": {}
     }
   },
   "dependencies": {
     "DynamicLoading": "1.0.0-*",
     "DataAccess.Interfaces": "1.0.0-*",
-
     "Extraction.Interfaces": "1.0.0-*",
-    "Extraction.Base": "1.0.0-*"
-
-  },  
+    "Extraction.Base": "1.0.0-*",
+    "System.Linq": "4.0.1-*",
+    "System.Collections": "4.0.11-*"
+  }
 }

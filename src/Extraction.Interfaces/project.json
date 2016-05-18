@@ -2,24 +2,17 @@
   "version": "1.0.0-*",
   "frameworks": {
     "dnxcore50": {
-      "dependencies": {
-       
-      }
+      "dependencies": {}
     },
     "dnx451": {
-      "dependencies": {
-
-      },
-      "frameworkAssemblies": {
-        
-      }
+      "dependencies": {},
+      "frameworkAssemblies": {}
     }
   },
-
   "dependencies": {
     "DataStructure.Tree": "1.0.0-*",
     "Extension.IEnumerable": "1.0.0-*",
     "DataAccess.Interfaces": "1.0.0-*",
-    "Extraction.DomainObjects": "1.0.0-*",
+    "Extraction.DomainObjects": "1.0.0-*"
   }
 }

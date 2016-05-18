@@ -1,24 +1,16 @@
 {
   "version": "1.0.0-*",
   "frameworks": {
-    "dnxcore50": {
-      
-    },
-    "dnx451": {
-    }
+    "dnxcore50": {},
+    "dnx451": {}
   },
   "dependencies": {
-
     "Facade.MVC": "1.0.0-*",
     "Facade.Session": "1.0.0-*",
     "Extension.IEnumerable": "1.0.0-*",
-
     "DataAccess.Interfaces": "1.0.0-*",
-
     "FLUX.DomainObjects": "1.0.0-*",
     "FLUX.Interfaces": "1.0.0-*",
-  
     "Extraction.Interfaces": "1.0.0-*"
-
   }
 }

@@ -4,18 +4,14 @@
     "dnxcore50": {
       "dependencies": {
         "System.Linq": "4.0.1-*",
-		"System.Runtime": "4.0.21-*",
+        "System.Runtime": "4.0.21-*"
       }
     },
-    "dnx451": {
-
-    }
-
+    "dnx451": {}
   },
   "dependencies": {
     "DataAccess.Interfaces": "1.0.0-*",
     "Extension.IEnumerable": "1.0.0-*",
-    "Extraction.Interfaces": "1.0.0-*",
-
+    "Extraction.Interfaces": "1.0.0-*"
   }
 }
