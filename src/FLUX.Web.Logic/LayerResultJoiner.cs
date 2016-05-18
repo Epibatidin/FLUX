@@ -34,7 +34,7 @@ namespace FLUX.Web.Logic
             _treeHelper = treeHelper;
         }
 
-        public TreeItem<MultiLayerDataContainer> Build(IDictionary<int, IVirtualFile> virtualFiles, 
+        public TreeItem<MultiLayerDataContainer> Build(IList<IVirtualFile> virtualFiles, 
             IList<ISongByKeyAccessor> songByKeyAccessors)
         {
             var root = new TreeItem<MultiLayerDataContainer>();
@@ -42,17 +42,17 @@ namespace FLUX.Web.Logic
             foreach (var kv in virtualFiles)
             {
                 // the path is relevant 
-                var path = IntToDigits(kv.Key);
+                var path = IntToDigits(kv.ID);
 
                 var activeTreeItem = _treeHelper.SelectItemOnPath(root, path);
 
                 var container = new MultiLayerDataContainer();
 
-                container.AddVirtualFile(activeTreeItem.Level, kv.Value);
+                container.AddVirtualFile(activeTreeItem.Level, kv);
 
                 foreach (var byKeyAccessor in songByKeyAccessors)
                 {
-                    var song = byKeyAccessor.GetByKey(kv.Key);
+                    var song = byKeyAccessor.GetByKey(kv.ID);
 
                     container.AddSong(activeTreeItem.Level, song);
                 }

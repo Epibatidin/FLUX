@@ -8,11 +8,9 @@ namespace Extraction.Interfaces
     {
         private readonly Dictionary<string, UpdateObject> _dataCollection;
 
-        public IDictionary<int, IVirtualFile> SourceValues { get; set; }
-        public IVirtualFileConfigurationReader StreamReader { get; set; }
-
-        public IList<int> Keys { get; set; }
-
+        public IList<IVirtualFile> SourceValues { get; set; }
+        public IVirtualFileStreamReader StreamReader { get; set; }
+        
         public ExtractionContext()
         {
             _dataCollection = new Dictionary<string, UpdateObject>();

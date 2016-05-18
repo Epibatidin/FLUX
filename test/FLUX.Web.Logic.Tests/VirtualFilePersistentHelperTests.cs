@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using DataAccess.Interfaces;
+﻿using DataAccess.Interfaces;
 using Extension.Test;
 using Microsoft.AspNet.Http.Features;
 using Moq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Bson;
+using System;
+using System.Collections.Generic;
+using System.IO;
 using Xunit;
 using Assert = NUnit.Framework.Assert;
 using Is = NUnit.Framework.Is;
@@ -59,12 +57,12 @@ namespace FLUX.Web.Logic.Tests
             {
                 ID = 2
             };
-            var virtualFiles = new Dictionary<int, IVirtualFile>()
+            var virtualFiles = new List<IVirtualFile>()
             {
-                { 1, source }
+                { source }
             };
 
-            var expectedData = GetByteArray(virtualFiles.Values);
+            var expectedData = GetByteArray(virtualFiles);
 
             SUT.SaveSource(virtualFiles);
             
@@ -78,13 +76,13 @@ namespace FLUX.Web.Logic.Tests
             var item0 = Create<VFile>();
             var item1 = Create<VFile>();
 
-            var virtualFiles = new Dictionary<int, IVirtualFile>()
+            var virtualFiles = new List<IVirtualFile>()
             {
-                { 1, item0 },
-                { 2, item1 }
+                { item0 },
+                { item1 }
             };
 
-            var expectedData = GetByteArray(virtualFiles.Values);
+            var expectedData = GetByteArray(virtualFiles);
 
             _session.Setup(c => c.TryGetValue("Source", out expectedData)).Returns(true);
 

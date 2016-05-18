@@ -6,11 +6,11 @@ namespace FLUX.Interfaces
 {
     public interface IVirtualFilePeristentHelper
     {
-        void SaveSource(IDictionary<int, IVirtualFile> sourceData);
+        void SaveSource(IList<IVirtualFile> sourceData);
         void SaveProviderName(string name);
         void SaveActiveGrp(string name);
 
-        IDictionary<int, IVirtualFile> LoadSource(Type virtualFileConcreteType);
+        IList<IVirtualFile> LoadSource(Type virtualFileConcreteType);
         string LoadProviderName();
         string LoadActiveGrp();
 

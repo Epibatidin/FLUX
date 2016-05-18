@@ -31,14 +31,14 @@ namespace DataAccess.FileSystem
             return rootPath;
         }
 
-        public IDictionary<int, IVirtualFile> RetrieveVirtualFiles(VirtualFileFactoryContext context)
+        public IList<IVirtualFile> RetrieveVirtualFiles(VirtualFileFactoryContext context)
         {
-            var virtualFiles = new Dictionary<int, IVirtualFile>();
+            var virtualFiles = new List<IVirtualFile>();
 
             var rootPath = getRootPath(context.SelectedSource);
            
             var root = new RealDirectory(rootPath);
-
+            int id = 0;
             var temp = root.GetDirectories();
             IEnumerable<IVirtualDirectory> dirs;
             if (context.OverrideRootnames == null)
@@ -67,10 +67,10 @@ namespace DataAccess.FileSystem
 
                     arrayPos++;
                     
-                    foreach (RealFile virtualFile in subDirectory.GetFiles("*.mp3", true, c => (pos + 1)*1000 + c))
+                    foreach (RealFile virtualFile in subDirectory.GetFiles("*.mp3", true, c => ++id))
                     {
                         virtualFile.VirtualPath = virtualFile.VirtualPath.Substring(rootPath.Length);
-                        virtualFiles.Add(virtualFile.ID, virtualFile);
+                        virtualFiles.Add(virtualFile);
                     }
                 }
             }

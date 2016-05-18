@@ -24,21 +24,21 @@ namespace FLUX.Web.Logic
 
         private ISession Session => _httpContextAccessor.HttpContext.Session;
 
-        public void SaveSource(IDictionary<int, IVirtualFile> sourceData)
+        public void SaveSource(IList<IVirtualFile> sourceData)
         {
             byte[] data = null;
 
             using (var memoryStream = new MemoryStream())
             using (BsonWriter writer = new BsonWriter(memoryStream))
             {
-                _serializer.Serialize(writer, sourceData.Values);
+                _serializer.Serialize(writer, sourceData);
                 data = memoryStream.ToArray();
             }
             
             Session.Set("Source", data);
         }
 
-        public IDictionary<int, IVirtualFile> LoadSource(Type virtualFileConcreteType)
+        public IList<IVirtualFile> LoadSource(Type virtualFileConcreteType)
         {
             byte[] data = null;
             
@@ -50,7 +50,7 @@ namespace FLUX.Web.Logic
                 reader.ReadRootValueAsArray = true;
                 virtualFileData = _serializer.Deserialize(reader, virtualFileConcreteType) as IEnumerable<IVirtualFile>;
             }
-            return virtualFileData?.ToDictionary(c => c.ID, c => c);
+            return virtualFileData?.ToList();
         }
 
         public void SaveProviderName(string name)

@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using DataStructure.Tree.Iterate;
-using Extraction.Base;
+﻿using DataStructure.Tree.Iterate;
 using Extraction.DomainObjects.StringManipulation;
 using Extraction.Interfaces;
 using Extraction.Interfaces.Layer;
+using System;
+using System.Collections.Generic;
 using FileTreeItem = DataStructure.Tree.TreeItem<Extraction.Layer.File.FileLayerSongDo>;
 
 namespace Extraction.Layer.File
@@ -20,7 +19,7 @@ namespace Extraction.Layer.File
 
         public void Execute(ExtractionContext store, UpdateObject updateObject)
         {
-            var tree = new TreeBuilder().Build(store.SourceValues.Values);
+            var tree = new TreeBuilder().Build(store.SourceValues);
             updateObject.UpdateData(new TreeByKeyAccessor(tree));
 
             foreach (var cleaner in _cleaners)

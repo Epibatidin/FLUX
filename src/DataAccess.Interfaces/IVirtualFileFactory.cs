@@ -11,6 +11,6 @@ namespace DataAccess.Interfaces
 
         IVirtualFileStreamReader GetReader(VirtualFileFactoryContext context);
 
-        IDictionary<int, IVirtualFile> RetrieveVirtualFiles(VirtualFileFactoryContext context);
+        IList<IVirtualFile> RetrieveVirtualFiles(VirtualFileFactoryContext context);
     }
 }

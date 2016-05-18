@@ -49,7 +49,7 @@ namespace DataAccess.XMLStub
             return dummy as Root;
         }
 
-        public IDictionary<int, IVirtualFile> RetrieveVirtualFiles(VirtualFileFactoryContext context)
+        public IList<IVirtualFile> RetrieveVirtualFiles(VirtualFileFactoryContext context)
         {
             var xmlSource = _xmlConfig.XmlSources.First(c => c.Name == context.SelectedSource);
             var root = new DirectoryInfo(xmlSource.XmlFolder);
@@ -66,7 +66,7 @@ namespace DataAccess.XMLStub
             }
 
             XmlSerializer groupSerializer = new XmlSerializer(typeof(Group));
-            var dict = new Dictionary<int, IVirtualFile>();
+            var dict = new List<IVirtualFile>();
             foreach (var subrootDir in dirs.OrderBy(c => c.Name))
             {
                 var xmlRootElement = GetRoot(subrootDir);
@@ -88,7 +88,7 @@ namespace DataAccess.XMLStub
                     foreach (var item in group.Source.Items)
                     {
                         item.VirtualPath = item.VirtualPath.Substring(xmlRootElement.RootPath.Length);
-                        dict.Add(item.ID, item);
+                        dict.Add(item);
                     }
                 }
             }

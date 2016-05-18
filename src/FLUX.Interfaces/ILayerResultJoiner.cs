@@ -8,7 +8,7 @@ namespace FLUX.Interfaces
 {
     public interface ILayerResultJoiner
     {
-        TreeItem<MultiLayerDataContainer> Build(IDictionary<int, IVirtualFile> virtualFiles,
+        TreeItem<MultiLayerDataContainer> Build(IList<IVirtualFile> virtualFiles,
             IList<ISongByKeyAccessor> songByKeyAccessors);
     }
 }
