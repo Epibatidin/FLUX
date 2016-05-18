@@ -28,19 +28,5 @@ namespace Extraction.Layer.File
                 case 3: SongName = value; break;
             }
         }
-
-        //public PartedString GetByDepth(int depth)
-        //{
-        //    return data[depth];
-        //}
-
-
-
-        //public void Update(int depth, Func<PartedString, PartedString> fun)
-        //{
-        //    data[depth] = fun(data[depth]);
-        //}
-
-
     }
 }

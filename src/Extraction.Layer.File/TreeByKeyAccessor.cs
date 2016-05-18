@@ -7,27 +7,23 @@ namespace Extraction.Layer.File
 {
     public class TreeByKeyAccessor : ISongByKeyAccessor
     {
-        private readonly TreeItem<FileLayerSongDo> _tree;
-
-        public TreeByKeyAccessor(TreeItem<FileLayerSongDo> tree)
-        {
-            _tree = tree;
-        }
-
-        private IEnumerable<int> IntToDigits(int key)
-        {
-            return key.ToString().Select(c => c - 48);
-        }
-
+        public TreeItem<FileLayerSongDo> Tree { get; set; }
+        public IDictionary<int, string> KeyMappings { get; set; }
+        
         public ISong GetByKey(int key)
         {
-            var root = _tree;
+            var path = KeyMappings[key];
+            var root = Tree;
 
-            foreach (var digit in IntToDigits(key))
+            var fls = new FileLayerSongDo();
+
+            foreach (var digit in path.Split('-').Select(int.Parse))
             {
                 root = root[digit];
+
+                
             }
-            return root.Value;
+            return fls;
         }
     }
 }

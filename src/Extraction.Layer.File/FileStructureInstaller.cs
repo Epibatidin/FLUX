@@ -13,6 +13,7 @@ namespace Extraction.Layer.File
         {
             services.AddSingleton<IDataExtractionLayer, FileStructureDataExtractionLayer>();
             services.AddSingleton<ICleaner, InternetStuffCleaner>();
+            services.AddSingleton<ITreeByKeyAccessorBuilder, TreeByKeyAccessorBuilder>();
         }
     }
 }

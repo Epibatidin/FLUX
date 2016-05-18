@@ -6,12 +6,8 @@ using DataStructure.Tree;
 
 namespace Extraction.Layer.File
 {
-    public class TreeBuilder
+    public class TreeByKeyAccessorBuilder : ITreeByKeyAccessorBuilder
     {
-        public TreeBuilder()
-        {
-        }
-
         private List<Tuple<int, List<string>>> PrepareData(IEnumerable<IVirtualFile> data)
         {
             // an dieser stelle empfehle ich den baum auf eine constante größe zu bluben 
@@ -34,7 +30,7 @@ namespace Extraction.Layer.File
         }
 
 
-        private List<TreeItem<FileLayerSongDo>> BuildTree(IEnumerable<Tuple<int, List<string>>> data, int depth)
+        private List<TreeItem<FileLayerSongDo>> BuildTree(IEnumerable<Tuple<int, List<string>>> data, int depth, IDictionary<int, string> currentKeyMapping)
         {
             // wenn depth == items2.length 
             // break;
@@ -64,7 +60,7 @@ namespace Extraction.Layer.File
 
                     child.Value = temp;
 
-                    var childs = BuildTree(item, depth + 1);
+                    var childs = BuildTree(item, depth + 1, currentKeyMapping);
                     if (childs != null)
                         child.SetChildren(childs);
 
@@ -75,11 +71,12 @@ namespace Extraction.Layer.File
         }
 
 
-        public TreeItem<FileLayerSongDo> Build(IEnumerable<IVirtualFile> data)
+        public TreeByKeyAccessor Build(IEnumerable<IVirtualFile> data)
         {
             var preparedData = PrepareData(data);
 
-            return BuildTree(preparedData, 0)[0];
+            return null;
+            //return BuildTree(preparedData, 0)[0];
         }
     }
 }

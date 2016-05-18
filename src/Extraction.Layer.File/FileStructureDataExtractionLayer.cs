@@ -11,20 +11,22 @@ namespace Extraction.Layer.File
     public class FileStructureDataExtractionLayer : IDataExtractionLayer
     {
         private readonly IEnumerable<ICleaner> _cleaners;
+        private readonly ITreeByKeyAccessorBuilder _byTreeAccessorBuilder;
 
-        public FileStructureDataExtractionLayer(IEnumerable<ICleaner> cleaners)
+        public FileStructureDataExtractionLayer(IEnumerable<ICleaner> cleaners, ITreeByKeyAccessorBuilder byTreeAccessorBuilder)
         {
             _cleaners = cleaners;
+            _byTreeAccessorBuilder = byTreeAccessorBuilder;
         }
 
         public void Execute(ExtractionContext store, UpdateObject updateObject)
         {
-            var tree = new TreeBuilder().Build(store.SourceValues);
-            updateObject.UpdateData(new TreeByKeyAccessor(tree));
+            var treeAccessor = _byTreeAccessorBuilder.Build(store.SourceValues);
+            updateObject.UpdateData(treeAccessor);
 
             foreach (var cleaner in _cleaners)
             {
-                ForeachPartedStringInTree(tree, cleaner.Filter);
+                ForeachPartedStringInTree(treeAccessor.Tree, cleaner.Filter);
             }
         }
 
@@ -75,7 +77,7 @@ namespace Extraction.Layer.File
         //            // daten aufbereiten 
         //            // wird nich neu gelesen ! 
         //            // bau den baum 
-        //            TreeBuilder builder = new TreeBuilder();
+        //            TreeByKeyAccessorBuilder builder = new TreeByKeyAccessorBuilder();
         //            _data = builder.Build(dirtyData.Values);
         //            Update();
         //            // dem data store bescheid geben ? 
