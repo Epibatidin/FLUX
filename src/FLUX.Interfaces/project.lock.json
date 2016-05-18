@@ -12,17 +12,17 @@
           "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.IO": "4.0.10",
-          "System.Linq": "4.0.1",
-          "System.Runtime": "4.0.21"
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516"
         }
       },
       "DataStructure.Tree/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Linq": "4.0.1",
-          "System.Runtime": "4.0.21"
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516"
         }
       },
       "DynamicLoading/1.0.0": {
@@ -37,8 +37,8 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Runtime": "4.0.21"
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516"
         }
       },
       "Extraction.DomainObjects/1.0.0": {
@@ -46,9 +46,9 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "Extension.IEnumerable": "1.0.0",
-          "System.Collections": "4.0.11",
-          "System.Linq": "4.0.1",
-          "System.Runtime": "4.0.21"
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516"
         }
       },
       "Extraction.Interfaces/1.0.0": {
@@ -83,8 +83,9 @@
           "DataAccess.Interfaces": "1.0.0",
           "Extension.IEnumerable": "1.0.0",
           "Extraction.Interfaces": "1.0.0",
-          "System.Linq": "4.0.1",
-          "System.Runtime": "4.0.21"
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516"
         }
       },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
@@ -1083,13 +1084,16 @@
           "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.dll": {}
         }
       },
-      "System.Collections/4.0.11-rc2-24027": {
+      "System.Collections/4.0.11-beta-23516": {
         "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.0.21-beta-23516"
+        },
         "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+          "ref/dotnet5.4/System.Collections.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+          "lib/DNXCore50/System.Collections.dll": {}
         }
       },
       "System.Collections.Concurrent/4.0.11-beta-23516": {
@@ -1353,7 +1357,7 @@
           "ref/dotnet5.1/System.IO.FileSystem.Watcher.dll": {}
         }
       },
-      "System.Linq/4.0.1-rc2-23623": {
+      "System.Linq/4.0.1-beta-23516": {
         "type": "package",
         "dependencies": {
           "System.Collections": "4.0.10",
@@ -1420,7 +1424,7 @@
           "lib/dotnet/System.ObjectModel.dll": {}
         }
       },
-      "System.Private.Uri/4.0.1-rc2-23623": {
+      "System.Private.Uri/4.0.1-beta-23516": {
         "type": "package",
         "compile": {
           "ref/dnxcore50/_._": {}
@@ -1535,10 +1539,10 @@
           "lib/DNXCore50/System.Resources.ResourceManager.dll": {}
         }
       },
-      "System.Runtime/4.0.21-rc2-23623": {
+      "System.Runtime/4.0.21-beta-23516": {
         "type": "package",
         "dependencies": {
-          "System.Private.Uri": "4.0.1-rc2-23623"
+          "System.Private.Uri": "4.0.1-beta-23516"
         },
         "compile": {
           "ref/dotnet5.4/System.Runtime.dll": {}
@@ -1858,10 +1862,7 @@
       },
       "DataStructure.Tree/1.0.0": {
         "type": "project",
-        "framework": "DNX,Version=v4.5.1",
-        "dependencies": {
-          "System.Linq": "4.0.1"
-        }
+        "framework": "DNX,Version=v4.5.1"
       },
       "DynamicLoading/1.0.0": {
         "type": "project",
@@ -3055,7 +3056,7 @@
           "lib/net45/_._": {}
         }
       },
-      "System.Linq/4.0.1-rc2-23623": {
+      "System.Linq/4.0.0": {
         "type": "package",
         "compile": {
           "ref/net45/_._": {}
@@ -3190,17 +3191,17 @@
           "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.IO": "4.0.10",
-          "System.Linq": "4.0.1",
-          "System.Runtime": "4.0.21"
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516"
         }
       },
       "DataStructure.Tree/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Linq": "4.0.1",
-          "System.Runtime": "4.0.21"
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516"
         }
       },
       "DynamicLoading/1.0.0": {
@@ -3215,8 +3216,8 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Runtime": "4.0.21"
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516"
         }
       },
       "Extraction.DomainObjects/1.0.0": {
@@ -3224,9 +3225,9 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "Extension.IEnumerable": "1.0.0",
-          "System.Collections": "4.0.11",
-          "System.Linq": "4.0.1",
-          "System.Runtime": "4.0.21"
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516"
         }
       },
       "Extraction.Interfaces/1.0.0": {
@@ -3261,8 +3262,9 @@
           "DataAccess.Interfaces": "1.0.0",
           "Extension.IEnumerable": "1.0.0",
           "Extraction.Interfaces": "1.0.0",
-          "System.Linq": "4.0.1",
-          "System.Runtime": "4.0.21"
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516"
         }
       },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
@@ -4390,7 +4392,7 @@
           "lib/DNXCore50/System.Net.Primitives.dll": {}
         }
       },
-      "runtime.win7.System.Private.Uri/4.0.1-rc2-23623": {
+      "runtime.win7.System.Private.Uri/4.0.1-beta-23516": {
         "type": "package",
         "compile": {
           "ref/dotnet/_._": {}
@@ -4486,13 +4488,16 @@
           "runtimes/win7/lib/DNXCore50/System.Threading.dll": {}
         }
       },
-      "System.Collections/4.0.11-rc2-24027": {
+      "System.Collections/4.0.11-beta-23516": {
         "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.0.21-beta-23516"
+        },
         "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+          "ref/dotnet5.4/System.Collections.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+          "lib/DNXCore50/System.Collections.dll": {}
         }
       },
       "System.Collections.Concurrent/4.0.11-beta-23516": {
@@ -4801,7 +4806,7 @@
           "ref/dotnet5.1/System.IO.FileSystem.Watcher.dll": {}
         }
       },
-      "System.Linq/4.0.1-rc2-23623": {
+      "System.Linq/4.0.1-beta-23516": {
         "type": "package",
         "dependencies": {
           "System.Collections": "4.0.10",
@@ -4900,7 +4905,7 @@
           "lib/DNXCore50/System.Private.Networking.dll": {}
         }
       },
-      "System.Private.Uri/4.0.1-rc2-23623": {
+      "System.Private.Uri/4.0.1-beta-23516": {
         "type": "package",
         "compile": {
           "ref/dnxcore50/_._": {}
@@ -5060,10 +5065,10 @@
           "lib/DNXCore50/System.Resources.ResourceManager.dll": {}
         }
       },
-      "System.Runtime/4.0.21-rc2-23623": {
+      "System.Runtime/4.0.21-beta-23516": {
         "type": "package",
         "dependencies": {
-          "System.Private.Uri": "4.0.1-rc2-23623"
+          "System.Private.Uri": "4.0.1-beta-23516"
         },
         "compile": {
           "ref/dotnet5.4/System.Runtime.dll": {}
@@ -5451,17 +5456,17 @@
           "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
           "System.IO": "4.0.10",
-          "System.Linq": "4.0.1",
-          "System.Runtime": "4.0.21"
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516"
         }
       },
       "DataStructure.Tree/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Linq": "4.0.1",
-          "System.Runtime": "4.0.21"
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516"
         }
       },
       "DynamicLoading/1.0.0": {
@@ -5476,8 +5481,8 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Runtime": "4.0.21"
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516"
         }
       },
       "Extraction.DomainObjects/1.0.0": {
@@ -5485,9 +5490,9 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "Extension.IEnumerable": "1.0.0",
-          "System.Collections": "4.0.11",
-          "System.Linq": "4.0.1",
-          "System.Runtime": "4.0.21"
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516"
         }
       },
       "Extraction.Interfaces/1.0.0": {
@@ -5522,8 +5527,9 @@
           "DataAccess.Interfaces": "1.0.0",
           "Extension.IEnumerable": "1.0.0",
           "Extraction.Interfaces": "1.0.0",
-          "System.Linq": "4.0.1",
-          "System.Runtime": "4.0.21"
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516"
         }
       },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
@@ -6651,7 +6657,7 @@
           "lib/DNXCore50/System.Net.Primitives.dll": {}
         }
       },
-      "runtime.win7.System.Private.Uri/4.0.1-rc2-23623": {
+      "runtime.win7.System.Private.Uri/4.0.1-beta-23516": {
         "type": "package",
         "compile": {
           "ref/dotnet/_._": {}
@@ -6747,13 +6753,16 @@
           "runtimes/win7/lib/DNXCore50/System.Threading.dll": {}
         }
       },
-      "System.Collections/4.0.11-rc2-24027": {
+      "System.Collections/4.0.11-beta-23516": {
         "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.0.21-beta-23516"
+        },
         "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+          "ref/dotnet5.4/System.Collections.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+          "lib/DNXCore50/System.Collections.dll": {}
         }
       },
       "System.Collections.Concurrent/4.0.11-beta-23516": {
@@ -7062,7 +7071,7 @@
           "ref/dotnet5.1/System.IO.FileSystem.Watcher.dll": {}
         }
       },
-      "System.Linq/4.0.1-rc2-23623": {
+      "System.Linq/4.0.1-beta-23516": {
         "type": "package",
         "dependencies": {
           "System.Collections": "4.0.10",
@@ -7161,7 +7170,7 @@
           "lib/DNXCore50/System.Private.Networking.dll": {}
         }
       },
-      "System.Private.Uri/4.0.1-rc2-23623": {
+      "System.Private.Uri/4.0.1-beta-23516": {
         "type": "package",
         "compile": {
           "ref/dnxcore50/_._": {}
@@ -7321,10 +7330,10 @@
           "lib/DNXCore50/System.Resources.ResourceManager.dll": {}
         }
       },
-      "System.Runtime/4.0.21-rc2-23623": {
+      "System.Runtime/4.0.21-beta-23516": {
         "type": "package",
         "dependencies": {
-          "System.Private.Uri": "4.0.1-rc2-23623"
+          "System.Private.Uri": "4.0.1-beta-23516"
         },
         "compile": {
           "ref/dotnet5.4/System.Runtime.dll": {}
@@ -7715,10 +7724,7 @@
       },
       "DataStructure.Tree/1.0.0": {
         "type": "project",
-        "framework": "DNX,Version=v4.5.1",
-        "dependencies": {
-          "System.Linq": "4.0.1"
-        }
+        "framework": "DNX,Version=v4.5.1"
       },
       "DynamicLoading/1.0.0": {
         "type": "project",
@@ -8912,7 +8918,7 @@
           "lib/net45/_._": {}
         }
       },
-      "System.Linq/4.0.1-rc2-23623": {
+      "System.Linq/4.0.0": {
         "type": "package",
         "compile": {
           "ref/net45/_._": {}
@@ -9050,10 +9056,7 @@
       },
       "DataStructure.Tree/1.0.0": {
         "type": "project",
-        "framework": "DNX,Version=v4.5.1",
-        "dependencies": {
-          "System.Linq": "4.0.1"
-        }
+        "framework": "DNX,Version=v4.5.1"
       },
       "DynamicLoading/1.0.0": {
         "type": "project",
@@ -10247,7 +10250,7 @@
           "lib/net45/_._": {}
         }
       },
-      "System.Linq/4.0.1-rc2-23623": {
+      "System.Linq/4.0.0": {
         "type": "package",
         "compile": {
           "ref/net45/_._": {}
@@ -11351,14 +11354,14 @@
         "runtimes/win7/lib/netcore50/System.Net.Primitives.dll"
       ]
     },
-    "runtime.win7.System.Private.Uri/4.0.1-rc2-23623": {
+    "runtime.win7.System.Private.Uri/4.0.1-beta-23516": {
       "type": "package",
       "serviceable": true,
-      "sha512": "fs37J5CLspn4uskv3svOaz18i03jMrEXxr63Pk3iV6wIBQN+T5btwjchJFtvaMAqolTCGz/DB+a4iyi4El5eng==",
+      "sha512": "dENjtxxx1L+OXWnxGRzeAD8mJC//NljPPLXNWg1H5BG6IB4YTLzBSzfeCOZQVpQaKfCYE7Mzjq12uCVZpBG4vg==",
       "files": [
         "ref/dotnet/_._",
-        "runtime.win7.System.Private.Uri.4.0.1-rc2-23623.nupkg",
-        "runtime.win7.System.Private.Uri.4.0.1-rc2-23623.nupkg.sha512",
+        "runtime.win7.System.Private.Uri.4.0.1-beta-23516.nupkg",
+        "runtime.win7.System.Private.Uri.4.0.1-beta-23516.nupkg.sha512",
         "runtime.win7.System.Private.Uri.nuspec",
         "runtimes/win7/lib/DNXCore50/System.Private.Uri.dll",
         "runtimes/win7/lib/netcore50/System.Private.Uri.dll",
@@ -11476,26 +11479,48 @@
         "ref/wpa81/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
+        "System.Collections.4.0.0.nupkg",
         "System.Collections.4.0.0.nupkg.sha512",
         "System.Collections.nuspec"
       ]
     },
-    "System.Collections/4.0.11-rc2-24027": {
+    "System.Collections/4.0.11-beta-23516": {
       "type": "package",
-      "sha512": "wi4oT2B06Ev7vDPeJki7HVJ3qPYJIilzf+p81JuNaBD9L2wi9Y2L5BsQ6ToncW+lYZafuMea/hiK1xX1Ge1VWQ==",
+      "serviceable": true,
+      "sha512": "FSd5zsGfmG2pidC3CVizQPNGTK1Q3A2HEuRqwUPLU/AArjELLC5p4l6XIAlJ9ZBPdbp6V8vFQAxUHzkFfyVkYA==",
       "files": [
-        "dotnet_library_license.txt",
+        "lib/DNXCore50/System.Collections.dll",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
         "lib/net45/_._",
-        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/netcore50/System.Collections.dll",
         "lib/win8/_._",
         "lib/wp80/_._",
         "lib/wpa81/_._",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
+        "ref/dotnet5.1/de/System.Collections.xml",
+        "ref/dotnet5.1/es/System.Collections.xml",
+        "ref/dotnet5.1/fr/System.Collections.xml",
+        "ref/dotnet5.1/it/System.Collections.xml",
+        "ref/dotnet5.1/ja/System.Collections.xml",
+        "ref/dotnet5.1/ko/System.Collections.xml",
+        "ref/dotnet5.1/ru/System.Collections.xml",
+        "ref/dotnet5.1/System.Collections.dll",
+        "ref/dotnet5.1/System.Collections.xml",
+        "ref/dotnet5.1/zh-hans/System.Collections.xml",
+        "ref/dotnet5.1/zh-hant/System.Collections.xml",
+        "ref/dotnet5.4/de/System.Collections.xml",
+        "ref/dotnet5.4/es/System.Collections.xml",
+        "ref/dotnet5.4/fr/System.Collections.xml",
+        "ref/dotnet5.4/it/System.Collections.xml",
+        "ref/dotnet5.4/ja/System.Collections.xml",
+        "ref/dotnet5.4/ko/System.Collections.xml",
+        "ref/dotnet5.4/ru/System.Collections.xml",
+        "ref/dotnet5.4/System.Collections.dll",
+        "ref/dotnet5.4/System.Collections.xml",
+        "ref/dotnet5.4/zh-hans/System.Collections.xml",
+        "ref/dotnet5.4/zh-hant/System.Collections.xml",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
         "ref/net45/_._",
@@ -11510,40 +11535,15 @@
         "ref/netcore50/System.Collections.xml",
         "ref/netcore50/zh-hans/System.Collections.xml",
         "ref/netcore50/zh-hant/System.Collections.xml",
-        "ref/netstandard1.0/de/System.Collections.xml",
-        "ref/netstandard1.0/es/System.Collections.xml",
-        "ref/netstandard1.0/fr/System.Collections.xml",
-        "ref/netstandard1.0/it/System.Collections.xml",
-        "ref/netstandard1.0/ja/System.Collections.xml",
-        "ref/netstandard1.0/ko/System.Collections.xml",
-        "ref/netstandard1.0/ru/System.Collections.xml",
-        "ref/netstandard1.0/System.Collections.dll",
-        "ref/netstandard1.0/System.Collections.xml",
-        "ref/netstandard1.0/zh-hans/System.Collections.xml",
-        "ref/netstandard1.0/zh-hant/System.Collections.xml",
-        "ref/netstandard1.3/de/System.Collections.xml",
-        "ref/netstandard1.3/es/System.Collections.xml",
-        "ref/netstandard1.3/fr/System.Collections.xml",
-        "ref/netstandard1.3/it/System.Collections.xml",
-        "ref/netstandard1.3/ja/System.Collections.xml",
-        "ref/netstandard1.3/ko/System.Collections.xml",
-        "ref/netstandard1.3/ru/System.Collections.xml",
-        "ref/netstandard1.3/System.Collections.dll",
-        "ref/netstandard1.3/System.Collections.xml",
-        "ref/netstandard1.3/zh-hans/System.Collections.xml",
-        "ref/netstandard1.3/zh-hant/System.Collections.xml",
-        "ref/portable-net45+win8+wp8+wpa81/_._",
         "ref/win8/_._",
         "ref/wp80/_._",
         "ref/wpa81/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "System.Collections.4.0.11-rc2-24027.nupkg",
-        "System.Collections.4.0.11-rc2-24027.nupkg.sha512",
-        "System.Collections.nuspec",
-        "ThirdPartyNotices.txt"
+        "runtimes/win8-aot/lib/netcore50/System.Collections.dll",
+        "System.Collections.4.0.11-beta-23516.nupkg",
+        "System.Collections.4.0.11-beta-23516.nupkg.sha512",
+        "System.Collections.nuspec"
       ]
     },
     "System.Collections.Concurrent/4.0.11-beta-23516": {
@@ -12554,21 +12554,50 @@
         "System.IO.FileSystem.Watcher.nuspec"
       ]
     },
-    "System.Linq/4.0.1-rc2-23623": {
+    "System.Linq/4.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "MDTKzq4KjW1pw2xavgJeVEcc9peCe2bId9r75hBavr+dX45HlCJYUJFd07hW5dCRR/3LoFoK+42b3tO1xWQKNg==",
+      "sha512": "r6Hlc+ytE6m/9UBr+nNRRdoJEWjoeQiT3L3lXYFDHoXk3VYsRBCDNXrawcexw7KPLaH0zamQLiAb6avhZ50cGg==",
       "files": [
-        "lib/dotnet5.4/System.Linq.dll",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
+        "lib/dotnet/System.Linq.dll",
         "lib/net45/_._",
         "lib/netcore50/System.Linq.dll",
         "lib/win8/_._",
         "lib/wp80/_._",
         "lib/wpa81/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
+        "ref/dotnet/de/System.Linq.xml",
+        "ref/dotnet/es/System.Linq.xml",
+        "ref/dotnet/fr/System.Linq.xml",
+        "ref/dotnet/it/System.Linq.xml",
+        "ref/dotnet/ja/System.Linq.xml",
+        "ref/dotnet/ko/System.Linq.xml",
+        "ref/dotnet/ru/System.Linq.xml",
+        "ref/dotnet/System.Linq.dll",
+        "ref/dotnet/System.Linq.xml",
+        "ref/dotnet/zh-hans/System.Linq.xml",
+        "ref/dotnet/zh-hant/System.Linq.xml",
+        "ref/net45/_._",
+        "ref/netcore50/System.Linq.dll",
+        "ref/netcore50/System.Linq.xml",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "System.Linq.4.0.0.nupkg",
+        "System.Linq.4.0.0.nupkg.sha512",
+        "System.Linq.nuspec"
+      ]
+    },
+    "System.Linq/4.0.1-beta-23516": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "AJaoyeAHLpurbTWnmvOhK/QC2sswKJrIA5RlPea+UdfXpHOw3srPNEPpseZDMV/EviVqAwUfFNkc5QxpGZtsLA==",
+      "files": [
+        "lib/dotnet5.4/System.Linq.dll",
+        "lib/net45/_._",
+        "lib/netcore50/System.Linq.dll",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
         "ref/dotnet5.1/de/System.Linq.xml",
         "ref/dotnet5.1/es/System.Linq.xml",
         "ref/dotnet5.1/fr/System.Linq.xml",
@@ -12580,8 +12609,6 @@
         "ref/dotnet5.1/System.Linq.xml",
         "ref/dotnet5.1/zh-hans/System.Linq.xml",
         "ref/dotnet5.1/zh-hant/System.Linq.xml",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
         "ref/net45/_._",
         "ref/netcore50/de/System.Linq.xml",
         "ref/netcore50/es/System.Linq.xml",
@@ -12597,10 +12624,8 @@
         "ref/win8/_._",
         "ref/wp80/_._",
         "ref/wpa81/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "System.Linq.4.0.1-rc2-23623.nupkg",
-        "System.Linq.4.0.1-rc2-23623.nupkg.sha512",
+        "System.Linq.4.0.1-beta-23516.nupkg",
+        "System.Linq.4.0.1-beta-23516.nupkg.sha512",
         "System.Linq.nuspec"
       ]
     },
@@ -12805,15 +12830,15 @@
         "System.Private.Networking.nuspec"
       ]
     },
-    "System.Private.Uri/4.0.1-rc2-23623": {
+    "System.Private.Uri/4.0.1-beta-23516": {
       "type": "package",
-      "sha512": "7VjuQcSa9LAhjxOJWrExcftjJo3nZVzcmE50L98Lxx0hC1NlB4S0p8tbNEIvy8d+7fwLGz6m97Et8iO2WKFlpw==",
+      "sha512": "PISxTW5FSZw8cQ8DOvq2pHHz48mok3ex0/QU2gcHG5PACvobxaXQl2oR345vqOx6C15l10bJPVkKZlgi2Ic4KQ==",
       "files": [
         "ref/dnxcore50/_._",
         "ref/netcore50/_._",
         "runtime.json",
-        "System.Private.Uri.4.0.1-rc2-23623.nupkg",
-        "System.Private.Uri.4.0.1-rc2-23623.nupkg.sha512",
+        "System.Private.Uri.4.0.1-beta-23516.nupkg",
+        "System.Private.Uri.4.0.1-beta-23516.nupkg.sha512",
         "System.Private.Uri.nuspec"
       ]
     },
@@ -13305,10 +13330,10 @@
         "System.Runtime.nuspec"
       ]
     },
-    "System.Runtime/4.0.21-rc2-23623": {
+    "System.Runtime/4.0.21-beta-23516": {
       "type": "package",
       "serviceable": true,
-      "sha512": "mDZ4yMdPOn4j5oplsRXwfSAwmKFIjyzaYXCijZUGayWgDHQEnahMfJmOkqc54EmmZfDAvBFyrj1vKhsBsmgJCA==",
+      "sha512": "ToYWwDgwR8fR9/8aaV+7PMFBfG2tEgGWED0l9OC9DQieaKEMAzXV3c6fOkK8FTd9YPjFcYnvx73tg21w6GuNDA==",
       "files": [
         "lib/DNXCore50/System.Runtime.dll",
         "lib/MonoAndroid10/_._",
@@ -13373,8 +13398,8 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtimes/win8-aot/lib/netcore50/System.Runtime.dll",
-        "System.Runtime.4.0.21-rc2-23623.nupkg",
-        "System.Runtime.4.0.21-rc2-23623.nupkg.sha512",
+        "System.Runtime.4.0.21-beta-23516.nupkg",
+        "System.Runtime.4.0.21-beta-23516.nupkg.sha512",
         "System.Runtime.nuspec"
       ]
     },

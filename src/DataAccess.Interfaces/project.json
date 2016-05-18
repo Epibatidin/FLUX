@@ -3,8 +3,8 @@
   "frameworks": {
     "dnxcore50": {
       "dependencies": {
-        "System.Linq": "4.0.1-*",
-        "System.Runtime": "4.0.21-*",
+        "System.Linq": "4.0.1-beta-23516",
+        "System.Runtime": "4.0.21-beta-23516",
         "System.IO": "4.0.10"
       }
     },
