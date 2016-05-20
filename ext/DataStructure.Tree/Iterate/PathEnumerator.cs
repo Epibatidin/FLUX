@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 namespace DataStructure.Tree.Iterate
 {
-
     // iteriert über alle pfade in baum von der wurzel zu den blättern 
     // die vererbung ist aber glaub falsch 
     // das resultat ist eine liste von Level : Value Pairs 
@@ -74,14 +73,14 @@ namespace DataStructure.Tree.Iterate
             }
             else
             {
-                Current = new List<int>(_currentPath);
+                CurrentPath = new List<int>(_currentPath);
                 CurrentItem = source;
                 return true;
             }
         }
 
         public TreeItem<T> CurrentItem { get; private set; }
-        
+        public List<int> CurrentPath { get; private set; }
         public TreeItem<T> NavigateToItem(IEnumerable<int> path)
         {
             var cur = _root;
@@ -128,10 +127,10 @@ namespace DataStructure.Tree.Iterate
         {
             _currentPath = new List<int>();
             _cache = false;
-            Current = null;
+            CurrentPath = null;
         }
 
-        public List<int> Current { get; private set; }
+        public List<int> Current => CurrentPath;
         object System.Collections.IEnumerator.Current => Current;
         TreeItem<T> IEnumerator<TreeItem<T>>.Current => CurrentItem;
 

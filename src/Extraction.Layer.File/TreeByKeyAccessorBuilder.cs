@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DataAccess.Interfaces;
 using DataStructure.Tree;
+using DataStructure.Tree.Iterate;
 
 namespace Extraction.Layer.File
 {
@@ -30,7 +31,7 @@ namespace Extraction.Layer.File
         }
 
 
-        private List<TreeItem<FileLayerSongDo>> BuildTree(IEnumerable<Tuple<int, List<string>>> data, int depth, IDictionary<int, string> currentKeyMapping)
+        private List<TreeItem<FileLayerSongDo>> BuildTree(IEnumerable<Tuple<int, List<string>>> data, int depth)
         {
             // wenn depth == items2.length 
             // break;
@@ -43,29 +44,31 @@ namespace Extraction.Layer.File
                         select grp;
 
             List<TreeItem<FileLayerSongDo>> result = null;
-            if (grped.Any())
+            bool hasElements = false;
+
+            foreach (var item in grped)
             {
-                result = new List<TreeItem<FileLayerSongDo>>();
-
-                foreach (var item in grped)
+                if (!hasElements)
                 {
-                    var child = new TreeItem<FileLayerSongDo>();
-                    child.Level = depth;
-                    var temp = new FileLayerSongDo();
-                    temp.SetByDepth(depth, item.Key);
-                    var current = item.First();
-
-                    if (depth == current.Item2.Count - 1)
-                        temp.Id = item.First().Item1;
-
-                    child.Value = temp;
-
-                    var childs = BuildTree(item, depth + 1, currentKeyMapping);
-                    if (childs != null)
-                        child.SetChildren(childs);
-
-                    result.Add(child);
+                    result = new List<TreeItem<FileLayerSongDo>>();
+                    hasElements = true;
                 }
+                var child = new TreeItem<FileLayerSongDo>();
+                child.Level = depth;
+                var temp = new FileLayerSongDo();
+                temp.SetByDepth(depth, item.Key);
+                var current = item.First();
+
+                if (depth == current.Item2.Count - 1)
+                    temp.Id = item.First().Item1;
+
+                child.Value = temp;
+
+                var childs = BuildTree(item, depth + 1);
+                if (childs != null)
+                    child.SetChildren(childs);
+
+                result.Add(child);
             }
             return result;
         }
@@ -73,10 +76,24 @@ namespace Extraction.Layer.File
 
         public TreeByKeyAccessor Build(IEnumerable<IVirtualFile> data)
         {
+            var byKeyAccessor = new TreeByKeyAccessor();
+            
             var preparedData = PrepareData(data);
+            byKeyAccessor.Tree = BuildTree(preparedData, 0)[0];
 
-            return null;
-            //return BuildTree(preparedData, 0)[0];
+            return byKeyAccessor;
+        }
+        
+        public void BuildKeyMapping(TreeByKeyAccessor result)
+        {
+            var mapping = result.KeyMappings = new Dictionary<int, IList<int>>();
+
+            var pathIterator = new PathEnumerator<FileLayerSongDo>(result.Tree);
+
+            while (pathIterator.MoveNext())
+            {
+                mapping.Add(pathIterator.CurrentItem.Value.Id, pathIterator.CurrentPath);
+            }
         }
     }
 }
