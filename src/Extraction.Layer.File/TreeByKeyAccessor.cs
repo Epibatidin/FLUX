@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DataStructure.Tree;
+using Extraction.Base;
 using Extraction.Interfaces;
 
 namespace Extraction.Layer.File
@@ -14,12 +15,14 @@ namespace Extraction.Layer.File
             var path = KeyMappings[key];
             var root = Tree;
 
-            var fls = new FileLayerSongDo();
+            var fls = new NonOverwrittingSongDummy();
 
             foreach (var digit in path)
             {
+                fls.Add(root.Value);
                 root = root[digit];
             }
+            fls.Add(root.Value);
             return fls;
         }
     }

@@ -32,13 +32,13 @@ namespace FLUX.Web.Logic
         public TreeItem<MultiLayerDataContainer> Build(IList<IVirtualFile> virtualFiles, 
             IList<ISongByKeyAccessor> songByKeyAccessors)
         {
-            var flatListForSongs = new List<object>();
+            var flatListForSongs = new List<MultiLayerDataContainer>();
 
             foreach (var kv in virtualFiles)
             {
                 var container = new MultiLayerDataContainer();
                 container.Id = kv.ID;
-                container.Path = kv.Name;
+                container.Path = kv.VirtualPath;
                 flatListForSongs.Add(container);
                 foreach (var byKeyAccessor in songByKeyAccessors)
                 {
@@ -47,7 +47,7 @@ namespace FLUX.Web.Logic
                     container.AddSong(song);
                 }
             }
-
+            var r = flatListForSongs;
             //var childs = new List<TreeItem<MultiLayerDataContainer>>();
             //LayerData.SetChildren(childs);
 

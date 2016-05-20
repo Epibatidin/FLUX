@@ -87,7 +87,8 @@ namespace DataAccess.XMLStub
 
                     foreach (var item in group.Source.Items)
                     {
-                        item.VirtualPath = item.VirtualPath.Substring(xmlRootElement.RootPath.Length);
+                        item.VirtualPath = item.VirtualPath.Substring(xmlRootElement.RootPath.Length,
+                            item.VirtualPath.Length - item.Name.Length - xmlRootElement.RootPath.Length -1 );
                         dict.Add(item);
                     }
                 }

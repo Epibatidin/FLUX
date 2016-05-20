@@ -22,6 +22,8 @@ namespace Extraction.Layer.File
         public void Execute(ExtractionContext store, UpdateObject updateObject)
         {
             var treeAccessor = _byTreeAccessorBuilder.Build(store.SourceValues);
+            _byTreeAccessorBuilder.BuildKeyMapping(treeAccessor);
+
             updateObject.UpdateData(treeAccessor);
 
             foreach (var cleaner in _cleaners)

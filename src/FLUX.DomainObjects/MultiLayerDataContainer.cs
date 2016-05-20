@@ -63,15 +63,13 @@ namespace FLUX.DomainObjects
 
         private void AddValue(string key, int value)
         {
-            string res = " ";
-            if (value > 0)
-                res = value.ToString();
-
-            AddValue(key, res);
+            if (value == 0) return;
+            AddValue(key, value.ToString());
         }
 
         private void AddValue(string key, string value)
         {
+            if(string.IsNullOrEmpty(value)) return;
             List<string> values = Data.GetOrCreate(key);
             values.Add(value);
         }

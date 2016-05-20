@@ -6,5 +6,6 @@ namespace Extraction.Layer.File
     public interface ITreeByKeyAccessorBuilder
     {
         TreeByKeyAccessor Build(IEnumerable<IVirtualFile> data);
+        void BuildKeyMapping(TreeByKeyAccessor result);
     }
 }
