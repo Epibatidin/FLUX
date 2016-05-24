@@ -3,23 +3,104 @@ using System.Collections.Generic;
 
 namespace DataStructure.Tree.Builder
 {
-    public class TreeBuilder<TValueType, TIDType> where TValueType : IUnique<TIDType>, new()
+    public class TreeBuilder : ITreeBuilder
     {
-        public List<Func<TIDType, int, int, TValueType>> Factories { get; set; }
-
-        public TreeBuilder(IEnumerable<Func<TIDType, int, int, TValueType>> _factories)
+        public void Add<T>(TreeItem<T> root, IEnumerable<int> path, T item)
         {
-            Factories = new List<Func<TIDType, int, int, TValueType>>();
-            Factories.AddRange(_factories);
+            var movingRoot = BuildToPath(root, path);
+            movingRoot.Value = item;
         }
 
-        private ItemBuilder<TValueType, TIDType> _builder;
-
-        public ItemBuilder<TValueType, TIDType> Root(Action<ItemBuilder<TValueType, TIDType>> builderAction)
+        public TreeItem<T> BuildToPath<T>(TreeItem<T> root, IEnumerable<int> path)
         {
-            _builder = new ItemBuilder<TValueType, TIDType>(0, Factories);
-            builderAction(_builder);
-            return _builder;
+            int currentLvl = root.Level;
+
+            var movingRoot = root;
+            foreach (var index in path)
+            {
+                currentLvl++;
+                var childs = movingRoot.GetChildren();
+                if (childs == null)
+                {
+                    childs = new List<TreeItem<T>>();
+                    movingRoot.SetChildren(childs);
+                }
+                if (index >= childs.Count - 1)
+                {
+                    var itemCountToAdd = index + 1 - childs.Count;
+
+                    for (int i = 0; i < itemCountToAdd; i++)
+                    {
+                        childs.Add(new TreeItem<T>()
+                        {
+                            Level = currentLvl
+                        });
+                    }
+                }
+                movingRoot = childs[index];
+            }
+            return movingRoot;
         }
+
+        public void Add<T>(TreeItem<T> root, IEnumerable<int> path, Action<T> valueConfig)
+        {
+            var movingRoot = BuildToPath(root, path);
+            valueConfig(movingRoot.Value);
+        }
+
+        private class SavedPathData
+        {
+            public int NextOnLevel { get; set; }
+
+            public List<int> Path { get; set; }
+        }
+
+        public TreeItem<TCollectionItem> BuildTreeFromCollection<TCollectionItem>(IList<TCollectionItem> collection,
+            Func<TCollectionItem, int, string> keyAccessor)
+        {
+            var root = new TreeItem<TCollectionItem>();
+
+            var keys = new Dictionary<string, SavedPathData>();
+
+            // ich muss mir zum pfad merken wieviele items 
+            // bereits dort sind 
+            // dann kann ich den baum aber auch direkt bauen 
+            foreach (var someItem in collection)
+            {
+                SavedPathData previousMatch = null;
+
+                for (int i = 0;; i++)
+                {
+                    var key = keyAccessor(someItem, i);
+                    if (key == null) break;
+
+                    if (keys.ContainsKey(key))
+                    {
+                        previousMatch = keys[key];
+                    }
+                    else
+                    {
+                        var newWrapper = new SavedPathData();
+                        if (previousMatch != null)
+                        {
+                            newWrapper.Path = new List<int>(previousMatch.Path);
+                            newWrapper.Path.Add(previousMatch.NextOnLevel++);
+                        }
+                        else
+                        {
+                            newWrapper.Path = new List<int> {0};
+                        }
+                        previousMatch = newWrapper;
+                        keys.Add(key, newWrapper);
+                    }
+                }
+                if (previousMatch == null)
+                    throw new NotSupportedException("TreeItems that do not have a key are not supported");
+
+                Add(root, previousMatch.Path, someItem);
+            }
+            return root;
+        }
+
     }
 }

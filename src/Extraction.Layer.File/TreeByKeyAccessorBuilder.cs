@@ -60,7 +60,7 @@ namespace Extraction.Layer.File
                 var current = item.First();
 
                 if (depth == current.Item2.Count - 1)
-                    temp.Id = item.First().Item1;
+                    temp.Id = current.Item1;
 
                 child.Value = temp;
 
@@ -92,7 +92,8 @@ namespace Extraction.Layer.File
 
             while (pathIterator.MoveNext())
             {
-                mapping.Add(pathIterator.CurrentItem.Value.Id, pathIterator.CurrentPath);
+                var key = pathIterator.CurrentItem.Value.Id;
+                mapping[key] = pathIterator.CurrentPath;
             }
         }
     }

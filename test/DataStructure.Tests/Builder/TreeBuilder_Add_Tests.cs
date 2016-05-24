@@ -9,7 +9,7 @@ using Assert = NUnit.Framework.Assert;
 
 namespace DataStructure.Tests.Builder
 {
-    public class TreeItemAdderTests : FixtureBase<TreeHelper>
+    public class TreeBuilder_Add_Tests : FixtureBase<TreeBuilder>
     {
         [Fact]
         public void should_create_childs_if_has_no_childs()

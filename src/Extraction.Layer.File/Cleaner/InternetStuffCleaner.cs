@@ -6,7 +6,7 @@ namespace Extraction.Layer.File.Cleaner
 {
     public class InternetStuffCleaner : ICleaner
     {
-        private static readonly string isInternetstuff = @"^(www.)?([a-z]*[.])(com|de|org|to|net)$";
+        //private static readonly string isInternetstuff = @"^(www.)?([a-z]*[.])(com|de|org|to|net)$";
         private static readonly string isInternetstuffNonExcluding = @"(www.)?([a-z0-9]*[.])(com|de|org|to|net)";
 
         private Regex Reg;

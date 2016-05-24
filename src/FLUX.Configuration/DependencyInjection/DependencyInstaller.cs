@@ -35,7 +35,7 @@ namespace FLUX.Configuration.DependencyInjection
 
         public void RegisterHelpers(IServiceCollection container)
         {
-            container.AddSingleton<ITreeHelper, TreeHelper>();
+            container.AddSingleton<ITreeBuilder, TreeBuilder>();
             container.AddSingleton<IVirtualFilePeristentHelper, VirtualFilePeristentHelper>();
             container.AddSingleton<IPostbackHelper, PostbackHelper>();
         }
