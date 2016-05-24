@@ -52,7 +52,6 @@ namespace FLUX.Web.MVC.ViewComponents
             var extractionContext = new ExtractionContext();
             if(!TryFillExtractionContext(extractionContext))
                 return new EmptyViewComponentResult();
-
             
             _extractionProcessor.Execute(extractionContext);
             

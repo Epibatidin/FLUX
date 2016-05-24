@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using DataAccess.Interfaces;
+using System.Linq;
 using Extension.IEnumerable;
 using Extraction.Interfaces;
 
@@ -17,37 +17,7 @@ namespace FLUX.DomainObjects
         public Dictionary<string, List<string>> Data;
 
         public string Path { get; set; }
-
-        public void AddVirtualFile(int depth, IVirtualFile vf)
-        {
-            switch (depth)
-            {
-                case 0:
-                    {
-                        AddValue("Artist", vf.Name);
-                        break;
-                    }
-                case 1:
-                    {
-                        AddValue("Year", "");
-                        AddValue("Album", vf.Name);
-                        break;
-                    }
-                case 2:
-                    {
-                        AddValue("CD", vf.Name);
-                        break;
-                    }
-                case 3:
-                    {
-                        AddValue("Track", "");
-                        AddValue("Title", vf.Name);
-                        break;
-                    }
-            }
-        }
-
-
+        
         public void AddSong(ISong song)
         {
             if (song == null) return;
@@ -58,6 +28,28 @@ namespace FLUX.DomainObjects
             AddValue("CD", song.CD);
             AddValue("Track", song.TrackNr);
             AddValue("Title", song.SongName);
+        }
+
+        public string GetGroupingKeyByDepth(int depth)
+        {
+            var key = GetKeyByDepth(depth);
+            if (key == null) return null;
+
+            if (!Data.ContainsKey(key))
+                return null;
+
+            return string.Join("-", Data[key]);
+        }
+
+        private string GetKeyByDepth(int depth)
+        {
+            switch (depth)
+            {
+                case 0: return "Artist";
+                case 1: return "Album";
+                case 2: return "Title";
+            }
+            return null;
         }
 
 

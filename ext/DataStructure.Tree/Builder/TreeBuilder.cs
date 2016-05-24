@@ -5,13 +5,17 @@ namespace DataStructure.Tree.Builder
 {
     public class TreeBuilder : ITreeBuilder
     {
-        public void Add<T>(TreeItem<T> root, IEnumerable<int> path, T item)
+        public void Add<T>(TreeItem<T> root, IEnumerable<int> path, T item) where T : class
         {
-            var movingRoot = BuildToPath(root, path);
+            var movingRoot = BuildToPath(root, path, (c, i, t) => null, item);
             movingRoot.Value = item;
         }
 
-        public TreeItem<T> BuildToPath<T>(TreeItem<T> root, IEnumerable<int> path)
+    
+        private TreeItem<TTreeItemValue> BuildToPath<TCollectionItem,TTreeItemValue>(TreeItem<TTreeItemValue> root, IEnumerable<int> path,
+            Func<TCollectionItem, int, bool, TTreeItemValue> itemValueMapper, TCollectionItem value)
+            where TTreeItemValue : class 
+
         {
             int currentLvl = root.Level;
 
@@ -22,7 +26,7 @@ namespace DataStructure.Tree.Builder
                 var childs = movingRoot.GetChildren();
                 if (childs == null)
                 {
-                    childs = new List<TreeItem<T>>();
+                    childs = new List<TreeItem<TTreeItemValue>>();
                     movingRoot.SetChildren(childs);
                 }
                 if (index >= childs.Count - 1)
@@ -31,22 +35,35 @@ namespace DataStructure.Tree.Builder
 
                     for (int i = 0; i < itemCountToAdd; i++)
                     {
-                        childs.Add(new TreeItem<T>()
+                        childs.Add(new TreeItem<TTreeItemValue>()
                         {
                             Level = currentLvl
                         });
                     }
                 }
+                if (childs[index].Value == null)
+                    childs[index].Value = itemValueMapper(value, currentLvl, false);
                 movingRoot = childs[index];
             }
+
+            if (movingRoot.Value == null)
+                movingRoot.Value = itemValueMapper(value, currentLvl, true);
+
             return movingRoot;
         }
 
-        public void Add<T>(TreeItem<T> root, IEnumerable<int> path, Action<T> valueConfig)
-        {
-            var movingRoot = BuildToPath(root, path);
-            valueConfig(movingRoot.Value);
-        }
+        //public void Add<T>(TreeItem<T> root, IEnumerable<int> path, Action<T> valueConfig)
+        //{
+        //    var movingRoot = BuildToPath(root, path);
+        //    valueConfig(movingRoot.Value);
+        //}
+
+        //public void Add<TCollectionItem, TTreeItemValue>(TreeItem<TTreeItemValue> root, IEnumerable<int> path, TCollectionItem collectionItem,
+        //    Func<TCollectionItem, int, TTreeItemValue> itemValueMapper)
+        //{
+        //    var movingRoot = BuildToPath(root, path);
+        //    valueConfig(movingRoot.Value);
+        //}
 
         private class SavedPathData
         {
@@ -55,10 +72,13 @@ namespace DataStructure.Tree.Builder
             public List<int> Path { get; set; }
         }
 
-        public TreeItem<TCollectionItem> BuildTreeFromCollection<TCollectionItem>(IList<TCollectionItem> collection,
-            Func<TCollectionItem, int, string> keyAccessor)
+        public TreeItem<TTreeItemValue> BuildTreeFromCollection<TCollectionItem, TTreeItemValue>(IList<TCollectionItem> collection,
+            Func<TCollectionItem, int, string> keyAccessor, Func<TCollectionItem, int, TTreeItemValue> itemValueMapper)
+
+            where TTreeItemValue : class 
+
         {
-            var root = new TreeItem<TCollectionItem>();
+            var root = new TreeItem<TTreeItemValue>();
 
             var keys = new Dictionary<string, SavedPathData>();
 
@@ -96,8 +116,8 @@ namespace DataStructure.Tree.Builder
                 }
                 if (previousMatch == null)
                     throw new NotSupportedException("TreeItems that do not have a key are not supported");
-
-                Add(root, previousMatch.Path, someItem);
+                
+                BuildToPath(root, previousMatch.Path, (collectionItem, depth, isLastItem) => itemValueMapper(collectionItem, depth), someItem);
             }
             return root;
         }

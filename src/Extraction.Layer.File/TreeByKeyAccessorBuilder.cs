@@ -3,12 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using DataAccess.Interfaces;
 using DataStructure.Tree;
+using DataStructure.Tree.Builder;
 using DataStructure.Tree.Iterate;
 
 namespace Extraction.Layer.File
 {
     public class TreeByKeyAccessorBuilder : ITreeByKeyAccessorBuilder
     {
+        private readonly ITreeBuilder _treeBuilder;
+
+        public TreeByKeyAccessorBuilder(ITreeBuilder treeBuilder)
+        {
+            _treeBuilder = treeBuilder;
+        }
+
         private List<Tuple<int, List<string>>> PrepareData(IEnumerable<IVirtualFile> data)
         {
             // an dieser stelle empfehle ich den baum auf eine constante größe zu bluben 
@@ -78,6 +86,8 @@ namespace Extraction.Layer.File
         {
             var byKeyAccessor = new TreeByKeyAccessor();
             
+            //var tree = _treeBuilder.
+
             var preparedData = PrepareData(data);
             byKeyAccessor.Tree = BuildTree(preparedData, 0)[0];
 

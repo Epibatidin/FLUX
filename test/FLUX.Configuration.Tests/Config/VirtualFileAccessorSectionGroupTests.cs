@@ -1,8 +1,5 @@
-﻿using System;
+﻿using DataAccess.Base.Config;
 using Xunit;
-using Microsoft.Extensions.OptionsModel;
-using DataAccess.Base.Config;
-using Microsoft.Extensions.Configuration;
 using Assert = NUnit.Framework.Assert;
 using Is = NUnit.Framework.Is;
 
@@ -10,8 +7,6 @@ namespace FLUX.Configuration.Tests.Config
 {
     public class VirtualFileAccessorSectionGroupTests : ConfigurationTestBase<VirtualFileAccessorSectionGroup>
     {
-        IConfiguration _config;
-
         public VirtualFileAccessorSectionGroupTests() : base(@"D:\Develop\FLUX\src\FLUX.Configuration\Files\VirtualFileProvier.json", null)
         {         
         }
