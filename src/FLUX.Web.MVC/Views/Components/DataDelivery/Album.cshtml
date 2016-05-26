@@ -1,0 +1,15 @@
+﻿@using DataStructure.Tree
+@using FLUX.DomainObjects
+@model DataStructure.Tree.TreeItem<FLUX.DomainObjects.MultiLayerDataContainer>
+
+<div class="ContentWrapper Album">
+    <div class="float-left">
+        <h2 class="float-left Album">Year</h2>
+        @Html.DisplayFor(c => c.Value, new { key = "Year" })
+
+    </div>
+    <div class="float-left" style="margin-left: 20px;">
+        <h2 class="float-left Album">Album</h2>
+        @Html.DisplayFor(c => c.Value, new { key = "Album" })
+    </div>
+</div>

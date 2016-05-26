@@ -1,0 +1,65 @@
+﻿h3.Artist {
+    display: block;
+    font-size: 1.5em;
+}
+
+h2.Album {
+    display: block;
+    font-size: 1.25em;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clear-fix:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+
+.TopHeadlineContainer {
+    margin-left: 50px;
+    padding-bottom: 50px;
+}
+
+.ContentWrapper {
+    padding: 10px;
+}
+
+.ContentWrapper.Artist {
+    border-right: solid blue thin;
+    float: left;
+}
+
+.ContentWrapper.Album {
+    width: 70%;
+    border-left: solid blue thin;
+    float: right;
+}
+
+.ContentContainer {
+    margin-left: 50px;
+}
+
+.ContentContainer>div {
+    border-style: solid;
+    border-width: 2px;
+    padding: 1px 10px;
+    margin-top: 1px;
+}
+
+.layer0 {
+    border-color: red;
+}
+
+.layer1 {
+    border-color: blue;
+}

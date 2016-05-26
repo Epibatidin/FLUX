@@ -6,6 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using FLUX.Configuration.DependencyInjection;
+using FLUX.Web.MVC.Framework;
+using Microsoft.AspNet.Mvc;
+using Microsoft.AspNet.Mvc.Razor;
 
 namespace FLUX.Web.MVC
 {
@@ -33,6 +36,12 @@ namespace FLUX.Web.MVC
         {
             // Add MVC dependencies
             services.AddMvc();
+
+            services.Configure<RazorViewEngineOptions>(o =>
+            {
+                o.ViewLocationExpanders.Clear();
+                o.ViewLocationExpanders.Add(new ViewComponentIgnoringViewLocationExpander());
+            });
 
             var di = new DependencyInstaller();
             di.Install(services, Configuration);

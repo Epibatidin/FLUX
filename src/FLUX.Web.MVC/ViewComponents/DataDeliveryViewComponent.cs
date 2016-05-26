@@ -57,7 +57,7 @@ namespace FLUX.Web.MVC.ViewComponents
             
             var layerData = _resultJoiner.Build(extractionContext.SourceValues, extractionContext.Iterate().Select(c => c.Data).ToArray());
             
-            return View("MainDataTable", layerData);
+            return View("Index", layerData);
         }
     }
 }

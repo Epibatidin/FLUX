@@ -1,0 +1,27 @@
+﻿@using DataStructure.Tree
+@using FLUX.DomainObjects
+@model TreeItem<MultiLayerDataContainer>
+
+@{
+    List<ITreeItem<MultiLayerDataContainer>> cds = new List<ITreeItem<MultiLayerDataContainer>>();
+
+    if (Model[0].HasChildren) // when the first child of Album has a child this is a CD
+    {
+        cds.AddRange(Model.Children);
+    }
+    else
+    {
+        cds.Add(Model);
+    }
+}
+
+@foreach (var cd in cds)
+{
+    <div>
+        @foreach (var song in cd.Children)
+        {
+            @Html.DisplayFor(c => song.Value, new { key = "TrackNr" })
+            @Html.DisplayFor(c => song.Value, new { key = "Title" })
+        }
+    </div>
+}

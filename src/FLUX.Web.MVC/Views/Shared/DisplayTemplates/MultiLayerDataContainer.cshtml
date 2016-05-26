@@ -1,0 +1,26 @@
+﻿@model FLUX.DomainObjects.MultiLayerDataContainer
+
+@{
+    var key = ViewData["Key"] as string;
+    if (key == null)
+    {
+        throw new NullReferenceException("Key can not be null");
+    }
+    List<string> elements = null;
+    Model.Data.TryGetValue(key, out elements);
+}
+
+<div class="float-left ContentContainer">
+    @if (elements != null)
+    {
+        for (int index = 0; index < elements.Count; index++)
+        {
+            var value = elements[index];
+            <div class="@("layer" + @index)">@value</div>
+        }
+    }
+    else
+    {
+        <div>No Data found for : @key</div>
+    }
+</div>

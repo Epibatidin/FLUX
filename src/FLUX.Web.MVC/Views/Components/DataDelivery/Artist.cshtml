@@ -1,0 +1,20 @@
+﻿@model DataStructure.Tree.TreeItem<FLUX.DomainObjects.MultiLayerDataContainer>
+
+<div class="TopHeadlineContainer">
+    <div class="ContentWrapper Artist">
+        <h3 class="float-left Artist">Artist</h3>
+        @Html.DisplayFor(c => c.Value, new {key = "Artist"})
+    </div>
+
+    @Html.Partial("DataDelivery/Album", Model[0])
+    <div class="clear-fix"></div>
+</div>
+<div class="clear-fix" ></div>
+@Html.Partial("DataDelivery/Songs", Model[0])
+
+
+@for (int i = 1; i < Model.Count; i++)
+{
+    @Html.Partial("DataDelivery/Album", Model[i])
+    @Html.Partial("DataDelivery/Songs", Model[i])
+}
