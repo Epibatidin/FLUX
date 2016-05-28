@@ -4,6 +4,7 @@ using Extraction.Interfaces.Layer;
 using Extraction.Layer.File.Cleaner;
 using Extraction.Layer.File.Cleaner.CursesRepair;
 using Extraction.Layer.File.Config;
+using Extraction.Layer.File.Operations;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Extraction.Layer.File
@@ -21,6 +22,7 @@ namespace Extraction.Layer.File
             // processing 
             services.AddSingleton<IPartedStringOperation, InternetStuffPartedStringOperation>();
             services.AddSingleton<IPartedStringOperation, RemoveBlackListValuesOperation>();
+            services.AddSingleton<IPartedStringOperation, DropNonWordPhraseOperation>();
 
             if (config.RepairCurses)
             {

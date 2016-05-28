@@ -2,7 +2,7 @@
 using Extraction.DomainObjects.StringManipulation;
 using Extraction.Interfaces;
 
-namespace Extraction.Layer.File.Cleaner
+namespace Extraction.Layer.File.Operations
 {
     public class InternetStuffPartedStringOperation : IPartedStringOperation
     {
