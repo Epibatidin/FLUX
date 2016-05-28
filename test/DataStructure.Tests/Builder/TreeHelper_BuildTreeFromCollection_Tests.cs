@@ -36,7 +36,7 @@ namespace DataStructure.Tests.Builder
     {
         public TreeItem<SomeItem> Act(IList<SomeItem> someItems)
         {
-            var result = SUT.BuildTreeFromCollection(someItems, (c,i) => c.GetKey(i));
+            var result = SUT.BuildTreeFromCollection(someItems, (c,i) => c.GetKey(i), (item, i) => item);
 
             return result;
         }

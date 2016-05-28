@@ -6,11 +6,17 @@ namespace DataAccess.XMLStub.Serialization
     [XmlType("Item")]
     public class SourceItem : IVirtualFile
     {
-        [XmlAttribute()]
-        public int ID { get; set; }
+        [XmlIgnore]
+        public string Extension { get; set; }
 
-        [XmlAttribute("Name")]
+        [XmlIgnore]
         public string Name { get; set; }
+
+        [XmlIgnore]
+        public string[] PathParts { get; set; }
+
+        [XmlAttribute()]
+        public int ID { get; set; }        
 
         [XmlElement("URL")]
         public string VirtualPath { get; set; }

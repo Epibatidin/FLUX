@@ -4,8 +4,10 @@
     {
         int ID { get; }
 
+
+        string Extension { get; set; }
         string Name {get;}
 
-        string VirtualPath {get;}
+        string[] PathParts { get; }
     }
 }

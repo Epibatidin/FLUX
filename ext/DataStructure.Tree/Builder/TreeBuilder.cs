@@ -51,20 +51,7 @@ namespace DataStructure.Tree.Builder
 
             return movingRoot;
         }
-
-        //public void Add<T>(TreeItem<T> root, IEnumerable<int> path, Action<T> valueConfig)
-        //{
-        //    var movingRoot = BuildToPath(root, path);
-        //    valueConfig(movingRoot.Value);
-        //}
-
-        //public void Add<TCollectionItem, TTreeItemValue>(TreeItem<TTreeItemValue> root, IEnumerable<int> path, TCollectionItem collectionItem,
-        //    Func<TCollectionItem, int, TTreeItemValue> itemValueMapper)
-        //{
-        //    var movingRoot = BuildToPath(root, path);
-        //    valueConfig(movingRoot.Value);
-        //}
-
+        
         private class SavedPathData
         {
             public int NextOnLevel { get; set; }
@@ -72,7 +59,8 @@ namespace DataStructure.Tree.Builder
             public List<int> Path { get; set; }
         }
 
-        public TreeItem<TTreeItemValue> BuildTreeFromCollection<TCollectionItem, TTreeItemValue>(IList<TCollectionItem> collection,
+        public TreeItem<TTreeItemValue> BuildTreeFromCollection<TCollectionItem, TTreeItemValue>(
+            IEnumerable<TCollectionItem> collection,
             Func<TCollectionItem, int, string> keyAccessor, Func<TCollectionItem, int, TTreeItemValue> itemValueMapper)
 
             where TTreeItemValue : class 

@@ -26,13 +26,13 @@ namespace Facade.Tests
 
             Assert.That(file.ID, Is.EqualTo(deserialized.ID));
             Assert.That(file.Name, Is.EqualTo(deserialized.Name));
-            Assert.That(file.VirtualPath, Is.EqualTo(deserialized.VirtualPath));
+            Assert.That(file.PathParts, Is.EqualTo(deserialized.PathParts));
         }
 
         [Fact]
         public void should_can_serialize_single_SourceItem_as_json()
         {
-            IVirtualFile file = Create<SourceItem>();
+            var file = Create<SourceItem>();
 
             var serialzed = JsonConvert.SerializeObject(file);
 

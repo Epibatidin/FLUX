@@ -5,6 +5,7 @@ using DataAccess.Interfaces;
 using DataStructure.Tree;
 using DataStructure.Tree.Builder;
 using DataStructure.Tree.Iterate;
+using Extraction.DomainObjects.StringManipulation;
 
 namespace Extraction.Layer.File
 {
@@ -17,80 +18,29 @@ namespace Extraction.Layer.File
             _treeBuilder = treeBuilder;
         }
 
-        private List<Tuple<int, List<string>>> PrepareData(IEnumerable<IVirtualFile> data)
+        public static string GetKeyOnVirtualFile(IVirtualFile vf, int level)
         {
-            // an dieser stelle empfehle ich den baum auf eine constante größe zu bluben 
-            // dh wenn parts.length < 3 
-            // add CD1 
-            var z = from item in data
-                    select Tuple.Create(item.ID, ConvertFileNameToTreeableData(item));
+            if (vf.PathParts.Length > level)
+                return vf.PathParts[level];
 
-            return z.ToList();
+            return null;
         }
 
-        private List<string> ConvertFileNameToTreeableData(IVirtualFile fi)
+        public static FileLayerSongDo BuildSong(IVirtualFile vf, int level)
         {
-            List<string> result = fi.VirtualPath.Split('\\').ToList();
-            if (result.Count < 3)
-                result.Add("CD1");
+            var file = new FileLayerSongDo();
+            
+            file.LevelValue = new PartedString(vf.PathParts[level]);
 
-            result.Add(fi.Name);
-            return result;
+            return file;
         }
-
-
-        private List<TreeItem<FileLayerSongDo>> BuildTree(IEnumerable<Tuple<int, List<string>>> data, int depth)
-        {
-            // wenn depth == items2.length 
-            // break;
-
-            var grped = from r in
-                            (from item in data
-                             where item.Item2.Count > depth
-                             select item)
-                        group r by r.Item2[depth] into grp
-                        select grp;
-
-            List<TreeItem<FileLayerSongDo>> result = null;
-            bool hasElements = false;
-
-            foreach (var item in grped)
-            {
-                if (!hasElements)
-                {
-                    result = new List<TreeItem<FileLayerSongDo>>();
-                    hasElements = true;
-                }
-                var child = new TreeItem<FileLayerSongDo>();
-                child.Level = depth;
-                var temp = new FileLayerSongDo();
-                temp.SetByDepth(depth, item.Key);
-                var current = item.First();
-
-                if (depth == current.Item2.Count - 1)
-                    temp.Id = current.Item1;
-
-                child.Value = temp;
-
-                var childs = BuildTree(item, depth + 1);
-                if (childs != null)
-                    child.SetChildren(childs);
-
-                result.Add(child);
-            }
-            return result;
-        }
-
 
         public TreeByKeyAccessor Build(IEnumerable<IVirtualFile> data)
         {
             var byKeyAccessor = new TreeByKeyAccessor();
+
+            byKeyAccessor.Tree = _treeBuilder.BuildTreeFromCollection(data, GetKeyOnVirtualFile, BuildSong);
             
-            //var tree = _treeBuilder.
-
-            var preparedData = PrepareData(data);
-            byKeyAccessor.Tree = BuildTree(preparedData, 0)[0];
-
             return byKeyAccessor;
         }
         

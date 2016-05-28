@@ -22,47 +22,33 @@ namespace DataAccess.FileSystem
 
         public string DirectoryName => _di.Name;
 
-        public IVirtualFile GetFile(string name)
+        public string GetFile(string name)
         {
             var files = _di.GetFiles(name);
-            return BuildRealFileFromInfo(files[0], 0);
-        }
 
-        private RealFile BuildRealFileFromInfo(FileInfo fileInfo, int id)
-        {
-            return new RealFile()
-            {
-                ID = id,
-                VirtualPath = fileInfo.FullName,
-                Name = fileInfo.Name
-            };
+            return files[0].FullName;
         }
-
-        public IEnumerable<IVirtualFile> GetFiles()
+        
+        public IEnumerable<string> GetFiles()
         {
             return GetFiles("*", false);
         }
 
-        public IEnumerable<IVirtualFile> GetFiles(string searchPattern)
+        public IEnumerable<string> GetFiles(string searchPattern)
         {
             return GetFiles(searchPattern, false);
         }
 
-        public IEnumerable<IVirtualFile> GetFiles(string searchPattern, bool deepSearch)
+        public IEnumerable<string> GetFiles(string searchPattern, bool deepSearch)
         {
-            return GetFiles(searchPattern, deepSearch, c => c);
+            return _di.EnumerateFiles(searchPattern, DeepToEnum(deepSearch)).Select(c => c.FullName);
         }
 
         private SearchOption DeepToEnum(bool deepSearch)
         {
             return deepSearch ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
         }
-
-        public IEnumerable<IVirtualFile> GetFiles(string searchPattern, bool deepSearch, Func<int, int> idGenerator)
-        {
-            return _di.EnumerateFiles(searchPattern, DeepToEnum(deepSearch)).Select((c, i) => BuildRealFileFromInfo(c, idGenerator(i)));
-        }
-
+        
         public IVirtualDirectory GetDirectory(string directoryName)
         {
             var items = _di.GetDirectories(directoryName);

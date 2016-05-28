@@ -28,12 +28,11 @@ namespace ExtractionLayer.Tests.Files
 
     public class TreeByKeyAccessorBuilderTests : FixtureBase<TreeByKeyAccessorBuilder>
     {
-
         [Fact]
         public void should_add_virtualPath_part_to_tree_item()
         {
             var treeitems = new RealFile();
-            treeitems.VirtualPath = "A";
+            treeitems.PathParts = new [] { "A" };
 
             var result = SUT.Build(new[] { treeitems });
 
@@ -44,7 +43,7 @@ namespace ExtractionLayer.Tests.Files
         public void should_split_by_slash_set_as_value()
         {
             var treeitems = new RealFile();
-            treeitems.VirtualPath = "A-B\\C:D\\E_F";
+            treeitems.PathParts = new[] { "A-B" , "C:D", "E_F" };
             treeitems.Name = "Name";
             var result = SUT.Build(new[] { treeitems });
 
@@ -60,7 +59,7 @@ namespace ExtractionLayer.Tests.Files
         public void should_add_cd1_if_path_is_shorter_then_3()
         {
             var treeitems = new RealFile();
-            treeitems.VirtualPath = "A\\B";
+            treeitems.PathParts = new [] { "A","B" };
 
             var result = SUT.Build(new [] { treeitems });
 
@@ -72,7 +71,7 @@ namespace ExtractionLayer.Tests.Files
         private RealFile AddVFile(IList<IVirtualFile> vfs, string path)
         {
             var rf = new RealFile();
-            rf.VirtualPath = path;
+            rf.PathParts = path.Split('\\');
             vfs.Add(rf);
             return rf;
         }

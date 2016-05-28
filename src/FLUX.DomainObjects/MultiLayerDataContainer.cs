@@ -16,7 +16,7 @@ namespace FLUX.DomainObjects
 
         public Dictionary<string, List<string>> Data;
 
-        public string Path { get; set; }
+        public string OriginalValue { get; set; }
         
         public void AddSong(ISong song)
         {

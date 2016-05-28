@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
+using DataAccess.Base;
 using DataAccess.Interfaces;
 using DataAccess.XMLStub.Config;
 using DataAccess.XMLStub.Serialization;
@@ -12,12 +13,12 @@ namespace DataAccess.XMLStub
     public class XmlVirtualFileFactory : IVirtualFileFactory
     {
         private readonly XMLSourcesCollection _xmlConfig;
-        private XmlSerializer _serializer;
+        private readonly XmlSerializer _rootElementSerializer;
 
         public XmlVirtualFileFactory(XMLSourcesCollection xmlConfig)
         {
             _xmlConfig = xmlConfig;
-            _serializer = new XmlSerializer(typeof(Root));
+            _rootElementSerializer = new XmlSerializer(typeof(Root));
         }
         
         public bool CanHandleProviderKey(string providerId) => _xmlConfig.SectionName == providerId;
@@ -28,7 +29,7 @@ namespace DataAccess.XMLStub
             return new XmlVirtualFileStreamReader();
         }
 
-        private int[] getCounts(DirectoryInfo subroot, int[] subRoots)
+        private int[] GetCounts(DirectoryInfo subroot, int[] subRoots)
         {
             var root = GetRoot(subroot);
 
@@ -44,13 +45,16 @@ namespace DataAccess.XMLStub
             object dummy = null;
             using (var readStream = index.OpenRead())
             {
-                dummy = _serializer.Deserialize(readStream);
+                dummy = _rootElementSerializer.Deserialize(readStream);
             }
             return dummy as Root;
         }
 
         public IList<IVirtualFile> RetrieveVirtualFiles(VirtualFileFactoryContext context)
         {
+            var pathDataHelper = new PathDataHelper();
+
+
             var xmlSource = _xmlConfig.XmlSources.First(c => c.Name == context.SelectedSource);
             var root = new DirectoryInfo(xmlSource.XmlFolder);
             
@@ -87,8 +91,12 @@ namespace DataAccess.XMLStub
 
                     foreach (var item in group.Source.Items)
                     {
-                        item.VirtualPath = item.VirtualPath.Substring(xmlRootElement.RootPath.Length,
-                            item.VirtualPath.Length - item.Name.Length - xmlRootElement.RootPath.Length -1 );
+                        var pathData = pathDataHelper.FullPathToVirtualPathData(item.VirtualPath,
+                            xmlRootElement.RootPath);
+
+                        item.PathParts = pathData.PathParts;
+                        item.Extension = pathData.Extension;
+                        
                         dict.Add(item);
                     }
                 }

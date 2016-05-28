@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DataAccess.Base;
 using DataAccess.FileSystem.Config;
 using DataAccess.Interfaces;
 
@@ -36,7 +37,8 @@ namespace DataAccess.FileSystem
             var virtualFiles = new List<IVirtualFile>();
 
             var rootPath = getRootPath(context.SelectedSource);
-           
+            var pathDataHelper = new PathDataHelper();
+
             var root = new RealDirectory(rootPath);
             int id = 0;
             var temp = root.GetDirectories();
@@ -51,7 +53,7 @@ namespace DataAccess.FileSystem
             }
             int pos, arrayPos;
             var subroots = context.SubRoots ?? new int[0];
-
+            int currentId = 0;
             foreach (var subdir in dirs.OrderBy(c => c.DirectoryName))
             {
                 pos = -1;
@@ -67,10 +69,16 @@ namespace DataAccess.FileSystem
 
                     arrayPos++;
                     
-                    foreach (RealFile virtualFile in subDirectory.GetFiles("*.mp3", true, c => ++id))
+                    foreach (string virtualFile in subDirectory.GetFiles("*.mp3", true))
                     {
-                        virtualFile.VirtualPath = virtualFile.VirtualPath.Substring(rootPath.Length);
-                        virtualFiles.Add(virtualFile);
+                        var realFile = new RealFile();
+                        realFile.ID = currentId++;
+
+                        var pathData = pathDataHelper.FullPathToVirtualPathData(virtualFile, rootPath);
+                        realFile.PathParts = pathData.PathParts;
+                        realFile.Extension = pathData.Extension;
+                        
+                        virtualFiles.Add(realFile);
                     }
                 }
             }
@@ -79,3 +87,4 @@ namespace DataAccess.FileSystem
         }
     }
 }
+

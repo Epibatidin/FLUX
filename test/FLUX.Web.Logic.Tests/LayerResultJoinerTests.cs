@@ -39,7 +39,7 @@ namespace FLUX.Web.Logic.Tests
             var result = SUT.BuildInitalFlatMultiLayerCollection(new [] { vFiles }, new List<ISongByKeyAccessor>());
 
             Assert.That(result[0].Id, Is.EqualTo(vFiles.ID));
-            Assert.That(result[0].Path, Is.EqualTo(vFiles.VirtualPath));
+            Assert.That(result[0].OriginalValue, Is.EqualTo(vFiles.VirtualPath));
         }
 
         [Fact]

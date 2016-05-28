@@ -9,8 +9,9 @@ namespace DataStructure.Tree.Builder
         //void Add<T>(TreeItem<T> root, IEnumerable<int> path, Action<T> valueConfig);
         //TreeItem<T> BuildToPath<T>(TreeItem<T> root, IEnumerable<int> path);
 
-        TreeItem<TTreeItemValue> BuildTreeFromCollection<TCollectionItem, TTreeItemValue>(IList<TCollectionItem> collection,
-            Func<TCollectionItem, int, string> keyAccessor, Func<TCollectionItem, int, TTreeItemValue> itemValueMapper)
+        TreeItem<TTreeItemValue> BuildTreeFromCollection<TCollectionItem, TTreeItemValue>(
+            IEnumerable<TCollectionItem> collection, Func<TCollectionItem, int, string> keyAccessor,
+            Func<TCollectionItem, int, TTreeItemValue> itemValueMapper)
             where TTreeItemValue : class;
     }
 }

@@ -12,12 +12,12 @@ namespace DataAccess.FileSystem
         {
             _rootDir = rootDir;
         }
-
         
-
         public Stream OpenStreamForReadAccess(IVirtualFile virtualFile)
         {
-            return new FileStream(string.Concat(_rootDir,virtualFile.VirtualPath), FileMode.Open, FileAccess.Read);
+            return null;
+
+            //return new FileStream(string.Concat(_rootDir,virtualFile.VirtualPath), FileMode.Open, FileAccess.Read);
         }
     }
 }

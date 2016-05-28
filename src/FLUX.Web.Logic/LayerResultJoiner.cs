@@ -38,7 +38,7 @@ namespace FLUX.Web.Logic
             {
                 var container = new MultiLayerDataContainer();
                 container.Id = kv.ID;
-                container.Path = kv.VirtualPath;
+               
                 flatListOfSongs.Add(container);
                 foreach (var byKeyAccessor in songByKeyAccessors)
                 {
