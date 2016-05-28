@@ -10,7 +10,7 @@
 
 
 //        //-----------------------------------------------------------------------------------------------------------------------
-//        public IStringPartManager Filter(IStringPartManager RawManager)
+//        public IStringPartManager Operate(IStringPartManager RawManager)
 //        //-----------------------------------------------------------------------------------------------------------------------
 //        {
 //            var parts = RawManager.RawDataParts;

@@ -14,7 +14,7 @@
   "File": {
     "WhiteList": [ "the", "a", "you", "die", "an" ],
     "BlackList": [ "ftyh", "promo", "cdm" ],
-    "RepairCurses": "true"
+    "RepairCurses": "false"
   },
   "Tag": {
     "IgnorePrivateData": "true"

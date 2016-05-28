@@ -28,7 +28,7 @@
 
 //        #region Equalities
 //        -----------------------------------------------------------------------------------------------------------------------
-//        public List<PartedString> Filter(List<PartedString> stringList)
+//        public List<PartedString> Operate(List<PartedString> stringList)
 //        -----------------------------------------------------------------------------------------------------------------------
 //        {
 //            if (stringList.Count == 1) return stringList;

@@ -6,7 +6,7 @@
 
 //namespace FileStructureDataExtraction.Cleaner.CursesRepair
 //{
-//    internal class FuckRepair : ICursesRepair
+//    internal class FuckRepair : ICurseRepairComponent
 //    {
 //        public bool Fixed { get; private set; }
 

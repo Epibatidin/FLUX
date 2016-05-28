@@ -10,10 +10,10 @@ namespace Extraction.Layer.File
 {
     public class FileStructureDataExtractionLayer : IDataExtractionLayer
     {
-        private readonly IEnumerable<ICleaner> _cleaners;
+        private readonly IEnumerable<IPartedStringOperation> _cleaners;
         private readonly ITreeByKeyAccessorBuilder _byTreeAccessorBuilder;
 
-        public FileStructureDataExtractionLayer(IEnumerable<ICleaner> cleaners, ITreeByKeyAccessorBuilder byTreeAccessorBuilder)
+        public FileStructureDataExtractionLayer(IEnumerable<IPartedStringOperation> cleaners, ITreeByKeyAccessorBuilder byTreeAccessorBuilder)
         {
             _cleaners = cleaners;
             _byTreeAccessorBuilder = byTreeAccessorBuilder;
@@ -28,7 +28,7 @@ namespace Extraction.Layer.File
 
             foreach (var cleaner in _cleaners)
             {
-                ForeachPartedStringInTree(treeAccessor.Tree, cleaner.Filter);
+                ForeachPartedStringInTree(treeAccessor.Tree, cleaner.Operate);
             }
         }
 
@@ -93,8 +93,8 @@ namespace Extraction.Layer.File
         //        ///<returns></returns>
         //        private void InternetStuff()
         //        {
-        //            InternetStuffCleaner cleaner = new InternetStuffCleaner();
-        //            ForeachPartedStringInTree(_data, cleaner.Filter);            
+        //            InternetStuffPartedStringOperation cleaner = new InternetStuffPartedStringOperation();
+        //            ForeachPartedStringInTree(_data, cleaner.Operate);            
         //        }
 
 
@@ -105,8 +105,8 @@ namespace Extraction.Layer.File
         //        /// <returns></returns>
         //        private void BlackList()
         //        {
-        //            BlacklistCleaner cleaner = new BlacklistCleaner(_config.BlackListConfig);
-        //            ForeachPartedStringInTree(_data, cleaner.Filter);
+        //            RemoveBlackListValuesOperation cleaner = new RemoveBlackListValuesOperation(_config.BlackListConfig);
+        //            ForeachPartedStringInTree(_data, cleaner.Operate);
         //        }
 
         //        private void ExtractYear()
@@ -158,7 +158,7 @@ namespace Extraction.Layer.File
         //        //            treeItem.Value.Status = Common.DataStatus.Updated;
         //        //            currentBlockData.Add(treeItem.Value.CleanIIS.getByKey<PartedString>(treeItem.Level));
         //        //        }
-        //        //        cleaner.Filter(currentBlockData);
+        //        //        cleaner.Operate(currentBlockData);
         //        //        var z = currentBlockData;
         //        //    }
         //        //    return W;
@@ -168,7 +168,7 @@ namespace Extraction.Layer.File
         //        //{
         //        //    OneStepUpCleaner cleaner = new OneStepUpCleaner();
 
-        //        //    cleaner.Filter(W.Data);
+        //        //    cleaner.Operate(W.Data);
 
         //        //    return W;
         //        //}

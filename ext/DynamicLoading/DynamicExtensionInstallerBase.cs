@@ -25,8 +25,13 @@ namespace DynamicLoading
                 services.Add(new ServiceDescriptor(InterfaceType, config));
 
             RegisterServices(services);
+            RegisterServices(services, config);
         }
-        
+
         public abstract void RegisterServices(IServiceCollection services);
+        public virtual void RegisterServices(IServiceCollection services, TConfigurationSection config)
+        {
+
+        }
     }
 }

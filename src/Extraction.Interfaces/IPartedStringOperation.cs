@@ -3,9 +3,9 @@ using Extraction.DomainObjects.StringManipulation;
 
 namespace Extraction.Interfaces
 {
-    public interface ICleaner
+    public interface IPartedStringOperation
     {
-        PartedString Filter(PartedString source);
+        PartedString Operate(PartedString source);
     }
 
     public interface IMultiCleaner

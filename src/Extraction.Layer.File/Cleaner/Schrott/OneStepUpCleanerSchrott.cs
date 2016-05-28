@@ -4,7 +4,7 @@
 
 //namespace Cleaner_SCHROTT
 //{
-//    public class OneStepUpCleaner_OLD // : ICleaner 
+//    public class OneStepUpCleaner_OLD // : IPartedStringOperation 
 //    {
 //        private List<string> StepUp;
 //        public void AddOneStepUp(string OneStepUp)

@@ -4,14 +4,14 @@ using Extraction.Interfaces;
 
 namespace Extraction.Layer.File.Cleaner
 {
-    public class InternetStuffCleaner : ICleaner
+    public class InternetStuffPartedStringOperation : IPartedStringOperation
     {
         //private static readonly string isInternetstuff = @"^(www.)?([a-z]*[.])(com|de|org|to|net)$";
         private static readonly string isInternetstuffNonExcluding = @"(www.)?([a-z0-9]*[.])(com|de|org|to|net)";
 
         private Regex Reg;
 
-        public InternetStuffCleaner()
+        public InternetStuffPartedStringOperation()
         {
             Reg = new Regex(isInternetstuffNonExcluding,
                 RegexOptions.Compiled
@@ -20,7 +20,7 @@ namespace Extraction.Layer.File.Cleaner
         }
 
         // just look for macthing string 
-        // hand remove this part 
+        // and remove this part 
         private void execute(PartedString parted)
         {
             for (int i = 0; i < parted.Count; i++)
@@ -34,7 +34,7 @@ namespace Extraction.Layer.File.Cleaner
             }
         }
 
-        public PartedString Filter(PartedString part)
+        public PartedString Operate(PartedString part)
         {
             execute(part);
             part.ReSplit(true);
