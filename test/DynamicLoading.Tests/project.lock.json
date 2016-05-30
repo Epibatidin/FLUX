@@ -672,8 +672,8 @@
     },
     "Extension.Test/1.0.0": {
       "type": "project",
-      "path": "../../ext/Extension.Test/project.json",
-      "msbuildProject": "../../ext/Extension.Test/Extension.Test.xproj"
+      "path": "../Extension.Test/project.json",
+      "msbuildProject": "../Extension.Test/Extension.Test.xproj"
     },
     "Facade.Configuration/1.0.0": {
       "type": "project",

@@ -13,9 +13,9 @@
         "Newtonsoft.Json": "8.0.1"
       },
       "dnx451": {
-        "dependencies": {}
+        "dependencies": { }
       }
-    },
-    "dependencies": {}
-  }
+    }
+  },
+  "dependencies": { }
 }

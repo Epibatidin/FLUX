@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Mvc.ViewComponents;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ViewComponents;
 
 namespace Facade.MVC
 {

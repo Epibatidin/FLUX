@@ -1651,13 +1651,13 @@
           "lib/netstandard1.1/System.Buffers.dll": {}
         }
       },
-      "System.Collections/4.0.11-rc2-24027": {
+      "System.Collections/4.0.10": {
         "type": "package",
-        "compile": {
-          "ref/net45/_._": {}
+        "dependencies": {
+          "System.Runtime": "4.0.0"
         },
-        "runtime": {
-          "lib/net45/_._": {}
+        "compile": {
+          "ref/dotnet/System.Collections.dll": {}
         }
       },
       "System.Collections.Concurrent/4.0.12-rc2-24027": {
@@ -1915,8 +1915,8 @@
         "dependencies": {
           "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc2",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc2"
         },
         "compile": {
           "dnx451/DataAccess.Interfaces.dll": {}
@@ -2001,7 +2001,8 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc": "1.0.0-rc2-final"
+          "Microsoft.AspNetCore.Mvc": "1.0.0-rc2",
+          "System.Collections": "4.0.10"
         },
         "compile": {
           "dnx451/Facade.MVC.dll": {}
@@ -5038,21 +5039,12 @@
       },
       "DataAccess.Interfaces/1.0.0": {
         "type": "project",
-        "framework": "DNXCore,Version=v5.0",
+        "framework": "Unsupported,Version=v0.0",
         "dependencies": {
           "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1",
-          "System.IO": "4.0.10",
-          "System.Linq": "4.0.1-beta-23516",
-          "System.Runtime": "4.0.21-beta-23516"
-        },
-        "compile": {
-          "dnxcore50/DataAccess.Interfaces.dll": {}
-        },
-        "runtime": {
-          "dnxcore50/DataAccess.Interfaces.dll": {}
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc2",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc2"
         }
       },
       "DataStructure.Tree/1.0.0": {
@@ -5072,34 +5064,19 @@
       },
       "Extraction.DomainObjects/1.0.0": {
         "type": "project",
-        "framework": "DNXCore,Version=v5.0",
+        "framework": "Unsupported,Version=v0.0",
         "dependencies": {
-          "Extension.IEnumerable": "1.0.0",
-          "System.Collections": "4.0.11-beta-23516",
-          "System.Linq": "4.0.1-beta-23516",
-          "System.Runtime": "4.0.21-beta-23516"
-        },
-        "compile": {
-          "dnxcore50/Extraction.DomainObjects.dll": {}
-        },
-        "runtime": {
-          "dnxcore50/Extraction.DomainObjects.dll": {}
+          "Extension.IEnumerable": "1.0.0"
         }
       },
       "Extraction.Interfaces/1.0.0": {
         "type": "project",
-        "framework": "DNXCore,Version=v5.0",
+        "framework": "Unsupported,Version=v0.0",
         "dependencies": {
           "DataAccess.Interfaces": "1.0.0",
           "DataStructure.Tree": "1.0.0",
           "Extension.IEnumerable": "1.0.0",
           "Extraction.DomainObjects": "1.0.0"
-        },
-        "compile": {
-          "dnxcore50/Extraction.Interfaces.dll": {}
-        },
-        "runtime": {
-          "dnxcore50/Extraction.Interfaces.dll": {}
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -5110,7 +5087,8 @@
         "type": "project",
         "framework": "Unsupported,Version=v0.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc": "1.0.0-rc2-final"
+          "Microsoft.AspNetCore.Mvc": "1.0.0-rc2",
+          "System.Collections": "4.0.10"
         }
       },
       "Facade.Session/1.0.0": {
@@ -6549,6 +6527,38 @@
         "dotnet_library_license.txt",
         "lib/netstandard1.1/.xml",
         "lib/netstandard1.1/System.Buffers.dll"
+      ]
+    },
+    "System.Collections/4.0.10": {
+      "sha512": "ux6ilcZZjV/Gp7JEZpe+2V1eTueq6NuoGRM3eZCFuPM25hLVVgCRuea6STW8hvqreIOE59irJk5/ovpA5xQipw==",
+      "type": "package",
+      "files": [
+        "System.Collections.4.0.10.nupkg.sha512",
+        "System.Collections.nuspec",
+        "lib/DNXCore50/System.Collections.dll",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/_._",
+        "lib/netcore50/System.Collections.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/dotnet/System.Collections.dll",
+        "ref/dotnet/System.Collections.xml",
+        "ref/dotnet/de/System.Collections.xml",
+        "ref/dotnet/es/System.Collections.xml",
+        "ref/dotnet/fr/System.Collections.xml",
+        "ref/dotnet/it/System.Collections.xml",
+        "ref/dotnet/ja/System.Collections.xml",
+        "ref/dotnet/ko/System.Collections.xml",
+        "ref/dotnet/ru/System.Collections.xml",
+        "ref/dotnet/zh-hans/System.Collections.xml",
+        "ref/dotnet/zh-hant/System.Collections.xml",
+        "ref/net46/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "runtimes/win8-aot/lib/netcore50/System.Collections.dll"
       ]
     },
     "System.Collections/4.0.11-rc2-24027": {

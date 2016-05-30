@@ -1530,22 +1530,17 @@
           "lib/netstandard1.0/Microsoft.Extensions.Configuration.Abstractions.dll": {}
         }
       },
-      "Microsoft.Extensions.Configuration.Binder/1.0.0-rc1-final": {
+      "Microsoft.Extensions.Configuration.Binder/1.0.0-rc2-final": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0-rc1-final"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc2-final",
+          "System.ComponentModel.TypeConverter": "4.0.1-rc2-24027"
         },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "System",
-          "System.Core",
-          "mscorlib"
-        ],
         "compile": {
-          "lib/net451/Microsoft.Extensions.Configuration.Binder.dll": {}
+          "lib/netstandard1.1/Microsoft.Extensions.Configuration.Binder.dll": {}
         },
         "runtime": {
-          "lib/net451/Microsoft.Extensions.Configuration.Binder.dll": {}
+          "lib/netstandard1.1/Microsoft.Extensions.Configuration.Binder.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration.EnvironmentVariables/1.0.0-rc2-final": {
@@ -2708,7 +2703,7 @@
           "DataAccess.Interfaces": "1.0.0",
           "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.OptionsModel": "1.0.0-rc1"
+          "Microsoft.Extensions.Options": "1.0.0-rc2"
         },
         "compile": {
           "dnx451/DataAccess.Base.dll": {}
@@ -2719,21 +2714,15 @@
       },
       "DataAccess.FileSystem/1.0.0": {
         "type": "project",
-        "framework": "DNX,Version=v4.5.1",
+        "framework": "Unsupported,Version=v0.0",
         "dependencies": {
           "DataAccess.Base": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
           "DynamicLoading": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
-          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
-        },
-        "compile": {
-          "dnx451/DataAccess.FileSystem.dll": {}
-        },
-        "runtime": {
-          "dnx451/DataAccess.FileSystem.dll": {}
+          "Microsoft.Extensions.Configuration": "1.0.0-rc2",
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc2",
+          "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc2",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc2"
         }
       },
       "DataAccess.Interfaces/1.0.0": {
@@ -2742,8 +2731,8 @@
         "dependencies": {
           "DynamicLoading": "1.0.0",
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc2",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc2"
         },
         "compile": {
           "dnx451/DataAccess.Interfaces.dll": {}
@@ -2759,8 +2748,8 @@
           "DataAccess.Base": "1.0.0",
           "DataAccess.Interfaces": "1.0.0",
           "DynamicLoading": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
+          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc2",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc2"
         },
         "frameworkAssemblies": [
           "System.Xml"
@@ -2895,7 +2884,8 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc": "1.0.0-rc2-final"
+          "Microsoft.AspNetCore.Mvc": "1.0.0-rc2",
+          "System.Collections": "4.0.10"
         },
         "compile": {
           "dnx451/Facade.MVC.dll": {}
@@ -2923,8 +2913,8 @@
           "FLUX.Web.Logic": "1.0.0",
           "Facade.Configuration": "1.0.0",
           "Facade.Session": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0-rc1",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1"
+          "Microsoft.Extensions.Configuration": "1.0.0-rc2",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc2"
         },
         "compile": {
           "dnx451/FLUX.Configuration.dll": {}
@@ -2990,7 +2980,7 @@
           "FLUX.Configuration": "1.0.0",
           "FLUX.Interfaces": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics": "1.0.0-rc2-final",
-          "Microsoft.AspNetCore.Mvc": "1.0.0-rc2-final",
+          "Microsoft.AspNetCore.Mvc": "1.0.0-rc2",
           "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0-rc2-final",
           "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
           "Microsoft.AspNetCore.StaticFiles": "1.0.0-rc2-final",
@@ -4174,19 +4164,14 @@
         "lib/netstandard1.0/Microsoft.Extensions.Configuration.Abstractions.xml"
       ]
     },
-    "Microsoft.Extensions.Configuration.Binder/1.0.0-rc1-final": {
-      "sha512": "tuIi7cRq6lbpCybL+z9vamz/KbM+nN9nyJ2Id5bKCdxKDNMnKb9PdMxJ+0DHc8p6fP00PyQucYuN5EpxsYrX6Q==",
+    "Microsoft.Extensions.Configuration.Binder/1.0.0-rc2-final": {
+      "sha512": "NxPXdoxve4kBzgOffvM21EOXVUEYNBb6PXfoOcmyoNajnadwLI8UhLqt2MqiIq60YqR400qES3ssat4TGczjZQ==",
       "type": "package",
       "files": [
-        "Microsoft.Extensions.Configuration.Binder.1.0.0-rc1-final.nupkg",
-        "Microsoft.Extensions.Configuration.Binder.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.Extensions.Configuration.Binder.1.0.0-rc2-final.nupkg.sha512",
         "Microsoft.Extensions.Configuration.Binder.nuspec",
-        "lib/dotnet5.4/Microsoft.Extensions.Configuration.Binder.dll",
-        "lib/dotnet5.4/Microsoft.Extensions.Configuration.Binder.xml",
-        "lib/net451/Microsoft.Extensions.Configuration.Binder.dll",
-        "lib/net451/Microsoft.Extensions.Configuration.Binder.xml",
-        "lib/netcore50/Microsoft.Extensions.Configuration.Binder.dll",
-        "lib/netcore50/Microsoft.Extensions.Configuration.Binder.xml"
+        "lib/netstandard1.1/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/netstandard1.1/Microsoft.Extensions.Configuration.Binder.xml"
       ]
     },
     "Microsoft.Extensions.Configuration.EnvironmentVariables/1.0.0-rc2-final": {
@@ -4424,7 +4409,6 @@
       "sha512": "IhK5pNqRgakrwiv5OrB6hv7e6+TZzYqfJr40Qri0Xgi+oXJklNgbA5eHvzZrghdHfqfSqcvLWtWD0ri6e8Eo1w==",
       "type": "package",
       "files": [
-        "Microsoft.Extensions.OptionsModel.1.0.0-rc1-final.nupkg",
         "Microsoft.Extensions.OptionsModel.1.0.0-rc1-final.nupkg.sha512",
         "Microsoft.Extensions.OptionsModel.nuspec",
         "lib/dotnet5.4/Microsoft.Extensions.OptionsModel.dll",
@@ -8287,8 +8271,8 @@
     },
     "Extension.Test/1.0.0": {
       "type": "project",
-      "path": "../../ext/Extension.Test/project.json",
-      "msbuildProject": "../../ext/Extension.Test/Extension.Test.xproj"
+      "path": "../Extension.Test/project.json",
+      "msbuildProject": "../Extension.Test/Extension.Test.xproj"
     },
     "Extraction.Base/1.0.0": {
       "type": "project",

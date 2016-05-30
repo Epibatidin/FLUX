@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Microsoft.AspNet.Http;
-using Microsoft.AspNet.Mvc.Formatters;
-using Microsoft.AspNet.Mvc.ModelBinding;
-using Microsoft.AspNet.Mvc.ModelBinding.Validation;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Facade.MVC
 {

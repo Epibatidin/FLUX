@@ -25,7 +25,7 @@
     "FLUX.Configuration": "1.0.0-*",
     "Microsoft.Extensions.DependencyInjection": "1.0.0-rc2-*",
     "Microsoft.Extensions.OptionsModel": "1.0.0-rc1-*",
-    "Microsoft.Extensions.Configuration": "1.0.0-rc1-*",
+    "Microsoft.Extensions.Configuration": "1.0.0-rc2-*",
     "Microsoft.Extensions.Configuration.FileProviderExtensions": "1.0.0-rc1-*",
     "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-*"
   },

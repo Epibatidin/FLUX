@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNet.Http;
-using Microsoft.AspNet.Http.Features;
+﻿using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
 namespace Facade.Session

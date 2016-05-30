@@ -1,11 +1,16 @@
 {
   "version": "1.0.0-*",
   "frameworks": {
-    "dnxcore50": {
+    "netcoreapp1.0": {
+      "imports": [
+        "dotnet5.6",
+        "dnxcore50",
+        "portable-net45+win8"
+      ],
       "dependencies": {
-        "System.Runtime": "4.0.21-beta-23516",
-        "System.Linq": "4.0.1-beta-23516",
-        "System.Collections": "4.0.11-beta-23516"
+        "System.Runtime": "4.1.0-rc2-24027",
+        "System.Linq": "4.1.0-rc2-24027",
+        "System.Collections": "4.0.11-rc2-24027"
       }
     },
     "dnx451": {
@@ -16,8 +21,8 @@
     "DynamicLoading": "1.0.0-*",
     "Facade.Configuration": "1.0.0-*",
     "Facade.Session": "1.0.0-*",
-    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1-*",
-    "Microsoft.Extensions.Configuration": "1.0.0-rc1-*",
+    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc2-*",
+    "Microsoft.Extensions.Configuration": "1.0.0-rc2-*",
     "FLUX.Interfaces": "1.0.0-*",
     "FLUX.Web.Logic": "1.0.0-*",
     "DataAccess.Interfaces": "1.0.0-*",
