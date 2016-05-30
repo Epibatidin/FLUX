@@ -1,11 +1,9 @@
-﻿using DataAccess.Interfaces;
-using Extension.Test;
+﻿using Extension.Test;
 using Extraction.Interfaces;
+using FLUX.DomainObjects;
 using Moq;
 using System.Collections.Generic;
 using System.Linq;
-using DataStructure.Tree;
-using FLUX.DomainObjects;
 using Xunit;
 using Assert = NUnit.Framework.Assert;
 using Is = NUnit.Framework.Is;
@@ -39,7 +37,6 @@ namespace FLUX.Web.Logic.Tests
             var result = SUT.BuildInitalFlatMultiLayerCollection(new [] { vFiles }, new List<ISongByKeyAccessor>());
 
             Assert.That(result[0].Id, Is.EqualTo(vFiles.ID));
-            Assert.That(result[0].OriginalValue, Is.EqualTo(vFiles.VirtualPath));
         }
 
         [Fact]
@@ -57,9 +54,6 @@ namespace FLUX.Web.Logic.Tests
             var result = SUT.BuildInitalFlatMultiLayerCollection(new[] { vFiles }, new[] { songByKey0.Object , songByKey1.Object });
 
             songByKey1.Verify();
-
-            Assert.That(result[0].Data["Artist"][0], Is.EqualTo(song0.Object.Artist));
-            Assert.That(result[0].Data["Artist"][1], Is.EqualTo(song1.Object.Artist));
         }
 
         //[Fact]

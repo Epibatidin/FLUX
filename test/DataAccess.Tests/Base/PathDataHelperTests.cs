@@ -70,8 +70,7 @@ namespace DataAccess.Tests.Base
         [Fact]
         public void should_remove_root_part_and_set_path_part_without_extension()
         {
-            string path =
-                "D:\\Musik\\01_amduscia-damn_punks";
+            string path = "D:\\Musik\\01_amduscia-damn_punks";
 
             var result = SUT.FullPathToVirtualPathData(path, "D:\\Musik");
 

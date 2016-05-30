@@ -20,17 +20,36 @@ namespace Extraction.Layer.File
 
         public static string GetKeyOnVirtualFile(IVirtualFile vf, int level)
         {
-            if (vf.PathParts.Length > level)
-                return vf.PathParts[level];
+            return GetValueByDepthWithCDDummy(vf.PathParts, level);
+        }
+
+        public static string GetValueByDepthWithCDDummy(string[] pathParts, int level)
+        {
+            int index = level;
+            
+            if (pathParts.Length < 4)
+            {
+                if (level == 2) return "CD1";
+
+                if (level > 2) --index;
+            }
+
+            if (pathParts.Length > index)
+                return pathParts[index];
 
             return null;
         }
 
         public static FileLayerSongDo BuildSong(IVirtualFile vf, int level)
         {
+            var value = GetValueByDepthWithCDDummy(vf.PathParts, level);
+            if (value == null)
+                return null;
+                //throw new Exception("WTF");
+
             var file = new FileLayerSongDo();
             
-            file.LevelValue = new PartedString(vf.PathParts[level]);
+            file.LevelValue = new PartedString(value);
 
             return file;
         }
@@ -58,3 +77,4 @@ namespace Extraction.Layer.File
         }
     }
 }
+

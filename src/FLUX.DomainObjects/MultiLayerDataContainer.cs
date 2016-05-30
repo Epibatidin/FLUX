@@ -7,16 +7,26 @@ namespace FLUX.DomainObjects
 {
     public class MultiLayerDataContainer
     {
+        private readonly string[] _parts;
         public int Id { get; set; }
 
-        public MultiLayerDataContainer()
+        public MultiLayerDataContainer(string[] parts)
         {
+            _parts = parts;
             Data = new Dictionary<string, List<string>>();
         }
 
         public Dictionary<string, List<string>> Data;
 
-        public string OriginalValue { get; set; }
+        public MultiLayerDataContainer SetOriginalValue(int depth)
+        {
+            if (_parts.Length < depth)
+                OriginalValue = _parts[depth];
+
+            return this;
+        }
+
+        public string OriginalValue { get; private set; }
         
         public void AddSong(ISong song)
         {

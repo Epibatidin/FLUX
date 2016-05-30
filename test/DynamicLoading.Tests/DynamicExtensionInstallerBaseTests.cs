@@ -23,6 +23,11 @@ namespace DynamicLoading.Tests
         {
             Service = serviceCollection;
         }
+
+        public override void RegisterServices(IServiceCollection services, VirtualFileRootConfigurationDummy config)
+        {
+            
+        }
     }
 
 
@@ -61,7 +66,7 @@ namespace DynamicLoading.Tests
 
             SUT.Install(configuration.Object, "sectionName", service.Object);
 
-            Assert.That(SUT.Service, Is.SameAs(service.Object));
+            Assert.That(SUT.Service.GetHashCode(), Is.EqualTo(service.Object.GetHashCode()));
         }
     }
 }
