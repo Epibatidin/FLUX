@@ -1,15 +1,19 @@
 {
   "version": "1.0.0-*",
   "frameworks": {
-    "dnxcore50": {
-      "dependencies": {}
+    "netcoreapp1.0": {
+      "imports": [
+        "dotnet5.6",
+        "dnxcore50"
+      ],
+      "dependencies": {
+        "Microsoft.Extensions.Configuration": "1.0.0-rc2-*",
+        "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc2-*"
+      }
     },
     "dnx451": {
       "dependencies": {}
     }
   },
-  "dependencies": {
-    "Microsoft.Extensions.Configuration": "1.0.0-rc1-*",
-    "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc1-*"
-  }
+  "dependencies": {}
 }
