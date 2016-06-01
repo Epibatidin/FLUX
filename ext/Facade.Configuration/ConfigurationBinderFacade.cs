@@ -9,6 +9,7 @@ namespace Facade.Configuration
 
     public class ConfigurationBinderFacade : IConfigurationBinderFacade
     {
-        public TConfig Bind<TConfig>(IConfiguration configuration, string sectionName) where TConfig : class => configuration.Get<TConfig>(sectionName);
+        public TConfig Bind<TConfig>(IConfiguration configuration, string sectionName) 
+            where TConfig : class => configuration.GetValue<TConfig>(sectionName);
     }
 }

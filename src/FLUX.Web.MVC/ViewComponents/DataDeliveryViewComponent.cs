@@ -3,7 +3,7 @@ using Extraction.Interfaces;
 using Extraction.Interfaces.Layer;
 using Facade.MVC;
 using FLUX.Interfaces;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
 namespace FLUX.Web.MVC.ViewComponents

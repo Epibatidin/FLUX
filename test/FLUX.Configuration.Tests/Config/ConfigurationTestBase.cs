@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.OptionsModel;
+using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Configuration.Json;
 
 namespace FLUX.Configuration.Tests.Config
 {
@@ -28,8 +29,9 @@ namespace FLUX.Configuration.Tests.Config
 
         protected OptionsManager<TConfig> RetrieveFromConfig<TConfig>(IConfiguration configuration) where TConfig : class, new()
         {
-            var option = new ConfigureFromConfigurationOptions<TConfig>(configuration);
-            return new OptionsManager<TConfig>(new[] { option });
+            return null;
+            //var option = new ConfigureFromConfigurationOptions<TConfig>(configuration);
+            //return new OptionsManager<TConfig>(new[] { option });
         }
 
         protected TProperty RetrieveFromConfig<TProperty>(Func<TConfigurationRootType, TProperty> propertyAccesscor)

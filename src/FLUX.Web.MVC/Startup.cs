@@ -1,14 +1,14 @@
 ﻿using System;
 using FLUX.Configuration;
-using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Hosting;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using FLUX.Configuration.DependencyInjection;
 using FLUX.Web.MVC.Framework;
-using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Mvc.Razor;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 namespace FLUX.Web.MVC
 {
@@ -54,12 +54,12 @@ namespace FLUX.Web.MVC
 
         private void InstallSession(IServiceCollection services)
         {
-            services.AddCaching();
+            //services.AddCaching();
 
-            services.AddSession(o =>
-            {
-                o.IdleTimeout = TimeSpan.FromMinutes(5);
-            });
+            //services.AddSession(o =>
+            //{
+            //    o.IdleTimeout = TimeSpan.FromMinutes(5);
+            //});
 
         }
 
@@ -79,9 +79,9 @@ namespace FLUX.Web.MVC
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            app.UseIISPlatformHandler();
+            //app.UseIISPlatformHandler();
 
-            app.UseSession();
+            //app.UseSession();
 
             app.UseStaticFiles();
 
@@ -92,8 +92,5 @@ namespace FLUX.Web.MVC
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
-
-        // Entry point for the application.
-        public static void Main(string[] args) => WebApplication.Run<Startup>(args);
     }
 }

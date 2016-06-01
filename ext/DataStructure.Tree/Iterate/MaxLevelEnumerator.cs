@@ -48,7 +48,7 @@ namespace DataStructure.Tree.Iterate
          *               = Path.Count - Dist 
          * 
          * */
-        [System.Diagnostics.DebuggerStepThrough]
+        //[DebuggerStepThrough]
         private int[] ShortenPath(List<int> path)
         {
             int length = _fromButtom ? _distance : path.Count - _distance;

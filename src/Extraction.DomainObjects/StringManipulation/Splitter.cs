@@ -22,7 +22,7 @@ namespace Extraction.DomainObjects.StringManipulation
         // Sonderzeichen = ausländische alphabete (mexiko, frankreich, ... )
 
 
-        [System.Diagnostics.DebuggerStepThrough]
+        //[System.Diagnostics.DebuggerStepThrough]
         //-----------------------------------------------------------------------------------------------------------------------
         public static List<string> Split(string input, bool splitByDot = false)
         //-----------------------------------------------------------------------------------------------------------------------

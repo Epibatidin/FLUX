@@ -4,7 +4,7 @@ using DataAccess.Interfaces;
 using Facade.MVC;
 using FLUX.Configuration.DependencyInjection;
 using FLUX.Interfaces.Web;
-using Microsoft.AspNet.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.OptionsModel;

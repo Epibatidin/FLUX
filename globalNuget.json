@@ -23,11 +23,9 @@
         "Newtonsoft.Json": "8.0.1"
       }
     },
-    "dnx451": {
+    "net451": {
       "dependencies": {
-        "Moq": "4.1.1308.2120",
-        "AutoFixture": "3.46.0",
-        "AutoFixture.AutoMoq": "3.46.0"
+       
 
       }
     }
@@ -38,6 +36,10 @@
     "Microsoft.Extensions.Configuration": "1.0.0-rc2-*",
     "Microsoft.Extensions.Configuration.Binder": "1.0.0-rc2-*",
     "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc2-*",
-    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc2-*"
+    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc2-*",
+
+    "Moq": "4.6.8",
+    "AutoFixture": "3.46.0",
+    "AutoFixture.AutoMoq": "3.46.0"
   }
 }

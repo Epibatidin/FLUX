@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Extraction.DomainObjects.StringManipulation
 {
-    [System.Diagnostics.DebuggerStepThrough]
+    //[System.Diagnostics.DebuggerStepThrough]
     public class PartedString : IEnumerable<string>, IComparable<PartedString>
     {
         public int Count

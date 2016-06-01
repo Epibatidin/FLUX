@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Mvc.Razor;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 namespace FLUX.Web.MVC.Framework
 {
@@ -15,7 +15,7 @@ namespace FLUX.Web.MVC.Framework
 
         public IEnumerable<string> ExpandViewLocations(ViewLocationExpanderContext context, IEnumerable<string> viewLocations)
         {
-            if (!context.IsPartial)
+            if (!context.IsMainPage)
                 return viewLocations;
 
             return viewLocations.Concat(new[] { "/Views/Components/{0}.cshtml", "/Views/{0}.cshtml"});

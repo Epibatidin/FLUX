@@ -1,6 +1,6 @@
 ﻿using FLUX.Interfaces.Web;
-using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Mvc.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace FLUX.Web.MVC.ViewComponents
 {
@@ -8,10 +8,10 @@ namespace FLUX.Web.MVC.ViewComponents
     {
         private readonly IConfigurationFormProcessor _configurationFormProcessor;
         private readonly IPostbackHelper _postbackHelper;
-        private readonly IActionBindingContextAccessor _actionBindingContextAccessor;
+        private readonly IActionContextAccessor _actionBindingContextAccessor;
 
         public ConfigurationViewComponent(IConfigurationFormProcessor configurationFormProcessor, 
-            IPostbackHelper postbackHelper, IActionBindingContextAccessor actionBindingContextAccessor)
+            IPostbackHelper postbackHelper, IActionContextAccessor actionBindingContextAccessor)
         {
             _configurationFormProcessor = configurationFormProcessor;
             _postbackHelper = postbackHelper;

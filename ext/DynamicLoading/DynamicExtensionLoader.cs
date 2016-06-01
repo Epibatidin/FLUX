@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 using Facade.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

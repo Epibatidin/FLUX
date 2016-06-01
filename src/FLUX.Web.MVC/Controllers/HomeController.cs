@@ -1,10 +1,4 @@
-﻿using System.Collections.Generic;
-using DataAccess.Interfaces;
-using Extraction.Interfaces;
-using Extraction.Interfaces.Layer;
-using Facade.MVC;
-using FLUX.Interfaces;
-using Microsoft.AspNet.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace FLUX.Web.MVC.Controllers
 {

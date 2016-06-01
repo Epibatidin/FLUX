@@ -11,6 +11,6 @@
   "dependencies": {
     "FLUX.DomainObjects": "1.0.0-*",
     "Facade.MVC": "1.0.0-*",
-    "Microsoft.AspNet.Mvc": "6.0.0-rc1-*"
+    "Microsoft.AspNetCore.Mvc": "1.0.0-rc2-*"
   }
 }

@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Controllers;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,56 +14,70 @@ namespace Facade.MVC
         ModelBinderContext BuildContext(Controller controller);
 
         ModelBinderContext BuildContext(ViewComponent component,
-            IActionBindingContextAccessor actionBindingContextAccessor);
+            IActionContextAccessor actionBindingContextAccessor);
 
         bool TryUpdateModel<TFormModel>(TFormModel form, ModelBinderContext modelBinderContext) where TFormModel : class;
     }
 
     public class ModelBinderFacade : IModelBinderFacade
     {
+        private readonly IControllerPropertyActivator _controllerActivator;
+
+        public ModelBinderFacade(IControllerPropertyActivator controllerActivator)
+        {
+            _controllerActivator = controllerActivator;
+        }
+
         public ModelBinderContext BuildContext(Controller controller)
         {
-            var bindingContext = BuildContextFromActionContext(controller.BindingContext);
-
-            bindingContext.HttpContext = controller.ActionContext.HttpContext;
-            bindingContext.ModelState = controller.ModelState;
-            bindingContext.MetadataProvider = controller.MetadataProvider;
-            bindingContext.Validator = controller.ObjectValidator;
-            return bindingContext;
+            var context = new ModelBinderContext();
+            context.ActionContext = controller.ControllerContext;
+            context.MetadataProvider = controller.MetadataProvider;
+            context.InputFormatters = controller.ControllerContext.InputFormatters;
+            context.ModelBinderFactory = controller.ModelBinderFactory;
+            context.Validator = controller.ObjectValidator;
+            context.ValidatorProvider = new CompositeModelValidatorProvider(controller.ControllerContext.ValidatorProviders);
+            context.ValueProvider = new CompositeValueProvider(controller.ControllerContext.ValueProviders);
+            return context;
         }
 
-        public ModelBinderContext BuildContext(ViewComponent component, IActionBindingContextAccessor actionBindingContextAccessor)
+        public ModelBinderContext BuildContext(ViewComponent component, IActionContextAccessor actionBindingContextAccessor)
         {
             var resolver = component.HttpContext.RequestServices;
+            var context = new ModelBinderContext();
+
+            context.ActionContext = actionBindingContextAccessor.ActionContext;
+            context.InputFormatters = new List<IInputFormatter>();
+
+            context.MetadataProvider = resolver.GetRequiredService<IModelMetadataProvider>();
+            context.ModelBinderFactory = resolver.GetRequiredService<IModelBinderFactory>();
+            context.Validator = resolver.GetRequiredService<IObjectModelValidator>();
+
+            var controllerContext = new ControllerContext();
+            _controllerActivator.Activate(controllerContext, new object());
             
-            var bindingContext = BuildContextFromActionContext(actionBindingContextAccessor.ActionBindingContext);
-
-            bindingContext.HttpContext = component.HttpContext;
-            bindingContext.ModelState = component.ModelState;
-            bindingContext.MetadataProvider = resolver.GetRequiredService<IModelMetadataProvider>();
-            bindingContext.Validator = resolver.GetRequiredService<IObjectModelValidator>();
-
-            return bindingContext;
+            return context;
         }
 
-        private ModelBinderContext BuildContextFromActionContext(ActionBindingContext actionbinding)
+        private ModelBinderContext BuildContextFromActionContext(ActionContext actionbinding)
         {
             var bindingContext = new ModelBinderContext();
+            
 
-            bindingContext.ModelBinder = actionbinding.ModelBinder;
-            bindingContext.ValueProvider = actionbinding.ValueProvider;
-            bindingContext.InputFormatters = actionbinding.InputFormatters;
-            bindingContext.ValidatorProvider = actionbinding.ValidatorProvider;
+            //bindingContext.ModelBinder = actionbinding.ModelBinder;
+            //bindingContext.ValueProvider = actionbinding.ValueProvider;
+            //bindingContext.InputFormatters = actionbinding.InputFormatters;
+            //bindingContext.ValidatorProvider = actionbinding.ValidatorProvider;
             return bindingContext;
         }
 
 
         public bool TryUpdateModel<TFormModel>(TFormModel form, ModelBinderContext modelBinderContext) where TFormModel : class
         {
-            var result = ModelBindingHelper.TryUpdateModelAsync<TFormModel>(form, "", modelBinderContext.HttpContext,
-                modelBinderContext.ModelState,
-                modelBinderContext.MetadataProvider, modelBinderContext.ModelBinder, modelBinderContext.ValueProvider
-                  , modelBinderContext.InputFormatters, modelBinderContext.Validator, modelBinderContext.ValidatorProvider);
+            var result = ModelBindingHelper.TryUpdateModelAsync(form, "",
+                modelBinderContext.ActionContext, modelBinderContext.MetadataProvider, 
+                modelBinderContext.ModelBinderFactory, modelBinderContext.ValueProvider, 
+                modelBinderContext.InputFormatters, modelBinderContext.Validator, modelBinderContext.ValidatorProvider);
             
             return result.GetAwaiter().GetResult();
         }

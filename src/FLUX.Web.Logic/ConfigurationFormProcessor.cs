@@ -2,11 +2,11 @@
 using DataAccess.Interfaces;
 using FLUX.DomainObjects;
 using FLUX.Interfaces.Web;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Facade.MVC;
 using Facade.Session;
 using FLUX.Interfaces;
-using Microsoft.AspNet.Http;
+using Microsoft.AspNetCore.Http;
 
 namespace FLUX.Web.Logic
 {

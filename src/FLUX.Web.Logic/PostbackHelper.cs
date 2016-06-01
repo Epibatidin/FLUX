@@ -1,6 +1,6 @@
 ﻿using System;
 using FLUX.Interfaces.Web;
-using Microsoft.AspNet.Http;
+using Microsoft.AspNetCore.Http;
 
 namespace FLUX.Web.Logic
 {

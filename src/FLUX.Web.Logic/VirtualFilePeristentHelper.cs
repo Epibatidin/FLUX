@@ -4,8 +4,7 @@ using System.IO;
 using System.Linq;
 using DataAccess.Interfaces;
 using FLUX.Interfaces;
-using Microsoft.AspNet.Http;
-using Microsoft.AspNet.Http.Features;
+using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Bson;
 

@@ -3,7 +3,7 @@ using Extension.Test;
 using Facade.MVC;
 using FLUX.DomainObjects;
 using FLUX.Interfaces.Web;
-using Microsoft.AspNet.Http;
+using Microsoft.AspNetCore.Http;
 using Moq;
 using NUnit.Framework;
 using Ploeh.AutoFixture;
