@@ -3,30 +3,86 @@
   "version": 2,
   "targets": {
     ".NETCoreApp,Version=v1.0": {
-      "System.Collections/4.0.11-rc2-24027": {
+      "Microsoft.NETCore.Platforms/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "Microsoft.NETCore.Targets/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "System.Collections/4.0.11": {
         "type": "package",
         "dependencies": {
-          "System.Runtime": "4.1.0-rc2-24027"
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.Runtime": "4.1.0"
         },
         "compile": {
           "ref/netstandard1.3/System.Collections.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
-      "System.Runtime/4.1.0-rc2-24027": {
+      "System.Runtime/4.1.0": {
         "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1"
+        },
         "compile": {
           "ref/netstandard1.5/System.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp80+wpa81/_._": {}
         }
       }
-    },
-    "DNX,Version=v4.5.1": {}
+    }
   },
   "libraries": {
-    "System.Collections/4.0.11-rc2-24027": {
-      "sha512": "wi4oT2B06Ev7vDPeJki7HVJ3qPYJIilzf+p81JuNaBD9L2wi9Y2L5BsQ6ToncW+lYZafuMea/hiK1xX1Ge1VWQ==",
+    "Microsoft.NETCore.Platforms/1.0.1": {
+      "sha512": "2G6OjjJzwBfNOO8myRV/nFrbTw5iA+DEm0N+qUqhrOmaVtn4pC77h38I1jsXGw5VH55+dPfQsqHD0We9sCl9FQ==",
       "type": "package",
+      "path": "Microsoft.NETCore.Platforms/1.0.1",
       "files": [
-        "System.Collections.4.0.11-rc2-24027.nupkg.sha512",
+        "Microsoft.NETCore.Platforms.1.0.1.nupkg.sha512",
+        "Microsoft.NETCore.Platforms.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/_._",
+        "runtime.json"
+      ]
+    },
+    "Microsoft.NETCore.Targets/1.0.1": {
+      "sha512": "rkn+fKobF/cbWfnnfBOQHKVKIOpxMZBvlSHkqDWgBpwGDcLRduvs3D9OLGeV6GWGvVwNlVi2CBbTjuPmtHvyNw==",
+      "type": "package",
+      "path": "Microsoft.NETCore.Targets/1.0.1",
+      "files": [
+        "Microsoft.NETCore.Targets.1.0.1.nupkg.sha512",
+        "Microsoft.NETCore.Targets.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/_._",
+        "runtime.json"
+      ]
+    },
+    "System.Collections/4.0.11": {
+      "sha512": "YUJGz6eFKqS0V//mLt25vFGrrCvOnsXjlvFQs+KimpwNxug9x0Pzy4PlFMU3Q2IzqAa9G2L4LsK3+9vCBK7oTg==",
+      "type": "package",
+      "path": "System.Collections/4.0.11",
+      "files": [
+        "System.Collections.4.0.11.nupkg.sha512",
         "System.Collections.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -87,11 +143,12 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "System.Runtime/4.1.0-rc2-24027": {
-      "sha512": "sDyyCeXycMSiNP4z1wyeyXlZSb26/OXIAwqnDsOAjw9PL3r8OgDRJgt4SH6Qid5z6E5IEGTKwjBjrHJGoa8bag==",
+    "System.Runtime/4.1.0": {
+      "sha512": "v6c/4Yaa9uWsq+JMhnOFewrYkgdNHNG2eMKuNqRn8P733rNXeRCGvV5FkkjBXn2dbVkPXOsO0xjsEeM1q2zC0g==",
       "type": "package",
+      "path": "System.Runtime/4.1.0",
       "files": [
-        "System.Runtime.4.1.0-rc2-24027.nupkg.sha512",
+        "System.Runtime.4.1.0.nupkg.sha512",
         "System.Runtime.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -178,12 +235,11 @@
     }
   },
   "projectFileDependencyGroups": {
-    "": [],
-    ".NETCoreApp,Version=v1.0": [
-      "System.Collections >= 4.0.11-rc2-24027",
-      "System.Runtime >= 4.1.0-rc2-24027"
+    "": [
+      "System.Collections >= 4.0.11",
+      "System.Runtime >= 4.1.0"
     ],
-    "DNX,Version=v4.5.1": []
+    ".NETCoreApp,Version=v1.0": []
   },
   "tools": {},
   "projectFileToolGroups": {}

@@ -1,8 +1,12 @@
 {
   "version": "1.0.0-*",
   "frameworks": {
-    "dnxcore50": {},
-    "dnx451": {}
+    "netcoreapp1.0": {
+      "imports": [
+        "dotnet5.6",
+        "portable-net45+win8"
+      ]
+    }
   },
   "dependencies": {
     "Facade.MVC": "1.0.0-*",

@@ -4,17 +4,12 @@
     "netcoreapp1.0": {
       "imports": [
         "dotnet5.6",
-        "dnxcore50",
         "portable-net45+win8"
-      ],
-      "dependencies": {}
-    },
-    "dnx451": {
-      "dependencies": {}
+      ]
     }
   },
   "dependencies": {
-    "Microsoft.AspNetCore.Mvc": "1.0.0-rc2-*",
-    "System.Collections": "4.0.10"
+    "Microsoft.AspNetCore.Mvc": "1.0.1",
+    "System.Collections": "4.0.11"
   }
 }

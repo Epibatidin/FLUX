@@ -4,23 +4,17 @@
     "netcoreapp1.0": {
       "imports": [
         "dotnet5.6",
-        "dnxcore50",
         "portable-net45+win8"
-      ],
-      "dependencies": {
-        "System.Linq": "4.1.0-rc2-24027",
-        "System.Runtime": "4.1.0-rc2-24027",
-        "System.IO": "4.1.0-rc2-24027"
-      }
-    },
-    "dnx451": {
-      "dependencies": {}
+      ]
     }
   },
   "dependencies": {
+    "System.Linq": "4.1.0",
+    "System.Runtime": "4.1.0",
+    "System.IO": "4.1.0",
     "Facade.Configuration": "1.0.0-*",
     "DynamicLoading": "1.0.0-*",
-    "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc2-*",
-    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc2-*"
+    "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
+    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
   }
 }

@@ -5,9 +5,9 @@
   },
   "dependencies": {
     "NUnit": "3.0.1",
-    "Moq": "4.1.1308.2120",
-    "AutoFixture": "3.37.0",
-    "AutoFixture.AutoMoq": "3.37.0",
+    "Moq": "4.6.8",
+    "AutoFixture": "3.46.0",
+    "AutoFixture.AutoMoq": "3.46.0",
     "xunit": "2.1.0",
     "xunit.runner.dnx": "2.1.0-rc1-build204",
     "Extension.Test": "1.0.0-*",
