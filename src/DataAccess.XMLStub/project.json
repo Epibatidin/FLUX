@@ -9,6 +9,8 @@
     }
   },
   "dependencies": {
+    "System.IO": "4.1.0",
+    "System.IO.FileSystem": "4.0.1",
     "System.Xml.XmlSerializer": "4.0.11",
     "DynamicLoading": "1.0.0-*",
     "DataAccess.Base": "1.0.0-*",

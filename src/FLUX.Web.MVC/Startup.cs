@@ -21,7 +21,7 @@ namespace FLUX.Web.MVC
 
             // Set up configuration sources.
             var builder = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json")
+                //.AddJsonFile("appsettings.json")
                 .AddJsonFile(configFolder + "VirtualFileProvier.json")
                 .AddJsonFile(configFolder + "Layer.json");
 
@@ -43,9 +43,12 @@ namespace FLUX.Web.MVC
                 o.ViewLocationExpanders.Add(new ViewComponentIgnoringViewLocationExpander());
             });
 
+            var fi = new FrameworkInstaller();
+            fi.Install(services);
+
             var di = new DependencyInstaller();
             di.Install(services, Configuration);
-
+            
             var sectionGrp = new ApplicationStarter();
             sectionGrp.Startup(services, Configuration);
 

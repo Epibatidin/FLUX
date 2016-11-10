@@ -13,14 +13,18 @@ namespace FLUX.Configuration
         {
             var loader = new DynamicExtensionLoader(new ConfigurationBinderFacade());
 
-            //var dataAccess = config.GetValue<>()<VirtualFileAccessorSectionGroup>();
-            //services.Configure<VirtualFileAccessorSectionGroup>(config);
+            var dataAccess = new VirtualFileAccessorSectionGroup();
+            config.Bind(dataAccess);
+            
+            services.AddSingleton(dataAccess);
 
-            //var layerConfig = config.Get<ExtractionLayerConfig>();
+            var layerConfig = new ExtractionLayerConfig();
+            config.Bind(layerConfig);
+            services.AddSingleton(layerConfig);
             //services.Configure<ExtractionLayerConfig>(config);
 
-            //loader.LoadExtension(config, services, dataAccess.Sources);
-            //loader.LoadExtension(config, services, layerConfig.Layers);
+            loader.LoadExtension(config, services, dataAccess.Sources);
+            loader.LoadExtension(config, services, layerConfig.Layers);
         }
     }
 }
