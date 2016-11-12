@@ -5,7 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DynamicLoading
 {
-    public abstract class DynamicExtensionInstallerBase<TConfigurationSection> : IDynamicExtensionInstaller where TConfigurationSection : class
+    public abstract class DynamicExtensionInstallerBase<TConfigurationSection> : IDynamicExtensionInstaller 
+        where TConfigurationSection : class, new()
     {
         public IConfigurationBinderFacade ConfigurationBinder { get; set; }
 
@@ -20,7 +21,7 @@ namespace DynamicLoading
                 assectionHolder.SectionName = sectionName;
 
             services.Add(new ServiceDescriptor(typeof(TConfigurationSection), config));
-
+            
             if(InterfaceType != null)
                 services.Add(new ServiceDescriptor(InterfaceType, config));
 

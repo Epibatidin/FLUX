@@ -7,8 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using FLUX.Configuration.DependencyInjection;
 using FLUX.Web.MVC.Framework;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor;
+using System.IO;
 
 namespace FLUX.Web.MVC
 {
@@ -21,7 +21,8 @@ namespace FLUX.Web.MVC
 
             // Set up configuration sources.
             var builder = new ConfigurationBuilder()
-                //.AddJsonFile("appsettings.json")
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
                 .AddJsonFile(configFolder + "VirtualFileProvier.json")
                 .AddJsonFile(configFolder + "Layer.json");
 
@@ -34,9 +35,9 @@ namespace FLUX.Web.MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add MVC dependencies
+            // Add MVC dependencies            
             services.AddMvc();
-
+            services.AddOptions();
             services.Configure<RazorViewEngineOptions>(o =>
             {
                 o.ViewLocationExpanders.Clear();
@@ -57,13 +58,12 @@ namespace FLUX.Web.MVC
 
         private void InstallSession(IServiceCollection services)
         {
-            //services.AddCaching();
+            services.AddDistributedMemoryCache();
 
-            //services.AddSession(o =>
-            //{
-            //    o.IdleTimeout = TimeSpan.FromMinutes(5);
-            //});
-
+            services.AddSession(o =>
+            {
+                o.IdleTimeout = TimeSpan.FromMinutes(5);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -84,7 +84,7 @@ namespace FLUX.Web.MVC
 
             //app.UseIISPlatformHandler();
 
-            //app.UseSession();
+            app.UseSession();
 
             app.UseStaticFiles();
 

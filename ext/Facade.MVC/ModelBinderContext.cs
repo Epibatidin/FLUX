@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Formatters;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
@@ -12,8 +10,6 @@ namespace Facade.MVC
         public IModelMetadataProvider MetadataProvider { get; set; }
         public IModelBinderFactory ModelBinderFactory { get; set; }
         public IValueProvider ValueProvider { get; set; }
-        public IList<IInputFormatter> InputFormatters { get; set; }
         public IObjectModelValidator Validator { get; set; }
-        public IModelValidatorProvider ValidatorProvider { get; set; }
     }
 }
