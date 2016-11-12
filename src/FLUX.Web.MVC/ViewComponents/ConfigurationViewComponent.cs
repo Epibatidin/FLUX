@@ -20,7 +20,6 @@ namespace FLUX.Web.MVC.ViewComponents
 
         public IViewComponentResult Invoke()
         {
-            
             var fm = _configurationFormProcessor.Build();
             _configurationFormProcessor.Update(fm, Request, c => c.BuildContext(this,_actionBindingContextAccessor));
 

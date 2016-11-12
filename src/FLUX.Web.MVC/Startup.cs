@@ -6,9 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using FLUX.Configuration.DependencyInjection;
-using FLUX.Web.MVC.Framework;
 using Microsoft.AspNetCore.Mvc.Razor;
-using System.IO;
 
 namespace FLUX.Web.MVC
 {
@@ -18,10 +16,9 @@ namespace FLUX.Web.MVC
         {
             string configFolder = @"D:\Develop\FLUX\src\FLUX.Configuration\Files\";
 
-
             // Set up configuration sources.
             var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
+                .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json")
                 .AddJsonFile(configFolder + "VirtualFileProvier.json")
                 .AddJsonFile(configFolder + "Layer.json");
@@ -40,8 +37,7 @@ namespace FLUX.Web.MVC
             services.AddOptions();
             services.Configure<RazorViewEngineOptions>(o =>
             {
-                o.ViewLocationExpanders.Clear();
-                o.ViewLocationExpanders.Add(new ViewComponentIgnoringViewLocationExpander());
+                o.ViewLocationFormats.Insert(1, "/Views/{0}.cshtml");
             });
 
             var fi = new FrameworkInstaller();
