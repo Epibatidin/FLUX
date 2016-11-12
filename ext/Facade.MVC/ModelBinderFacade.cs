@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Internal;
+using System.Collections.Generic;
+using Microsoft.Extensions.Options;
 
 namespace Facade.MVC
 {
@@ -17,6 +19,13 @@ namespace Facade.MVC
 
     public class ModelBinderFacade : IModelBinderFacade
     {
+        private IList<IValueProviderFactory> _valueProviderFactories;
+
+        public ModelBinderFacade(IOptions<MvcOptions> optionsAccessor)
+        {
+            _valueProviderFactories = optionsAccessor.Value.ValueProviderFactories;
+        }
+
         public ModelBinderContext BuildContext(Controller controller)
         {
             var context = new ModelBinderContext();
@@ -37,7 +46,11 @@ namespace Facade.MVC
             context.MetadataProvider = resolver.GetRequiredService<IModelMetadataProvider>();
             context.ModelBinderFactory = resolver.GetRequiredService<IModelBinderFactory>();
             context.Validator = resolver.GetRequiredService<IObjectModelValidator>();
-            context.ValueProvider = CompositeValueProvider.CreateAsync(new ControllerContext(context.ActionContext)).GetAwaiter().GetResult();
+            
+            var controllerContext = new ControllerContext(context.ActionContext);
+            controllerContext.ValueProviderFactories = _valueProviderFactories;
+
+            context.ValueProvider = CompositeValueProvider.CreateAsync(controllerContext).GetAwaiter().GetResult();
 
             return context;
         }

@@ -1,8 +1,8 @@
 ﻿
-@using (Html.BeginForm("Configuration", "Home", FormMethod.Post, new {@class = "context"}))
+@using (Html.BeginForm("Configuration", "Home",null, FormMethod.Post, false,  new {@class = "context"}))
 {
     <div class="loadHere">
-        @await Component.InvokeAsync("Configuration")
+        @Component.InvokeAsync("Configuration").GetAwaiter().GetResult()
     </div>
     <input type="submit" value="Submit"/>
 }
@@ -10,6 +10,6 @@
 <div class="cfix"></div>
 <div id="DataContainer" data-url="@Url.Action("DataDelivery", "Home")">
     
-    @await Component.InvokeAsync("DataDelivery")
+    @Component.InvokeAsync("DataDelivery").GetAwaiter().GetResult()
     
 </div>

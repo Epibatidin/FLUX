@@ -1,6 +1,7 @@
 ﻿using FLUX.Interfaces.Web;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.Extensions.Options;
 
 namespace FLUX.Web.MVC.ViewComponents
 {
@@ -21,7 +22,8 @@ namespace FLUX.Web.MVC.ViewComponents
         public IViewComponentResult Invoke()
         {
             var fm = _configurationFormProcessor.Build();
-            _configurationFormProcessor.Update(fm, Request, c => c.BuildContext(this,_actionBindingContextAccessor));
+            _configurationFormProcessor.Update(fm, Request,
+                c => c.BuildContext(this,_actionBindingContextAccessor));
 
             if (_postbackHelper.IsPostback(Request))
                 _configurationFormProcessor.Process(fm);
