@@ -5,11 +5,11 @@ namespace Extraction.Interfaces
 {
     public interface IPartedStringOperation
     {
-        PartedString Operate(PartedString source);
+        void Operate(PartedString source);
     }
 
-    public interface IMultiCleaner
+    public interface IEnumerablePartedStringOperation
     {
-        List<PartedString> Filter(List<PartedString> source);
+        void Operate(List<PartedString> source);
     }
 }

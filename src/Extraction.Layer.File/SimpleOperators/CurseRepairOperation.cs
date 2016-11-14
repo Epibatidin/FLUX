@@ -5,7 +5,7 @@ namespace Extraction.Layer.File.Cleaner
 {
     public class CurseRepairOperation : IPartedStringOperation
     {
-        public PartedString Operate(PartedString source)
+        public void Operate(PartedString source)
         {
             //    else
             //    {
@@ -20,9 +20,6 @@ namespace Extraction.Layer.File.Cleaner
             //        }
             //    }
             //}
-
-
-            return source;
         }
     }
 }

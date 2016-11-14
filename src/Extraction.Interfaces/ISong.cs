@@ -6,11 +6,10 @@ namespace Extraction.Interfaces
     {
         int TrackNr { get; }
         int Year { get; }
-
-        string CD { get; }
-
+        
         string Artist { get; }
         string Album { get; }
+        string CD { get; }
         string SongName { get; }
     }
 }

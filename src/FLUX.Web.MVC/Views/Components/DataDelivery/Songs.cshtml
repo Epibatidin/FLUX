@@ -4,7 +4,6 @@
 
 @foreach (var cd in Model.Children)
 {
-    
     <div>
         <div class="ContentWrapper CD">
             <h2 class="float-left Album">CD</h2>
@@ -14,7 +13,7 @@
 
             @foreach (var song in cd.Children)
             {
-                @Html.DisplayFor(c => song.Value, new { key = "TrackNr" })
+                @Html.DisplayFor(c => song.Value, new { key = "Track" })
                 @Html.DisplayFor(c => song.Value, new { key = "Title" })
                 <div class="clear-fix"></div>
             }

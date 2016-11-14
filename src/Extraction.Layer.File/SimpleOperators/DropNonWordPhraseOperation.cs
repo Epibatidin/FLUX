@@ -2,13 +2,13 @@
 using Extraction.DomainObjects.StringManipulation;
 using Extraction.Interfaces;
 
-namespace Extraction.Layer.File.Operations
+namespace Extraction.Layer.File.Operations.Cleaning
 {
     public class DropNonWordPhraseOperation : IPartedStringOperation
     {
         private static readonly HashSet<char> LettersMakingAValidWord = new HashSet<char> { 'a', 'e', 'i', 'o', 'u', 'ä', 'ö', 'ü', 'y' };
 
-        public PartedString Operate(PartedString source)
+        public void Operate(PartedString source)
         {
             for (int i = 0; i < source.Count; i++)
             {
@@ -31,7 +31,6 @@ namespace Extraction.Layer.File.Operations
                 source.RemoveAt(i);
                 i--;
             }
-            return source;
         }
     }
 }

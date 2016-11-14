@@ -2,8 +2,11 @@
 using Extraction.DomainObjects.StringManipulation;
 using Extraction.Interfaces;
 
-namespace Extraction.Layer.File.Operations
+namespace Extraction.Layer.File.Operations.Cleaning
 {
+    ///<summary>    
+    /// Entfernt Urls
+    ///</summary>
     public class InternetStuffPartedStringOperation : IPartedStringOperation
     {
         //private static readonly string isInternetstuff = @"^(www.)?([a-z]*[.])(com|de|org|to|net)$";
@@ -34,12 +37,10 @@ namespace Extraction.Layer.File.Operations
             }
         }
 
-        public PartedString Operate(PartedString part)
+        public void Operate(PartedString part)
         {
             execute(part);
-            part.ReSplit(true);
-
-            return part;
+            part.ReSplit(true);            
         }
     }
 }

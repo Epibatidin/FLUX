@@ -2,7 +2,7 @@
 
 namespace Extraction.Layer.File.Config
 {
-    public class WhiteListConfig : HashSet<string>
+    public class WhiteListConfig : HashSet<string>, IWhiteListConfig
     {
     }
 }

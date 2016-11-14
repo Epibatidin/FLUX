@@ -5,29 +5,48 @@ namespace Extraction.Layer.File
 {
     public class FileLayerSongDo : ISong
     {
-        public int Id { get; set; }
+        public FileLayerSongDo()
+        {
+            OverwrittenValues = new string[4];
+        }
 
-        public string CD { get; set; }
+        public int Id { get; set; }
+        
         public int TrackNr { get; set; }
         public int Year { get; set; }
-        
-        public string Artist { get; set; }
-        public string Album { get; set; }
-        public string SongName { get; set; }
 
+        private string[] OverwrittenValues;
+
+        public string Artist => ResolveValue(0);
+        public string Album => ResolveValue(1);
+        public string CD => ResolveValue(2);
+        public string SongName => ResolveValue(3);
+        
         public PartedString LevelValue { get; set; }
+
+        private int _depth;
+
+        private string ResolveValue(int currentDepth)
+        {
+            if (_depth != currentDepth) return null;
+
+            var value = OverwrittenValues[currentDepth];
+
+            if(value == null)
+                return LevelValue.ToString();
+
+            return value;
+        }
 
         public void SetByDepth(int depth, string value)
         {
-            LevelValue = new PartedString(value);
+            _depth = depth;
+            LevelValue = new PartedString(value);            
+        }
 
-            switch (depth)
-            {
-                case 0: Artist = value; break;
-                case 1: Album = value; break;
-                case 2: CD = value; break;
-                case 3: SongName = value; break;
-            }
+        public void SetCD(int i)
+        {
+            OverwrittenValues[2] = i.ToString();
         }
     }
 }

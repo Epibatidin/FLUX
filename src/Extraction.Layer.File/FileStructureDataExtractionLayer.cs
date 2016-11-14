@@ -2,6 +2,7 @@
 using Extraction.DomainObjects.StringManipulation;
 using Extraction.Interfaces;
 using Extraction.Interfaces.Layer;
+using Extraction.Layer.File.Operations.FullTreeOperators;
 using System;
 using System.Collections.Generic;
 using FileTreeItem = DataStructure.Tree.TreeItem<Extraction.Layer.File.FileLayerSongDo>;
@@ -11,11 +12,16 @@ namespace Extraction.Layer.File
     public class FileStructureDataExtractionLayer : IDataExtractionLayer
     {
         private readonly IEnumerable<IPartedStringOperation> _cleaners;
-        private readonly ITreeByKeyAccessorBuilder _byTreeAccessorBuilder;
+        private readonly IEnumerable<IFullTreeOperator> _treeOperators;
 
-        public FileStructureDataExtractionLayer(IEnumerable<IPartedStringOperation> cleaners, ITreeByKeyAccessorBuilder byTreeAccessorBuilder)
+        private readonly ITreeByKeyAccessorBuilder _byTreeAccessorBuilder;
+        
+        public FileStructureDataExtractionLayer(IEnumerable<IPartedStringOperation> cleaners,
+            IEnumerable<IFullTreeOperator> treeOperators,
+            ITreeByKeyAccessorBuilder byTreeAccessorBuilder)
         {
             _cleaners = cleaners;
+            _treeOperators = treeOperators;
             _byTreeAccessorBuilder = byTreeAccessorBuilder;
         }
 
@@ -30,84 +36,73 @@ namespace Extraction.Layer.File
             {
                 ForeachPartedStringInTree(treeAccessor.Tree, cleaner.Operate);
             }
-        }
 
-        private void ForeachPartedStringInTree(FileTreeItem root, Func<PartedString, PartedString> func)
-        {
-            foreach (var item in TreeIterator.IterateDepthGetTreeItems(root))
+            foreach (var treeOperator in _treeOperators)
             {
-                item.Value.LevelValue = func(item.Value.LevelValue);
+                treeOperator.Operate(treeAccessor);
             }
         }
 
+        private void ForeachPartedStringInTree(FileTreeItem root, Action<PartedString> func)
+        {
+            foreach (var item in TreeIterator.IterateDepthGetTreeItems(root))
+            {
+                func(item.Value.LevelValue);
+            }
+        }
 
-        //        FileLayerConfig _config;
+        //private void ForeachLvl(FileTreeItem root)
+        //{
+        //    var lvlIterator = new TreeLevelEnumerator<FileLayerSongDo>(root, 0);
+        //    var iter = new MaxLevelEnumerator<FileLayerSongDo>(root, 1, true); // 1 == Album
 
-        //        private FileItem _data;
+        //    while(iter.MoveNext())
+        //    {
+        //        yield return iter.Current.Children;
+        //    }
 
-        //        private List<Action> _work;
 
-        //        public override void Execute()
+
+        //}
+
+        //private IEnumerable<List<TreeItem<ISSC>>> IterateBlock(WorkUnit wu)
+        //        //{
+        //        //    MaxLevelEnumerator<ISSC> iter = new MaxLevelEnumerator<ISSC>(wu.Data, 1, true);
+        //        //    yield return wu.Data.Children;
+
+        //        //    while (iter.MoveNext())
+        //        //    {
+        //        //        yield return iter.Current.Children;
+        //        //    }
+        //        //    iter = new MaxLevelEnumerator<ISSC>(wu.Data, 2, true);
+
+        //        //    while (iter.MoveNext())
+        //        //    {
+        //        //        yield return iter.Current.Children;
+        //        //    }
+        //        //    yield break;
+        //        //}
+
+        //{
+        //    EqualityCleaner cleaner = new EqualityCleaner(_config.WhiteListConfig);
+
+
+
+
+        //    List<PartedString> currentBlockData = null;
+        //    foreach (var block in IterateBlock(W))
+        //    {
+        //        currentBlockData = new List<PartedString>();
+        //        foreach (var treeItem in block)
         //        {
-        //            foreach (var item in _work)
-        //            {
-        //                item();
-        //                Update();
-        //            }
+        //            treeItem.Value.Status = Common.DataStatus.Updated;
+        //            currentBlockData.Add(treeItem.Value.CleanIIS.getByKey<PartedString>(treeItem.Level));
         //        }
-
-        //        protected override void ConfigureInternal(XmlReader reader)
-        //        {
-        //            _config = new FileLayerConfig(reader);
-        //            _work = new List<Action>();
-        //            _work.Add(InternetStuff); // internet zeug entfernen ist wahrscheinlich das leichteste und fehlerfreiste 
-        //            _work.Add(BlackList);
-        //            _work.Add(ExtractTrack);
-        //            _work.Add(ExtractYear);
-
-
-        //            CreateProgress(_work.Count);
-        //        }
-
-        //        protected override ISongByKeyAccessor Data()
-        //        {
-        //            return new TreeByKeyAccessor(_data);
-        //        }
-
-        //        public override void InitData(Dictionary<int, IVirtualFile> dirtyData)
-        //        {
-        //            // daten aufbereiten 
-        //            // wird nich neu gelesen ! 
-        //            // bau den baum 
-        //            TreeByKeyAccessorBuilder builder = new TreeByKeyAccessorBuilder();
-        //            _data = builder.Build(dirtyData.Values);
-        //            Update();
-        //            // dem data store bescheid geben ? 
-        //        }
-
-        //        
-        //        ///<summary>
-        //        /// Die Erste Funktion die ausgeführt - 
-        //        /// Entfernt Urls
-        //        ///</summary>
-        //        ///<returns></returns>
-        //        private void InternetStuff()
-        //        {
-        //            InternetStuffPartedStringOperation cleaner = new InternetStuffPartedStringOperation();
-        //            ForeachPartedStringInTree(_data, cleaner.Operate);            
-        //        }
-
-
-        //        /// <summary>
-        //        /// Zweite Function
-        //        /// </summary>
-        //        /// <param name="W"></param>
-        //        /// <returns></returns>
-        //        private void BlackList()
-        //        {
-        //            RemoveBlackListValuesOperation cleaner = new RemoveBlackListValuesOperation(_config.BlackListConfig);
-        //            ForeachPartedStringInTree(_data, cleaner.Operate);
-        //        }
+        //        cleaner.Operate(currentBlockData);
+        //        var z = currentBlockData;
+        //    }
+        //    return W;
+        //}
 
         //        private void ExtractYear()
         //        {
@@ -142,27 +137,7 @@ namespace Extraction.Layer.File
 
 
 
-        //        //private void RemoveDoubles()
-        //        //{
-        //        //    EqualityCleaner cleaner = new EqualityCleaner(_config.WhiteListConfig);
-
-
-
-
-        //        //    List<PartedString> currentBlockData = null;
-        //        //    foreach (var block in IterateBlock(W))
-        //        //    {
-        //        //        currentBlockData = new List<PartedString>();
-        //        //        foreach (var treeItem in block)
-        //        //        {
-        //        //            treeItem.Value.Status = Common.DataStatus.Updated;
-        //        //            currentBlockData.Add(treeItem.Value.CleanIIS.getByKey<PartedString>(treeItem.Level));
-        //        //        }
-        //        //        cleaner.Operate(currentBlockData);
-        //        //        var z = currentBlockData;
-        //        //    }
-        //        //    return W;
-        //        //}
+        //        
 
         //        //private WorkUnit OneStepUp(WorkUnit W)
         //        //{

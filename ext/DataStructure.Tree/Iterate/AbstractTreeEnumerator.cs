@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 
 namespace DataStructure.Tree.Iterate
 {
@@ -9,12 +10,11 @@ namespace DataStructure.Tree.Iterate
             Root = root;
         }
 
-
         protected TreeItem<T> Root;
 
         protected TreeItem<T> current;
 
-        object System.Collections.IEnumerator.Current => Current;
+        object IEnumerator.Current => current;
         public TreeItem<T> Current => current;
 
 

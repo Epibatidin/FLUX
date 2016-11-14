@@ -36,30 +36,6 @@ namespace DataStructure.Tree.Iterate
             }
         }
 
-      
-        //public static IEnumerable<T> GetItemsOfLevel<T>(TreeItem<T> source, int Level)
-        //{
-        //    if (source.Level == Level) // dann bin ich eigentlich zu weit weil ich wollt ja alle von dieser ebene 
-        //    {
-        //        yield return source.Value;
-        //        yield break;
-        //    }
-        //    else if(source.Level < Level) // wenn ich noch ne ebene drunter bin ist alles noch okay 
-        //    {
-        //        if(source.HasChildren)
-        //        {                    
-        //            if(source.Level == Level -1 )
-        //            {
-
-        //            }
-        //            else // geh ne strufe tiefer  -- geht aber irgendwie nich ... - viele items und so
-        //            {
-                    
-        //            }
-        //        }
-        //    }
-        //}
-
         //public IEnumerable<IteratorContainer> IterateInWriteFileOrder()
         //{
         //    FileManager.Get.ResetPos();

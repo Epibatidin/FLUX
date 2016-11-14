@@ -1,9 +1,8 @@
-﻿//using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-//namespace Extraction.Layer.File.Config
-//{
-//    public interface IWhiteListConfig
-//    {
-//        HashSet<string> WhiteList { get; }
-//    }
-//}
+namespace Extraction.Layer.File.Config
+{
+    public interface IWhiteListConfig : ISet<string>
+    {
+    }
+}
