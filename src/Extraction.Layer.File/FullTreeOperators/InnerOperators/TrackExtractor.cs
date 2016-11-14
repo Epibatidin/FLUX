@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using Extraction.DomainObjects.StringManipulation;
 using Extraction.Layer.File.Helper;
+using Extraction.Layer.File.Interfaces;
 
 namespace Extraction.Layer.File.FullTreeOperators.InnerOperators
 {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using DataAccess.Interfaces;
 
-namespace Extraction.Layer.File
+namespace Extraction.Layer.File.Interfaces
 {
     public interface ITreeByKeyAccessorBuilder
     {

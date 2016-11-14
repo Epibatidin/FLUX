@@ -1,5 +1,7 @@
 ﻿
-namespace Extraction.Layer.File.Cleaner.CursesRepair
+using Extraction.Layer.File.Interfaces;
+
+namespace Extraction.Layer.File.SimpleOperators.CursesRepair
 {
     public class ShitRepair : ICurseRepairComponent
     {

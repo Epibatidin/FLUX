@@ -1,7 +1,7 @@
 ﻿using Extraction.DomainObjects.StringManipulation;
 using Extraction.Interfaces;
 
-namespace Extraction.Layer.File.Cleaner
+namespace Extraction.Layer.File.SimpleOperators
 {
     public class CurseRepairOperation : IPartedStringOperation
     {

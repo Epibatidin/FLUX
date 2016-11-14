@@ -1,10 +1,10 @@
 ﻿using DataStructure.Tree;
 using DataStructure.Tree.Iterate;
-using Extraction.Layer.File.Operations.Interfaces;
+using Extraction.Layer.File.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Extraction.Layer.File.Operations.FullTreeOperators
+namespace Extraction.Layer.File.FullTreeOperators
 {
     public class DropAllRedundantInformationTreeOperator : IFullTreeOperator
     {
@@ -32,7 +32,6 @@ namespace Extraction.Layer.File.Operations.FullTreeOperators
                 yield return songIterator.Current.Children; // Songs
             }
         }
-
 
         public void Operate(TreeByKeyAccessor treeByKeyAccessor)
         {

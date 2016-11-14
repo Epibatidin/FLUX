@@ -1,4 +1,4 @@
-﻿namespace Extraction.Layer.File.Operations.FullTreeOperators
+﻿namespace Extraction.Layer.File.Interfaces
 {
     public interface IFullTreeOperator
     {

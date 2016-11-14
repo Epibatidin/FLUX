@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Extraction.Layer.File.FullTreeOperators.InnerOperators
+namespace Extraction.Layer.File.Interfaces
 {
     public interface ITrackExtractor
     {

@@ -2,7 +2,7 @@
 using DataAccess.Interfaces;
 using DataStructure.Tree.Builder;
 using DataStructure.Tree.Iterate;
-using Extraction.DomainObjects.StringManipulation;
+using Extraction.Layer.File.Interfaces;
 
 namespace Extraction.Layer.File
 {
@@ -42,12 +42,10 @@ namespace Extraction.Layer.File
             var value = GetValueByDepthWithCDDummy(vf.PathParts, level);
             if (value == null)
                 return null;
-                //throw new Exception("WTF");
 
             var file = new FileLayerSongDo();
             file.SetByDepth(level, value);
             file.Id = vf.ID;
-            //file.LevelValue = new PartedString(value);
 
             return file;
         }

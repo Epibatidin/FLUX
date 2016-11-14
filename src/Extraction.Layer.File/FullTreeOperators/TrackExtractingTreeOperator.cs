@@ -1,8 +1,8 @@
 ﻿using DataStructure.Tree.Iterate;
-using Extraction.Layer.File.FullTreeOperators.InnerOperators;
+using Extraction.Layer.File.Interfaces;
 using System.Linq;
 
-namespace Extraction.Layer.File.Operations.FullTreeOperators
+namespace Extraction.Layer.File.FullTreeOperators
 {
     public class TrackExtractingTreeOperator : IFullTreeOperator
     {

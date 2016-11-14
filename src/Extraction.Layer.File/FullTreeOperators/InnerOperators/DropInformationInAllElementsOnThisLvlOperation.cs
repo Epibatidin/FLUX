@@ -2,9 +2,9 @@
 using System.Linq;
 using Extraction.DomainObjects.StringManipulation;
 using Extraction.Layer.File.Config;
-using Extraction.Layer.File.Operations.Interfaces;
+using Extraction.Layer.File.Interfaces;
 
-namespace Extraction.Layer.File.Cleaner
+namespace Extraction.Layer.File.FullTreeOperators.InnerOperators
 {
     public class DropInformationInAllElementsOnThisLvlOperation : IDropInformationInAllElementsOnThisLvlOperation
     {

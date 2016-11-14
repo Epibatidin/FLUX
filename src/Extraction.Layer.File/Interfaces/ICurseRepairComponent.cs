@@ -1,5 +1,5 @@
 ﻿
-namespace Extraction.Layer.File.Cleaner.CursesRepair
+namespace Extraction.Layer.File.Interfaces
 {
     public interface ICurseRepairComponent
     {
