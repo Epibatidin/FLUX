@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using DataAccess.Interfaces;
-using DataStructure.Tree;
 using DataStructure.Tree.Builder;
 using DataStructure.Tree.Iterate;
 using Extraction.DomainObjects.StringManipulation;
@@ -48,8 +45,9 @@ namespace Extraction.Layer.File
                 //throw new Exception("WTF");
 
             var file = new FileLayerSongDo();
-            
-            file.LevelValue = new PartedString(value);
+            file.SetByDepth(level, value);
+            file.Id = vf.ID;
+            //file.LevelValue = new PartedString(value);
 
             return file;
         }

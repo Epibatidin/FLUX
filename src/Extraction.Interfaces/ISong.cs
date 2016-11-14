@@ -4,9 +4,10 @@ namespace Extraction.Interfaces
 {
     public interface ISong : IUnique<int>
     {
-        int CD { get; }
         int TrackNr { get; }
         int Year { get; }
+
+        string CD { get; }
 
         string Artist { get; }
         string Album { get; }

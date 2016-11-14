@@ -28,7 +28,7 @@ namespace FLUX.Web.Logic
             
             var tree = _treeBuilder.BuildTreeFromCollection(flatListOfSongs,
                 (container, i) => container.GetGroupingKeyByDepth(i), (a, depth) => a.SetOriginalValue(depth));
-            return tree[0];
+            return tree;
         }
 
         internal IList<MultiLayerDataContainer> BuildInitalFlatMultiLayerCollection(IEnumerable<IVirtualFile> virtualFiles,

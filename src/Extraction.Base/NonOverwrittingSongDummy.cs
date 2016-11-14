@@ -6,13 +6,15 @@ namespace Extraction.Base
     public class NonOverwrittingSongDummy : ISong
     {
         public int Id { get; set; }
-        public int CD { get; set;  }
+                
         public int TrackNr { get; set; }
         public int Year { get; set; }
+
+        public string CD { get; set; }
         public string Artist { get;set;  }
         public string Album { get; set; }
         public string SongName { get; set; }
-
+        
         public void Add(ISong song)
         {
             CD = Set(song, c => c.CD);

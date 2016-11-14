@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Extension.IEnumerable;
 using Extraction.Interfaces;
 
@@ -57,7 +56,8 @@ namespace FLUX.DomainObjects
             {
                 case 0: return "Artist";
                 case 1: return "Album";
-                case 2: return "Title";
+                case 2: return "CD";
+                case 3: return "Title";
             }
             return null;
         }

@@ -7,10 +7,10 @@ namespace Extraction.Layer.File
     {
         public int Id { get; set; }
 
-        public int CD { get; set; }
+        public string CD { get; set; }
         public int TrackNr { get; set; }
         public int Year { get; set; }
-
+        
         public string Artist { get; set; }
         public string Album { get; set; }
         public string SongName { get; set; }
@@ -25,6 +25,7 @@ namespace Extraction.Layer.File
             {
                 case 0: Artist = value; break;
                 case 1: Album = value; break;
+                case 2: CD = value; break;
                 case 3: SongName = value; break;
             }
         }

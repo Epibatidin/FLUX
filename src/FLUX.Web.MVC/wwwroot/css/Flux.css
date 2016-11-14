@@ -45,6 +45,12 @@ h2.Album {
     float: right;
 }
 
+.ContentWrapper.CD {
+    width: 20%;
+    border-right: solid blue thin;
+    float: left;
+}
+
 .ContentContainer {
     margin-left: 50px;
 }
