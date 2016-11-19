@@ -90,7 +90,21 @@ namespace DataStructure.Tree.Iterate
             }
             return cur;
         }
-          
+
+        public IList<T> CollectNodeValuesOnPath(IEnumerable<int> path)
+        {
+            var result = new List<T>();
+            result.Add(_root.Value);
+
+            var cur = _root;
+            foreach (var item in path)
+            {   
+                cur = cur[item];
+                result.Add(cur.Value);
+            }
+            return result;
+        }
+
         private int GetPositionByLevel(int nonMappedLevel)
         {
             var listpos = nonMappedLevel - _root.Level;

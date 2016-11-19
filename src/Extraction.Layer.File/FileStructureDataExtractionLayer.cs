@@ -50,111 +50,13 @@ namespace Extraction.Layer.File
                 func(item.Value.LevelValue);
             }
         }
-
-        //private void ForeachLvl(FileTreeItem root)
-        //{
-        //    var lvlIterator = new TreeLevelEnumerator<FileLayerSongDo>(root, 0);
-        //    var iter = new MaxLevelEnumerator<FileLayerSongDo>(root, 1, true); // 1 == Album
-
-        //    while(iter.MoveNext())
-        //    {
-        //        yield return iter.Current.Children;
-        //    }
-
-
-
-        //}
-
-        //private IEnumerable<List<TreeItem<ISSC>>> IterateBlock(WorkUnit wu)
-        //        //{
-        //        //    MaxLevelEnumerator<ISSC> iter = new MaxLevelEnumerator<ISSC>(wu.Data, 1, true);
-        //        //    yield return wu.Data.Children;
-
-        //        //    while (iter.MoveNext())
-        //        //    {
-        //        //        yield return iter.Current.Children;
-        //        //    }
-        //        //    iter = new MaxLevelEnumerator<ISSC>(wu.Data, 2, true);
-
-        //        //    while (iter.MoveNext())
-        //        //    {
-        //        //        yield return iter.Current.Children;
-        //        //    }
-        //        //    yield break;
-        //        //}
-
-        //{
-        //    EqualityCleaner cleaner = new EqualityCleaner(_config.WhiteListConfig);
-
-
-
-
-        //    List<PartedString> currentBlockData = null;
-        //    foreach (var block in IterateBlock(W))
-        //    {
-        //        currentBlockData = new List<PartedString>();
-        //        foreach (var treeItem in block)
-        //        {
-        //            treeItem.Value.Status = Common.DataStatus.Updated;
-        //            currentBlockData.Add(treeItem.Value.CleanIIS.getByKey<PartedString>(treeItem.Level));
-        //        }
-        //        cleaner.Operate(currentBlockData);
-        //        var z = currentBlockData;
-        //    }
-        //    return W;
-        //}
-
-        //        private void ExtractYear()
-        //        {
-        //            YearExtractor exe = new YearExtractor();
-        //            foreach (var item in _data.Children) // iteriere alle alben 
-        //            {
-        //                exe.Execute(item.Value);
-        //            }
-        //        }
-
-
-        //        private void ExtractTrack()
-        //        {
-        //            // iteriere im block auf level 4 und extrahiere tracknr und eventuell cd 
-        //            MaxLevelEnumerator<FileLayerSongDo> iter = new MaxLevelEnumerator<FileLayerSongDo>(_data,2, true);
-
-        //            TrackExtractor extractor = new TrackExtractor(c =>
-        //            {
-        //                return c.Value.LevelValue;
-        //            });
-
-        //            while (iter.MoveNext())
-        //            {
-        //                extractor.CurrentData(iter.Current.GetChildren());
-        //                extractor.Execute();
-        //            }
-
-        //            // kontrolle ob cds hinzugekommen sind 
-
-        //            // wenn cd - dann restructure tree
-        //        }
-
-
-
-        //        
-
+        
         //        //private WorkUnit OneStepUp(WorkUnit W)
         //        //{
         //        //    OneStepUpCleaner cleaner = new OneStepUpCleaner();
 
         //        //    cleaner.Operate(W.Data);
 
-        //        //    return W;
-        //        //}
-
-
-        //        //private WorkUnit SetUpdated(WorkUnit W)
-        //        //{
-        //        //    foreach (var item in TreeIterator.IterateDepthGetTreeItems(W.Data))
-        //        //    {
-        //        //        item.Value.Status = Common.DataStatus.Updated;
-        //        //    }
         //        //    return W;
         //        //}
 
@@ -183,27 +85,6 @@ namespace Extraction.Layer.File
         //        //     * 
         //        //     */
         //        //    return Wu;
-        //        //}
-
-
-        //        //private IEnumerable<List<TreeItem<ISSC>>> IterateBlock(WorkUnit wu)
-        //        //{
-        //        //    MaxLevelEnumerator<ISSC> iter = new MaxLevelEnumerator<ISSC>(wu.Data, 1, true);
-        //        //    yield return wu.Data.Children;
-
-        //        //    while (iter.MoveNext())
-        //        //    {
-        //        //        yield return iter.Current.Children;
-        //        //    }
-        //        //    iter = new MaxLevelEnumerator<ISSC>(wu.Data, 2, true);
-
-        //        //    while (iter.MoveNext())
-        //        //    {
-        //        //        yield return iter.Current.Children;
-        //        //    }
-        //        //    yield break;
-        //        //}
-
-
+        //        //}        
     }
 }

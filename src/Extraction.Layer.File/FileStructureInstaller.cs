@@ -29,6 +29,7 @@ namespace Extraction.Layer.File
             services.AddSingleton<IFullTreeOperator, DropAllRedundantInformationTreeOperator>();
             services.AddSingleton<IFullTreeOperator, YearExtractionTreeOperator>();
             services.AddSingleton<IFullTreeOperator, TrackExtractingTreeOperator>();
+            services.AddSingleton<IFullTreeOperator, DropRedundantExtractedInformationTreeOperator>();
 
             services.AddSingleton<IDropInformationInAllElementsOnThisLvlOperation, DropInformationInAllElementsOnThisLvlOperation>();
             services.AddSingleton<IYearExtractor, YearExtractor>();
