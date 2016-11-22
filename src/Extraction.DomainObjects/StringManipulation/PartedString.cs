@@ -56,8 +56,7 @@ namespace Extraction.DomainObjects.StringManipulation
             Changed = true;
             _rawDataParts.RemoveRange(position, length);
         }
-
-
+        
         public override string ToString()
         {
             if (Changed)

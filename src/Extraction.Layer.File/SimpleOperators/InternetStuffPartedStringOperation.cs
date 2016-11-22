@@ -27,7 +27,7 @@ namespace Extraction.Layer.File.SimpleOperators
         private void execute(PartedString parted)
         {
             /* klammern aufnehmen ?!
-            // was gehschiet mit [x] - rX ? 
+            // was geschieht mit [x] - rX ? 
 
             * option : bei klammern und anderen noch zu wählenden sonderzeichen auch splitten 
             * dann normal suchen und die durch dieses spezielle splitten nach bearbeiten 
@@ -36,18 +36,15 @@ namespace Extraction.Layer.File.SimpleOperators
             * ja  
             * entferne den teil des strings der das internet ding enthielt 
             * ich würde ungern in string parts rumschneiden 
-            * am liebsten wätre mir danach noch speziell zu splitten und zu kontrollieren ob dann noch inet zeug drin ist 
+            * am liebsten wäre mir danach noch speziell zu splitten und zu kontrollieren ob dann noch inet zeug drin ist 
             * 
-            * vorgehen ;: 
+            * vorgehen : 
             * such in dem komplettem string 
             * 
-            * nimm einfach die worterkennung am anfangg raus 
+            * nimm einfach die worterkennung am anfang raus 
             * dadurch werden auch inet addressen in strings gefunden 
-            * dann muss ich aber auch auf dem komplettem string arbeiten und nicht nur auf einem stück 
-
-            * 
+            * dann muss ich aber auch auf dem komplettem string arbeiten und nicht nur auf einem stück             
             */
-
 
             for (int i = 0; i < parted.Count; i++)
             {
@@ -56,14 +53,16 @@ namespace Extraction.Layer.File.SimpleOperators
                 {
                     parted.RemoveAt(i);
                     i--;
+                    continue;
                 }
+                // we need to protect acronyms 
+                //parted[i] = parted[i].Replace(".", "<ar>");
             }
         }
 
         public void Operate(PartedString part)
         {
-            execute(part);
-            part.ReSplit(true);            
+            execute(part);           
         }
     }
 }

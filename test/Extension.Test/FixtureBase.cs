@@ -1,20 +1,24 @@
-﻿using Moq;
-using Ploeh.AutoFixture;
-using Ploeh.AutoFixture.AutoMoq;
-using Ploeh.AutoFixture.Kernel;
+﻿//using Moq;
+//using Ploeh.AutoFixture;
+//using Ploeh.AutoFixture.AutoMoq;
+//using Ploeh.AutoFixture.Kernel;
+
+using Moq;
+using NUnit.Framework;
 
 namespace Extension.Test
 {
+    [TestFixture]
     public abstract class FixtureBase<TSystemUnderTest> where TSystemUnderTest : class
     {
         public TSystemUnderTest SUT { get; set; }
-        public Fixture Fixture { get; set; }
+        //public Fixture Fixture { get; set; }
 
         protected FixtureBase()
         {
-            Fixture = new Fixture();
+            //Fixture = new Fixture();
             //Fixture.Customize(new MultipleCustomization());
-            Fixture.Customize(new AutoMoqCustomization());
+            //Fixture.Customize(new AutoMoqCustomization());
             //Fixture.Customize<TSystemUnderTest>(r => new MethodInvoker(new GreedyConstructorQuery()));
 
             Customize();
@@ -33,19 +37,17 @@ namespace Extension.Test
         {
         }
 
-        protected Mock<TInterface> FreezeMock<TInterface>() where TInterface : class 
+        protected Mock<TInterface> FreezeMock<TInterface>() where TInterface : class
         {
-            return Fixture.Freeze<Mock<TInterface>>();
+            return new Mock<TInterface>();
+            //return Fixture.Freeze<Mock<TInterface>>();
         }
 
-        protected TObject Create<TObject>()
-        {
-            return Fixture.Create<TObject>();
-        }
+        //protected TObject Create<TObject>()
+        //{
+        //    return Fixture.Create<TObject>();
+        //}
 
-        protected virtual TSystemUnderTest CreateSUT()
-        {
-            return Fixture.Create<TSystemUnderTest>();
-        }
+        protected abstract TSystemUnderTest CreateSUT();        
     }
 }

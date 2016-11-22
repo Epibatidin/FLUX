@@ -10,6 +10,11 @@ namespace Extraction.Layer.File
             OverwrittenValues = new string[4];
         }
 
+        public FileLayerSongDo(string levelValue) : this()
+        {
+            LevelValue = new PartedString(levelValue);
+        }
+
         public int Id { get; set; }
         
         public int TrackNr { get; set; }

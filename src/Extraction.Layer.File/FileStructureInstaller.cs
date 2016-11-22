@@ -22,9 +22,9 @@ namespace Extraction.Layer.File
         public override void RegisterServices(IServiceCollection services, FileLayerConfig config)
         {
             // processing 
-            services.AddSingleton<IPartedStringOperation, InternetStuffPartedStringOperation>();
-            services.AddSingleton<IPartedStringOperation, RemoveBlackListValuesOperation>();
             services.AddSingleton<IPartedStringOperation, DropNonWordPhraseOperation>();
+            services.AddSingleton<IPartedStringOperation, InternetStuffPartedStringOperation>();
+            services.AddSingleton<IPartedStringOperation, RemoveBlackListValuesOperation>();            
 
             services.AddSingleton<IFullTreeOperator, DropAllRedundantInformationTreeOperator>();
             services.AddSingleton<IFullTreeOperator, YearExtractionTreeOperator>();

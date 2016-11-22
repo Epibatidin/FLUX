@@ -2,7 +2,10 @@
 @using FLUX.DomainObjects
 @model TreeItem<MultiLayerDataContainer>
 
-
+<div class="float-left origin">
+    @Model.Value.GetOriginalValue(1)    
+</div>
+<div class="clear-fix"></div>
 <div class="float-left">
     <h2 class="float-left Album">Year</h2>
     @Html.DisplayFor(c => c.Value, new { key = "Year" })

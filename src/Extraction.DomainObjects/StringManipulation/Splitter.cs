@@ -38,7 +38,7 @@ namespace Extraction.DomainObjects.StringManipulation
             
             foreach (string part in parts)
             {
-                if (!System.String.IsNullOrWhiteSpace(part))
+                if (!string.IsNullOrWhiteSpace(part))
                 {
                     result.Add(part.ToLower());
                 }

@@ -5,14 +5,21 @@
       "imports": [
         "dotnet5.6",
         "portable-net45+win8"
-      ]
+      ],
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "version": "1.0.1",
+          "type": "platform"
+        }
+      }
     }
   },
   "dependencies": {
     "Moq": "4.6.38-alpha",
-    "AutoFixture": "3.46.0",
-    "AutoFixture.AutoMoq": "3.46.0",
+    //"AutoFixture": "3.46.0",
+    //"AutoFixture.AutoMoq": "3.46.0",
     "NUnit": "3.5.0",
+    "dotnet-test-nunit": "3.4.0-beta-3",
     "Extension.Test": "1.0.0-*",
     "DataAccess.Base": "1.0.0-*",
     "DataAccess.FileSystem": {
@@ -30,7 +37,5 @@
     "Microsoft.Extensions.Configuration.FileProviderExtensions": "1.0.0-rc1-*",
     "Microsoft.Extensions.Configuration.Json": "1.0.0"
   },
-  "commands": {
-    "test": "xunit.runner.dnx"
-  }
+  "testRunner": "nunit"  
 }

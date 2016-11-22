@@ -6,7 +6,7 @@ namespace Extraction.Layer.File.SimpleOperators
 {
     public class DropNonWordPhraseOperation : IPartedStringOperation
     {
-        private static readonly HashSet<char> LettersMakingAValidWord = new HashSet<char> { 'a', 'e', 'i', 'o', 'u', 'ä', 'ö', 'ü', 'y' };
+        private static readonly HashSet<char> LettersMakingAValidWord = new HashSet<char> { 'a', 'e', 'i', 'o', 'u', 'ä', 'ö', 'ü', 'y', '.' };
 
         public void Operate(PartedString source)
         {
@@ -15,6 +15,8 @@ namespace Extraction.Layer.File.SimpleOperators
                 string part = source[i];
                 if (1 >= part.Length && part.Length >= 5) continue;
                 // kontrolliere ob konsonanten enthalten sind 
+
+                // but what about dots ? like in acronyms ? 
                 var containsVowel = false;
 
                 for (int j = 0; j < part.Length; j++)

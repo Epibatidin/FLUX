@@ -6,11 +6,13 @@
     {
         throw new NullReferenceException("Key can not be null");
     }
+    bool emitOrigin = ViewData.ContainsKey("OData");
     List<string> elements = null;
     Model.Data.TryGetValue(key, out elements);
 }
 
 <div class="float-left ContentContainer">
+
     @if (elements != null)
     {
         for (int index = 0; index < elements.Count; index++)

@@ -1,0 +1,43 @@
+﻿@using DataStructure.Tree
+@using FLUX.DomainObjects
+@model TreeItem<MultiLayerDataContainer>
+
+@foreach (var cd in Model.Children)
+{
+    <div>
+        <div class="ContentWrapper CD">
+            @{ 
+                var origin = cd.Value.GetOriginalValue(2);
+
+                if(!string.IsNullOrEmpty(origin))
+                {
+                    <div class="float-left origin">
+                        @origin
+                    </div>
+                    <div class="clear-fix"></div>
+                }
+            }
+            <h2 class="float-left Album">CD</h2>
+            @Html.DisplayFor(c => cd.Value, new { key = "CD", OData = true })
+        </div>
+        <div class="ContentWrapper Songs">
+            <table>
+                @*<tr>
+                    <td></td>
+                    <td>Track</td>
+                    <td>Title</td>
+                </tr>*@
+
+                @foreach (var song in cd.Children)
+                {
+                    <tr>
+                        <td>@song.Value.GetOriginalValue(3)</td>
+                        <td>@Html.DisplayFor(c => song.Value, new { key = "Track" })</td>
+                        <td>@Html.DisplayFor(c => song.Value, new { key = "Title" })</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+    <div class="clear-fix"></div>
+}

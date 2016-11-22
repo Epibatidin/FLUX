@@ -1,4 +1,4 @@
-﻿h3.Artist {
+﻿dh3.Artist {
     display: block;
     font-size: 1.5em;
 }
@@ -46,8 +46,12 @@ h2.Album {
 }
 
 .ContentWrapper.CD {
-    width: 20%;
-    border-right: solid blue thin;
+    width: 17%;    
+    float: left;
+}
+
+.ContentWrapper.Songs {
+    border-left: solid blue thin;
     float: left;
 }
 
@@ -60,6 +64,14 @@ h2.Album {
     border-width: 2px;
     padding: 1px 10px;
     margin-top: 1px;
+}
+
+.origin {
+    border-color :black;
+    margin: 5px;
+    padding: 2px;
+    border-style: solid;
+    border-width: 2px;
 }
 
 .layer0 {
