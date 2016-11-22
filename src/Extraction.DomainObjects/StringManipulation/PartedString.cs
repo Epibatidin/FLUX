@@ -41,8 +41,8 @@ namespace Extraction.DomainObjects.StringManipulation
 
         public void InitFromString(string rawdata)
         {
-            this._rawData = rawdata;            
-            this._rawDataParts = Splitter.Split(rawdata);
+            _rawData = rawdata;            
+            _rawDataParts = Splitter.Split(rawdata);
         }
 
         public void RemoveAt(int position)
