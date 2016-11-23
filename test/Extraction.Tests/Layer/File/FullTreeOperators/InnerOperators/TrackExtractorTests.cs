@@ -22,7 +22,7 @@ namespace ExtractionLayer.Tests.Files.FullTreeOperators.InnerOperators
 
             SUT.Execute(fileLayerSongs);
 
-            Assert.That(fileLayerSongs[0].LevelValue.ToString(), Is.EqualTo("beyond the darkness(raving mix)"));
+            Assert.That(fileLayerSongs[0].LevelValue.ToString(), Is.EqualTo("beyond the darkness (raving mix)"));
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Extraction.Layer.File
 
         public FileLayerSongDo(string levelValue) : this()
         {
-            LevelValue = new PartedString(levelValue);
+            LevelValue = new PartedString(levelValue).Split();
         }
 
         public int Id { get; set; }

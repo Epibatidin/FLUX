@@ -29,9 +29,10 @@ namespace Extraction.DomainObjects.StringManipulation
             StringValue = rawData;
         }
             
-        public void Split()
+        public PartedString Split()
         {
             Split(StringValue);
+            return this;
         }
 
         public void Split(string newData)
