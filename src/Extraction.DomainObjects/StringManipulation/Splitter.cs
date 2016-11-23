@@ -7,7 +7,7 @@ namespace Extraction.DomainObjects.StringManipulation
 {
     public static class Splitter
     {
-        public static IList<string> ComplexSplit(string source)
+        public static List<string> ComplexSplit(string source)
         { 
             StringBuilder builder = new StringBuilder(source);
 
@@ -16,11 +16,11 @@ namespace Extraction.DomainObjects.StringManipulation
 
             var finalResult = new List<string>();
 
-            foreach(var part in withoutBraces.Split(SplitByWithoutDot, StringSplitOptions.RemoveEmptyEntries))
+            foreach(var part in withoutBraces.Split(SplitByEverything, StringSplitOptions.RemoveEmptyEntries))
             {
-                if(part.StartsWith("$$$"))
+                if(part.StartsWith("?"))
                 {
-                    finalResult.Add((bracesBlocks[part[3] - 48]));
+                    finalResult.Add((bracesBlocks[part[1] - 48]));
                     continue;
                 }
                 SplitByDotAndAdd(part, finalResult);                
@@ -60,7 +60,7 @@ namespace Extraction.DomainObjects.StringManipulation
         public static IList<string> SplitStringInBracesBlocks(StringBuilder builder)
         {
             IList<string> partsWithBraces = new List<string>();
-            int counter = 0;
+            int counter = 48; 
             CollectPartsInBraces(builder, partsWithBraces, '(', ')', ref counter);
             CollectPartsInBraces(builder, partsWithBraces, '{', '}', ref counter);
             CollectPartsInBraces(builder, partsWithBraces, '[', ']', ref counter);
@@ -75,25 +75,41 @@ namespace Extraction.DomainObjects.StringManipulation
             int begin = 0, end = 0;
             do
             {
-                if (begin >= toSearchIn.Length) return;
-
                 begin = toSearchIn.IndexOf(openingBrace, begin);
-                if (begin++ == -1) return;
+                if (begin == -1) return;
 
                 end = toSearchIn.IndexOf(closingBrace, begin);
                 if (end == -1) return;
+                
+                int length = end - begin + 1;
+                if (length == 2)
+                {
+                    builder[begin++] = ' ';
+                    builder[begin] = ' ';                    
+                    continue;
+                }
 
-                partsWithBraces.Add(builder.ToString(begin - 1, end - begin + 2));
-
-                builder.Remove(begin - 1, end - begin + 2);
-                string braceContent = "$$$" + counter++;
-
-                builder.Insert(begin -1,braceContent);
+                partsWithBraces.Add(builder.ToString(begin, length));                
+                ReplaceTheBraceInBuilder(builder, begin, length, ref counter);
+                begin++;
             }
             while (true);
         }
 
+        public static void ReplaceTheBraceInBuilder(StringBuilder builder,
+            int start, int length, ref int counter)
+        {
+            for (int i = 0; i < length -2; i++)
+            {
+                builder[i + start] = ' ';
+            }
+            builder[start + length - 2] = '?';
+            builder[start + length - 1] = Convert.ToChar(counter++);
+        }
 
+
+        private readonly static char[] SplitByEverything = 
+            new char[] {'(', ')','{', '}','[',']', ',', ' ', '-', '_' };
         private readonly static char[] SplitByWithoutDot = new char[] { ',', ' ', '-', '_' };
         private readonly static char[] SplitByWithDot = new char[] { '.', ',', ' ', '-', '_' };
 

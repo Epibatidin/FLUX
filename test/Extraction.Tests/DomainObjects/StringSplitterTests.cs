@@ -27,17 +27,17 @@ namespace Extraction.Tests.DomainObjects
         }
 
         [Test]
-        public void should_find_all_braces_and_inject_place_holders()
+        public void should_find_all_braces_and_inject_place_holders_or_empty()
         {
-            var builder = new StringBuilder("09.evil song{123} (paradise mix) -  skfdhg [456]");
-
+            var builder = new StringBuilder("09.evil song{}{1} [456](paradise mix) -  skfdhg ");
+                                                      //g   ?1    ?2            ?0 -  skfdhg "     
             var result = Splitter.SplitStringInBracesBlocks(builder);
 
             Assert.That(result[0], Is.EqualTo("(paradise mix)"));
-            Assert.That(result[1], Is.EqualTo("{123}"));
+            Assert.That(result[1], Is.EqualTo("{1}"));
             Assert.That(result[2], Is.EqualTo("[456]"));
 
-            Assert.That(builder.ToString(), Is.EqualTo("09.evil song$$$1 $$$0 -  skfdhg $$$2"));
+            Assert.That(builder.ToString(), Is.EqualTo("09.evil song   ?1    ?2            ?0 -  skfdhg "));
         }
 
         [Test]
@@ -84,6 +84,20 @@ namespace Extraction.Tests.DomainObjects
 
             Assert.That(splitted[0], Is.EqualTo("a.b.c."));
             Assert.That(splitted[1], Is.EqualTo("11"));
+        }
+
+        [Test]
+        public void should_stand_a_real_world_example()
+        {
+            //07 - Animal Instinct(Part 2)(Nightmares Of Conscience)
+            var splitted = Splitter.ComplexSplit("07 - Animal Instinct(Part 2)(Nightmares Of Conscience)");
+
+            Assert.That(splitted[0], Is.EqualTo("07"));
+            Assert.That(splitted[1], Is.EqualTo("Animal"));
+            Assert.That(splitted[2], Is.EqualTo("Instinct"));
+            Assert.That(splitted[3], Is.EqualTo("(Part 2)"));
+            Assert.That(splitted[4], Is.EqualTo("(Nightmares Of Conscience)"));
+
         }
     }
 }
