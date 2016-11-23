@@ -16,11 +16,9 @@ namespace Extraction.Layer.File
 
         private readonly ITreeByKeyAccessorBuilder _byTreeAccessorBuilder;
         
-        public FileStructureDataExtractionLayer(IEnumerable<IPartedStringOperation> cleaners,
-            IEnumerable<IFullTreeOperator> treeOperators,
+        public FileStructureDataExtractionLayer(IEnumerable<IFullTreeOperator> treeOperators,
             ITreeByKeyAccessorBuilder byTreeAccessorBuilder)
         {
-            _cleaners = cleaners;
             _treeOperators = treeOperators;
             _byTreeAccessorBuilder = byTreeAccessorBuilder;
         }
@@ -31,25 +29,14 @@ namespace Extraction.Layer.File
             _byTreeAccessorBuilder.BuildKeyMapping(treeAccessor);
 
             updateObject.UpdateData(treeAccessor);
-
-            foreach (var cleaner in _cleaners)
-            {
-                ForeachPartedStringInTree(treeAccessor.Tree, cleaner.Operate);
-            }
-
+            
             foreach (var treeOperator in _treeOperators)
             {
                 treeOperator.Operate(treeAccessor);
             }
         }
 
-        private void ForeachPartedStringInTree(FileTreeItem root, Action<PartedString> func)
-        {
-            foreach (var item in TreeIterator.IterateDepthGetTreeItems(root))
-            {
-                func(item.Value.LevelValue);
-            }
-        }
+        
         
         //        //private WorkUnit OneStepUp(WorkUnit W)
         //        //{

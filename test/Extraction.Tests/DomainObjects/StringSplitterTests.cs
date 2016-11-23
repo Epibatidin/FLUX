@@ -50,5 +50,40 @@ namespace Extraction.Tests.DomainObjects
             Assert.That(result[2], Is.EqualTo("song"));
             Assert.That(result[3], Is.EqualTo("(paradise mix)"));
         }
+
+        [Test]
+        public void should_support_acronyms()
+        {
+            var result = Splitter.ComplexSplit("09.a.b.c");
+
+            Assert.That(result[0], Is.EqualTo("09"));
+            Assert.That(result[1], Is.EqualTo("a.b.c."));
+        }
+
+        [Test]
+        public void should_keep_acronyms()
+        {
+            var splitted = Splitter.ComplexSplit("a.b.c.");
+
+            Assert.That(splitted[0], Is.EqualTo("a.b.c."));
+        }
+
+        [TestCase("11.a.b.c.")]
+        [TestCase("11.a.b.c")]
+        public void should_find_non_acronym_parts(string source)
+        {
+            var splitted = Splitter.ComplexSplit(source);
+            Assert.That(splitted[0], Is.EqualTo("11"));
+            Assert.That(splitted[1], Is.EqualTo("a.b.c."));
+        }
+
+        [Test]
+        public void should_find_non_acronym_parts_2()
+        {
+            var splitted = Splitter.ComplexSplit("a.b.c.11");
+
+            Assert.That(splitted[0], Is.EqualTo("a.b.c."));
+            Assert.That(splitted[1], Is.EqualTo("11"));
+        }
     }
 }

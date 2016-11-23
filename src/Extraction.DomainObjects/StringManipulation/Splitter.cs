@@ -16,16 +16,45 @@ namespace Extraction.DomainObjects.StringManipulation
 
             var finalResult = new List<string>();
 
-            foreach(var part in withoutBraces.Split(SplitByWithDot, StringSplitOptions.RemoveEmptyEntries))
+            foreach(var part in withoutBraces.Split(SplitByWithoutDot, StringSplitOptions.RemoveEmptyEntries))
             {
                 if(part.StartsWith("$$$"))
                 {
-                    finalResult.Add((bracesBlocks[part[3] - 47]));
+                    finalResult.Add((bracesBlocks[part[3] - 48]));
                     continue;
                 }
-                finalResult.Add(part);
+                SplitByDotAndAdd(part, finalResult);                
             }
             return finalResult;
+        }
+
+        private static void SplitByDotAndAdd(string source, IList<string> result)
+        {
+            StringBuilder acrony = new StringBuilder();
+            int acronymPos = -1;
+            foreach (var splitted in source.Split(new[] { '.' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                if (splitted.Length == 1)
+                {
+                    if(!Char.IsLetter(splitted[0]))
+                    {
+                        result.Add(splitted);
+                        continue;
+                    }
+
+                    if (acronymPos == -1)
+                    {
+                        acronymPos = result.Count;
+                        result.Add(null);
+                    }
+                    acrony.Append(splitted).Append('.');
+                }
+                else
+                    result.Add(splitted);
+            };
+            if (acrony.Length == 0) return;
+
+            result[acronymPos] = acrony.ToString();
         }
 
         public static IList<string> SplitStringInBracesBlocks(StringBuilder builder)
