@@ -2,7 +2,7 @@
 using Extraction.Interfaces;
 using Extraction.Layer.File.Config;
 
-namespace Extraction.Layer.File.SimpleOperators
+namespace Extraction.Layer.File.FullTreeOperators.SingleElementOperations
 {
     public class RemoveBlackListValuesOperation : IPartedStringOperation
     {   

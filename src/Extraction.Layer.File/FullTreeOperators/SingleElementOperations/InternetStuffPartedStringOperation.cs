@@ -2,7 +2,7 @@
 using Extraction.DomainObjects.StringManipulation;
 using Extraction.Interfaces;
 
-namespace Extraction.Layer.File.SimpleOperators
+namespace Extraction.Layer.File.FullTreeOperators.SingleElementOperations
 {
     ///<summary>    
     /// Entfernt Urls
@@ -18,7 +18,8 @@ namespace Extraction.Layer.File.SimpleOperators
         {
             Reg = new Regex(isInternetstuffNonExcluding,
                 RegexOptions.Compiled
-                | RegexOptions.CultureInvariant
+                | RegexOptions.CultureInvariant 
+                | RegexOptions.ExplicitCapture
                 | RegexOptions.IgnoreCase);
         }
 
@@ -46,18 +47,22 @@ namespace Extraction.Layer.File.SimpleOperators
             * dann muss ich aber auch auf dem komplettem string arbeiten und nicht nur auf einem stück             
             */
 
-            for (int i = 0; i < parted.Count; i++)
-            {
-                var match = Reg.Match(parted[i]);
-                if (match.Success)
-                {
-                    parted.RemoveAt(i);
-                    i--;
-                    continue;
-                }
-                // we need to protect acronyms 
-                //parted[i] = parted[i].Replace(".", "<ar>");
-            }
+            var newValue = Reg.Replace(parted.StringValue, "");
+
+            parted.Split(newValue);
+
+            //for (int i = 0; i < parted.Count; i++)
+            //{
+            //    var match = Reg.Match(parted[i]);
+            //    if (match.Success)
+            //    {
+            //        parted.RemoveAt(i);
+            //        i--;
+            //        continue;
+            //    }
+            //    // we need to protect acronyms 
+            //    //parted[i] = parted[i].Replace(".", "<ar>");
+            //}
         }
 
         public void Operate(PartedString part)

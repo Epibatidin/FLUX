@@ -162,7 +162,7 @@
           "System.Runtime": "4.1.0"
         },
         "compile": {
-          "ref/netstandard1.5/_._": {}
+          "ref/netstandard1.5/System.Runtime.Extensions.dll": {}
         },
         "runtime": {
           "lib/portable-net45+win8+wp8+wpa81/_._": {}
@@ -1087,7 +1087,8 @@
       "Extension.IEnumerable >= 1.0.0-*",
       "System.Collections >= 4.0.11",
       "System.Linq >= 4.1.0",
-      "System.Runtime >= 4.1.0"
+      "System.Runtime >= 4.1.0",
+      "System.Runtime.Extensions >= 4.1.0"
     ],
     ".NETCoreApp,Version=v1.0": []
   },

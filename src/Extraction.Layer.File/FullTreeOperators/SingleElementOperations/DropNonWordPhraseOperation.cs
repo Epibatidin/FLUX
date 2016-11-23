@@ -2,7 +2,7 @@
 using Extraction.DomainObjects.StringManipulation;
 using Extraction.Interfaces;
 
-namespace Extraction.Layer.File.SimpleOperators
+namespace Extraction.Layer.File.FullTreeOperators.SingleElementOperations
 {
     public class DropNonWordPhraseOperation : IPartedStringOperation
     {

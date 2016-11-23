@@ -3,10 +3,11 @@ using Extraction.Interfaces;
 using Extraction.Interfaces.Layer;
 using Extraction.Layer.File.Config;
 using Extraction.Layer.File.FullTreeOperators;
-using Extraction.Layer.File.FullTreeOperators.InnerOperators;
+using Extraction.Layer.File.FullTreeOperators.SingleElementOperations;
+using Extraction.Layer.File.FullTreeOperators.MultiElementOperations;
+using Extraction.Layer.File.FullTreeOperators.SingleElementOperations.CursesRepair;
 using Extraction.Layer.File.Interfaces;
-using Extraction.Layer.File.SimpleOperators;
-using Extraction.Layer.File.SimpleOperators.CursesRepair;
+
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Extraction.Layer.File
@@ -27,9 +28,9 @@ namespace Extraction.Layer.File
             services.AddSingleton<IFullTreeOperator, YearExtractionTreeOperator>();
             services.AddSingleton<IFullTreeOperator, TrackExtractingTreeOperator>();
             services.AddSingleton<IFullTreeOperator, DropRedundantExtractedInformationTreeOperator>();
-
+                        
+            services.AddSingleton<IPartedStringOperation, InternetStuffPartedStringOperation>();            
             services.AddSingleton<IPartedStringOperation, DropNonWordPhraseOperation>();
-            services.AddSingleton<IPartedStringOperation, InternetStuffPartedStringOperation>();
             services.AddSingleton<IPartedStringOperation, RemoveBlackListValuesOperation>();
 
             services.AddSingleton<IDropInformationInAllElementsOnThisLvlOperation, DropInformationInAllElementsOnThisLvlOperation>();

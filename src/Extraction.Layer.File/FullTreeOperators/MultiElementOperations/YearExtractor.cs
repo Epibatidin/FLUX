@@ -4,7 +4,7 @@ using System.Linq;
 using Extraction.Layer.File.Helper;
 using Extraction.Layer.File.Interfaces;
 
-namespace Extraction.Layer.File.FullTreeOperators.InnerOperators
+namespace Extraction.Layer.File.FullTreeOperators.MultiElementOperations
 {
     public class YearExtractor : IYearExtractor
     {

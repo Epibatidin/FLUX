@@ -1,5 +1,5 @@
 ﻿using Extraction.DomainObjects.StringManipulation;
-using Extraction.Layer.File.SimpleOperators;
+using Extraction.Layer.File.FullTreeOperators.SingleElementOperations;
 using NUnit.Framework;
 
 namespace ExtractionLayer.Tests.Files.SimpleOperators

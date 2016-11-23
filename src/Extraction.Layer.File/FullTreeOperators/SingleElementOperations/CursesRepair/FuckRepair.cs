@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Extraction.Layer.File.Interfaces;
 
-namespace Extraction.Layer.File.SimpleOperators.CursesRepair
+namespace Extraction.Layer.File.FullTreeOperators.SingleElementOperations.CursesRepair
 {
     internal class FuckRepair : ICurseRepairComponent
     {

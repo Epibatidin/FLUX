@@ -20,29 +20,24 @@ namespace Extraction.DomainObjects.StringManipulation
 
         public bool Changed {get; private set;}
 
-        private string _rawData;
+        public string StringValue { get; private set; }
+        
         private List<string> _rawDataParts;
-
-
-        //-----------------------------------------------------------------------------------------------------------------------
+                
         public PartedString(string rawData)
-        //-----------------------------------------------------------------------------------------------------------------------
         {
-            InitFromString(rawData);
-
+            StringValue = rawData;
+        }
+            
+        public void Split()
+        {
+            Split(StringValue);
         }
 
-        public void ReSplit(bool byDot)
+        public void Split(string newData)
         {
-            this._rawDataParts = Splitter.Split(ToString(), byDot);
-            Changed = true;
-
-        }
-
-        public void InitFromString(string rawdata)
-        {
-            _rawData = rawdata;            
-            _rawDataParts = Splitter.Split(rawdata);
+            _rawDataParts = Splitter.ComplexSplit(newData);
+            StringValue = newData;
         }
 
         public void RemoveAt(int position)
@@ -62,10 +57,10 @@ namespace Extraction.DomainObjects.StringManipulation
             if (Changed)
             {
                 Changed = false;
-                _rawData = Splitter.Join(_rawDataParts, ' ');
+                StringValue = Splitter.Join(_rawDataParts, ' ');
             }
 
-            return _rawData;
+            return StringValue;
         }
 
         public string this[int i]

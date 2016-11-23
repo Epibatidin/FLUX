@@ -4,7 +4,7 @@ using Extraction.DomainObjects.StringManipulation;
 using Extraction.Layer.File.Config;
 using Extraction.Layer.File.Interfaces;
 
-namespace Extraction.Layer.File.FullTreeOperators.InnerOperators
+namespace Extraction.Layer.File.FullTreeOperators.MultiElementOperations
 {
     public class DropInformationInAllElementsOnThisLvlOperation : IDropInformationInAllElementsOnThisLvlOperation
     {
