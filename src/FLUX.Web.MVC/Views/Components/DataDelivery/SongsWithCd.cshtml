@@ -4,7 +4,7 @@
 
 @foreach (var cd in Model.Children)
 {
-    <div>
+    <div class="CdSong">
         <div class="ContentWrapper CD">
             @{ 
                 var origin = cd.Value.GetOriginalValue(2);
@@ -17,7 +17,7 @@
                     <div class="clear-fix"></div>
                 }
             }
-            <h2 class="float-left Album">CD</h2>
+            <h4>CD</h4>
             @Html.DisplayFor(c => cd.Value, new { key = "CD", OData = true })
         </div>
         <div class="ContentWrapper Songs">

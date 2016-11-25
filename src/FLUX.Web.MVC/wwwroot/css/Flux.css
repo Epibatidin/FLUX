@@ -1,12 +1,126 @@
-﻿dh3.Artist {
-    display: block;
-    font-size: 1.5em;
+﻿body {
+    width: 942px;
 }
 
-h2.Album {
+.container {
+    border: 2px solid red;
+    text-align: center;
+}
+
+.container.Artist {
+    position: absolute;
+    background: white;    
+}
+
+.container.Album {
+    width: 68%;
+    float: right;
+}
+
+.container.CD {
+    width: 17%;
+    margin: 20px 0;
+}
+
+.container.Songs {
+    width: 80%;
+    float: right;
+    text-align: left;
+    display:block;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.container.Songs td {
+    border-bottom: 1px solid #000; 
+}
+
+.CdSong {
+    border-top: 1px solid blue; 
+}
+
+.originTR {
+    width:30%;
+}
+
+.track {
+    width:20%;
+}
+
+.title{
+    width:60%;
+}
+
+.ArtistSize {
+    width: 29%;
+    float: none;
+}
+
+.spaceLeft {
+    margin-left: 40px;
+}
+
+.theScrollContainer {
+    height: 897px;
+    overflow-y: scroll;
+}
+
+h3 {
+    font-size: 1.5em;
+    display: block;
+    float: left;
+    margin: 5px;
+}
+
+div {
+    float: left;
+}
+
+.origin {
+    margin: 5px 0;
+    text-align: center;
+    font-weight: bold;
+    float: none;
+}
+
+.rightBlock {
+    float: right;
+    margin: 2px 5px;
+}
+
+/*.rightBlock span {
+    border-width: 2px;
+    border-style: solid;
+}*/
+
+.layer0 {
+    border-color: green;
+}
+
+.layer1 {
+    border-color: hotpink;
+}
+
+.cfix {
+    content: "";
+    clear: both;
+    float: none;
+}
+
+
+
+/*h2,h3 {
     display: block;
     font-size: 1.25em;
+    float:left;
 }
+
+div
+{
+    float:left;
+}
+
+
 
 .float-left {
     float: left;
@@ -34,16 +148,16 @@ h2.Album {
     padding: 10px;
 }
 
-.ContentWrapper.Artist {
-    border-right: solid blue thin;
+.ContentWrapper.Artist {    
     float: left;
 }
 
 .ContentWrapper.Album {
-    width: 70%;
-    border-left: solid blue thin;
-    float: right;
+    width: 70%; 
+    float:left;
+    margin-top:5px;     
 }
+
 
 .ContentWrapper.CD {
     width: 17%;    
@@ -80,4 +194,4 @@ h2.Album {
 
 .layer1 {
     border-color: blue;
-}
+}*/
