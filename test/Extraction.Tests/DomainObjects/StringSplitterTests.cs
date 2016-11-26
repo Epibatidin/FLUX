@@ -16,6 +16,14 @@ namespace Extraction.Tests.DomainObjects
             Assert.That(result[1], Is.EqualTo("2"));
         }
 
+        [Test]
+        public void should_not_add_single_letter_as_acronym()
+        {
+            var result = Splitter.ComplexSplit("01 - A Pleasure Without End");
+
+            Assert.That(result[1], Is.EqualTo("A"));
+        }
+
         [TestCase("(1)")]
         [TestCase("[1]")]
         [TestCase("{1}")]

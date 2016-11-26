@@ -23,6 +23,12 @@ namespace Extraction.DomainObjects.StringManipulation
                     finalResult.Add((bracesBlocks[part[1] - 48]));
                     continue;
                 }
+                if(part.Length == 1)
+                {
+                    finalResult.Add(part);
+                    continue;
+                }
+
                 SplitByDotAndAdd(part, finalResult);                
             }
             return finalResult;
