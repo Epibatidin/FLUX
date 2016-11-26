@@ -63,6 +63,9 @@ namespace Extraction.Layer.File.FullTreeOperators
                         break;
                     }
                 }
+                if (length == 1 && patternContainer.Count > 1)
+                    return;
+
                 toBeShortend.RemoveRange(start, length);
             }
         }
