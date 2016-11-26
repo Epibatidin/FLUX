@@ -25,13 +25,19 @@
 .container.Songs {
     width: 80%;
     float: right;
-    text-align: left;
-    display:block;
-    border-collapse: collapse;
+    
     margin: 20px 0;
+    
 }
 
-.container.Songs td {
+.SongTable {
+    table-layout: fixed;
+    border-collapse: collapse;
+    text-align: left;
+    width:100%;
+}
+
+.SongTable td {
     border-bottom: 1px solid #000; 
 }
 
@@ -40,16 +46,18 @@
 }
 
 .originTR {
-    width:30%;
+    width:35%;
 }
 
 .track {
-    width:20%;
+    width:8%;
 }
 
-.title{
-    width:60%;
+.title {
+    width:57%;
 }
+
+
 
 .ArtistSize {
     width: 29%;

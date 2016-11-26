@@ -16,68 +16,31 @@
         foreach (var cd in album.Children)
         {
             <multi-layer-data model="@cd" level="2" class="CD" />
-            
-                <table class="container Songs">
+
+            <div class="container Songs">
+                <table class="SongTable">
                     <colgroup>
-                        <col class="originTR"/>
-                        <col class="track"/>
+                        <col class="originTR" />
+                        <col class="track" />
                         <col class="title" />
-                    </colgroup>                        
+                    </colgroup>
                     <tbody>
-                    @foreach (var song in cd.Children.Select(c =>
-                        new MultiLayerDataViewModel(c.Value, "", 3, new[] { "Track", "Title" })))
-                    {
-                        var originalValue = song.OriginalValue;
-                        var trimmed = originalValue.Substring(0, Math.Min(35, originalValue.Length));
-                        <tr>
-                            <td title="@originalValue">@trimmed</td>
-                            @foreach (var key in song.Keys)
-                            {
-                                <td>@Html.Partial("DataCollection", song.RetrieveData(key))</td>
-                            }
-                        </tr>
-                    }
+                        @foreach (var song in cd.Children.Select(c =>
+                            new MultiLayerDataViewModel(c.Value, "", 3, new[] { "Track", "Title" })))
+                        {
+                            var originalValue = song.OriginalValue;
+                            var trimmed = originalValue.Substring(0, Math.Min(35, originalValue.Length));
+                            <tr>
+                                <td title="@originalValue">@trimmed</td>
+                                @foreach (var key in song.Keys)
+                        {
+                                    <td>@Html.Partial("DataCollection", song.RetrieveData(key))</td>
+                                }
+                            </tr>
+                        }
                     </tbody>
                 </table>
-            @*</div>*@
+            </div>
         }
     }
 </div>
-
-
-@*@for (int i = 0; i < 7; i++)
-{
-    @Html.Partial("Block", new BlockData("Album", 2))
-    <div class="clearfix" style="height:20px;"></div>
-
-        @Html.Partial("Block", new BlockData("CD", 1))
-        @Html.Partial("Block", new BlockData("Song", 2) { LayerCount = 8 })
-        <div class="clearfix"></div>
-        <hr />
-}
-
-
-
-
-<div class="container @Model.ClassName">
-    <div class="origin">@Model.ClassName</div>
-
-    @for (int j = 0; j < Model.SubElementCount; j++)
-    {
-        string spacer = "";
-        if (j > 0)
-        {
-            spacer = "spaceLeft";
-        }
-        <div class="@spacer">
-            <h3>Headline (@j)</h3>
-
-            <div class="rightBlock">
-                @for (int i = 0; i < 3; i++)
-                {
-                    <span class="layer@(i)">layer(@i)</span><br />
-                }
-            </div>
-        </div>
-    }
-</div>*@
