@@ -13,7 +13,8 @@ namespace FLUX.Web.MVC.Controllers
         {
             return ViewComponent("Configuration");
         }
-        
+
+        [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult DataDelivery()
         {
             return ViewComponent("DataDelivery");
