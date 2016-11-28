@@ -4,6 +4,6 @@ namespace Extraction.Layer.File.Interfaces
 {
     public interface ITrackExtractor
     {
-        bool Execute(IList<FileLayerSongDo> partedStrings);
+        bool Execute(IList<FileLayerSongDo> fileLayerSongs, int actualCD);
     }
 }

@@ -27,6 +27,8 @@ namespace Extraction.Layer.File
         public string CD => ResolveValue(2);
         public string SongName => ResolveValue(3);
         
+        public int CDRaw { get; set; }
+
         public PartedString LevelValue { get; set; }
 
         private int _depth;
@@ -52,6 +54,7 @@ namespace Extraction.Layer.File
         public void SetCD(int i)
         {
             OverwrittenValues[2] = i.ToString();
+            CDRaw = i;
         }
     }
 }

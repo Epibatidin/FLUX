@@ -33,7 +33,7 @@
                             <tr>
                                 <td title="@originalValue">@trimmed</td>
                                 @foreach (var key in song.Keys)
-                        {
+                                {
                                     <td>@Html.Partial("DataCollection", song.RetrieveData(key))</td>
                                 }
                             </tr>
@@ -41,6 +41,7 @@
                     </tbody>
                 </table>
             </div>
+            <div class="cfix"></div>
         }
     }
 </div>

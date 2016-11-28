@@ -26,7 +26,7 @@ namespace Extraction.Layer.File
             
             if (pathParts.Length < 4)
             {
-                if (level == 2) return "CD1";
+                if (level == 2) return "001";
 
                 if (level > 2) --index;
             }

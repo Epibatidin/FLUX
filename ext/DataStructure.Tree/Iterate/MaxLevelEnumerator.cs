@@ -32,6 +32,11 @@ namespace DataStructure.Tree.Iterate
             return next;
         }
 
+        public IList<int> ActivePath()
+        {
+            return _pathes[_curPos];
+        }
+
         /*
          * ich hab nen baum der maximalen tiefe 21 DH das tiefste blatt hat 21 (=MaxDepth) als level wert 
          * ich möchte ab dem Root mit 14 (= Root.Level) mit einer entfernung von 3(=Dist) vom jeweils tiefsten blatt 

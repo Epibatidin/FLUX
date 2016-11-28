@@ -2,73 +2,97 @@
 using System.Linq;
 using Extraction.Layer.File.Helper;
 using Extraction.Layer.File.Interfaces;
+using System;
+using Extraction.Layer.File.DomainObjects.Track;
+using System.Text;
 
 namespace Extraction.Layer.File.FullTreeOperators.MultiElementOperations
 {
     public class TrackExtractor : ITrackExtractor
     {
-        private class Container
-        {
-            public int FoundIn { get; private set; }
-
-            public List<PossibleTrack> PossibleTracks;
-
-            public Container(int FoundIn)
-            {
-                this.FoundIn = FoundIn;
-                PossibleTracks = new List<PossibleTrack>();
-            }
-        }
-
-        private class PossibleTrack
-        {
-            public int FoundAt { get; private set; }
-            public bool FoundAtIsLastPos { get; private set; }
-
-            public int FoundValue { get; private set; }
-            public bool UseThis { get; set; }
-
-            public PossibleTrack(int foundAt, int foundValue, int stringLength)
-            {
-                FoundAt = foundAt;
-                FoundValue = foundValue;
-                FoundAtIsLastPos = stringLength == foundAt;
-            }
-        }
-
         /// <summary>
         /// der einfachheithalber werde ich tracks nur anhand der relativen position extrahieren       
         /// </summary>
-        public bool Execute(IList<FileLayerSongDo> partedStrings)
+        public bool Execute(IList<FileLayerSongDo> fileLayerSongs, int actualCD)
         {
-            var numbers = ExtractNumbers(partedStrings);
-            // no numbers found ?
+            var numbers = ExtractNumbers(fileLayerSongs);
+            //// no numbers found ?
             if (numbers == null) return false;
 
-            var r = (from i in
-                         (from n in numbers
-                          from p in n.PossibleTracks
-                          group new { n, p } by (p.FoundAtIsLastPos ? -1 : p.FoundAt) into grp // map lastPos to -1 
-                          select grp)
-                     where i.Count() == partedStrings.Count
-                     select i).FirstOrDefault().Select(c => c.p);
+            NormalizeTracksAndCalculatePossibleCD(numbers);
 
-            foreach (var item in r)
+            foreach (var item in numbers.Tracks)
             {
-                item.UseThis = true;
-            }
+                var song = fileLayerSongs[item.FoundIn];
+                song.TrackNr = item.NormalizedTrack;
+                song.SetCD(item.PossibleCd);
 
-            return ExtractCDs(partedStrings, numbers);
+                song.LevelValue.RemoveAt(item.Position);
+            }
+            return true;
         }
 
-
-        private List<Container> ExtractNumbers(IList<FileLayerSongDo> data)
+        public static void NormalizeTracksAndCalculatePossibleCD(EvalutatedTrackCollection numbers)
         {
-            List<Container> result = new List<Container>();
+            var indexes = new Dictionary<int, int>();
+            
+            foreach (var track in numbers.Tracks)
+            {
+                // normalize track no
+                var digits = track.NormalizedTrack.ToString().Select(c => c - 48).ToList();
+                StringBuilder trackAsString = new StringBuilder();
+                // 123
+                bool hadHundreds = false;
+                if(hadHundreds = digits.Count == 3)
+                {
+                    track.PossibleCd = digits[0];
+                    digits.Remove(0);
+                }
+
+                foreach (var digit in digits)
+                {
+                    trackAsString.Append(digit);
+                }   
+
+                track.NormalizedTrack = int.Parse(trackAsString.ToString());
+
+                if (!hadHundreds)
+                    track.PossibleCd = AddOrUpdate(indexes, track.NormalizedTrack, 1, Increment);
+            }
+        }
+
+        private static int Increment(int x)
+        {
+            return x + 1;
+        }
+
+        public static ProperplySureTrack BuildTrack(int foundIn, PossibleTrack possibleTrack)
+        {
+            return new ProperplySureTrack()
+            {
+                FoundIn = foundIn,
+                Position = possibleTrack.RelativeBegin(),
+                NormalizedTrack = possibleTrack.FoundValue
+            };
+        }
+
+        private EvalutatedTrackCollection ExtractNumbers(IList<FileLayerSongDo> data)
+        {
+            // grp by position and take the position which count is equal to song count
+            // ziel ist herrauszufinden ob die Tracks relative vorne oder relative hinten stehen 
+                 
+            List<AllTrackContainer> rawContainerData = new List<AllTrackContainer>();
             bool nothing = true;
+            // ich muss mir den track merken und 
+            // relative begin pos und relative endpos 
+
+            var relativeBegins = new Dictionary<int, int>();
+            var relativeEnds = new Dictionary<int, int>();
+
+            // extract all numbers
             for (int i = 0; i < data.Count; i++)
             {
-                var cont = new Container(i);
+                var cont = new AllTrackContainer(i);
 
                 var pString = data[i].LevelValue;
                 for (int ps = 0; ps < pString.Count; ps++)
@@ -77,56 +101,79 @@ namespace Extraction.Layer.File.FullTreeOperators.MultiElementOperations
 
                     // in diesem context ist es nicht möglich das mehrere nummern in einem string sind 
                     if (numbers.Count == 1)
-                    {
-                        cont.PossibleTracks.Add(new PossibleTrack(ps, numbers[0], pString.Count));
+                    {                        
+                        var possibleTrack = new PossibleTrack(ps, numbers[0], pString.Count);
+
+                        AddOrUpdate(relativeBegins, possibleTrack.RelativeBegin(), 1, Increment);
+                        AddOrUpdate(relativeEnds, possibleTrack.RelativeEnd(), 1, Increment);
+
+                        cont.PossibleTracks.Add(possibleTrack);
                         nothing = false;
                     }
                 }
-                result.Add(cont);
+                rawContainerData.Add(cont);
             }
             if (nothing) return null;
+
+            int pos = 0;
+            var posAccessor = SelectPosAccessor(data.Count, relativeBegins, relativeEnds, ref pos);
+            if (posAccessor == null) return null;
+
+            var result = BuildEvalutedTrackCollection(rawContainerData, posAccessor, pos);
+            
             return result;
         }
 
-        private bool CheckIfAllTitlesHasExactlyOneNumber(List<Container> numbers)
+        private Func<PossibleTrack, int> SelectPosAccessor(int length, 
+            IDictionary<int, int> relativeBegins, IDictionary<int, int> relativeEnds, ref int pos)
         {
-            foreach (var item in numbers)
+            //int pos = 0;
+            foreach (var item in relativeBegins)
             {
-                if (item.PossibleTracks.Count != 1)
-                    return false;
+                if (item.Value != length) continue;
+                pos = item.Key;
+                return c => c.RelativeBegin();
             }
-            return true;
+
+            foreach (var item in relativeEnds)
+            {
+                if (item.Value != length) continue;
+                pos = item.Key;
+                return c => c.RelativeEnd();
+            }
+            return null;
         }
 
-        private bool ExtractCDs(IList<FileLayerSongDo> allContent ,List<Container> numbers)
+        private EvalutatedTrackCollection BuildEvalutedTrackCollection(IList<AllTrackContainer> allTracks, 
+            Func<PossibleTrack, int> posAccessor, int pos)
         {
-            // groupiere numbers nach mod blub 
-            // nimm aber nur die wo usethis = true 
-            var r = from i in numbers
-                    from pT in i.PossibleTracks
-                    where pT.UseThis
-                    group new { i, pT } by pT.FoundValue / 100 into CDs
-                    from cd in CDs
-                    select new
-                    {
-                        Track = cd.pT.FoundValue - CDs.Key * 100,
-                        CD = CDs.Key,
-                        FoundIn = cd.i.FoundIn,
-                        FoundAt = cd.pT.FoundAt
-                    };
-
-            bool thereWasAcdRewrite = false;
-
-            foreach (var item in r)
+            var result = new EvalutatedTrackCollection();
+            foreach (var container in allTracks)
             {
-                var value = allContent[item.FoundIn];
-                value.SetCD(item.CD);
-                value.TrackNr = item.Track;
-                value.LevelValue.RemoveAt(item.FoundAt);
-                thereWasAcdRewrite = true;
+                foreach (var item in container.PossibleTracks)
+                {
+                    if (posAccessor(item) != pos) continue;
+
+                    result.Tracks.Add(BuildTrack(container.FoundIn, item));
+                }
             }
-            return thereWasAcdRewrite;
+
+            return result;
         }
+
+
+        private static int AddOrUpdate(IDictionary<int, int> dict, int key, int newValue, Func<int, int> valueUpdater)
+        {
+            int dummy = 0;
+            if (dict.TryGetValue(key, out dummy))
+                dict[key] = dummy = valueUpdater(dummy);
+            else
+            {
+                dummy = newValue;
+                dict.Add(key, newValue);
+            }
+            return dummy;
+        }        
     }
 }
 

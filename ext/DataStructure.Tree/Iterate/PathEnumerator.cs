@@ -91,6 +91,17 @@ namespace DataStructure.Tree.Iterate
             return cur;
         }
 
+        public static TreeItem<T> NavigateToItem(TreeItem<T> root, IList<int> path, int maxDepth)
+        {
+            var cur = root;
+
+            for (int i = 0; i < maxDepth; i++)
+            {
+                cur = cur[path[i]];
+            }
+            return cur;
+        }
+
         public IList<T> CollectNodeValuesOnPath(IEnumerable<int> path)
         {
             var result = new List<T>();
