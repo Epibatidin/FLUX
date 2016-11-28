@@ -46,7 +46,9 @@ namespace FLUX.DomainObjects
             if (!Data.ContainsKey(key))
                 return null;
 
-            return string.Join("-", Data[key]);
+            var assambledkey = string.Join("-", Data[key]) + depth;
+
+            return assambledkey;
         }
 
         private string GetKeyByDepth(int depth)

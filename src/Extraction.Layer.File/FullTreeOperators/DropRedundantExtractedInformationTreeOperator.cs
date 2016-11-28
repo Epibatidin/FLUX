@@ -28,8 +28,8 @@ namespace Extraction.Layer.File.FullTreeOperators
             // check song against artist
             RemoveLongestMatch(elements[3].LevelValue, elements[0].LevelValue);
 
-            // check song against album 
-            RemoveLongestMatch(elements[3].LevelValue, elements[1].LevelValue);
+            // check song against album - really error prone
+            //RemoveLongestMatch(elements[3].LevelValue, elements[1].LevelValue);
         }
 
 
