@@ -1,47 +1,59 @@
 ﻿@using FLUX.DomainObjects;
 
 @model DataStructure.Tree.TreeItem<MultiLayerDataContainer>
-
+@{ 
+    int counter = 0;
+}
 <div class="theScrollContainer">
     
-    <div class="ArtistSize">
-        <multi-layer-data model="@Model" level="0" class="Artist" />
-    </div>
-
-    @foreach (var album in Model.Children)
-    {
-        <multi-layer-data model="@album" level="1" class="Album" keys="Year,Album" />
-        <div class="cfix"></div>
-        
-        foreach (var cd in album.Children)
-        {
-            <multi-layer-data model="@cd" level="2" class="CD" />
-
-            <div class="container Songs">
-                <table class="SongTable">
-                    <colgroup>
-                        <col class="originTR" />
-                        <col class="track" />
-                        <col class="title" />
-                    </colgroup>
-                    <tbody>
-                        @foreach (var song in cd.Children.Select(c =>
-                            new MultiLayerDataViewModel(c.Value, "", 3, new[] { "Track", "Title" })))
-                        {
-                            var originalValue = song.OriginalValue;
-                            var trimmed = originalValue.Substring(0, Math.Min(35, originalValue.Length));
-                            <tr>
-                                <td title="@originalValue">@trimmed</td>
-                                @foreach (var key in song.Keys)
-                                {
-                                    <td>@Html.Partial("DataCollection", song.RetrieveData(key))</td>
-                                }
-                            </tr>
-                        }
-                    </tbody>
-                </table>
+    <form action="@Url.Action("Index","Persist")" method="post">
+        <div class="ArtistSize">
+            <div class="floatingContainer">
+                <multi-layer-data model="@Model" level="0" class="Artist" />
+                <input type="submit" value="Nicht clicken" />
             </div>
+        </div>
+
+        @foreach (var album in Model.Children)
+        {
+            <multi-layer-data model="@album" level="1" class="Album"/>
             <div class="cfix"></div>
+
+            foreach (var cd in album.Children)
+            {
+                <multi-layer-data model="@cd" level="2" class="CD" />
+
+                <div class="container Songs">
+                    <table class="SongTable">
+                        <colgroup>
+                            <col class="originTR" />
+                            <col class="track" />
+                            <col class="title" />
+                        </colgroup>
+                        <tbody>
+                            @foreach (var song in cd.Children.Select(c =>
+                                new MultiLayerDataViewModel(c.Value, "", 3, FLUX.Web.MVC.TagHelpers.MultiLayerDataTagHelper.Keys[3])))
+                            {
+                                var originalValue = song.OriginalValue;
+                                var trimmed = originalValue.Substring(0, Math.Min(35, originalValue.Length));
+                                <tr>
+                                    <td title="@originalValue">@trimmed</td>
+                                    @foreach (var key in song.Keys)
+                                    {
+                                        <td>@Html.Partial("DataCollection", song.RetrieveData(key))</td>
+                                    }
+                                </tr>
+                                @foreach (var element in song.IteratePostbackData())
+                                {
+                                    <input type="hidden" name="@string.Format("[{0}].{1}", counter, element.Item1)" value="@element.Item2" />
+                                }
+                                counter++;
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="cfix"></div>
+            }
         }
-    }
+    </form>
 </div>

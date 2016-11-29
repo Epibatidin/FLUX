@@ -27,7 +27,7 @@ namespace ExtractionLayer.Tests.Files.FullTreeOperators.InnerOperators
             fileLayerSongs.Add(new FileLayerSongDo("01.beyond the darkness(raving mix)"));
             fileLayerSongs.Add(new FileLayerSongDo("02.killing mission"));
 
-            SUT.Execute(fileLayerSongs);
+            SUT.Execute(fileLayerSongs,1);
 
             Assert.That(fileLayerSongs[0].LevelValue.ToString(), Is.EqualTo("beyond the darkness (raving mix)"));
         }
@@ -39,7 +39,7 @@ namespace ExtractionLayer.Tests.Files.FullTreeOperators.InnerOperators
             fileLayerSongs.Add(new FileLayerSongDo("01.beyond the darkness(raving mix)"));
             fileLayerSongs.Add(new FileLayerSongDo("02.killing mission"));
 
-            SUT.Execute(fileLayerSongs);
+            SUT.Execute(fileLayerSongs,1);
 
             Assert.That(fileLayerSongs[0].TrackNr, Is.EqualTo(1));
             Assert.That(fileLayerSongs[1].TrackNr, Is.EqualTo(2));           
@@ -52,7 +52,7 @@ namespace ExtractionLayer.Tests.Files.FullTreeOperators.InnerOperators
             fileLayerSongs.Add(new FileLayerSongDo("23.beyond 12 darkness(raving mix)"));
             fileLayerSongs.Add(new FileLayerSongDo("02.killing 14"));
 
-            SUT.Execute(fileLayerSongs);
+            SUT.Execute(fileLayerSongs,1);
 
             Assert.That(fileLayerSongs[0].TrackNr, Is.EqualTo(23));
             Assert.That(fileLayerSongs[1].TrackNr, Is.EqualTo(2));
@@ -65,7 +65,7 @@ namespace ExtractionLayer.Tests.Files.FullTreeOperators.InnerOperators
             fileLayerSongs.Add(new FileLayerSongDo("word word 1 word word"));
             fileLayerSongs.Add(new FileLayerSongDo("word word word 2 word word"));
 
-            SUT.Execute(fileLayerSongs);
+            SUT.Execute(fileLayerSongs,1);
 
             Assert.That(fileLayerSongs[0].TrackNr, Is.EqualTo(1));
             Assert.That(fileLayerSongs[1].TrackNr, Is.EqualTo(2));
@@ -78,7 +78,7 @@ namespace ExtractionLayer.Tests.Files.FullTreeOperators.InnerOperators
             fileLayerSongs.Add(new FileLayerSongDo("01.beyond the darkness(raving mix)"));
             fileLayerSongs.Add(new FileLayerSongDo("01.killing mission"));
 
-            SUT.Execute(fileLayerSongs);
+            SUT.Execute(fileLayerSongs,1);
 
             Assert.That(fileLayerSongs[0].TrackNr, Is.EqualTo(1));
             Assert.That(fileLayerSongs[0].CDRaw, Is.EqualTo(1));
@@ -95,7 +95,7 @@ namespace ExtractionLayer.Tests.Files.FullTreeOperators.InnerOperators
             fileLayerSongs.Add(new FileLayerSongDo("201"));
             fileLayerSongs.Add(new FileLayerSongDo("401"));
 
-            SUT.Execute(fileLayerSongs);
+            SUT.Execute(fileLayerSongs,1);
 
             Assert.That(fileLayerSongs[0].CDRaw, Is.EqualTo(1));
             Assert.That(fileLayerSongs[1].CDRaw, Is.EqualTo(2));

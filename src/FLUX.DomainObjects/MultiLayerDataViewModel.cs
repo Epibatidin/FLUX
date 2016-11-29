@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Extraction.Interfaces;
+using System;
+using System.Collections.Generic;
 
 namespace FLUX.DomainObjects
 {
@@ -10,8 +12,9 @@ namespace FLUX.DomainObjects
         private MultiLayerDataContainer Container { get; set; }
         
         public string AdditionalClass { get; set; }
-
-        public MultiLayerDataViewModel(MultiLayerDataContainer container,string additionalClass, int forLvl, string[] keys)
+        
+        public MultiLayerDataViewModel(MultiLayerDataContainer container,string additionalClass, 
+            int forLvl, string[] keys)
         {
             forLevel = forLvl;
             Container = container;
@@ -35,6 +38,19 @@ namespace FLUX.DomainObjects
                 list = new List<string>();
 
             return list;
+        }
+        
+        public IEnumerable<Tuple<string, string>> IteratePostbackData()
+        {
+            yield return Tuple.Create(nameof(ISong.Id), Container.Id.ToString());
+
+            foreach (var item in Container.Data)
+            {
+                if (item.Value.Count == 0) continue;
+
+                yield return Tuple.Create(item.Key, item.Value[0]);
+            }
+            yield break;
         }
 
     }

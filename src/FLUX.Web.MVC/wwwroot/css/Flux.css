@@ -7,9 +7,14 @@
     text-align: center;
 }
 
-.container.Artist {
+/*.container.Artist {
     position: absolute;
     background: white;    
+}*/
+
+.floatingContainer {
+    position: absolute;
+    background: white;
 }
 
 .container.Album {

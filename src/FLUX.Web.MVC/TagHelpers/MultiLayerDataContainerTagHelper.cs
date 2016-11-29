@@ -1,18 +1,28 @@
 ﻿using DataStructure.Tree;
+using Extraction.Interfaces;
 using FLUX.DomainObjects;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
-using Microsoft.AspNetCore.Routing;
-using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace FLUX.Web.MVC.TagHelpers
 {
     public class MultiLayerDataTagHelper : TagHelper
     {
+        public readonly static string[][] Keys;
+
+        static MultiLayerDataTagHelper()
+        {
+            Keys = new string[4][];
+            Keys[0] = new [] { nameof(ISong.Artist) };
+            Keys[1] = new [] { nameof(ISong.Year), nameof(ISong.Album) };
+            Keys[2] = new [] { nameof(ISong.CD) };
+            Keys[3] = new [] { nameof(ISong.TrackNr), nameof(ISong.SongName) };
+        }
+
+
         ICompositeViewEngine _viewEngine;
 
         public MultiLayerDataTagHelper(ICompositeViewEngine viewEngine )
@@ -24,28 +34,19 @@ namespace FLUX.Web.MVC.TagHelpers
         
         [HtmlAttributeName("model")]
         public ITreeItem<MultiLayerDataContainer> Container { get; set; }
-
-        [HtmlAttributeName("keys")]
-        public string KeysAsString { get; set; }
-        
+             
         [HtmlAttributeName("class")]
         public string Class { get; set; }
         
         [HtmlAttributeName("level")]
         public int ForLevel { get; set; }
-
-
+        
+        
         public async override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
-            output.TagName = null;
+            output.TagName = null;                      
 
-            string[] keyArray = null;
-            if (KeysAsString == null)
-                keyArray = new[] { Class };
-            else
-                keyArray = KeysAsString.Split(',');
-
-            var model = new MultiLayerDataViewModel(Container.Value, Class ,ForLevel, keyArray);
+            var model = new MultiLayerDataViewModel(Container.Value, Class ,ForLevel, Keys[ForLevel]);
             var viewContext = new ViewContext(ViewContext, ViewContext.View,
                 new ViewDataDictionary<MultiLayerDataViewModel>(ViewContext.ViewData, model), ViewContext.Writer);
          
