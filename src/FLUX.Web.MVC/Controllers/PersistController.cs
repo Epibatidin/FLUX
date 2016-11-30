@@ -2,20 +2,45 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using FLUX.DomainObjects;
-
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+using Facade.Session;
+using FLUX.Interfaces;
+using DataAccess.Base.Config;
+using System.Linq;
 
 namespace FLUX.Web.MVC.Controllers
 {
     public class PersistController : Controller
     {
-        // GET: /<controller>/
+        IVirtualFilePeristentHelper _persistentHelper;
+        IExtractionContextBuilder _contextBuilder;
+
+        public PersistController(IVirtualFilePeristentHelper persistentHelper, IExtractionContextBuilder contextBuilder)
+        {
+            _persistentHelper = persistentHelper;
+            _contextBuilder = contextBuilder;
+        }
+
         public async Task<IActionResult> Index()
         {
             var postbackItems = new List<PostbackSong>();
+            var extractionContext = _contextBuilder.BuildForPersistence();
+
 
             await TryUpdateModelAsync(postbackItems);
+
+
+
             
+            //var sourceAndResult = from post in postbackItems
+            //                      join vf in vfs on post.Id equals vf.ID
+            //                      select new { post, vf};
+
+            //foreach (var item in sourceAndResult)
+            //{
+
+            //}
+            
+
             return View();
         }
     }

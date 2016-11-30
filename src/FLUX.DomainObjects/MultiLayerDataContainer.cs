@@ -62,8 +62,7 @@ namespace FLUX.DomainObjects
             }
             return null;
         }
-
-
+        
         private void AddValue(string key, int value)
         {
             if (value == 0) return;
@@ -72,7 +71,7 @@ namespace FLUX.DomainObjects
 
         private void AddValue(string key, string value)
         {
-            if(string.IsNullOrEmpty(value)) return;
+            //if(string.IsNullOrEmpty(value)) return;
             List<string> values = Data.GetOrCreate(key);
             values.Add(value);
         }

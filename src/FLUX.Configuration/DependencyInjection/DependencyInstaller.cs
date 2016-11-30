@@ -28,7 +28,8 @@ namespace FLUX.Configuration.DependencyInjection
         {
             container.AddSingleton<IModelBinderFacade, ModelBinderFacade>();
             container.AddSingleton<ISessionFacade, SessionFacade>();
-            
+
+            container.AddSingleton<IExtractionContextBuilder, ExtractionContextBuilder>();
             container.AddSingleton<IConfigurationFormProcessor, ConfigurationFormProcessor>();
             container.AddSingleton<ILayerResultJoiner, LayerResultJoiner>();
         }

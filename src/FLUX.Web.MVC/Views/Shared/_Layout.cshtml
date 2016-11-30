@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="~/css/Flux.css"/>
+    <link rel="stylesheet" href="~/css/Flux.css?foo=@DateTime.Now.Ticks" />
 
     <title dir="ltr">Der Flux ordnet deine MP3 s</title>
 </head>
@@ -25,7 +25,6 @@
 
         <script src="~/js/Configuration.js" asp-append-version="true"></script>
         <script src="~/js/DataDelivery.js" asp-append-version="true"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
 
     @RenderSection("scripts", required: false)

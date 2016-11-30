@@ -62,7 +62,12 @@
     width:57%;
 }
 
-
+img.empty {
+    background-color:aqua;
+    height: 14px;
+    padding-bottom: 4px;
+    width:250px;
+}
 
 .ArtistSize {
     width: 29%;
