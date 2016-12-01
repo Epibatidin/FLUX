@@ -20,6 +20,7 @@ namespace FLUX.Web.MVC.Controllers
             _contextBuilder = contextBuilder;
         }
 
+        [HttpPost]
         public async Task<IActionResult> Index()
         {
             var postbackItems = new List<PostbackSong>();

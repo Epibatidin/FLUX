@@ -47,6 +47,7 @@ namespace FLUX.DomainObjects
             foreach (var item in Container.Data)
             {
                 if (item.Value.Count == 0) continue;
+                if (string.IsNullOrEmpty(item.Value[0])) continue;
 
                 yield return Tuple.Create(item.Key, item.Value[0]);
             }
