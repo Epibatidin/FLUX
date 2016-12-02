@@ -9,7 +9,7 @@
     }
   },
   "dependencies": {
-    "System.Linq": "4.1.0",
+    "System.Linq": "4.3.0",
     "Microsoft.Extensions.Options": "1.0.0",
     "DynamicLoading": "1.0.0-*",
     "Facade.Configuration": "1.0.0-*",

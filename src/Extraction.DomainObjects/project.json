@@ -9,11 +9,10 @@
     }
   },
   "dependencies": {
-    "System.Runtime": "4.1.0",
-    "System.Runtime.Extensions": "4.1.0",
-    "System.Collections": "4.0.11",
-    "System.Linq": "4.1.0",
+    "System.Runtime": "4.3.0",
+    "System.Runtime.Extensions": "4.3.0",
+    "System.Collections": "4.3.0",
+    "System.Linq": "4.3.0",
     "Extension.IEnumerable": "1.0.0-*"
-
   }
 }

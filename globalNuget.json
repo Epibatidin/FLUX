@@ -1,13 +1,13 @@
 {
   "dependencies": {
-    "System.Runtime": "4.1.0",
-    "System.Runtime.Extensions": "4.1.0",
-    "System.Collections": "4.0.11",
-    "System.Linq": "4.1.0",
-    "System.IO": "4.1.0",
-    "System.IO.FileSystem": "4.0.1",
-    "System.Xml.XmlSerializer": "4.0.11",
-    "System.Text.RegularExpressions": "4.1.0",
+    "System.Runtime": "4.3.0",
+    "System.Runtime.Extensions": "4.3.0",
+    "System.Collections": "4.3.0",
+    "System.Linq": "4.3.0",
+    "System.IO": "4.3.0",
+    "System.IO.FileSystem": "4.3.0",
+    "System.Xml.XmlSerializer": "4.3.0",
+    "System.Text.RegularExpressions": "4.3.0",
 
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Mvc": "1.0.1",

@@ -9,11 +9,12 @@
     }
   },
   "dependencies": {
-    "System.Linq": "4.1.0",
-    "System.Collections": "4.0.11",
-    "System.Runtime": "4.1.0",
+    "System.Linq": "4.3.0",
+    "System.Collections": "4.3.0",
+    "System.Runtime": "4.3.0",
     "DataAccess.Interfaces": "1.0.0-*",
     "Extension.IEnumerable": "1.0.0-*",
-    "Extraction.Interfaces": "1.0.0-*"
+    "Extraction.Interfaces": "1.0.0-*",
+    "System.ComponentModel.Annotations": "4.3.0"
   }
 }

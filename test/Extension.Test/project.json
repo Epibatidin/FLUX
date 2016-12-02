@@ -11,5 +11,5 @@
   "dependencies": {
     "Moq": "4.6.38-alpha",
     "NUnit": "3.5.0"
-  }  
+  }
 }
