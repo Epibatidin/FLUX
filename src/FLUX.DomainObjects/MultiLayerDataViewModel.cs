@@ -7,13 +7,13 @@ namespace FLUX.DomainObjects
     public class MultiLayerDataViewModel
     {
         private int forLevel;
-        
+
         public IList<string> Keys { get; set; }
         private MultiLayerDataContainer Container { get; set; }
-        
+
         public string AdditionalClass { get; set; }
-        
-        public MultiLayerDataViewModel(MultiLayerDataContainer container,string additionalClass, 
+
+        public MultiLayerDataViewModel(MultiLayerDataContainer container, string additionalClass,
             int forLvl, string[] keys)
         {
             forLevel = forLvl;
@@ -30,16 +30,28 @@ namespace FLUX.DomainObjects
             }
         }
 
-        public IList<string> RetrieveData(string key)
+        public DataCollection RetrieveData(string key, bool isLast)
         {
+            var dataCollection = new DataCollection();
+            dataCollection.IsLastElement = isLast;
+            dataCollection.OriginalValue = OriginalValue;
+
             List<string> list = null;
 
             if (!Container.Data.TryGetValue(key, out list))
                 list = new List<string>();
-
-            return list;
+            dataCollection.LayerValues = list;
+            return dataCollection;
         }
-        
+
+        public int ID
+        {
+            get
+            {
+                return Container.Id;
+            }
+        }
+
         public IEnumerable<Tuple<string, string>> IteratePostbackData()
         {
             yield return Tuple.Create(nameof(ISong.Id), Container.Id.ToString());

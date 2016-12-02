@@ -1,14 +1,41 @@
-﻿@model IList<string>
+﻿@model FLUX.DomainObjects.DataCollection
+@using System.Text;
 
-@for (int i = 0; i < Model.Count; i++)
+
+@*was soll passieren ? 
+wir machen nur noch layer key geraffel 
+wir soll jetzt einen wert rendern 
+also 
+
+title
+    value
+    value
+
+wir brauchen ein 1 input feld - immer damit weggesposted wird 
+
+aber nur das erste feld muss input sein 
+der rest wie ggewohn span 
+
+wenn der erste wert null ist 
+nimm original value*@ 
+
+@for (int i = 0; i < Model.LayerValues.Count; i++)
 {
-    if (string.IsNullOrEmpty(Model[i]))
+    var layer = Model.LayerValues[i];
+    if (i == 0)
     {
-       <img src="" class="empty" />
+        string classN = "spanLook";
+        if (string.IsNullOrEmpty(layer) && Model.IsLastElement)
+        {
+            layer = Model.OriginalValue;
+            classN += " inValid";
+        }    
+        
+        <input type="text" class="@classN" value="@layer" />    
     }
     else
     {
-        <span class="layer@(i)">@Model[i]</span>
+        <span class="layer@(i)">@layer</span>
+
     }
-    <br />
 }

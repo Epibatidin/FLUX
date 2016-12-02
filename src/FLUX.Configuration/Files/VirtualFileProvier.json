@@ -6,7 +6,7 @@
 
   "Debug": {
     "RootNames": [ "Metallica", "Ashbury Heights", "Amduscia" ],
-    "SubRootPos": [ ]
+    "SubRootPos": [ 4 ]
   },
   "Sources": [
     {

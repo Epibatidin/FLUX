@@ -1,24 +1,27 @@
 ﻿@model FLUX.DomainObjects.MultiLayerDataViewModel
 
 <div class="container @Model.AdditionalClass">
-    <div class="origin">@Model.OriginalValue</div>
-    
-    @{
-        string spacer = "";
-        foreach (var key in Model.Keys)
-        {
-            var data = Model.RetrieveData(key);
-            <div class="@spacer">
-                <h3>@key</h3>
+    <div class="origin">@Model.OriginalValue</div>    
+@{
+    string spacer = "";
+    int length = Model.Keys.Count;
 
-                <div class="rightBlock">
-                    @Html.Partial("DataCollection", Model.RetrieveData(key))
-                </div>
+    for (int i = 0; i < length; i++)
+    {
+        var key = Model.Keys[i];
+        var data = Model.RetrieveData(key, i == length - 1);
+        
+        <div class="@spacer">
+            <h3>@key</h3>
+
+            <div class="rightBlock">
+                @Html.Partial("DataCollection", data)
             </div>
-            if (spacer.Length == 0)
-            {
-                spacer = "spaceLeft";
-            };
+        </div>
+        if(i == 0)
+        {
+            spacer = "spaceLeft";
         }
     }
+}
 </div>

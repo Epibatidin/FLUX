@@ -50,17 +50,28 @@
     border-top: 1px solid blue; 
 }
 
-.originTR {
+col.originTR {
     width:35%;
 }
 
-.track {
+col.track {
     width:8%;
 }
 
-.title {
+col.title {
     width:57%;
 }
+
+
+.spanLook {
+    background:rgba(0,0,0,0);
+    border:none;
+}
+
+.inValid{
+    background:rgba( 233, 30, 86, 0.36)
+}
+
 
 img.empty {
     background-color:aqua;

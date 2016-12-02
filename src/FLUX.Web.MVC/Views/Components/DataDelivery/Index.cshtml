@@ -36,21 +36,21 @@
                             {
                                 var originalValue = song.OriginalValue;
                                 var trimmed = originalValue.Substring(0, Math.Min(35, originalValue.Length));
-                                <tr>
+                                <tr id="@song.ID">
                                     <td title="@originalValue">@trimmed</td>
-                                    @foreach (var key in song.Keys)
+                                    @for (int s = 0; s < song.Keys.Count; s++)
                                     {
-                                        <td>@Html.Partial("DataCollection", song.RetrieveData(key))</td>
+                                        <td>@Html.Partial("DataCollection", song.RetrieveData(song.Keys[s], s == song.Keys.Count -1))</td>
                                     }
+                                    <td>
                                 </tr>
-                                @foreach (var element in song.IteratePostbackData())
-                                {
-                                    <input type="hidden" name="@string.Format("[{0}].{1}", counter, element.Item1)" value="@element.Item2" />
-                                }
+                               
                                 counter++;
                             }
                         </tbody>
                     </table>
+                   
+
                 </div>
                 <div class="cfix"></div>
             }
