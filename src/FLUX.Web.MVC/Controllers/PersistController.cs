@@ -23,15 +23,19 @@ namespace FLUX.Web.MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Index()
         {
-            var postbackItems = new List<PostbackSong>();
             var extractionContext = _contextBuilder.BuildForPersistence();
 
+            var postbackTree = new PostbackTree();
+                       
+            await TryUpdateModelAsync(postbackTree);
 
-            await TryUpdateModelAsync(postbackItems);
+
+            var songs = postbackTree.Flatten();
+            var r = songs;
+            // overdue modelbinding for tree support 
 
 
 
-            
             //var sourceAndResult = from post in postbackItems
             //                      join vf in vfs on post.Id equals vf.ID
             //                      select new { post, vf};
@@ -40,9 +44,9 @@ namespace FLUX.Web.MVC.Controllers
             //{
 
             //}
-            
 
-            return View();
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }

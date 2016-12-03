@@ -13,6 +13,8 @@ namespace FLUX.DomainObjects
 
         public string AdditionalClass { get; set; }
 
+        public string NamePattern { get; set; }
+
         public MultiLayerDataViewModel(MultiLayerDataContainer container, string additionalClass,
             int forLvl, string[] keys)
         {
@@ -35,7 +37,7 @@ namespace FLUX.DomainObjects
             var dataCollection = new DataCollection();
             dataCollection.IsLastElement = isLast;
             dataCollection.OriginalValue = OriginalValue;
-
+            dataCollection.PostbackName = NamePattern + "." +key;
             List<string> list = null;
 
             if (!Container.Data.TryGetValue(key, out list))

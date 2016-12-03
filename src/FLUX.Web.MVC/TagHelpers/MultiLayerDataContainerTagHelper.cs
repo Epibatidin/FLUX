@@ -38,6 +38,8 @@ namespace FLUX.Web.MVC.TagHelpers
         [HtmlAttributeName("class")]
         public string Class { get; set; }
         
+        public string NameFor { get; set; }
+
         [HtmlAttributeName("level")]
         public int ForLevel { get; set; }
         
@@ -47,6 +49,7 @@ namespace FLUX.Web.MVC.TagHelpers
             output.TagName = null;                      
 
             var model = new MultiLayerDataViewModel(Container.Value, Class ,ForLevel, Keys[ForLevel]);
+            model.NamePattern = NameFor;
             var viewContext = new ViewContext(ViewContext, ViewContext.View,
                 new ViewDataDictionary<MultiLayerDataViewModel>(ViewContext.ViewData, model), ViewContext.Writer);
          

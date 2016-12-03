@@ -3,25 +3,41 @@
 @model DataStructure.Tree.TreeItem<MultiLayerDataContainer>
 @{ 
     int counter = 0;
+    var postbackPattern = nameof(PostbackTree.Artists)+"[0]";
+}
+
+@functions
+{
+    private IEnumerable<MultiLayerDataViewModel> Iterate(DataStructure.Tree.ITreeItem<MultiLayerDataContainer> tree)
+    {
+        return tree.Children.Select(c => new MultiLayerDataViewModel(c.Value, "", 3, FLUX.Web.MVC.TagHelpers.MultiLayerDataTagHelper.Keys[3]));
+    }
 }
 <div class="theScrollContainer">
     
     <form action="@Url.Action("Index","Persist")" method="post">
         <div class="ArtistSize">
             <div class="floatingContainer">
-                <multi-layer-data model="@Model" level="0" class="Artist" />
+                <multi-layer-data model="@Model" level="0" class="Artist" name-for="@postbackPattern"/>
                 <input type="submit" value="Nicht clicken" />
             </div>
         </div>
+        @{ 
+            int albumCounter = 0;
+        }
 
-        @foreach (var album in Model.Children)
-        {
-            <multi-layer-data model="@album" level="1" class="Album"/>
+    @foreach (var album in Model.Children)
+    {
+        var albumPattern = postbackPattern +"."+ nameof(ArtistNode.Albums) + string.Format("[{0}]", albumCounter);
+
+            <multi-layer-data model="@album" level="1" class="Album" name-for="@albumPattern"/>
             <div class="cfix"></div>
+        int cdCounter = 0;
+        foreach (var cd in album.Children)
+        {
+              var cdPattern = albumPattern + "." + nameof(AlbumNode.Cds) + string.Format("[{0}]", cdCounter);
 
-            foreach (var cd in album.Children)
-            {
-                <multi-layer-data model="@cd" level="2" class="CD" />
+                <multi-layer-data model="@cd" level="2" class="CD" name-for="@cdPattern" />
 
                 <div class="container Songs">
                     <table class="SongTable">
@@ -31,29 +47,34 @@
                             <col class="title" />
                         </colgroup>
                         <tbody>
-                            @foreach (var song in cd.Children.Select(c =>
-                                new MultiLayerDataViewModel(c.Value, "", 3, FLUX.Web.MVC.TagHelpers.MultiLayerDataTagHelper.Keys[3])))
-                            {
+                            @{
+                                int songCounter = 0;
+                            }
+                            @foreach (var song in Iterate(cd))
+                            {                                
+                                song.NamePattern = cdPattern +"."+ nameof(CdNode.Songs) + string.Format("[{0}]", songCounter);
                                 var originalValue = song.OriginalValue;
                                 var trimmed = originalValue.Substring(0, Math.Min(35, originalValue.Length));
+
                                 <tr id="@song.ID">
                                     <td title="@originalValue">@trimmed</td>
                                     @for (int s = 0; s < song.Keys.Count; s++)
                                     {
-                                        <td>@Html.Partial("DataCollection", song.RetrieveData(song.Keys[s], s == song.Keys.Count -1))</td>
+                                        <td>@Html.Partial("DataCollection", song.RetrieveData(song.Keys[s], s == song.Keys.Count - 1))</td>
                                     }
                                     <td>
                                 </tr>
-                               
-                                counter++;
+
+                                songCounter = songCounter+ 1;
                             }
                         </tbody>
                     </table>
-                   
-
                 </div>
                 <div class="cfix"></div>
+                cdCounter++;
             }
+            albumCounter++;
         }
+
     </form>
 </div>

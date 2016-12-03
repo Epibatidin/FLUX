@@ -5,6 +5,26 @@ namespace FLUX.DomainObjects
 {
     public class PostbackSong : ISong
     {
+        private PostbackSong current;
+
+        public PostbackSong()
+        {
+
+        }
+
+        public PostbackSong(PostbackSong current)
+        {
+            Artist = current.Artist;
+
+            Year = current.Year;
+            Album = current.Album;
+
+            CD = current.CD;
+
+            TrackNr = current.TrackNr;
+            SongName = current.SongName;
+        }
+
         public int Id { get; set; }
 
         [Required]

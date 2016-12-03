@@ -5,6 +5,7 @@ namespace FLUX.DomainObjects
     public class DataCollection
     {
         public string OriginalValue { get; set; }
+        public string PostbackName { get; set; }
 
         public IList<string> LayerValues { get; set; }
 
