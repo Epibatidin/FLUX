@@ -6,6 +6,7 @@ using DataAccess.Interfaces;
 
 namespace DataAccess.FileSystem
 {
+    [System.Diagnostics.DebuggerStepThrough]
     public class RealDirectory : IVirtualDirectory
     {
         private readonly DirectoryInfo _di;

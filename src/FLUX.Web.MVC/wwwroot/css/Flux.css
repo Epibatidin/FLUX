@@ -7,11 +7,6 @@
     text-align: center;
 }
 
-/*.container.Artist {
-    position: absolute;
-    background: white;    
-}*/
-
 .floatingContainer {
     position: absolute;
     background: white;
@@ -29,10 +24,8 @@
 
 .container.Songs {
     width: 80%;
-    float: right;
-    
-    margin: 20px 0;
-    
+    float: right;    
+    margin: 20px 0;    
 }
 
 .SongTable {
@@ -66,18 +59,17 @@ col.title {
 .spanLook {
     background:rgba(0,0,0,0);
     border:none;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+.fullWidth {
+    width:100%;
 }
 
 .inValid{
     background:rgba( 233, 30, 86, 0.36)
-}
-
-
-img.empty {
-    background-color:aqua;
-    height: 14px;
-    padding-bottom: 4px;
-    width:250px;
 }
 
 .ArtistSize {
@@ -90,8 +82,8 @@ img.empty {
 }
 
 .theScrollContainer {
-    height: 897px;
-    overflow-y: scroll;
+    height: 897px;    
+    overflow-y: auto;
 }
 
 h3 {
@@ -117,11 +109,6 @@ div {
     margin: 2px 5px;
 }
 
-/*.rightBlock span {
-    border-width: 2px;
-    border-style: solid;
-}*/
-
 .layer0 {
     border-color: green;
 }
@@ -135,92 +122,3 @@ div {
     clear: both;
     float: none;
 }
-
-
-
-/*h2,h3 {
-    display: block;
-    font-size: 1.25em;
-    float:left;
-}
-
-div
-{
-    float:left;
-}
-
-
-
-.float-left {
-    float: left;
-}
-
-.float-right {
-    float: right;
-}
-
-.clear-fix:after {
-    content: ".";
-    clear: both;
-    display: block;
-    height: 0;
-    visibility: hidden;
-}
-
-
-.TopHeadlineContainer {
-    margin-left: 50px;
-    padding-bottom: 50px;
-}
-
-.ContentWrapper {
-    padding: 10px;
-}
-
-.ContentWrapper.Artist {    
-    float: left;
-}
-
-.ContentWrapper.Album {
-    width: 70%; 
-    float:left;
-    margin-top:5px;     
-}
-
-
-.ContentWrapper.CD {
-    width: 17%;    
-    float: left;
-}
-
-.ContentWrapper.Songs {
-    border-left: solid blue thin;
-    float: left;
-}
-
-.ContentContainer {
-    margin-left: 50px;
-}
-
-.ContentContainer>div {
-    border-style: solid;
-    border-width: 2px;
-    padding: 1px 10px;
-    margin-top: 1px;
-}
-
-.origin {
-    border-color :black;
-    margin: 5px;
-    padding: 2px;
-    border-style: solid;
-    border-width: 2px;
-}
-
-.layer0 {
-    border-color: red;
-}
-
-.layer1 {
-    border-color: blue;
-}*/

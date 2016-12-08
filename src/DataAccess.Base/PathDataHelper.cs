@@ -17,7 +17,7 @@ namespace DataAccess.Base
             else
                 pathData.Extension = absoluteFilePath.Substring(++extPos);
             
-            var pureVirtualFilePath = absoluteFilePath.Substring(rootDirPath.Length +1 ,extPos- rootDirPath.Length -2);
+            var pureVirtualFilePath = absoluteFilePath.Substring(rootDirPath.Length ,extPos- rootDirPath.Length -1);
             pathData.PathParts = pureVirtualFilePath.Split('\\');
 
             return pathData;

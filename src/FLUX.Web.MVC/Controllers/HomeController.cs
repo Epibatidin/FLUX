@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Session;
+
 
 namespace FLUX.Web.MVC.Controllers
 {
@@ -13,6 +15,16 @@ namespace FLUX.Web.MVC.Controllers
         {
             return ViewComponent("Configuration");
         }
+
+
+        [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult ResetSession()
+        {
+            HttpContext.Session.Clear();
+
+            return RedirectToAction("Index", "Home");
+        }
+
 
         [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult DataDelivery()

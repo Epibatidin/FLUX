@@ -51,7 +51,7 @@ namespace DataAccess.Tests.Base
             string path =
                 "D:\\Musik\\01_amduscia-damn_punks.mp3";
 
-            var result = SUT.FullPathToVirtualPathData(path, "D:\\Musik");
+            var result = SUT.FullPathToVirtualPathData(path, "D:\\Musik\\");
 
             Assert.That(result.PathParts.Length, Is.EqualTo(1));
         }
@@ -62,7 +62,7 @@ namespace DataAccess.Tests.Base
             string path =
                 "D:\\Musik\\01_amduscia-damn_punks.mp3";
 
-            var result = SUT.FullPathToVirtualPathData(path, "D:\\Musik");
+            var result = SUT.FullPathToVirtualPathData(path, "D:\\Musik\\");
 
             Assert.That(result.PathParts[0], Is.EqualTo("01_amduscia-damn_punks"));
         }
@@ -72,7 +72,7 @@ namespace DataAccess.Tests.Base
         {
             string path = "D:\\Musik\\01_amduscia-damn_punks";
 
-            var result = SUT.FullPathToVirtualPathData(path, "D:\\Musik");
+            var result = SUT.FullPathToVirtualPathData(path, "D:\\Musik\\");
 
             Assert.That(result.PathParts[0], Is.EqualTo("01_amduscia-damn_punks"));
         }
