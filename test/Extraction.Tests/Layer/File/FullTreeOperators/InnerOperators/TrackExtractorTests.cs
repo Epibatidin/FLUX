@@ -101,5 +101,34 @@ namespace ExtractionLayer.Tests.Files.FullTreeOperators.InnerOperators
             Assert.That(fileLayerSongs[1].CDRaw, Is.EqualTo(2));
             Assert.That(fileLayerSongs[2].CDRaw, Is.EqualTo(4));
         }
+
+        [Test]
+        public void should_stand_a_real_world_example()
+        {
+            var fileLayerSongs = new List<FileLayerSongDo>();
+            fileLayerSongs.Add(new FileLayerSongDo("101-ashbury_heights-anti_ordinary"));
+            fileLayerSongs.Add(new FileLayerSongDo("102-ashbury_heights-beautiful_scum"));
+            fileLayerSongs.Add(new FileLayerSongDo("103-ashbury_heights-scars_of_a_ligh"));
+            fileLayerSongs.Add(new FileLayerSongDo("201-ashbury_heights-invisible_man"));
+            fileLayerSongs.Add(new FileLayerSongDo("202-ashbury_heights-dark_clouds_ga"));
+            fileLayerSongs.Add(new FileLayerSongDo("203-ashbury_heights-shades_of_black"));
+
+
+            SUT.Execute(fileLayerSongs, 1);
+
+            Assert.That(fileLayerSongs[0].CDRaw, Is.EqualTo(1));
+            Assert.That(fileLayerSongs[0].TrackNr, Is.EqualTo(1));
+            Assert.That(fileLayerSongs[1].CDRaw, Is.EqualTo(1));
+            Assert.That(fileLayerSongs[1].TrackNr, Is.EqualTo(2));
+            Assert.That(fileLayerSongs[2].CDRaw, Is.EqualTo(1));
+            Assert.That(fileLayerSongs[2].TrackNr, Is.EqualTo(3));
+
+            Assert.That(fileLayerSongs[3].CDRaw, Is.EqualTo(2));
+            Assert.That(fileLayerSongs[3].TrackNr, Is.EqualTo(1));
+            Assert.That(fileLayerSongs[4].CDRaw, Is.EqualTo(2));
+            Assert.That(fileLayerSongs[4].TrackNr, Is.EqualTo(2));
+            Assert.That(fileLayerSongs[5].CDRaw, Is.EqualTo(2));
+            Assert.That(fileLayerSongs[5].TrackNr, Is.EqualTo(3));
+        }
     }
 }

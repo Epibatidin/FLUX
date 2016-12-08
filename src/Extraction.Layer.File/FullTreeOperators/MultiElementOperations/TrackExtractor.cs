@@ -46,7 +46,7 @@ namespace Extraction.Layer.File.FullTreeOperators.MultiElementOperations
                 if(hadHundreds = digits.Count == 3)
                 {
                     track.PossibleCd = digits[0];
-                    digits.Remove(0);
+                    digits.RemoveAt(0);
                 }
 
                 foreach (var digit in digits)
