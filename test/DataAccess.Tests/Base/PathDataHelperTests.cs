@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using DataAccess.Base;
 using Extension.Test;
-using Xunit;
-using Assert = NUnit.Framework.Assert;
-using Is = NUnit.Framework.Is;
+using NUnit.Framework;
 
 namespace DataAccess.Tests.Base
 {
     public class PathDataHelperTests : FixtureBase<PathDataHelper>
     {
-        [Fact]
+        protected override PathDataHelper CreateSUT()
+        {
+            return new PathDataHelper();
+        }
+
+        [Test]
         public void should_find_extension()
         {
             string path =
@@ -23,7 +23,7 @@ namespace DataAccess.Tests.Base
             Assert.That(result.Extension, Is.EqualTo("mp3"));
         }
 
-        [Fact]
+        [Test]
         public void should_support_non_extension()
         {
             string path =
@@ -33,8 +33,8 @@ namespace DataAccess.Tests.Base
 
             Assert.That(result.Extension, Is.EqualTo(""));
         }
-        
-        [Fact]
+
+        [Test]
         public void should_split_by_slashes()
         {
             string path =
@@ -45,7 +45,7 @@ namespace DataAccess.Tests.Base
             Assert.That(result.PathParts.Contains("2011 Amduscia-Death_Thou_Shalt_Die"), Is.True);
         }
 
-        [Fact]
+        [Test]
         public void should_remove_root_part()
         {
             string path =
@@ -56,7 +56,7 @@ namespace DataAccess.Tests.Base
             Assert.That(result.PathParts.Length, Is.EqualTo(1));
         }
 
-        [Fact]
+        [Test]
         public void should_remove_root_part_and_set_path_part()
         {
             string path =
@@ -67,7 +67,7 @@ namespace DataAccess.Tests.Base
             Assert.That(result.PathParts[0], Is.EqualTo("01_amduscia-damn_punks"));
         }
 
-        [Fact]
+        [Test]
         public void should_remove_root_part_and_set_path_part_without_extension()
         {
             string path = "D:\\Musik\\01_amduscia-damn_punks";
@@ -77,5 +77,6 @@ namespace DataAccess.Tests.Base
             Assert.That(result.PathParts[0], Is.EqualTo("01_amduscia-damn_punks"));
         }
 
+       
     }
 }

@@ -57,10 +57,15 @@
                                 var trimmed = originalValue.Substring(0, Math.Min(35, originalValue.Length));
 
                                 <tr id="@song.ID">
-                                    <td title="@originalValue">@trimmed</td>
+                                    <td title="@originalValue">
+                                        @trimmed
+                                        <input type="hidden" value="@song.ID" name="@(song.NamePattern + ".Id")" />
+                                    </td>
                                     @for (int s = 0; s < song.Keys.Count; s++)
                                     {
-                                        <td>@Html.Partial("DataCollection", song.RetrieveData(song.Keys[s], s == song.Keys.Count - 1))</td>
+                                        <td><div class="fullWidth">
+                                            @Html.Partial("DataCollection", song.RetrieveData(song.Keys[s], s == song.Keys.Count - 1))
+                                        </div></td>
                                     }
                                     <td>
                                 </tr>

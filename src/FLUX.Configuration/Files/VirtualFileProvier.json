@@ -1,12 +1,11 @@
 {
-
   "General": {
-    "Active": "XMLSource"
+    "Active": "Normal"
   },
 
   "Debug": {
     "RootNames": [ "Metallica", "Ashbury Heights", "Amduscia" ],
-    "SubRootPos": [ 4 ]
+    "SubRootPos": [3]
   },
   "Sources": [
     {

@@ -45,13 +45,13 @@ namespace FLUX.DomainObjects
 
         public void Add(AlbumNode albumNode)
         {
-            Current.Album = albumNode.Album;
-            Current.Year = albumNode.Year;                
+            _current.Album = albumNode.Album;
+            _current.Year = albumNode.Year;                
         }
 
         public void Add(ArtistNode artistNode)
         {
-            Current.Artist = artistNode.Artist;
+            _current.Artist = artistNode.Artist;
         }
     }
 

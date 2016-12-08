@@ -52,6 +52,7 @@ namespace DataAccess.FileSystem
                        select d;
             }
             int pos, arrayPos;
+
             var subroots = context.SubRoots ?? new int[0];
             int currentId = 0;
             foreach (var subdir in dirs.OrderBy(c => c.DirectoryName))
@@ -61,14 +62,16 @@ namespace DataAccess.FileSystem
                 foreach (var subDirectory in subdir.GetDirectories())
                 {
                     pos++;
-                    if (arrayPos >= subroots.Length)
-                        continue;
+                    if (subroots.Length > 0)
+                    {
+                        if (arrayPos >= subroots.Length)
+                            continue;
 
-                    if (subroots[arrayPos] != pos)
-                        continue;
+                        if (subroots[arrayPos] != pos)
+                            continue;
 
-                    arrayPos++;
-                    
+                        arrayPos++;
+                    }
                     foreach (string virtualFile in subDirectory.GetFiles("*.mp3", true))
                     {
                         var realFile = new RealFile();

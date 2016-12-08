@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using DataAccess.XMLStub.Serialization;
+using FLUX.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using FLUX.DomainObjects;
-using Facade.Session;
-using FLUX.Interfaces;
-using DataAccess.Base.Config;
+using System.Threading.Tasks;
 using System.Linq;
+using System.IO;
+using DataAccess.XMLStub;
 
 namespace FLUX.Web.MVC.Controllers
 {
@@ -28,25 +28,17 @@ namespace FLUX.Web.MVC.Controllers
             var postbackTree = new PostbackTree();
                        
             await TryUpdateModelAsync(postbackTree);
-
-
+                        
             var songs = postbackTree.Flatten();
-            var r = songs;
             // overdue modelbinding for tree support 
 
-
-
-            //var sourceAndResult = from post in postbackItems
-            //                      join vf in vfs on post.Id equals vf.ID
-            //                      select new { post, vf};
-
-            //foreach (var item in sourceAndResult)
-            //{
-
-            //}
-
-
+            // search index.xml 
+            // select name 
+            var writer = new XmlSongWriter();
+            writer.Persist(extractionContext.SourceValues, songs);
+            
             return RedirectToAction("Index", "Home");
         }
+        
     }
 }

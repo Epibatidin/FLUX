@@ -6,6 +6,6 @@
         
         public DebugSection Debug { get; set; }
                 
-        public SourceItem[] Sources { get; set; }
+        public SourceElement[] Sources { get; set; }
     }
 }

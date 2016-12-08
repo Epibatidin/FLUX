@@ -50,7 +50,6 @@ namespace FLUX.DomainObjects
             foreach (var artist in Artists)
             {
                 builder.Add(artist);
-
                 foreach (var album in artist.Albums)
                 {
                     builder.Add(album);

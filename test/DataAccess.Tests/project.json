@@ -15,9 +15,8 @@
     "Microsoft.Extensions.Configuration": "1.0.0",
     "Extension.Test": "1.0.0-*",
     "DataAccess.Base": "1.0.0-*",
+    "DataAccess.XMLStub": "1.0.0-*",
     "DataAccess.FileSystem": "1.0.0-*"
   },
-  "commands": {
-    "test": "xunit.runner.dnx"
-  }
+  "testRunner": "nunit"
 }

@@ -23,5 +23,9 @@ namespace DataAccess.XMLStub.Serialization
 
         [XmlElement("TagData")]
         public TagData TagData { get; set; }
+
+        [XmlElement("Result")]
+        public ResultContainer Results { get; set; }
+
     }
 }

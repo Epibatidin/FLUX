@@ -2,7 +2,7 @@
 
 namespace DataAccess.Base.Config
 {
-    public class SourceItem : IDynamicLoadableExtensionConfiguration
+    public class SourceElement : IDynamicLoadableExtensionConfiguration
     {
         public string SetionName { get; set; }
 

@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace DataAccess.XMLStub.Serialization
 {
@@ -7,9 +8,6 @@ namespace DataAccess.XMLStub.Serialization
     public class Group
     {
         [XmlElement]
-        public Source Source { get; set; }
-
-        //[XmlElement]
-        //public LayerResults Results { get; set; }
+        public Source Source { get; set; }        
     }
 }
