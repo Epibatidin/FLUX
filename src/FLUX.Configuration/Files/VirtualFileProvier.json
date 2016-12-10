@@ -18,10 +18,10 @@
     }
   ],
   "XML": {
+    "FolderForPersist": "D:\\FluxWorkBenchFiles\\XML\\XMLSourceProviderSource",
     "XmlSources": [
       {
-        "Name": "XMLSource",
-        "XMLFolder": "D:\\FluxWorkBenchFiles\\XML\\XMLSourceProviderSource"
+        "Name": "XMLSource"
       }
     ]
   },

@@ -8,6 +8,8 @@ namespace DataAccess.XMLStub.Config
     {
         public string SectionName { get; set; }
 
+        public string FolderForPersist { get; set; }
+
         public List<XMLSource> XmlSources { get; set; }
 
         public IEnumerable<string> Keys => XmlSources.Select(c => c.Name);

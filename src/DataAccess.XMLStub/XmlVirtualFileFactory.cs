@@ -56,7 +56,7 @@ namespace DataAccess.XMLStub
 
 
             var xmlSource = _xmlConfig.XmlSources.First(c => c.Name == context.SelectedSource);
-            var root = new DirectoryInfo(xmlSource.XmlFolder);
+            var root = new DirectoryInfo(xmlSource.XmlFolder ?? _xmlConfig.FolderForPersist);
             
             var temp = root.GetDirectories();
             IEnumerable<DirectoryInfo> dirs;

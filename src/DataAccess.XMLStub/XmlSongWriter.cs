@@ -7,11 +7,20 @@ using DataAccess.XMLStub.Serialization;
 using System.Xml.Serialization;
 using DataStructure.Tree.Builder;
 using DataStructure.Tree;
+using DataAccess.XMLStub.Config;
 
 namespace DataAccess.XMLStub
 {
     public class XmlSongWriter
     {
+        private string _persistenceRoot;
+
+        public XmlSongWriter(XMLSourcesCollection xmlConfig)
+        {
+            _persistenceRoot = xmlConfig.FolderForPersist;
+        }
+
+
         private SourceItem CombineVFileWithPostbackData(SourceItem sourceItem, IExtractionValueFacade song)
         {
             var resultContainer = sourceItem.Results = new ResultContainer();
@@ -74,7 +83,7 @@ namespace DataAccess.XMLStub
                 Name = artist                
             };
 
-            var rootDirPath = @"D:\FluxWorkBenchFiles\XML\XMLSourceProviderSource\" + tree.Value.Values[0].Item2 + "\\";
+            var rootDirPath = _persistenceRoot + "\\" + tree.Value.Values[0].Item2 + "\\";
             
             using (var indexStream = new FileStream(rootDirPath + "Index.xml", FileMode.Create, FileAccess.Write))
             {
