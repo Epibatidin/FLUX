@@ -117,7 +117,7 @@ namespace DataAccess.XMLStub
                     var sourceItem = new SourceItem()
                     {
                         ID = song.Value.Id,
-                        VirtualPath = string.Join("/", parts) +"." + song.Value.vfs.Extension, 
+                        VirtualPath = string.Join("\\", parts) +"." + song.Value.vfs.Extension, 
                     };
                     var results = song.Value.Values.Select(c => new MyKv()
                     {
