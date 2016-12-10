@@ -45,17 +45,21 @@ namespace FLUX.DomainObjects
         [Required]
         public string SongName { get; set; }
 
-        public IEnumerable<Tuple<string, string>> ToValues()
+        private Tuple<string, string>[] _asValues;
+        public IList<Tuple<string, string>> ToValues()
         {
-            yield return Tuple.Create("Artist", Artist);
+            if (_asValues != null)
+                return _asValues;
 
-            yield return Tuple.Create("Year", Year.ToString());
-            yield return Tuple.Create("Album", Album);
+            _asValues = new Tuple<string, string>[6];
+            _asValues[0] = Tuple.Create("Artist", Artist);
+            _asValues[1] = Tuple.Create("Album", Album);
+            _asValues[2] = Tuple.Create("CD", CD);
+            _asValues[3] = Tuple.Create("SongName", SongName);
 
-            yield return Tuple.Create("CD", CD);
-
-            yield return Tuple.Create("TrackNr", TrackNr.ToString());
-            yield return Tuple.Create("SongName", SongName);
+            _asValues[4] = Tuple.Create("Year", Year.ToString());
+            _asValues[5] = Tuple.Create("TrackNr", TrackNr.ToString());
+            return _asValues;
         }
     }
 }

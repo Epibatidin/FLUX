@@ -7,6 +7,6 @@ namespace DataAccess.Interfaces
     {
         int Id { get; set; }
 
-        IEnumerable<Tuple<string, string>> ToValues();
+        IList<Tuple<string, string>> ToValues();
     }
 }

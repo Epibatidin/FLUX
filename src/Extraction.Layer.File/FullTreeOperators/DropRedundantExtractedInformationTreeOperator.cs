@@ -24,7 +24,6 @@ namespace Extraction.Layer.File.FullTreeOperators
         {
             // check album against artist 
             RemoveLongestMatch(elements[1].LevelValue, elements[0].LevelValue);
-
             // check song against artist
             RemoveLongestMatch(elements[3].LevelValue, elements[0].LevelValue);
 
@@ -33,7 +32,7 @@ namespace Extraction.Layer.File.FullTreeOperators
         }
 
 
-        private void RemoveLongestMatch(PartedString toBeShortend, PartedString patternContainer)
+        public void RemoveLongestMatch(PartedString toBeShortend, PartedString patternContainer)
         {
             bool foundMismatchAfterMatch = false;
 
@@ -70,7 +69,9 @@ namespace Extraction.Layer.File.FullTreeOperators
             }
         }
 
-        private Tuple<int, int> FindFirstMatch(PartedString toBeShortend, PartedString patternContainer)
+
+
+        private static Tuple<int, int> FindFirstMatch(PartedString toBeShortend, PartedString patternContainer)
         {
             for (int i = 0; i < toBeShortend.Count; i++)
             {

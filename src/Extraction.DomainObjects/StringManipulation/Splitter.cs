@@ -9,7 +9,7 @@ namespace Extraction.DomainObjects.StringManipulation
     {
         public static List<string> ComplexSplit(string source)
         { 
-            StringBuilder builder = new StringBuilder(source);
+            StringBuilder builder = new StringBuilder(source.ToLowerInvariant());
 
             var bracesBlocks = SplitStringInBracesBlocks(builder);
             var withoutBraces = builder.ToString();

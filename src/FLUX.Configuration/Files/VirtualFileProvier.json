@@ -4,8 +4,8 @@
   },
 
   "Debug": {
-    "RootNames": [ "Metallica", "Ashbury Heights", "Amduscia" ],
-    "SubRootPos": [3]
+    "RootNames": [ "Ashbury Heights" ],
+    "SubRootPos": [ ]
   },
   "Sources": [
     {

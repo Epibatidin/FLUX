@@ -21,7 +21,7 @@ namespace Extraction.Tests.DomainObjects
         {
             var result = Splitter.ComplexSplit("01 - A Pleasure Without End");
 
-            Assert.That(result[1], Is.EqualTo("A"));
+            Assert.That(result[1], Is.EqualTo("a"));
         }
 
         [TestCase("(1)")]
@@ -101,10 +101,10 @@ namespace Extraction.Tests.DomainObjects
             var splitted = Splitter.ComplexSplit("07 - Animal Instinct(Part 2)(Nightmares Of Conscience)");
 
             Assert.That(splitted[0], Is.EqualTo("07"));
-            Assert.That(splitted[1], Is.EqualTo("Animal"));
-            Assert.That(splitted[2], Is.EqualTo("Instinct"));
-            Assert.That(splitted[3], Is.EqualTo("(Part 2)"));
-            Assert.That(splitted[4], Is.EqualTo("(Nightmares Of Conscience)"));
+            Assert.That(splitted[1], Is.EqualTo("animal"));
+            Assert.That(splitted[2], Is.EqualTo("instinct"));
+            Assert.That(splitted[3], Is.EqualTo("(part 2)"));
+            Assert.That(splitted[4], Is.EqualTo("(nightmares of conscience)"));
 
         }
     }

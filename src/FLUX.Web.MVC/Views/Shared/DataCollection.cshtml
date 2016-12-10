@@ -17,10 +17,17 @@ der rest wie ggewohn span
 
 wenn der erste wert null ist 
 nimm original value*@ 
-
-@for (int i = 0; i < Model.LayerValues.Count; i++)
+@if (Model.LayerValues.Count == 0)
 {
-    var layer = Model.LayerValues[i];
+    <span>
+        <input type="text" name="@Model.PostbackName" class="inValid" />
+    </span>
+}
+else
+{
+    for (int i = 0; i < Model.LayerValues.Count; i++)
+    {
+        var layer = Model.LayerValues[i];
 
     <span class="layer@(i)">
 
@@ -39,4 +46,5 @@ nimm original value*@
             <text>@layer</text>
         }
     </span>
+    }
 }

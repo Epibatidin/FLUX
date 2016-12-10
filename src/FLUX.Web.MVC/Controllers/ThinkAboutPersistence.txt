@@ -1,0 +1,52 @@
+﻿blubber 
+
+1. file to file 
+
+2. xml to validation 
+
+
+
+
+1. file to file 
+	das problem ist das der mp3 tager einen einfluss hat 
+	aber sollte ich nicht einfach das zeug auf die platte schreiben 
+	und fertig sein. 
+
+	erweitern wenns soweit is und nich vorher schon irgendnen foo rein denken 
+
+	irgendnen interface zum registrieren und dann den filestream modifizieren 
+
+	done 
+	
+	tu es ! 
+	jetzt !
+
+
+2. xml to validation is quasi fertig 
+
+
+3. file to xml 
+	so was 
+	file geraffel in xml file schreiben zur späteren validierung 
+
+	benötigt sowohl tag data als auch file data 
+	über welches interface zur verfügung stellen ? 
+
+	das file geblubber macht quasi gar nix 
+	nur den filestream zur verfügung stellen 
+
+	diesen filestream muss ich in die tag extractions schicht stopfen 
+	das führt aber alles zu weit 
+	das kommt alles erst später 
+	ich brauch kkein intermediate mapping in tag extraction wie in file extraction 
+	ich kann den kompletten container behaltne ! (=> serialieable ? session)
+	nee das funzt irgendwie nich ...
+	oder nochmal extrahieren ? 
+
+
+
+
+
+
+
+
