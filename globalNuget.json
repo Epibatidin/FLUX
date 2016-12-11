@@ -38,6 +38,8 @@
     "Microsoft.Extensions.Logging.Console": "1.0.0",
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
 
+    "Microsoft.Extensions.PropertyHelper.Sources": "1.2.0-preview1-22716",
+
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
 
     "Newtonsoft.Json": "9.0.1",

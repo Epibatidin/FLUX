@@ -34,7 +34,7 @@ namespace FLUX.Web.MVC.Controllers
 
             // search index.xml 
             // select name 
-            var writer = new XmlSongWriter();
+            var writer = new XmlSongWriter(new DataAccess.XMLStub.Config.XMLSourcesCollection());
             writer.Persist(extractionContext.SourceValues, songs);
             
             return RedirectToAction("Index", "Home");
