@@ -2,9 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using FLUX.DomainObjects;
 using System.Threading.Tasks;
-using DataAccess.XMLStub;
-using DataAccess.FileSystem;
 using FLUX.Interfaces.Web;
+using DataAccess.Interfaces;
 
 namespace FLUX.Web.MVC.Controllers
 {
@@ -13,12 +12,15 @@ namespace FLUX.Web.MVC.Controllers
         IVirtualFilePeristentHelper _persistentHelper;
         IExtractionContextBuilder _contextBuilder;
         IPostbackSongBuilder _songBuilder;
+        ISongToFileSystemWriter _writer;
 
-        public PersistController(IVirtualFilePeristentHelper persistentHelper, IExtractionContextBuilder contextBuilder, IPostbackSongBuilder songBuilder)
+        public PersistController(IVirtualFilePeristentHelper persistentHelper,
+            IExtractionContextBuilder contextBuilder, IPostbackSongBuilder songBuilder, ISongToFileSystemWriter writer)
         {
             _persistentHelper = persistentHelper;
             _contextBuilder = contextBuilder;
             _songBuilder = songBuilder;
+            _writer = writer;
         }
 
         [HttpPost]
@@ -35,11 +37,10 @@ namespace FLUX.Web.MVC.Controllers
 
             // search index.xml 
             // select name 
-            var writer = new XmlSongWriter(new DataAccess.XMLStub.Config.XMLSourcesCollection());
-            writer.Persist(extractionContext.SourceValues, songs);
+            //var writer = new XmlSongWriter(new DataAccess.XMLStub.Config.XMLSourcesCollection());
+            //writer.Persist(extractionContext.SourceValues, songs);
 
-            var blubber = new SongToFileSystemWriter();
-            blubber.Write(extractionContext.StreamReader, extractionContext.SourceValues, songs);
+            _writer.Write(extractionContext.StreamReader, extractionContext.SourceValues, songs);
 
 
             return RedirectToAction("Index", "Home");

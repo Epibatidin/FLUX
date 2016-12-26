@@ -14,6 +14,9 @@ namespace DataAccess.FileSystem.Config
         public override void RegisterServices(IServiceCollection services)
         {
             services.AddSingleton<IVirtualFileFactory, DirectoryVirtualFileFactory>();
+
+            services.AddSingleton<IPatternProvider, PatternProvider>();
+            services.AddSingleton<ISongToFileSystemWriter, SongToFileSystemWriter>();
         }
     }
 }

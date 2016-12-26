@@ -1,4 +1,5 @@
 ﻿using DataAccess.Interfaces;
+using DataStructure.Tree.Builder;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -6,19 +7,28 @@ using System.Linq;
 
 namespace DataAccess.FileSystem
 {
-    public class PatternProvider
+    public class SongToFileSystemWriter : ISongToFileSystemWriter
     {
-        public string ByLevel(int level, IExtractionValueFacade facade)
+        IPatternProvider _patternProvider;
+        ITreeBuilder _treeBuilder;
+
+        public SongToFileSystemWriter(IPatternProvider patternProvider, ITreeBuilder treeBuilder)
         {
-
-
-            return null;
+            _patternProvider = patternProvider;
+            _treeBuilder = treeBuilder;
         }
-    }
 
-    public class SongToFileSystemWriter
-    {        
         public void Write(IVirtualFileStreamReader streamReader, IEnumerable<IVirtualFile> vfs, IEnumerable<IExtractionValueFacade> songs)
+        {
+            var tree = _treeBuilder.BuildTreeFromCollection(songs, _patternProvider.GroupBy, _patternProvider.LevelBuilder);
+
+
+
+
+        }
+
+
+        public void Write_old(IVirtualFileStreamReader streamReader, IEnumerable<IVirtualFile> vfs, IEnumerable<IExtractionValueFacade> songs)
         {
             // 
             var filePath = @"D:\FluxWorkBenchFiles\Working\Result";
