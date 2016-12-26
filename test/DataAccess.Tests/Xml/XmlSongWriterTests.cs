@@ -13,7 +13,8 @@ namespace DataAccess.Tests.Xml
     {
         protected override XmlSongWriter CreateSUT()
         {
-            return new XmlSongWriter();                
+            return null;
+            //return new XmlSongWriter();                
         }
 
         public void should_return_stream_for_write_access()

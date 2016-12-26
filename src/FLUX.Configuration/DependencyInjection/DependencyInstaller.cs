@@ -32,6 +32,7 @@ namespace FLUX.Configuration.DependencyInjection
             container.AddSingleton<IExtractionContextBuilder, ExtractionContextBuilder>();
             container.AddSingleton<IConfigurationFormProcessor, ConfigurationFormProcessor>();
             container.AddSingleton<ILayerResultJoiner, LayerResultJoiner>();
+            container.AddSingleton<IPostbackSongBuilder, PostbackSongBuilder>();
         }
 
         public void RegisterHelpers(IServiceCollection container)

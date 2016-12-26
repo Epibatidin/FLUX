@@ -15,9 +15,7 @@ namespace DataAccess.FileSystem
         
         public Stream OpenStreamForReadAccess(IVirtualFile virtualFile)
         {
-            return null;
-
-            //return new FileStream(string.Concat(_rootDir,virtualFile.VirtualPath), FileMode.Open, FileAccess.Read);
+            return new FileStream(string.Concat(_rootDir, string.Join("\\" , virtualFile.PathParts)) + "." + virtualFile.Extension, FileMode.Open, FileAccess.Read);
         }
     }
 }

@@ -42,6 +42,7 @@ namespace FLUX.DomainObjects
         public string CD { get; set; }
 
         public int TrackNr { get; set; }
+
         [Required]
         public string SongName { get; set; }
 
@@ -60,6 +61,11 @@ namespace FLUX.DomainObjects
             _asValues[4] = Tuple.Create("Year", Year.ToString());
             _asValues[5] = Tuple.Create("TrackNr", TrackNr.ToString());
             return _asValues;
+        }
+
+        private void Set()
+        {
+
         }
     }
 }

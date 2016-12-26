@@ -6,6 +6,5 @@ namespace FLUX.Interfaces.Web
     {
         bool IsPostback(HttpContext context);
         bool IsPostback(HttpRequest context);
-
     }
 }

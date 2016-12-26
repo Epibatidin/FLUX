@@ -1,6 +1,4 @@
-﻿using Extraction.Interfaces;
-using System.Collections.Generic;
-using System;
+﻿using System.Collections.Generic;
 
 namespace FLUX.DomainObjects
 {
@@ -34,40 +32,9 @@ namespace FLUX.DomainObjects
         public int TrackNr { get; set; }
         public string SongName { get; set; }        
     }
-
-
-
-
+    
     public class PostbackTree
     {
-        public List<ArtistNode> Artists { get; set; } = new List<ArtistNode>();
-
-        public IList<PostbackSong> Flatten()
-        {
-            var builder = new PostbackSongBuilder();
-            var postBack = new List<PostbackSong>();
-
-            foreach (var artist in Artists)
-            {
-                builder.Add(artist);
-                foreach (var album in artist.Albums)
-                {
-                    builder.Add(album);
-                    foreach (var cd in album.Cds)
-                    {
-                        builder.Add(cd);
-                        foreach (var song in cd.Songs)
-                        {
-                            builder.Add(song);
-
-                            postBack.Add(builder.Current);
-                        }
-                    }
-                }
-            }
-
-            return postBack;
-        }
-
+        public List<ArtistNode> Artists { get; set; } = new List<ArtistNode>();        
     }
 }

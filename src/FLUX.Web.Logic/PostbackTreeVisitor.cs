@@ -1,20 +1,14 @@
-﻿using System;
+﻿using FLUX.Interfaces.Web;
+using DataAccess.Interfaces;
+using FLUX.DomainObjects;
 
-namespace FLUX.DomainObjects
+namespace FLUX.Web.Logic
 {
-    public interface IPostbackSongBuilder
-    {
-        void Add(ArtistNode artistNode);
-        void Add(AlbumNode albumNode);
-        void Add(CdNode cdNode);
-        void Add(SongNode songNode);
-    }
-
-    public class PostbackSongBuilder : IPostbackSongBuilder
+    public class PostbackTreeVisitor : IPostbackTreeVisitor
     {
         private PostbackSong _current;
 
-        public PostbackSong Current
+        public IExtractionValueFacade Current
         {
             get
             {
@@ -23,17 +17,16 @@ namespace FLUX.DomainObjects
                 _current = newSong;
                 return dummy;
             }
-        } 
-
-        public PostbackSongBuilder()
-        {
-            _current = new PostbackSong();                
         }
-
+        
+        public PostbackTreeVisitor()
+        {
+            _current = new PostbackSong();
+        }
 
         public void Add(CdNode cdNode)
         {
-            _current.CD = cdNode.CD;                
+            _current.CD = cdNode.CD;
         }
 
         public void Add(SongNode songNode)
@@ -46,18 +39,12 @@ namespace FLUX.DomainObjects
         public void Add(AlbumNode albumNode)
         {
             _current.Album = albumNode.Album;
-            _current.Year = albumNode.Year;                
+            _current.Year = albumNode.Year;
         }
 
         public void Add(ArtistNode artistNode)
         {
             _current.Artist = artistNode.Artist;
-        }
-    }
-
-
-    public interface IVisitablePostbackData
-    {
-        void Accept(IPostbackSongBuilder visitor);
+        }        
     }
 }
