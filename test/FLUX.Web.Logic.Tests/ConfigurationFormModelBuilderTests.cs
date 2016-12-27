@@ -1,4 +1,5 @@
-﻿using DataAccess.Interfaces;
+﻿using System;
+using DataAccess.Interfaces;
 using Extension.Test;
 using Facade.MVC;
 using FLUX.DomainObjects;
@@ -6,9 +7,6 @@ using FLUX.Interfaces.Web;
 using Microsoft.AspNetCore.Http;
 using Moq;
 using NUnit.Framework;
-using Ploeh.AutoFixture;
-using Xunit;
-using Assert = NUnit.Framework.Assert;
 
 namespace FLUX.Web.Logic.Tests
 {
@@ -20,14 +18,18 @@ namespace FLUX.Web.Logic.Tests
 
         protected override void Customize()
         {
-            _configurationProvider = Fixture.Freeze<Mock<IVirtualFileConfigurationReader>>();
-
+            _configurationProvider = FreezeMock<IVirtualFileConfigurationReader>();
             _modelBinder = FreezeMock<IModelBinderFacade>();
             _postbackHelper = FreezeMock<IPostbackHelper>();
-
         }
 
-        [Fact]
+
+        protected override ConfigurationFormProcessor CreateSUT()
+        {
+            throw new NotImplementedException();
+        }
+
+        [Test]
         public void should_return_new_formmodel()
         {
             var model = SUT.Build();
@@ -35,10 +37,10 @@ namespace FLUX.Web.Logic.Tests
             Assert.That(model, Is.TypeOf<ConfigurationFormModel>());
         }
 
-        [Fact]
+        [Test]
         public void should_get_available_virtual_file_provider_from_configuration_provider()
         {
-            var providerDO = Fixture.Create<AvailableVirtualFileProviderDo>();
+            var providerDO = Create<AvailableVirtualFileProviderDo>();
             _configurationProvider.Setup(c => c.ReadToDO()).Returns(providerDO);
 
             var model = SUT.Build();
@@ -46,10 +48,10 @@ namespace FLUX.Web.Logic.Tests
             _configurationProvider.Verify(c => c.ReadToDO());
         }
 
-        [Fact]
+        [Test]
         public void should_copy_available_provider_names_from_configuration_provider_result()
         {                               
-            var providerDO = Fixture.Create<AvailableVirtualFileProviderDo>();
+            var providerDO = Create<AvailableVirtualFileProviderDo>();
             _configurationProvider.Setup(c => c.ReadToDO()).Returns(providerDO);
 
             var model = SUT.Build();
@@ -58,7 +60,7 @@ namespace FLUX.Web.Logic.Tests
             Assert.That(model.VirtualFileProvider.ProviderNames, Is.EqualTo(providerDO.ProviderNames));
         }
 
-        [Fact]
+        [Test]
         public void should_invoke_model_binder_if_is_postback()
         {
             var controller = new Mock<HttpRequest>();

@@ -43,10 +43,10 @@ namespace Extension.Test
             //return Fixture.Freeze<Mock<TInterface>>();
         }
 
-        //protected TObject Create<TObject>()
-        //{
-        //    return Fixture.Create<TObject>();
-        //}
+        protected TObject Create<TObject>() where TObject : new()
+        {
+            return new TObject();                
+        }
 
         protected abstract TSystemUnderTest CreateSUT();        
     }

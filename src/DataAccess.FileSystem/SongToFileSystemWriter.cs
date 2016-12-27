@@ -29,6 +29,12 @@ namespace DataAccess.FileSystem
 
             var rootFolder = new DirectoryInfo(filePath);
 
+            while(pathIterator.MoveNext())
+            {
+
+            }
+
+
             int depth = 4;
             for (int i = 0; i < depth; i++)
             {

@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Moq;
-using Xunit;
+using NUnit.Framework;
 
 namespace FLUX.Web.Logic.Tests
 {
     public class PostbackHelperTests
     {
-        [Theory]
-        [InlineData("POST")]
-        [InlineData("pOsT")]
+        
+        [TestCase("POST")]
+        [TestCase("pOsT")]
         public void should_be_postback_for_(string value)
         {
             var context = new Mock<HttpContext>();
@@ -23,7 +23,7 @@ namespace FLUX.Web.Logic.Tests
             Assert.True(result);
         }
 
-        [Fact]
+        [Test]
         public void should_not_be_postback_for_get()
         {
             var context = new Mock<HttpContext>();

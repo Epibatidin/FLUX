@@ -8,9 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
-using Xunit;
-using Assert = NUnit.Framework.Assert;
-using Is = NUnit.Framework.Is;
+using NUnit.Framework;
 
 namespace FLUX.Web.Logic.Tests
 {
@@ -18,6 +16,18 @@ namespace FLUX.Web.Logic.Tests
     {
         private Mock<ISession> _session;
         private JsonSerializer _serializer;
+        
+        protected override VirtualFilePeristentHelper CreateSUT()
+        {
+            var httpContextAccessor = new Mock<IHttpContextAccessor>();
+
+            var httpContext = new Mock<HttpContext>();
+            httpContext.Setup(c => c.Session).Returns(_session.Object);
+
+            httpContextAccessor.Setup(c => c.HttpContext);
+
+            return new VirtualFilePeristentHelper(httpContextAccessor.Object);
+        }
 
         protected override void Customize()
         {
@@ -51,7 +61,7 @@ namespace FLUX.Web.Logic.Tests
             return true;
         }
 
-        [Fact]
+        [Test]
         public void should_take_dict_values_for_serialization()
         {
             var source = new VFile()
@@ -71,7 +81,7 @@ namespace FLUX.Web.Logic.Tests
         }
 
 
-        [Fact]
+        [Test]
         public void should_can_deserialize_dict_from_values()
         {
             var item0 = Create<VFile>();
