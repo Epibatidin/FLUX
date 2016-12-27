@@ -1,28 +1,29 @@
 {
+  "testRunner": "nunit",
   "version": "1.0.0-*",
   "frameworks": {
     "netcoreapp1.0": {
       "imports": [
         "dotnet5.6",
         "portable-net45+win8"
-      ]
+      ],
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "version": "1.0.1",
+          "type": "platform"
+        },
+        "NUnit": "3.5.0",
+        "dotnet-test-nunit": "3.4.0-beta-3",
+        "Moq": "4.6.38-alpha"
+      }
     }
   },
   "dependencies": {
-    "AutoFixture": "3.46.0",
-    "AutoFixture.AutoMoq": "3.46.0",
-    "NUnit": "3.5.0",
-    "Moq": "4.6.38-alpha",
-    "xunit": "2.1.0",
-    "xunit.runner.dnx": "2.1.0-rc1-build204",
-    "Microsoft.AspNet.Http.Extensions": "1.0.0-rc1-*",
+    "Microsoft.AspNetCore.Http.Extensions": "1.0.0",
     "Extension.Test": "1.0.0-*",
     "Facade.Session": "1.0.0-*",
     "DataAccess.Interfaces": "1.0.0-*",
     "DataAccess.FileSystem": "1.0.0-*",
     "DataAccess.XMLStub": "1.0.0-*"
-  },
-  "commands": {
-    "test": "xunit.runner.dnx"
   }
 }

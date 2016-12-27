@@ -7,11 +7,9 @@ using FLUX.Interfaces.Web;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.OptionsModel;
+using Microsoft.Extensions.Options;
 using Moq;
-using Xunit;
-using Is = NUnit.Framework.Is;
-using Assert = NUnit.Framework.Assert;
+using NUnit.Framework;
 
 namespace FLUX.Configuration.Tests.DependencyInjection
 {
@@ -41,13 +39,12 @@ namespace FLUX.Configuration.Tests.DependencyInjection
 
         }
 
-        [Theory]
-        [InlineData(typeof(IConfigurationFormProcessor))]
-        [InlineData(typeof(IVirtualFileConfigurationReader))]
+        [TestCase(typeof(IConfigurationFormProcessor))]
+        [TestCase(typeof(IVirtualFileConfigurationReader))]
         //[TestCase(typeof(IVirtualFileAccessorSectionGroupProvider))]
 
-        [InlineData(typeof(IPostbackHelper))]
-        [InlineData(typeof(IModelBinderFacade))]
+        [TestCase(typeof(IPostbackHelper))]
+        [TestCase(typeof(IModelBinderFacade))]
         public void should_can_resolve(Type componenType)
         {
             var result = _serviceprovider.GetService(componenType);

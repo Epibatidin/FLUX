@@ -6,15 +6,18 @@ using DataAccess.Interfaces;
 using Extension.Test;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Bson;
-using Xunit;
-using Assert = NUnit.Framework.Assert;
-using Is = NUnit.Framework.Is;
+using NUnit.Framework;
 
 namespace Facade.Tests
 {
     public class SerializerTests : FixtureBase<object>
     {
-        [Fact]
+        protected override object CreateSUT()
+        {
+            return null;
+        }
+
+        [Test]
         public void should_can_serialize_single_RealFile_as_json()
         {
             IVirtualFile file = Create<RealFile>();
@@ -29,7 +32,7 @@ namespace Facade.Tests
             Assert.That(file.PathParts, Is.EqualTo(deserialized.PathParts));
         }
 
-        [Fact]
+        [Test]
         public void should_can_serialize_single_SourceItem_as_json()
         {
             var file = Create<SourceItem>();
@@ -45,7 +48,7 @@ namespace Facade.Tests
             Assert.That(deserialized.TagData, Is.Not.Null);
         }
 
-        [Fact]
+        [Test]
         public void should_can_serialize_collection_SourceItem_as_json()
         {
             var file = Create<SourceItem>();
@@ -71,7 +74,7 @@ namespace Facade.Tests
             public string Property { get; set; }
         }
 
-        [Fact]
+        [Test]
         public void should_can_serialize_collection_SourceItem_as_binary()
         {
             var file = Create<SourceItem>();
@@ -96,8 +99,6 @@ namespace Facade.Tests
             Assert.That(file.Name, Is.EqualTo(deserialized.Name));
             Assert.That(file.VirtualPath, Is.EqualTo(deserialized.VirtualPath));
             Assert.That(deserialized.TagData, Is.Not.Null);
-
         }
-
     }
 }

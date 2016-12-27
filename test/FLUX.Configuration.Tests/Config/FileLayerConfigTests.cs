@@ -1,7 +1,5 @@
 ﻿using Extraction.Layer.File.Config;
-using Xunit;
-using Assert = NUnit.Framework.Assert;
-using Is = NUnit.Framework.Is;
+using NUnit.Framework;
 
 namespace FLUX.Configuration.Tests.Config
 {
@@ -12,7 +10,7 @@ namespace FLUX.Configuration.Tests.Config
            
         }
         
-        [Fact]
+        [Test]
         public void should_can_read_blacklist()
         {
             var blacklist = RetrieveFromConfig(c => c.BlackList);
@@ -20,7 +18,7 @@ namespace FLUX.Configuration.Tests.Config
             Assert.That(blacklist.Count, Is.GreaterThan(0));
         }
 
-        [Fact]
+        [Test]
         public void should_can_read_whitelist()
         {
             var blacklist = RetrieveFromConfig(c => c.WhiteList);

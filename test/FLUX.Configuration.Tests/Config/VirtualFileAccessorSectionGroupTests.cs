@@ -1,7 +1,5 @@
 ﻿using DataAccess.Base.Config;
-using Xunit;
-using Assert = NUnit.Framework.Assert;
-using Is = NUnit.Framework.Is;
+using NUnit.Framework;
 
 namespace FLUX.Configuration.Tests.Config
 {
@@ -11,7 +9,7 @@ namespace FLUX.Configuration.Tests.Config
         {         
         }
         
-        [Fact]
+        [Test]
         public void should_can_read_config_file()
         {
             var build = RetrieveFromConfig<VirtualFileAccessorSectionGroup>();
@@ -19,7 +17,7 @@ namespace FLUX.Configuration.Tests.Config
             Assert.That(build.Value, Is.Not.Null);
         }
 
-        [Fact]
+        [Test]
         public void should_can_bind_debug_config()
         {
             var debug = RetrieveFromConfig(r => r.Debug);
@@ -29,7 +27,7 @@ namespace FLUX.Configuration.Tests.Config
             Assert.That(debug.SubRootPos, Is.Not.Null);
         }
 
-        [Fact]
+        [Test]
         public void should_can_bind_general_config()
         {
             var debug = RetrieveFromConfig(r => r.General);
@@ -37,7 +35,7 @@ namespace FLUX.Configuration.Tests.Config
             Assert.That(debug.Active, Is.Not.Empty);
         }
 
-        [Fact]
+        [Test]
         public void should_can_bind_sources_elements()
         {
             var debug = RetrieveFromConfig(r => r.Sources);
@@ -45,7 +43,7 @@ namespace FLUX.Configuration.Tests.Config
             Assert.That(debug.Length, Is.EqualTo(2));
         }
 
-        [Fact]
+        [Test]
         public void should_can_bind_source_values()
         {
             var debug = RetrieveFromConfig(r => r.Sources);

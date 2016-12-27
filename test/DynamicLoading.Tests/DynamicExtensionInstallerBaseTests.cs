@@ -4,8 +4,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using NUnit.Framework;
-using Xunit;
-using Assert = NUnit.Framework.Assert;
 
 namespace DynamicLoading.Tests
 {
@@ -40,7 +38,13 @@ namespace DynamicLoading.Tests
             _configurationBinder = FreezeMock<IConfigurationBinderFacade>();
         }
 
-        [Fact]
+
+        protected override DynamicExtensionInstallerImpl CreateSUT()
+        {
+            return new DynamicExtensionInstallerImpl();
+        }
+
+        [Test]
         public void should_build_configuration_from_options()
         {
             var configuration = new Mock<IConfiguration>();
@@ -52,7 +56,7 @@ namespace DynamicLoading.Tests
             _configurationBinder.Verify(c => c.Bind<VirtualFileRootConfigurationDummy>(configuration.Object, "sectionName"));
         }
 
-        [Fact]
+        [Test]
         public void should_call_register_services()
         {
             var configuration = new Mock<IConfiguration>();

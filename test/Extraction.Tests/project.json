@@ -18,7 +18,7 @@
       }
     }
   },
-  "dependencies": {   
+  "dependencies": {
     "Extension.Test": "1.0.0-*",
     "DataAccess.Base": "1.0.0-*",
     "DataAccess.FileSystem": {

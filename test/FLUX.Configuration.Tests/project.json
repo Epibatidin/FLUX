@@ -1,20 +1,24 @@
 {
+  "testRunner": "nunit",
   "version": "1.0.0-*",
   "frameworks": {
     "netcoreapp1.0": {
       "imports": [
         "dotnet5.6",
         "portable-net45+win8"
-      ]
+      ],
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "version": "1.0.1",
+          "type": "platform"
+        },
+        "NUnit": "3.5.0",
+        "dotnet-test-nunit": "3.4.0-beta-3",
+        "Moq": "4.6.38-alpha"
+      }
     }
   },
   "dependencies": {
-    "xunit": "2.1.0",
-    "xunit.runner.dnx": "2.1.0-rc1-build204",
-    "Moq": "4.6.38-alpha",
-    "AutoFixture": "3.46.0",
-    "AutoFixture.AutoMoq": "3.46.0",
-    "NUnit": "3.5.0",
     "Extension.Test": "1.0.0-*",
     "DataAccess.Base": "1.0.0-*",
     "DataAccess.FileSystem": {
@@ -27,12 +31,9 @@
     "Extraction.Layer.File": "1.0.0-*",
     "FLUX.Configuration": "1.0.0-*",
     "Microsoft.Extensions.DependencyInjection": "1.0.0",
-    "Microsoft.Extensions.OptionsModel": "1.0.0-rc1-*",
+    "Microsoft.Extensions.Options": "1.0.0",
     "Microsoft.Extensions.Configuration": "1.0.0",
-    "Microsoft.Extensions.Configuration.FileProviderExtensions": "1.0.0-rc1-*",
+    "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0",
     "Microsoft.Extensions.Configuration.Json": "1.0.0"
-  },
-  "commands": {
-    "test": "xunit.runner.dnx"
   }
 }

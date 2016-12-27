@@ -1,7 +1,5 @@
 using Extraction.Base.Config;
 using NUnit.Framework;
-using Xunit;
-using Assert = NUnit.Framework.Assert;
 
 namespace FLUX.Configuration.Tests.Config
 {
@@ -12,7 +10,7 @@ namespace FLUX.Configuration.Tests.Config
 
         }
         
-        [Fact]
+        [Test]
         public void should_can_read_config_file()
         {
             var build = RetrieveFromConfig<ExtractionLayerConfig>();
@@ -20,7 +18,7 @@ namespace FLUX.Configuration.Tests.Config
             Assert.That(build.Value, Is.Not.Null);
         }
 
-        [Fact]
+        [Test]
         public void should_not_be_async()
         {
             var bound = RetrieveFromConfig(c => c.ASync);
@@ -28,7 +26,7 @@ namespace FLUX.Configuration.Tests.Config
             Assert.That(bound, Is.False);
         }
 
-        [Fact]
+        [Test]
         public void should_can_read_layer_items()
         {
             var bound = RetrieveFromConfig(c => c.Layers);
@@ -37,7 +35,7 @@ namespace FLUX.Configuration.Tests.Config
         }
 
 
-        [Fact]
+        [Test]
         public void should_not_be_empty_item()
         {
             var bound = RetrieveFromConfig(c => c.Layers[0]);

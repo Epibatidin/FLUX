@@ -18,7 +18,7 @@
       }
     }
   },
-  "dependencies": {   
+  "dependencies": {
     "Extension.Test": "1.0.0-*",
     "Facade.MVC": "1.0.0-*",
     "DataAccess.Interfaces": "1.0.0-*",
