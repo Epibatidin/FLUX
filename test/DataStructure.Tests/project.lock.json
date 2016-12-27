@@ -2740,8 +2740,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v1.0",
         "dependencies": {
-          "Moq": "4.6.38-alpha",
-          "NUnit": "3.5.0"
+          "Microsoft.NETCore.App": "1.0.1",
+          "dotnet-test-nunit": "3.4.0-beta-3"
         },
         "compile": {
           "netcoreapp1.0/Extension.Test.dll": {}
@@ -8008,13 +8008,13 @@
     "": [
       "DataStructure.Tree >= 1.0.0-*",
       "Extension.Test >= 1.0.0-*",
-      "Microsoft.Extensions.Configuration >= 1.0.0",
+      "Microsoft.Extensions.Configuration >= 1.0.0"
+    ],
+    ".NETCoreApp,Version=v1.0": [
+      "Microsoft.NETCore.App >= 1.0.1",
       "Moq >= 4.6.38-alpha",
       "NUnit >= 3.5.0",
       "dotnet-test-nunit >= 3.4.0-beta-3"
-    ],
-    ".NETCoreApp,Version=v1.0": [
-      "Microsoft.NETCore.App >= 1.0.1"
     ]
   },
   "tools": {},

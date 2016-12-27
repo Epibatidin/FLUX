@@ -40,7 +40,7 @@ namespace DataAccess.FileSystem
             var pathDataHelper = new PathDataHelper();
 
             var root = new RealDirectory(rootPath);
-            int id = 0;
+            
             var temp = root.GetDirectories();
             IEnumerable<IVirtualDirectory> dirs;
             if (context.OverrideRootnames == null)

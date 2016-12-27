@@ -11,7 +11,6 @@ namespace Extraction.Layer.File
 {
     public class FileStructureDataExtractionLayer : IDataExtractionLayer
     {
-        private readonly IEnumerable<IPartedStringOperation> _cleaners;
         private readonly IEnumerable<IFullTreeOperator> _treeOperators;
 
         private readonly ITreeByKeyAccessorBuilder _byTreeAccessorBuilder;

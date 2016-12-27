@@ -10,22 +10,28 @@ namespace FLUX.Web.Logic
         public IList<IExtractionValueFacade> Flatten(PostbackTree postBackTree)
         {
             var builder = new PostbackTreeVisitor();
+
+            return FlattenInternal(postBackTree, builder);
+        }
+
+        public IList<IExtractionValueFacade> FlattenInternal(PostbackTree postBackTree, IPostbackTreeVisitor pseudoVisitor)
+        {
             var postBack = new List<IExtractionValueFacade>();
 
             foreach (var artist in postBackTree.Artists)
             {
-                builder.Add(artist);
+                pseudoVisitor.Add(artist);
                 foreach (var album in artist.Albums)
                 {
-                    builder.Add(album);
+                    pseudoVisitor.Add(album);
                     foreach (var cd in album.Cds)
                     {
-                        builder.Add(cd);
+                        pseudoVisitor.Add(cd);
                         foreach (var song in cd.Songs)
                         {
-                            builder.Add(song);
+                            pseudoVisitor.Add(song);
 
-                            postBack.Add(builder.Current);
+                            postBack.Add(pseudoVisitor.Current);
                         }
                     }
                 }
@@ -33,5 +39,6 @@ namespace FLUX.Web.Logic
 
             return postBack;
         }
+
     }
 }

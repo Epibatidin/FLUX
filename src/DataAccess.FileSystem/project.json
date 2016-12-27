@@ -12,7 +12,6 @@
     "System.Linq": "4.3.0",
     "System.IO": "4.3.0",
     "System.IO.FileSystem": "4.3.0",
-
     "Extension.IEnumerable": "1.0.0-*",
     "DynamicLoading": "1.0.0-*",
     "DataStructure.Tree": "1.0.0-*",

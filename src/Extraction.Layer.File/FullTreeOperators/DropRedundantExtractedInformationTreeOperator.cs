@@ -34,8 +34,6 @@ namespace Extraction.Layer.File.FullTreeOperators
 
         public void RemoveLongestMatch(PartedString toBeShortend, PartedString patternContainer)
         {
-            bool foundMismatchAfterMatch = false;
-
             var pos = FindFirstMatch(toBeShortend, patternContainer);
             if (pos != null)
             {

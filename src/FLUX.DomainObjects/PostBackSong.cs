@@ -8,8 +8,6 @@ namespace FLUX.DomainObjects
 {
     public class PostbackSong : ISong, IExtractionValueFacade
     {
-        private PostbackSong current;
-
         public PostbackSong()
         {
 
@@ -61,11 +59,6 @@ namespace FLUX.DomainObjects
             _asValues[4] = Tuple.Create("Year", Year.ToString());
             _asValues[5] = Tuple.Create("TrackNr", TrackNr.ToString());
             return _asValues;
-        }
-
-        private void Set()
-        {
-
-        }
+        }        
     }
 }
