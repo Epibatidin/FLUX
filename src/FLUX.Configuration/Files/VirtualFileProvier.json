@@ -29,14 +29,15 @@
     "Root": "D:\\FluxWorkBenchFiles",
     "Folder": [
       {
-        "Name":"Normal",
-        "SubFolder":"Working"
+        "Name": "Normal",
+        "SubFolder": "Working"
       },
       {
-        "Name" :"MOQ",
-        "SubFolder" : "MOQ"
+        "Name": "MOQ",
+        "SubFolder": "MOQ"
       }
-    ]
+    ],
+    "WriterPattern": [ "{Artist}",  "{Year} - {Album}" , "{CD}", "{TrackNr} - {SongName} - {Artist}" ]
   }
 }  
 

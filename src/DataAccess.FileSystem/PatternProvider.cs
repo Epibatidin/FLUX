@@ -5,15 +5,32 @@ namespace DataAccess.FileSystem
 {
     public class PatternProvider : IPatternProvider
     {
-        public string GroupBy(IExtractionValueFacade facade, int lvl)
-        {
-            return null;
+        string[] Pattern;
 
+
+        public PatternProvider()
+        {
+            Pattern = new string[4];
+
+            Pattern[0] = "{Artist}";
+            Pattern[1] = "{Year} - {Album}";
+            Pattern[2] = "{CD}";
+            Pattern[3] = "{TrackNr} - {SongName} - {Artist}";
         }
 
-        public FileWritePatternPartHolder LevelBuilder(IExtractionValueFacade facade, int lvl)
+
+        public string FormattedLevelValue(IExtractionValueFacade facade, int lvl)
         {
-            return null;
+            // lalala 
+            // parts anhand der pattern einsetzen und zurück geben 
+
+            var format = Pattern[lvl];
+
+            foreach (var value in facade.ToValues())
+            {
+                format.Replace("{" + value.Item1 + "}", value.Item2);
+            }
+            return format;
         }
     }
 }

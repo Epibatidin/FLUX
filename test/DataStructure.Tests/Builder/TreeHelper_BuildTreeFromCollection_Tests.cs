@@ -2,22 +2,16 @@
 using DataStructure.Tree;
 using DataStructure.Tree.Builder;
 using NUnit.Framework;
-using Assert = NUnit.Framework.Assert;
-using Is = NUnit.Framework.Is;
+using Extension.Test;
 
 namespace DataStructure.Tests.Builder
 {
-    [TestFixture]
-    public class TreeHelper_BuildTreeFromCollection_Tests
+    public class TreeHelper_BuildTreeFromCollection_Tests : FixtureBase<TreeBuilder>
     {
-        private TreeBuilder SUT;
-
-        [SetUp]
-        public void Setup()
+        protected override TreeBuilder CreateSUT()
         {
-            SUT = new TreeBuilder();
+            return new TreeBuilder();
         }
-
 
         public TreeItem<SomeItem> Act(IList<SomeItem> someItems)
         {
@@ -60,8 +54,7 @@ namespace DataStructure.Tests.Builder
             Assert.That(tree[0][1].Value, Is.SameAs(list[1]));
 
             Assert.That(tree[1].Value, Is.SameAs(list[2]));
-
-
+           
 
             Assert.That(tree[1][0].Value, Is.SameAs(list[2]));
             Assert.That(tree[1][1].Value, Is.SameAs(list[3]));
@@ -197,5 +190,6 @@ namespace DataStructure.Tests.Builder
             Assert.That(gtValue.KnownPathes.Count, Is.EqualTo(1));
             Assert.That(gtValue.ActivePath.Path, Is.EqualTo(new[] { 0, 0, 2 }));
         }
+
     }
 }

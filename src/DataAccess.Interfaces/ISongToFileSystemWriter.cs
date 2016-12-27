@@ -4,6 +4,6 @@ namespace DataAccess.Interfaces
 {
     public interface ISongToFileSystemWriter
     {
-        void Write(IVirtualFileStreamReader streamReader, IEnumerable<IVirtualFile> vfs, IEnumerable<IExtractionValueFacade> songs)
+        void Write(IVirtualFileStreamReader streamReader, IEnumerable<IVirtualFile> vfs, IEnumerable<IExtractionValueFacade> songs);
     }
 }

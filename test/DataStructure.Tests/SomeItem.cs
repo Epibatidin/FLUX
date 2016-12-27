@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DataStructure.Tests.Builder
+namespace DataStructure.Tests
 {
     public class SomeItem
     {

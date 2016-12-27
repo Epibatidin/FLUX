@@ -1,5 +1,6 @@
 ﻿using DataAccess.Interfaces;
 using DataStructure.Tree.Builder;
+using DataStructure.Tree.Iterate;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,8 +21,21 @@ namespace DataAccess.FileSystem
 
         public void Write(IVirtualFileStreamReader streamReader, IEnumerable<IVirtualFile> vfs, IEnumerable<IExtractionValueFacade> songs)
         {
-            var tree = _treeBuilder.BuildTreeFromCollection(songs, _patternProvider.GroupBy, _patternProvider.LevelBuilder);
+            var tree = _treeBuilder.BuildTreeFromCollection(songs, _patternProvider.FormattedLevelValue, _patternProvider.FormattedLevelValue);
 
+            var pathIterator = new PathEnumerator<string>(tree);
+
+            var filePath = @"D:\FluxWorkBenchFiles\Working\Result";
+
+            var rootFolder = new DirectoryInfo(filePath);
+
+            int depth = 4;
+            for (int i = 0; i < depth; i++)
+            {
+
+
+
+            }
 
 
 
