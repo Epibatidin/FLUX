@@ -4,9 +4,9 @@ using NUnit.Framework;
 
 namespace FLUX.Web.Logic.Tests
 {
+    [TestFixture]
     public class PostbackHelperTests
-    {
-        
+    {        
         [TestCase("POST")]
         [TestCase("pOsT")]
         public void should_be_postback_for_(string value)

@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Moq;
 using NUnit.Framework;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FLUX.Configuration.Tests.DependencyInjection
 {
@@ -26,13 +27,20 @@ namespace FLUX.Configuration.Tests.DependencyInjection
 
             _configurationRoot = new Mock<IConfigurationRoot>();
 
+            AddMock<IOptions<MvcOptions>>();
+
+            var mvcOptionsMock = new Mock<IOptions<MvcOptions>>();
+            mvcOptionsMock.Setup(c => c.Value).Returns(new MvcOptions());
+
+            _container.Add(new ServiceDescriptor(typeof(IOptions<MvcOptions>), mvcOptionsMock.Object));
+
             AddMock<IOptions<VirtualFileAccessorSectionGroup>>();
             AddMock<IHttpContextAccessor>();
 
             installer.Install(_container, _configurationRoot.Object);
             _serviceprovider = _container.BuildServiceProvider();
         }
-
+        
         private void AddMock<TInterface>() where TInterface : class
         {
             _container.Add(new ServiceDescriptor(typeof(TInterface), new Mock<TInterface>().Object));

@@ -5,7 +5,7 @@ namespace FLUX.Configuration.Tests.Config
 {
     public class VirtualFileAccessorSectionGroupTests : ConfigurationTestBase<VirtualFileAccessorSectionGroup>
     {
-        public VirtualFileAccessorSectionGroupTests() : base(@"D:\Develop\FLUX\src\FLUX.Configuration\Files\VirtualFileProvier.json", null)
+        public VirtualFileAccessorSectionGroupTests() : base(@"D:\Develop\FLUX\test\FLUX.Configuration.Tests\Files\VirtualFileProvier.json", null)
         {         
         }
         
@@ -31,7 +31,7 @@ namespace FLUX.Configuration.Tests.Config
         public void should_can_bind_general_config()
         {
             var debug = RetrieveFromConfig(r => r.General);
-
+            
             Assert.That(debug.Active, Is.Not.Empty);
         }
 

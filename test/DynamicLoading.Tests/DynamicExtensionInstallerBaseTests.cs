@@ -35,13 +35,20 @@ namespace DynamicLoading.Tests
 
         protected override void Customize()
         {
+            var config = new VirtualFileRootConfigurationDummy();
+
             _configurationBinder = FreezeMock<IConfigurationBinderFacade>();
+            _configurationBinder.Setup(c => c.Bind<VirtualFileRootConfigurationDummy>(It.IsAny<IConfiguration>(), It.IsAny<string>())).Returns(config);
         }
-
-
+        
         protected override DynamicExtensionInstallerImpl CreateSUT()
         {
             return new DynamicExtensionInstallerImpl();
+        }
+
+        protected override void PostBuild()
+        {
+            SUT.ConfigurationBinder = _configurationBinder.Object;
         }
 
         [Test]

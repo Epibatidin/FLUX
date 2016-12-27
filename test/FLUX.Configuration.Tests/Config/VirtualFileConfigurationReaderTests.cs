@@ -28,9 +28,13 @@ namespace FLUX.Configuration.Tests.Config
             
 
             _firstRootConfig = Create<VirtualFileRootConfiguration>();
-            _secondRootConfig = Create<VirtualFileRootConfiguration>();
+            _firstRootConfig.Keys = new string[0];
+            _firstRootConfig.SectionName = "NotNull";
 
-           
+            _secondRootConfig = Create<VirtualFileRootConfiguration>();
+            _secondRootConfig.Keys = new string[0];
+
+
 
             //Fixture.Register<IEnumerable<IVirtualFileRootConfiguration>>(() => configs);
         }
@@ -39,6 +43,10 @@ namespace FLUX.Configuration.Tests.Config
         {
             var virtualFileSectionGroup = FreezeMock<IOptions<VirtualFileAccessorSectionGroup>>();
             _virtualFileAccessorSectionGroup = Create<VirtualFileAccessorSectionGroup>();
+            _virtualFileAccessorSectionGroup.General = new GeneralSection()
+            {
+                Active = "NotNull"
+            };
             virtualFileSectionGroup.Setup(c => c.Value).Returns(_virtualFileAccessorSectionGroup);
 
             var configs = new List<IVirtualFileRootConfiguration>();

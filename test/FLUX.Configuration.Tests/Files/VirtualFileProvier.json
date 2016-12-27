@@ -1,0 +1,43 @@
+{
+  "General": {
+    "Active": "XMLSource"
+  },
+
+  "Debug": {
+    "RootNames": [ "Ashbury Heights" ],
+    "SubRootPos": [1,2 ]
+  },
+  "Sources": [
+    {
+      "SetionName": "Directory",
+      "Type": "DataAccess.FileSystem.Config.FileDataAccessInstaller, DataAccess.FileSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "SetionName": "XML",
+      "Type": "DataAccess.XMLStub.Config.XMLSourcesInstaller, DataAccess.XMLStub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+    }
+  ],
+  "XML": {
+    "FolderForPersist": "D:\\FluxWorkBenchFiles\\XML\\XMLSourceProviderSource",
+    "XmlSources": [
+      {
+        "Name": "XMLSource"
+      }
+    ]
+  },
+  "Directory": {
+    "Root": "D:\\FluxWorkBenchFiles",
+    "Folder": [
+      {
+        "Name": "Normal",
+        "SubFolder": "Working"
+      },
+      {
+        "Name": "MOQ",
+        "SubFolder": "MOQ"
+      }
+    ],
+    "WriterPattern": [ "{Artist}",  "{Year} - {Album}" , "{CD}", "{TrackNr} - {SongName} - {Artist}" ]
+  }
+}  
+

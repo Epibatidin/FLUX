@@ -36,6 +36,7 @@ namespace Facade.Tests
         public void should_can_serialize_single_SourceItem_as_json()
         {
             var file = Create<SourceItem>();
+            file.TagData = new TagData();
 
             var serialzed = JsonConvert.SerializeObject(file);
 
@@ -52,6 +53,7 @@ namespace Facade.Tests
         public void should_can_serialize_collection_SourceItem_as_json()
         {
             var file = Create<SourceItem>();
+            file.TagData = new TagData();
             IList<IVirtualFile> collection = new List<IVirtualFile>()
             {
                 file,
@@ -74,14 +76,31 @@ namespace Facade.Tests
             public string Property { get; set; }
         }
 
+        private SourceItem BuildSourceItem()
+        {
+            var sourceItem = Create<SourceItem>();
+            sourceItem.TagData = new TagData()
+            {
+                Begin = new byte[] { 1, 2 },
+                End = new byte[] { 3, 4 },
+                ContentLength = 7
+            };
+            return sourceItem;
+        }
+
+
         [Test]
         public void should_can_serialize_collection_SourceItem_as_binary()
         {
-            var file = Create<SourceItem>();
+            var file = BuildSourceItem();
+            file.ID = 2;
+            file.Name = "sdf";
+            var source = BuildSourceItem();
+
+
             var collection = new List<SourceItem>()
             {
-                Create<SourceItem>(),
-                file
+                file,source
             };
 
             var jsonSerializer = JsonSerializer.CreateDefault(new JsonSerializerSettings());
@@ -93,7 +112,7 @@ namespace Facade.Tests
 
             var reader = new BsonReader(memoryStream);
             reader.ReadRootValueAsArray = true;
-            var deserialized = jsonSerializer.Deserialize<SourceItem[]>(reader)[1];
+            var deserialized = jsonSerializer.Deserialize<SourceItem[]>(reader)[0];
 
             Assert.That(file.ID, Is.EqualTo(deserialized.ID));
             Assert.That(file.Name, Is.EqualTo(deserialized.Name));
