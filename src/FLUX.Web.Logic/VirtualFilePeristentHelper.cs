@@ -19,9 +19,24 @@ namespace FLUX.Web.Logic
         {
             _httpContextAccessor = httpContextAccessor;
             _serializer = JsonSerializer.CreateDefault();
+
+            SessionAccessor = GetSession;
         }
 
-        private ISession Session => _httpContextAccessor.HttpContext.Session;
+        public Func<ISession> SessionAccessor { get; set; }
+
+        private ISession GetSession()
+        {
+             return _httpContextAccessor.HttpContext.Session;
+        }
+
+        private ISession Session
+        {
+            get
+            {
+                return SessionAccessor();
+            }
+        }
 
         public void SaveSource(IList<IVirtualFile> sourceData)
         {

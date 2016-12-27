@@ -7,6 +7,7 @@ using FLUX.Interfaces.Web;
 using Microsoft.AspNetCore.Http;
 using Moq;
 using NUnit.Framework;
+using FLUX.Interfaces;
 
 namespace FLUX.Web.Logic.Tests
 {
@@ -19,6 +20,9 @@ namespace FLUX.Web.Logic.Tests
         protected override void Customize()
         {
             _configurationProvider = FreezeMock<IVirtualFileConfigurationReader>();
+            _configurationProvider.Setup(c => c.ReadToDO()).Returns(new AvailableVirtualFileProviderDo());
+
+
             _modelBinder = FreezeMock<IModelBinderFacade>();
             _postbackHelper = FreezeMock<IPostbackHelper>();
         }
@@ -26,7 +30,14 @@ namespace FLUX.Web.Logic.Tests
 
         protected override ConfigurationFormProcessor CreateSUT()
         {
-            throw new NotImplementedException();
+            var httpContextAccessor = new Mock<IHttpContextAccessor>();
+
+            var vitualFilePersistenceHelper = new Mock<IVirtualFilePeristentHelper>();
+
+            return new ConfigurationFormProcessor(_configurationProvider.Object, _postbackHelper.Object,
+                _modelBinder.Object,
+                httpContextAccessor.Object,
+                vitualFilePersistenceHelper.Object); 
         }
 
         [Test]

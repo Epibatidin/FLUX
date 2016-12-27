@@ -19,14 +19,9 @@ namespace FLUX.Web.Logic.Tests
         
         protected override VirtualFilePeristentHelper CreateSUT()
         {
-            var httpContextAccessor = new Mock<IHttpContextAccessor>();
-
-            var httpContext = new Mock<HttpContext>();
-            httpContext.Setup(c => c.Session).Returns(_session.Object);
-
-            httpContextAccessor.Setup(c => c.HttpContext);
-
-            return new VirtualFilePeristentHelper(httpContextAccessor.Object);
+            var sut =  new VirtualFilePeristentHelper(null);
+            sut.SessionAccessor = () => _session.Object;
+            return sut;
         }
 
         protected override void Customize()
@@ -38,6 +33,8 @@ namespace FLUX.Web.Logic.Tests
 
             _serializer = new JsonSerializer();
         }
+
+
 
         private byte[] GetByteArray(object o)
         {
