@@ -26,7 +26,9 @@ namespace FLUX.Web.Logic
                     pseudoVisitor.Add(album);
                     foreach (var cd in album.Cds)
                     {
-                        pseudoVisitor.Add(cd);
+                        if(album.Cds.Count > 1)
+                            pseudoVisitor.Add(cd);
+
                         foreach (var song in cd.Songs)
                         {
                             pseudoVisitor.Add(song);

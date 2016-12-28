@@ -60,8 +60,8 @@ namespace FLUX.Web.Logic.Tests
             var vFiles = Create<VFile>();
             var songByKey0 = new Mock<ISongByKeyAccessor>();
             var songByKey1 = new Mock<ISongByKeyAccessor>();
-            var song0 = Create<Mock<ISong>>();
-            var song1 = Create<Mock<ISong>>();
+            var song0 = new Mock<ISong>();
+            var song1 = new Mock<ISong>();
 
             songByKey0.Setup(c => c.GetByKey(vFiles.ID)).Returns(song0.Object).Verifiable();
             songByKey1.Setup(c => c.GetByKey(vFiles.ID)).Returns(song1.Object).Verifiable();

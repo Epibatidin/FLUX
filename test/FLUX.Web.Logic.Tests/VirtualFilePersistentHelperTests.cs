@@ -96,7 +96,8 @@ namespace FLUX.Web.Logic.Tests
 
             var result = SUT.LoadSource(typeof(VFile[]));
 
-            Assert.That(result[item0.ID].Name, Is.EqualTo(item0.Name));
+            Assert.That(result[0].Name, Is.EqualTo(item0.Name));
+            Assert.That(result[1].Name, Is.EqualTo(item1.Name));
         }
 
     }

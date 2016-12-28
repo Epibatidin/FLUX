@@ -3824,6 +3824,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v1.0",
         "dependencies": {
+          "Microsoft.Extensions.PropertyHelper.Sources": "1.2.0-preview1-22716",
           "Microsoft.NETCore.App": "1.0.1",
           "Moq": "4.6.38-alpha",
           "NUnit": "3.5.0",

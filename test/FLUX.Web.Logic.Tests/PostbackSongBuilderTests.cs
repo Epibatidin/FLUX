@@ -62,10 +62,7 @@ namespace FLUX.Web.Logic.Tests
 
             SUT.FlattenInternal(tree, visitor.Object);
 
-            visitor.Verify(c => c.Add(artistNode));
-            visitor.Verify(c => c.Add(albumNode));
-            visitor.Verify(c => c.Add(cdNode), Times.Never);
-            visitor.Verify(c => c.Add(song));
+            visitor.Verify(c => c.Add(cdNode), Times.Never);            
         }
 
     }

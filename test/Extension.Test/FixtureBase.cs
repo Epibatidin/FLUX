@@ -11,6 +11,8 @@ namespace Extension.Test
     [TestFixture]
     public abstract class FixtureBase<TSystemUnderTest> where TSystemUnderTest : class
     {
+        private MyAutofixture _myFixture;
+
         public TSystemUnderTest SUT { get; set; }
         //public Fixture Fixture { get; set; }
 
@@ -20,6 +22,8 @@ namespace Extension.Test
             //Fixture.Customize(new MultipleCustomization());
             //Fixture.Customize(new AutoMoqCustomization());
             //Fixture.Customize<TSystemUnderTest>(r => new MethodInvoker(new GreedyConstructorQuery()));
+
+            _myFixture = new MyAutofixture();
 
             Customize();
 
@@ -43,9 +47,9 @@ namespace Extension.Test
             //return Fixture.Freeze<Mock<TInterface>>();
         }
 
-        protected TObject Create<TObject>() where TObject : new()
+        protected TObject Create<TObject>() where TObject : class, new()
         {
-            return new TObject();                
+            return _myFixture.Build<TObject>();         
         }
 
         protected abstract TSystemUnderTest CreateSUT();        

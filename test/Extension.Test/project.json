@@ -18,5 +18,7 @@
       }
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "Microsoft.Extensions.PropertyHelper.Sources": "1.2.0-preview1-22716"
+  }
 }
