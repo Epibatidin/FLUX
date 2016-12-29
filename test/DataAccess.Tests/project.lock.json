@@ -1211,10 +1211,10 @@
           "lib/netstandard1.3/System.Collections.Specialized.dll": {}
         }
       },
-      "System.ComponentModel/4.0.1": {
+      "System.ComponentModel/4.3.0": {
         "type": "package",
         "dependencies": {
-          "System.Runtime": "4.1.0"
+          "System.Runtime": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.0/System.ComponentModel.dll": {}
@@ -1223,20 +1223,20 @@
           "lib/netstandard1.3/System.ComponentModel.dll": {}
         }
       },
-      "System.ComponentModel.Annotations/4.1.0": {
+      "System.ComponentModel.Annotations/4.3.0": {
         "type": "package",
         "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.ComponentModel": "4.0.1",
-          "System.Globalization": "4.0.11",
-          "System.Linq": "4.1.0",
-          "System.Reflection": "4.1.0",
-          "System.Reflection.Extensions": "4.0.1",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Text.RegularExpressions": "4.1.0",
-          "System.Threading": "4.0.11"
+          "System.Collections": "4.3.0",
+          "System.ComponentModel": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.4/System.ComponentModel.Annotations.dll": {}
@@ -3168,6 +3168,39 @@
           "netcoreapp1.0/Extension.Test.dll": {}
         }
       },
+      "Extraction.DomainObjects/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.0",
+        "dependencies": {
+          "Extension.IEnumerable": "1.0.0",
+          "System.Collections": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0"
+        },
+        "compile": {
+          "netcoreapp1.0/Extraction.DomainObjects.dll": {}
+        },
+        "runtime": {
+          "netcoreapp1.0/Extraction.DomainObjects.dll": {}
+        }
+      },
+      "Extraction.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.0",
+        "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
+          "DataStructure.Tree": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.DomainObjects": "1.0.0"
+        },
+        "compile": {
+          "netcoreapp1.0/Extraction.Interfaces.dll": {}
+        },
+        "runtime": {
+          "netcoreapp1.0/Extraction.Interfaces.dll": {}
+        }
+      },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v1.0",
@@ -3181,6 +3214,25 @@
         },
         "runtime": {
           "netcoreapp1.0/Facade.Configuration.dll": {}
+        }
+      },
+      "FLUX.DomainObjects/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.0",
+        "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
+          "Extension.IEnumerable": "1.0.0",
+          "Extraction.Interfaces": "1.0.0",
+          "System.Collections": "4.3.0",
+          "System.ComponentModel.Annotations": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Runtime": "4.3.0"
+        },
+        "compile": {
+          "netcoreapp1.0/FLUX.DomainObjects.dll": {}
+        },
+        "runtime": {
+          "netcoreapp1.0/FLUX.DomainObjects.dll": {}
         }
       }
     }
@@ -4457,12 +4509,12 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "System.ComponentModel/4.0.1": {
-      "sha512": "oBZFnm7seFiVfugsIyOvQCWobNZs7FzqDV/B7tx20Ep/l3UUFCPDkdTnCNaJZTU27zjeODmy2C/cP60u3D4c9w==",
+    "System.ComponentModel/4.3.0": {
+      "sha512": "Zglf50lZbM1GhgQdi/M315CW83GBZ+InRWeZwsNtO3djtszSPp0Xzf78P3vtD7GkE440I+04JKfgNdi9mlnimQ==",
       "type": "package",
-      "path": "System.ComponentModel/4.0.1",
+      "path": "System.ComponentModel/4.3.0",
       "files": [
-        "System.ComponentModel.4.0.1.nupkg.sha512",
+        "System.ComponentModel.4.3.0.nupkg.sha512",
         "System.ComponentModel.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -4514,12 +4566,12 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "System.ComponentModel.Annotations/4.1.0": {
-      "sha512": "rhnz80h8NnHJzoi0nbQJLRR2cJznyqG168q1bgoSpe5qpaME2SguXzuEzpY68nFCi2kBgHpbU4bRN2cP3unYRA==",
+    "System.ComponentModel.Annotations/4.3.0": {
+      "sha512": "rx4RmG+JamsyoSRaU1oFzhm+wExcROmjM9oT4LjQTEXNJ3mW179mfMkvrae8ZMHCRJyJtjMAyRdg0BSmO4gJ7Q==",
       "type": "package",
-      "path": "System.ComponentModel.Annotations/4.1.0",
+      "path": "System.ComponentModel.Annotations/4.3.0",
       "files": [
-        "System.ComponentModel.Annotations.4.1.0.nupkg.sha512",
+        "System.ComponentModel.Annotations.4.3.0.nupkg.sha512",
         "System.ComponentModel.Annotations.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -8801,10 +8853,25 @@
       "path": "../Extension.Test/project.json",
       "msbuildProject": "../Extension.Test/Extension.Test.xproj"
     },
+    "Extraction.DomainObjects/1.0.0": {
+      "type": "project",
+      "path": "../../src/Extraction.DomainObjects/project.json",
+      "msbuildProject": "../../src/Extraction.DomainObjects/Extraction.DomainObjects.xproj"
+    },
+    "Extraction.Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../../src/Extraction.Interfaces/project.json",
+      "msbuildProject": "../../src/Extraction.Interfaces/Extraction.Interfaces.xproj"
+    },
     "Facade.Configuration/1.0.0": {
       "type": "project",
       "path": "../../ext/Facade.Configuration/project.json",
       "msbuildProject": "../../ext/Facade.Configuration/Facade.Configuration.xproj"
+    },
+    "FLUX.DomainObjects/1.0.0": {
+      "type": "project",
+      "path": "../../src/FLUX.DomainObjects/project.json",
+      "msbuildProject": "../../src/FLUX.DomainObjects/FLUX.DomainObjects.xproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8813,6 +8880,7 @@
       "DataAccess.FileSystem >= 1.0.0-*",
       "DataAccess.XMLStub >= 1.0.0-*",
       "Extension.Test >= 1.0.0-*",
+      "FLUX.DomainObjects >= 1.0.0-*",
       "Microsoft.Extensions.Configuration >= 1.0.0"
     ],
     ".NETCoreApp,Version=v1.0": [

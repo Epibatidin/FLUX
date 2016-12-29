@@ -23,6 +23,7 @@
     "Extension.Test": "1.0.0-*",
     "DataAccess.Base": "1.0.0-*",
     "DataAccess.XMLStub": "1.0.0-*",
-    "DataAccess.FileSystem": "1.0.0-*"
+    "DataAccess.FileSystem": "1.0.0-*",
+    "FLUX.DomainObjects": "1.0.0-*",
   }
 }

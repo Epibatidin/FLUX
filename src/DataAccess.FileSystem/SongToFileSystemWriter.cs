@@ -21,18 +21,20 @@ namespace DataAccess.FileSystem
 
         public void Write(IVirtualFileStreamReader streamReader, IEnumerable<IVirtualFile> vfs, IEnumerable<IExtractionValueFacade> songs)
         {
-            var tree = _treeBuilder.BuildTreeFromCollection(songs, _patternProvider.FormattedLevelValue, _patternProvider.FormattedLevelValue);
-
-            var pathIterator = new PathEnumerator<string>(tree);
-
             var filePath = @"D:\FluxWorkBenchFiles\Working\Result";
 
             var rootFolder = new DirectoryInfo(filePath);
 
-            while(pathIterator.MoveNext())
-            {
+            // eigentlich wäre es wirklich am besten einfach den ganzen pfad mit extension usw zu bauen 
+            // dann gibts kein baum usw 
+            // 
 
-            }
+            //_patternProvider.FormattedLevelValue
+
+            //while(pathIterator.MoveNext())
+            //{
+
+            //}
 
 
             int depth = 4;

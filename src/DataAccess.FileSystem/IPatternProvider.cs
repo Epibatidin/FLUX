@@ -1,9 +1,10 @@
 ﻿using DataAccess.Interfaces;
+using System.Collections.Generic;
 
 namespace DataAccess.FileSystem
 {
     public interface IPatternProvider
     {
-        string FormattedLevelValue(IExtractionValueFacade facade, int lvl);
+        IList<string> FormattedLevelValue(IExtractionValueFacade facade);
     }
 }
