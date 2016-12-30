@@ -62,5 +62,16 @@ namespace DataAccess.Tests.FileSystem
 
             Assert.That(result[0], Is.EqualTo(" - Blubber"));
         }
+
+        [Test]
+        public void should_make_every_first_letter_upper_case()
+        {
+            var values = new List<Tuple<string, string>>();
+            values.Add(Tuple.Create<string, string>("Bar", "bluBBer"));
+
+            var result = SUT.FormatInternal(values, new[] { "{Bar}" });
+
+            Assert.That(result[0], Is.EqualTo("Blubber"));
+        }
     }
 }

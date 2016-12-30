@@ -5,6 +5,6 @@ namespace DataAccess.FileSystem
 {
     public interface IPatternProvider
     {
-        IList<string> FormattedLevelValue(IExtractionValueFacade facade);
+        IList<string> CreatePathParts(IExtractionValueFacade facade);
     }
 }

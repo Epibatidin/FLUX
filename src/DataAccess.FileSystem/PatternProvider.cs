@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
 namespace DataAccess.FileSystem
@@ -23,10 +22,9 @@ namespace DataAccess.FileSystem
             _pattern[3] = "{TrackNr} - {SongName} - {Artist}";
         }
 
-        public IList<string> FormattedLevelValue(IExtractionValueFacade facade)
+        public IList<string> CreatePathParts(IExtractionValueFacade facade)
         {
-            return null;
-
+            return FormatInternal(facade.ToValues(), _pattern);
         }
 
         internal List<string> FormatInternal(IList<Tuple<string, string>> values, string[] patterns)
@@ -41,37 +39,50 @@ namespace DataAccess.FileSystem
                 {
                     var IamNotThatGoodWithRegex = r.Value.Substring(1, r.Value.Length - 2);
                     var element = values.FirstOrDefault(c => c.Item1 == IamNotThatGoodWithRegex);
+
                     if (element == null)
                     {
                         allMacthesAreNull = false;
                         return "";
-                    }   
-
-                    if (element.Item2 != null)
+                    }
+                    if (element.Item2 == null)
+                    {
+                        return "";
+                    }
+                    else
+                    {
                         allMacthesAreNull = false;
+                    }
 
-                    return element.Item2;
+                    return ToTitleCase(element.Item2);
                 });
-                if (!allMacthesAreNull)
-                    result.Add(replacedValues);                    
+                if (allMacthesAreNull) continue;
+                
+                result.Add(replacedValues);                    
             }
             return result;
         } 
 
 
+        private string ToTitleCase(string source)
+        {
+            var chars = source.ToCharArray();
+            bool newWord = true;
 
-        //public string FormattedLevelValue(IExtractionValueFacade facade, int lvl)
-        //{
-        //    // lalala 
-        //    // parts anhand der pattern einsetzen und zurück geben 
+            for (int i = 0; i < chars.Length; i++)
+            {
+                if (newWord)
+                {
+                    chars[i] = Char.ToUpper(chars[i]);
+                    newWord = false;
+                }
+                else
+                    chars[i] = Char.ToLower(chars[i]);
 
-        //    var format = Pattern[lvl];
+                if (chars[i] == ' ') newWord = true;                
+            }
 
-        //    foreach (var value in facade.ToValues())
-        //    {
-        //        format.Replace("{" + value.Item1 + "}", value.Item2);
-        //    }
-        //    return format;
-        //}
+            return new string(chars);
+        }
     }
 }
