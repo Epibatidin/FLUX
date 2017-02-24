@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="Notifications" style="max-height:100px;overflow-y:scroll"></div>
-
+    <div class="clear-fix"></div>
 
 @RenderBody()
     
@@ -19,12 +19,13 @@
 <div>
 
     <environment names="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/jquery/dist/jquery-3.1.1.min.js"></script>
+        <script src="~/lib/jquery-ui/jquery-ui.min.js"></script>        
         <script src="~/js/Notifications.js" asp-append-version="true"></script>
 
         <script src="~/js/Configuration.js" asp-append-version="true"></script>
         <script src="~/js/DataDelivery.js" asp-append-version="true"></script>
+        <script src="~/js/DragDrop.js" asp-append-version="true"></script>
     </environment>
 
     @RenderSection("scripts", required: false)

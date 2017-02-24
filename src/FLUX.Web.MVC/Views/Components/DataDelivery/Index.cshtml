@@ -33,10 +33,12 @@
 
             <multi-layer-data model="@album" level="1" class="Album" name-for="@albumPattern"/>
             <div class="cfix"></div>
-        int cdCounter = 0;
-        foreach (var cd in album.Children)
-        {
-              var cdPattern = albumPattern + "." + nameof(AlbumNode.Cds) + string.Format("[{0}]", cdCounter);
+              int cdCounter = 0;
+            <div class="CDWrapper">
+               
+                @foreach (var cd in album.Children)
+                {
+                var cdPattern = albumPattern + "." + nameof(AlbumNode.Cds) + string.Format("[{0}]", cdCounter);
 
                 <multi-layer-data model="@cd" level="2" class="CD" name-for="@cdPattern" />
 
@@ -52,35 +54,39 @@
                                 int songCounter = 0;
                             }
                             @foreach (var song in Iterate(cd))
-                            {                                
-                                song.NamePattern = cdPattern +"."+ nameof(CdNode.Songs) + string.Format("[{0}]", songCounter);
+                            {
+                                song.NamePattern = cdPattern + "." + nameof(CdNode.Songs) + string.Format("[{0}]", songCounter);
                                 var originalValue = song.OriginalValue;
                                 var trimmed = originalValue.Substring(0, Math.Min(35, originalValue.Length));
 
                                 <tr id="@song.ID">
+
                                     <td title="@originalValue">
                                         @trimmed
-                                        <input type="hidden" value="@song.ID" name="@(song.NamePattern + ".Id")" />
+                                        <input type="hidden" value="@song.ID" class="idHolder" name="@(song.NamePattern + ".Id")" />
                                     </td>
                                     @for (int s = 0; s < song.Keys.Count; s++)
                                     {
-                                        <td><div class="fullWidth">
-                                            @Html.Partial("DataCollection", song.RetrieveData(song.Keys[s], s == song.Keys.Count - 1))
-                                        </div></td>
+                                        <td>
+                                            <div class="fullWidth">
+                                                @Html.Partial("DataCollection", song.RetrieveData(song.Keys[s], s == song.Keys.Count - 1))
+                                            </div>
+                                        </td>
                                     }
                                     <td>
                                 </tr>
 
-                                songCounter = songCounter+ 1;
+                                songCounter = songCounter + 1;
                             }
                         </tbody>
                     </table>
                 </div>
                 <div class="cfix"></div>
                 cdCounter++;
-            }
-            albumCounter++;
-        }
+                }
+            </div>
+                                    albumCounter++;
+                                }
 
     </form>
 </div>
