@@ -11,12 +11,10 @@ function readId(trElement) {
     return ids;
 }
 
+
 function rewriteNames(trElement, ids) {
-
     // select all input elements 
-
     $('input', trElement).each(function () {
-
         var runner = 0;
         this.name = this.name.replace(pattern, function () {
             var id = ids[runner];
@@ -28,8 +26,7 @@ function rewriteNames(trElement, ids) {
 
 
 function sortEnd(event, ui) {
-    var r = this;
-    var ids;
+   var ids;
 
     // check if first element - we take the element after as id provider 
     var prev = ui.item.prev();
@@ -54,13 +51,21 @@ function sortEnd(event, ui) {
         runner = runner.next();
         if (runner.length == 0) break;
     }
+
+    // drop old empty list 
+    var idsToDrop = ui.item.data('ids');
+    if (idsToDrop) {
+        var selector = ".cdNo" + idsToDrop[1] + "-" +  idsToDrop[2];
+        $(selector).remove();
+
+    }
+
 }
 
 function sortStart(event, ui) {
-    var nameOfIdField = $('.idHolder', ui.item).attr('name');
-    
-    var ids = nameOfIdField.match(pattern);
 
+    if (ui.item.siblings().length > 1) return;
+    var ids = readId(ui.item);
     ui.item.data('ids', ids);
 }
 

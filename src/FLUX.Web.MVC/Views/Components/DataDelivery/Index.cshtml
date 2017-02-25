@@ -39,10 +39,10 @@
                 @foreach (var cd in album.Children)
                 {
                 var cdPattern = albumPattern + "." + nameof(AlbumNode.Cds) + string.Format("[{0}]", cdCounter);
+                var dropableClass = "cdNo" + albumCounter + "-" + cdCounter;
+                <multi-layer-data model="@cd" level="2" class="CD @dropableClass" name-for="@cdPattern" />
 
-                <multi-layer-data model="@cd" level="2" class="CD" name-for="@cdPattern" />
-
-                <div class="container Songs">
+                <div class="container Songs @dropableClass">
                     <table class="SongTable">
                         <colgroup>
                             <col class="originTR" />
@@ -81,7 +81,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="cfix"></div>
+                <div class="cfix @dropableClass"></div>
                 cdCounter++;
                 }
             </div>
