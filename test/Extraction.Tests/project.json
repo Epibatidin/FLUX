@@ -29,6 +29,7 @@
     },
     "Extraction.Base": "1.0.0-*",
     "Extraction.Layer.File": "1.0.0-*",
+    "Extraction.Layer.Tags": "1.0.0-*",
     "FLUX.Configuration": "1.0.0-*",
     "Microsoft.Extensions.DependencyInjection": "1.0.0",
     "Microsoft.Extensions.OptionsModel": "1.0.0-rc1-*",

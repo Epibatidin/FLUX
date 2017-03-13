@@ -4073,6 +4073,28 @@
           "netcoreapp1.0/Extraction.Layer.File.dll": {}
         }
       },
+      "Extraction.Layer.Tags/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.0",
+        "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
+          "Extraction.Base": "1.0.0",
+          "Extraction.Interfaces": "1.0.0",
+          "System.Collections": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0"
+        },
+        "compile": {
+          "netcoreapp1.0/Extraction.Layer.Tags.dll": {}
+        },
+        "runtime": {
+          "netcoreapp1.0/Extraction.Layer.Tags.dll": {}
+        }
+      },
       "Facade.Configuration/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v1.0",
@@ -10526,6 +10548,11 @@
       "path": "../../src/Extraction.Layer.File/project.json",
       "msbuildProject": "../../src/Extraction.Layer.File/Extraction.Layer.File.xproj"
     },
+    "Extraction.Layer.Tags/1.0.0": {
+      "type": "project",
+      "path": "../../src/Extraction.Layer.Tags/project.json",
+      "msbuildProject": "../../src/Extraction.Layer.Tags/Extraction.Layer.Tags.xproj"
+    },
     "Facade.Configuration/1.0.0": {
       "type": "project",
       "path": "../../ext/Facade.Configuration/project.json",
@@ -10570,6 +10597,7 @@
       "Extension.Test >= 1.0.0-*",
       "Extraction.Base >= 1.0.0-*",
       "Extraction.Layer.File >= 1.0.0-*",
+      "Extraction.Layer.Tags >= 1.0.0-*",
       "FLUX.Configuration >= 1.0.0-*",
       "Microsoft.Extensions.Configuration >= 1.0.0",
       "Microsoft.Extensions.Configuration.FileProviderExtensions >= 1.0.0-rc1-*",

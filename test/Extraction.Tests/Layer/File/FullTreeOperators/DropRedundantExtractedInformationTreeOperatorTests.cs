@@ -1,8 +1,5 @@
-﻿
-using DataStructure.Tree;
-using Extension.Test;
+﻿using Extension.Test;
 using Extraction.DomainObjects.StringManipulation;
-using Extraction.Layer.File;
 using Extraction.Layer.File.FullTreeOperators;
 using NUnit.Framework;
 

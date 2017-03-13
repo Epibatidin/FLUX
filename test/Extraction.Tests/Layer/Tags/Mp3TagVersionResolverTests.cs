@@ -1,0 +1,77 @@
+﻿using Extension.Test;
+using Extraction.Layer.Tags;
+using Moq;
+using NUnit.Framework;
+using System.IO;
+
+namespace Extraction.Tests.Layer.Tags
+{
+    public class Mp3TagVersionResolverTests : FixtureBase<Mp3TagVersionResolver>
+    {
+        private Mock<IMp3TagReader> _firstReader;
+        private Mock<IMp3TagReader> _secondReader;
+
+        protected override void Customize()
+        {
+            _firstReader = FreezeMock<IMp3TagReader>();
+            _firstReader.Setup(c => c.Order).Returns(0);
+            _secondReader = FreezeMock<IMp3TagReader>();
+            _secondReader.Setup(c => c.Order).Returns(1);
+        }
+        
+        protected override Mp3TagVersionResolver CreateSUT()
+        {
+            return new Mp3TagVersionResolver(new[] { _firstReader.Object, _secondReader.Object });
+        }
+
+        [Test]
+        public void should_reorder_the_tag_readers()
+        {
+            _firstReader.Setup(c => c.Order).Returns(2);
+            _secondReader.Setup(c => c.Order).Returns(1);
+
+            var resolver = new Mp3TagVersionResolver(new[] { _firstReader.Object, _secondReader.Object });
+            var stream = new MemoryStream();
+
+            var result = resolver.ResolverTagReader(stream);
+                       
+            Assert.That(resolver._supportedReaders[0], Is.SameAs(_secondReader.Object));
+            Assert.That(resolver._supportedReaders[1], Is.SameAs(_firstReader.Object));
+        }
+
+
+        [Test]
+        public void should_ask_all_tag_readers_for_support()
+        {
+            var stream = new MemoryStream();
+
+            var result = SUT.ResolverTagReader(stream);
+
+            _firstReader.Verify(c => c.Supports(stream));
+            _secondReader.Verify(c => c.Supports(stream));
+        }
+
+        [Test]
+        public void should_return_null_if_not_supported()
+        {
+            _firstReader.Setup(c => c.Supports(It.IsAny<Stream>())).Returns(false);
+            _secondReader.Setup(c => c.Supports(It.IsAny<Stream>())).Returns(false);
+
+            var result = SUT.ResolverTagReader(new MemoryStream());
+
+            Assert.That(result, Is.Null);
+        }
+
+        [Test]
+        public void should_return_first_match()
+        {
+            _firstReader.Setup(c => c.Supports(It.IsAny<Stream>())).Returns(true);
+            _secondReader.Setup(c => c.Supports(It.IsAny<Stream>())).Returns(true);
+
+            var result = SUT.ResolverTagReader(new MemoryStream());
+
+            Assert.That(result, Is.SameAs(_firstReader.Object));
+        }
+
+    }
+}
