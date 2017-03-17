@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
 namespace Extraction.Layer.Tags.Helper
 {
     public static class ByteHelper
-    {
-        [System.Diagnostics.DebuggerStepThrough]
-        public static bool GetBit(this byte _byte, int bitNumber)
+    {       
+        public static bool GetBit(byte value, int bitNumber)
         {
-            return (_byte & (1 << bitNumber)) != 0;
+            return (value & (1 << bitNumber)) != 0;
         }
 
-        [System.Diagnostics.DebuggerStepThrough]
+        
         public static int GetIntFrom7SignificantBitsPerByte(byte[] bytes)
         {
             int tagSize = 0;
@@ -27,7 +24,17 @@ namespace Extraction.Layer.Tags.Helper
             return tagSize;
         }
 
-        [System.Diagnostics.DebuggerStepThrough]
+        public static string BytesToString(byte[] bytes, Encoding encoding)
+        {
+            return encoding.GetString(bytes, 0, bytes.Length);
+        }
+
+        public static string BytesToString(byte[] bytes)
+        {
+            return BytesToString(bytes, Encoding.ASCII);
+        }
+
+        
         public static byte[] GetByteArrayWith7SignificantBitsPerByteForInt(int length)
         {
             BitArray source = new BitArray(BitConverter.GetBytes(length));
@@ -56,8 +63,7 @@ namespace Extraction.Layer.Tags.Helper
         /// encodes Bytes to int in Big Endian order
         /// </summary>
         /// <param name="bytes"></param>
-        /// <returns></returns>
-        [System.Diagnostics.DebuggerStepThrough]
+        /// <returns></returns>        
         public static int GetInt32FromBytes(byte[] bytes)
         {
             Array.Reverse(bytes);
@@ -68,8 +74,7 @@ namespace Extraction.Layer.Tags.Helper
         /// encodes Bytes to int in Big Endian order
         /// </summary>
         /// <param name="bytes"></param>
-        /// <returns></returns>
-        [System.Diagnostics.DebuggerStepThrough]
+        /// <returns></returns>       
         public static byte[] GetBytesFromInt32(Int32 value)
         {
             // reverse array 

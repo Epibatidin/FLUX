@@ -21,22 +21,31 @@ namespace Extraction.Tests.Layer.Tags
         
         protected override Mp3TagVersionResolver CreateSUT()
         {
-            return new Mp3TagVersionResolver(new[] { _firstReader.Object, _secondReader.Object });
+            var resolver =  new Mp3TagVersionResolver();
+            resolver.SetReader(new[] { _firstReader.Object, _secondReader.Object });
+            return resolver;
         }
 
         [Test]
         public void should_reorder_the_tag_readers()
         {
+            var sequence = new MockSequence();
+
             _firstReader.Setup(c => c.Order).Returns(2);
             _secondReader.Setup(c => c.Order).Returns(1);
 
-            var resolver = new Mp3TagVersionResolver(new[] { _firstReader.Object, _secondReader.Object });
+            _secondReader.InSequence(sequence).Setup(c => c.Supports(It.IsAny<Stream>())).Verifiable();
+            _firstReader.InSequence(sequence).Setup(c => c.Supports(It.IsAny<Stream>())).Verifiable();
+
+
+            SUT.SetReader(new[] { _firstReader.Object, _secondReader.Object });
             var stream = new MemoryStream();
 
-            var result = resolver.ResolverTagReader(stream);
-                       
-            Assert.That(resolver._supportedReaders[0], Is.SameAs(_secondReader.Object));
-            Assert.That(resolver._supportedReaders[1], Is.SameAs(_firstReader.Object));
+            var result = SUT.ResolverTagReader(stream);
+
+            
+            _firstReader.Verify();
+            _secondReader.Verify();
         }
 
 

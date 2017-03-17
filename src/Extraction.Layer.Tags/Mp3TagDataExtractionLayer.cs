@@ -1,25 +1,30 @@
 ﻿using Extraction.Interfaces.Layer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Extraction.Interfaces;
+using Extraction.Layer.Tags.Interfaces;
 
 namespace Extraction.Layer.Tags
 {
     public class Mp3TagDataExtractionLayer : IDataExtractionLayer
     {
+        IMp3TagVersionResolver _tagVersionResolver;
+
         public Mp3TagDataExtractionLayer(IMp3TagVersionResolver tagVersionResolver)
         {
-
+            _tagVersionResolver = tagVersionResolver;
         }
 
 
         public void Execute(ExtractionContext extractionContext, UpdateObject updateObject)
         {
-            foreach(var virtualFile in extractionContext.SourceValues)
+            updateObject.UpdateData(new TagTreeByKeyAccessor());
+            
+            foreach (var virtualFile in extractionContext.SourceValues)
             {
                 var stream = extractionContext.StreamReader.OpenStreamForReadAccess(virtualFile);
+
+                var tagReader = _tagVersionResolver.ResolverTagReader(stream);
+
+                tagReader.ReadAllTagData(stream);
             }
             
         }

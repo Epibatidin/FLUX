@@ -7,7 +7,7 @@
     },
     {
       "Name": "Tag",
-      "ExtractorType": "Extraction.Layer.Tags.Mp3TagInstaller,,Extraction.Layer.Tags,Version=1.0.0.0, Culture=neutral,PublicKeyToken=null",
+      "ExtractorType": "Extraction.Layer.Tags.Mp3TagInstaller,Extraction.Layer.Tags,Version=1.0.0.0, Culture=neutral,PublicKeyToken=null",
       "Active": "true"
     }
   ],

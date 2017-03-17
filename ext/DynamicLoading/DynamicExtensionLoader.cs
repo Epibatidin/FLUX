@@ -2,6 +2,8 @@
 using Facade.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Runtime.Loader;
+using System.Reflection;
 
 namespace DynamicLoading
 {
@@ -28,18 +30,24 @@ namespace DynamicLoading
             }
         }
 
-
         private IDynamicExtensionInstaller LoadInstaller(string type)
         {
-            //var typeParts = type.Split(new[] { ',' });
-            //var assembly = Assembly.Load(new AssemblyName(typeParts[1])
-            //{
-            //    CodeBase = ""
-            //});
-
+            var firstComma = type.IndexOf(',');
+            var assemblyNameString = type.Substring(firstComma +1);
+            var assamblyNAme = new AssemblyName(assemblyNameString);
+            var assambly = Assembly.Load(assamblyNAme);
+            
             var installertype = Type.GetType(type);
             if (installertype == null) return null;
             return Activator.CreateInstance(installertype) as IDynamicExtensionInstaller;
         }
+
+        //private IDynamicExtensionInstaller LoadInstaller(string type)
+        //{
+
+        //    var installertype = Type.GetType(type);
+        //    if (installertype == null) return null;
+        //    return Activator.CreateInstance(installertype) as IDynamicExtensionInstaller;
+        //}
     }
 }

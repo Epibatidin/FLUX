@@ -1,18 +1,15 @@
 ﻿using Extension.Test;
-using Extraction.Layer.Tags;
-using System;
-using System.Collections.Generic;
+using Extraction.Layer.Tags.TagReader;
+using NUnit.Framework;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Extraction.Tests.Layer.Tags
 {
-    public class ID3TagReaderTests : FixtureBase<ID3TagReader>
+    public class ID3TagReaderTests : FixtureBase<ID3V1TagReader>
     {
-        protected override ID3TagReader CreateSUT()
+        protected override ID3V1TagReader CreateSUT()
         {
-            return new ID3TagReader();
+            return new ID3V1TagReader();
         }
 
         private Stream StringToStream(string content)
@@ -26,6 +23,12 @@ namespace Extraction.Tests.Layer.Tags
             var stream = new MemoryStream(bytes);
 
             return stream;
+        }
+
+        [Test]
+        public void should_return_true_for_ID3()
+        {
+
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿{
+{
   "version": "1.0.0-*",
 
   "dependencies": {
@@ -11,7 +11,8 @@
     "DynamicLoading": "1.0.0-*",
     "DataAccess.Interfaces": "1.0.0-*",
     "Extraction.Interfaces": "1.0.0-*",
-    "Extraction.Base": "1.0.0-*"
+    "Extraction.Base": "1.0.0-*",
+    "System.ComponentModel": "4.3.0"
   },
 
   "frameworks": {

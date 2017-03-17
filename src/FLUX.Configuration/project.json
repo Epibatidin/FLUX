@@ -30,6 +30,10 @@
     "Extraction.Layer.File": {
       "version": "1.0.0-*",
       "options": "private"
+    },
+    "Extraction.Layer.Tags": {
+      "version": "1.0.0-*",
+      "options": "private"
     }
   }
 }

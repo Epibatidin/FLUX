@@ -3238,7 +3238,8 @@
         "framework": ".NETCoreApp,Version=v1.0",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection": "1.0.0"
+          "Microsoft.Extensions.DependencyInjection": "1.0.0",
+          "System.Runtime.Loader": "4.0.0-rc2-23623"
         },
         "compile": {
           "netcoreapp1.0/DynamicLoading.dll": {}

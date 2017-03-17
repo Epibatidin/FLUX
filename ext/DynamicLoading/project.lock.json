@@ -574,6 +574,17 @@
           "lib/portable-net45+win8+wpa81/_._": {}
         }
       },
+      "System.Runtime.Loader/4.0.0-rc2-23623": {
+        "type": "package",
+        "dependencies": {
+          "System.IO": "4.0.0",
+          "System.Reflection": "4.0.0",
+          "System.Runtime": "4.0.0"
+        },
+        "compile": {
+          "ref/dotnet5.5/System.Runtime.Loader.dll": {}
+        }
+      },
       "System.Text.Encoding/4.0.11": {
         "type": "package",
         "dependencies": {
@@ -2326,6 +2337,27 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
+    "System.Runtime.Loader/4.0.0-rc2-23623": {
+      "sha512": "bUgB1oCOjY+ZI4kiVVdPFjRa3QMRiEAkunWoar9w7su4hQQrO3TIRAiT2fNVa/6gTxIcGA6X1+TytlaBTgBUlw==",
+      "type": "package",
+      "path": "System.Runtime.Loader/4.0.0-rc2-23623",
+      "files": [
+        "System.Runtime.Loader.4.0.0-rc2-23623.nupkg.sha512",
+        "System.Runtime.Loader.nuspec",
+        "lib/DNXCore50/System.Runtime.Loader.dll",
+        "ref/dotnet5.5/System.Runtime.Loader.dll",
+        "ref/dotnet5.5/System.Runtime.Loader.xml",
+        "ref/dotnet5.5/de/System.Runtime.Loader.xml",
+        "ref/dotnet5.5/es/System.Runtime.Loader.xml",
+        "ref/dotnet5.5/fr/System.Runtime.Loader.xml",
+        "ref/dotnet5.5/it/System.Runtime.Loader.xml",
+        "ref/dotnet5.5/ja/System.Runtime.Loader.xml",
+        "ref/dotnet5.5/ko/System.Runtime.Loader.xml",
+        "ref/dotnet5.5/ru/System.Runtime.Loader.xml",
+        "ref/dotnet5.5/zh-hans/System.Runtime.Loader.xml",
+        "ref/dotnet5.5/zh-hant/System.Runtime.Loader.xml"
+      ]
+    },
     "System.Text.Encoding/4.0.11": {
       "sha512": "U3gGeMlDZXxCEiY4DwVLSacg+DFWCvoiX+JThA/rvw37Sqrku7sEFeVBBBMBnfB6FeZHsyDx85HlKL19x0HtZA==",
       "type": "package",
@@ -2536,7 +2568,8 @@
   "projectFileDependencyGroups": {
     "": [
       "Facade.Configuration >= 1.0.0-*",
-      "Microsoft.Extensions.DependencyInjection >= 1.0.0"
+      "Microsoft.Extensions.DependencyInjection >= 1.0.0",
+      "System.Runtime.Loader >= 4.0.0-rc2-23623"
     ],
     ".NETCoreApp,Version=v1.0": []
   },

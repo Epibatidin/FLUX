@@ -50,7 +50,8 @@ namespace ExtractionLayer.Tests.Files
 
             Assert.That(result.Tree.Value.LevelValue.ToString(), Is.EqualTo("A-B"));
             Assert.That(result.Tree[0].Value.LevelValue.ToString(), Is.EqualTo("C:D"));
-            Assert.That(result.Tree[0][0].Value.LevelValue.ToString(), Is.EqualTo("E_F"));
+            Assert.That(result.Tree[0][0].Value.LevelValue.ToString(), Is.EqualTo("001"));
+            Assert.That(result.Tree[0][0][0].Value.LevelValue.ToString(), Is.EqualTo("E_F"));
         }
 
 
@@ -64,14 +65,14 @@ namespace ExtractionLayer.Tests.Files
 
             Assert.That(result.Tree.Value.Artist, Is.EqualTo("A"));
             Assert.That(result.Tree[0].Value.Album, Is.EqualTo("B"));
-            Assert.That(result.Tree[0][0].Value.LevelValue.ToString(), Is.EqualTo("CD1"));
+            Assert.That(result.Tree[0][0].Value.LevelValue.ToString(), Is.EqualTo("001"));
         }
 
         private RealFile AddVFile(IList<IVirtualFile> vfs, string path)
         {
             var rf = new RealFile();
             rf.PathParts = path.Split('\\');
-            //vfs.Add(rf);
+            vfs.Add(rf);
             return rf;
         }
 
@@ -122,7 +123,7 @@ namespace ExtractionLayer.Tests.Files
         
         [TestCase(0, "Amduscia")]
         [TestCase(1, "Death_Thou_Shalt_Die")]
-        [TestCase(2, "CD1")]
+        [TestCase(2, "001")]
         [TestCase(3, "amduscia-damn_punks")]
         [TestCase(4, null)]
         public void should_get_Value_of_part_collection(int depth, string expected)

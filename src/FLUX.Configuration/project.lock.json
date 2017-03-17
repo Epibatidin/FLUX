@@ -3021,7 +3021,8 @@
         "framework": ".NETCoreApp,Version=v1.0",
         "dependencies": {
           "Facade.Configuration": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection": "1.0.0"
+          "Microsoft.Extensions.DependencyInjection": "1.0.0",
+          "System.Runtime.Loader": "4.0.0-rc2-23623"
         },
         "compile": {
           "netcoreapp1.0/DynamicLoading.dll": {}
@@ -3111,6 +3112,29 @@
         },
         "runtime": {
           "netcoreapp1.0/Extraction.Layer.File.dll": {}
+        }
+      },
+      "Extraction.Layer.Tags/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.0",
+        "dependencies": {
+          "DataAccess.Interfaces": "1.0.0",
+          "DynamicLoading": "1.0.0",
+          "Extraction.Base": "1.0.0",
+          "Extraction.Interfaces": "1.0.0",
+          "System.Collections": "4.3.0",
+          "System.ComponentModel": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0"
+        },
+        "compile": {
+          "netcoreapp1.0/Extraction.Layer.Tags.dll": {}
+        },
+        "runtime": {
+          "netcoreapp1.0/Extraction.Layer.Tags.dll": {}
         }
       },
       "Facade.Configuration/1.0.0": {
@@ -8437,6 +8461,11 @@
       "path": "../Extraction.Layer.File/project.json",
       "msbuildProject": "../Extraction.Layer.File/Extraction.Layer.File.xproj"
     },
+    "Extraction.Layer.Tags/1.0.0": {
+      "type": "project",
+      "path": "../Extraction.Layer.Tags/project.json",
+      "msbuildProject": "../Extraction.Layer.Tags/Extraction.Layer.Tags.xproj"
+    },
     "Facade.Configuration/1.0.0": {
       "type": "project",
       "path": "../../ext/Facade.Configuration/project.json",
@@ -8477,6 +8506,7 @@
       "DynamicLoading >= 1.0.0-*",
       "Extraction.Base >= 1.0.0-*",
       "Extraction.Layer.File >= 1.0.0-*",
+      "Extraction.Layer.Tags >= 1.0.0-*",
       "FLUX.Interfaces >= 1.0.0-*",
       "FLUX.Web.Logic >= 1.0.0-*",
       "Facade.Configuration >= 1.0.0-*",
