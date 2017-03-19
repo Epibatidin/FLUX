@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using Extraction.Layer.Tags.DomainObjects;
+using Extraction.Layer.Tags.Interfaces;
 
 namespace Extraction.Layer.Tags.TagReader
 {
@@ -10,8 +11,7 @@ namespace Extraction.Layer.Tags.TagReader
 
         public StreamTagContent ReadAllTagData(Stream stream)
         {
-           
-            return null;
+            throw new NotImplementedException();
         }
 
         public bool Supports(Stream stream)

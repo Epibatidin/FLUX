@@ -7,9 +7,7 @@ namespace Extraction.Layer.Tags.TagReader
     public abstract class ID3TagReader : IMp3TagReader
     {
         private byte _subversion;
-
-        public IFrameMapper FrameMapper { get; set; }
-
+        
         public ID3TagReader(byte subversion)
         {
             _subversion = subversion;
@@ -17,7 +15,7 @@ namespace Extraction.Layer.Tags.TagReader
 
         public int Order { get { return _subversion; } }
 
-        protected byte[] read(Stream stream, int length)
+        protected static byte[] read(Stream stream, int length)
         {
             var result = new byte[length];
 

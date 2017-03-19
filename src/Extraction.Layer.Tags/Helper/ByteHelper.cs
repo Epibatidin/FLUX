@@ -6,9 +6,9 @@ namespace Extraction.Layer.Tags.Helper
 {
     public static class ByteHelper
     {       
-        public static bool GetBit(byte value, int bitNumber)
+        public static bool GetBit(byte value, int bitPositionInByte)
         {
-            return (value & (1 << bitNumber)) != 0;
+            return (value & (1 << bitPositionInByte)) != 0;
         }
 
         

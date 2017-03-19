@@ -13,5 +13,10 @@ namespace Extraction.Layer.Tags.DomainObjects
         {
             FrameID = _frameID.ToUpper();
         }
+
+        public override string ToString()
+        {
+            return string.Format("ID: |{0}|, Data: |{1}|", FrameID, FrameData);
+        }
     }
 }

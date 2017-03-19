@@ -14,21 +14,23 @@ namespace Extraction.Layer.Tags.TagReader
 
         public override StreamTagContent ReadAllTagData(Stream stream)
         {
-                var tagData = new StreamTagContent();
-                tagData.DataStart = EvaluateBeginOfData(stream);
-                tagData.Frames = new List<Frame>();
-                stream.Seek(10, SeekOrigin.Begin);
+            throw new NotSupportedException("IDV4 needs revision");
 
-                while (stream.Position < tagData.DataStart)
-                {
-                    var frame = CreateV3Frame(stream);
-                    if (frame == null) break;
-                    if (string.IsNullOrEmpty(frame.FrameData)) continue;
-                    if (!FrameMapper.IsSupported(frame.FrameID)) continue;
+
+            var tagData = new StreamTagContent();
+            tagData.DataStart = EvaluateBeginOfData(stream);
+            tagData.Frames = new List<Frame>();
+            stream.Seek(10, SeekOrigin.Begin);
+
+            while (stream.Position < tagData.DataStart)
+            {
+                var frame = CreateFrame(stream);
+                if (frame == null) break;
+                if (string.IsNullOrEmpty(frame.FrameData)) continue;
                     
-                    tagData.Frames.Add(frame);
-                }
-                return tagData;
+                tagData.Frames.Add(frame);
+            }
+            return tagData;
             
         }
 
@@ -63,7 +65,7 @@ namespace Extraction.Layer.Tags.TagReader
             return ByteHelper.BytesToString(stream.Read(DataSize - read), encoding);
         }
         
-        private Frame CreateV3Frame(Stream stream)
+        private Frame CreateFrame(Stream stream)
         {
             // Frame ID   $xx xx xx xx (four characters) 
             var frameIDBytes = read(stream, 4);

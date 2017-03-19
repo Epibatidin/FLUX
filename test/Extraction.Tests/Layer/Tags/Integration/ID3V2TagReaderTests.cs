@@ -4,6 +4,7 @@ using Extraction.Layer.Tags.TagReader;
 using Moq;
 using NUnit.Framework;
 using System.IO;
+using System.Text;
 
 namespace Extraction.Tests.Layer.Tags.Integration
 {
@@ -17,6 +18,14 @@ namespace Extraction.Tests.Layer.Tags.Integration
             var fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
 
             return fileStream;
+        }
+
+        protected override ID3V2TagReader CreateSUT()
+        {
+            var mapper = new Mock<IFrameMapper>();
+            mapper.Setup(c => c.IsSupported(It.IsAny<string>())).Returns(true);
+            var reader = new ID3V2TagReader(mapper.Object);
+            return reader;
         }
 
         [Test]
@@ -37,18 +46,42 @@ namespace Extraction.Tests.Layer.Tags.Integration
 
             var isId2 = SUT.ReadAllTagData(stream);
 
-            Assert.That(isId2.Frames.Count, Is.EqualTo(2));
+            Assert.That(isId2.Frames.Count, Is.EqualTo(9));
         }
 
+        //[Test]
+        //public void should_super_foo()
+        //{
+        //    var stream = OpenFile();
+        //    stream.Seek(121, SeekOrigin.Begin);
 
-        protected override ID3V2TagReader CreateSUT()
+        //    int length = 35;
+
+        //    byte[] blubber = new byte[length];
+        //    stream.Read(blubber, 0, length);
+
+        //    blubber[6] = 1;
+
+        //    var newStream = new MemoryStream(blubber);
+            
+        //    var frame = ID3V2TagReader.CreateV3Frame(newStream);
+
+        //    var value = Encoding.GetEncoding("ISO-8859-1").GetString(blubber, 0, length);
+
+        //    Assert.Fail();
+        //}
+        
+        [Test]
+        public void should_not_contain_string_terminator()
         {
-            var reader = new ID3V2TagReader();
-            var mapper = new Mock<IFrameMapper>();
-            mapper.Setup(c => c.IsSupported(It.IsAny<string>())).Returns(true);
+            var stream = OpenFile();
 
-            reader.FrameMapper = mapper.Object;
-            return reader;
+            var isId2 = SUT.ReadAllTagData(stream);
+
+            Assert.That(isId2.Frames[8].FrameData.Length, Is.EqualTo(17));
         }
+
+
+
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using Extraction.Layer.Tags.DomainObjects;
 
 namespace Extraction.Layer.Tags.TagReader

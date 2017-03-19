@@ -12,7 +12,7 @@
           "version": "1.0.1",
           "type": "platform"
         },
-        "NUnit": "3.5.0",
+        "NUnit": "3.6.1",
         "dotnet-test-nunit": "3.4.0-beta-3",
         "Moq": "4.6.38-alpha"
       }
@@ -24,6 +24,6 @@
     "DataAccess.Base": "1.0.0-*",
     "DataAccess.XMLStub": "1.0.0-*",
     "DataAccess.FileSystem": "1.0.0-*",
-    "FLUX.DomainObjects": "1.0.0-*",
+    "FLUX.DomainObjects": "1.0.0-*"
   }
 }
