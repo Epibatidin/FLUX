@@ -22,7 +22,7 @@ namespace Extraction.Tests.Layer.Tags.Integration
 
         protected override ID3V2TagReader CreateSUT()
         {
-            var mapper = new Mock<IFrameMapper>();
+            var mapper = new Mock<ITagSongFactory>();
             mapper.Setup(c => c.IsSupported(It.IsAny<string>())).Returns(true);
             var reader = new ID3V2TagReader(mapper.Object);
             return reader;

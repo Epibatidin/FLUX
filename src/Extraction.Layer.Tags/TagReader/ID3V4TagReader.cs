@@ -14,9 +14,6 @@ namespace Extraction.Layer.Tags.TagReader
 
         public override StreamTagContent ReadAllTagData(Stream stream)
         {
-            throw new NotSupportedException("IDV4 needs revision");
-
-
             var tagData = new StreamTagContent();
             tagData.DataStart = EvaluateBeginOfData(stream);
             tagData.Frames = new List<Frame>();

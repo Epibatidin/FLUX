@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using Extraction.Layer.Tags.DomainObjects;
+using System;
 
 namespace Extraction.Layer.Tags.TagReader
 {
@@ -11,7 +12,7 @@ namespace Extraction.Layer.Tags.TagReader
 
         public override StreamTagContent ReadAllTagData(Stream stream)
         {
-            return null;
+            throw new NotImplementedException();
         }
     }
 }

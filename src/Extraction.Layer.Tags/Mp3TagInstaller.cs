@@ -15,7 +15,7 @@ namespace Extraction.Layer.Tags
 
             services.AddSingleton<IMp3TagVersionResolver, Mp3TagVersionResolver>();
 
-            services.AddSingleton<IFrameMapper, FrameMapper>();
+            services.AddSingleton<ITagSongFactory, TagSongFactory>();
 
             services.AddSingleton<IMp3TagReader, ID3V1TagReader>();
             services.AddSingleton<IMp3TagReader, ID3V2TagReader>();
