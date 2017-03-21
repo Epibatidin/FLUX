@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <AssemblyName>FLUX.Interfaces</AssemblyName>
+    <PackageId>FLUX.Interfaces</PackageId>
+    <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;portable-net45+win8</PackageTargetFallback>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FLUX.DomainObjects\FLUX.DomainObjects.csproj" />
+    <ProjectReference Include="..\..\ext\Facade.MVC\Facade.MVC.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+    <PackageReference Include="System.Runtime" Version="4.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+  </ItemGroup>
+</Project>

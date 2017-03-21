@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <AssemblyName>DataAccess.Base</AssemblyName>
+    <PackageId>DataAccess.Base</PackageId>
+    <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;portable-net45+win8</PackageTargetFallback>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ext\DynamicLoading\DynamicLoading.csproj" />
+    <ProjectReference Include="..\..\ext\Facade.Configuration\Facade.Configuration.csproj" />
+    <ProjectReference Include="..\DataAccess.Interfaces\DataAccess.Interfaces.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="1.1.1" />
+  </ItemGroup>
+</Project>

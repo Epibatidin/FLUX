@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <AssemblyName>Extraction.DomainObjects</AssemblyName>
+    <PackageId>Extraction.DomainObjects</PackageId>
+    <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;portable-net45+win8</PackageTargetFallback>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ext\Extension.IEnumerable\Extension.IEnumerable.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Runtime" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Extensions" Version="4.3.0" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+  </ItemGroup>
+</Project>

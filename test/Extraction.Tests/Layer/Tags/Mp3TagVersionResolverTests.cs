@@ -1,5 +1,6 @@
 ﻿using Extension.Test;
 using Extraction.Layer.Tags;
+using Extraction.Layer.Tags.Interfaces;
 using Moq;
 using NUnit.Framework;
 using System.IO;

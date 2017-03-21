@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <AssemblyName>Extraction.Interfaces</AssemblyName>
+    <PackageId>Extraction.Interfaces</PackageId>
+    <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;portable-net45+win8</PackageTargetFallback>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ext\DataStructure.Tree\DataStructure.Tree.csproj" />
+    <ProjectReference Include="..\..\ext\Extension.IEnumerable\Extension.IEnumerable.csproj" />
+    <ProjectReference Include="..\DataAccess.Interfaces\DataAccess.Interfaces.csproj" />
+    <ProjectReference Include="..\Extraction.DomainObjects\Extraction.DomainObjects.csproj" />
+  </ItemGroup>
+</Project>

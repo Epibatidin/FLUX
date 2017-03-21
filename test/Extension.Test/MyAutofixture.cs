@@ -1,5 +1,5 @@
 ﻿using System;
-using Microsoft.Extensions.Internal;
+using System.Reflection;
 
 namespace Extension.Test
 {
@@ -13,16 +13,16 @@ namespace Extension.Test
         }
 
         public TType Build<TType>() where TType : class, new()
-        {           
-            var helpers = PropertyHelper.GetVisibleProperties(typeof(TType));
-
+        {
+            var properties = typeof(TType).GetProperties(); 
+                
             var result = new TType();
 
-            foreach (var helper in helpers)
+            foreach (var property in properties)
             {
-                var value = GenerateRandomValueByType(helper.Property.PropertyType);
+                var value = GenerateRandomValueByType(property.PropertyType);
 
-                helper.SetValue(result, value);
+                property.SetValue(result, value);
             }
             return result;
         }

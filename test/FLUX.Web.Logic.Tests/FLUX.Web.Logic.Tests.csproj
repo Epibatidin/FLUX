@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <AssemblyName>FLUX.Web.Logic.Tests</AssemblyName>
+    <PackageId>FLUX.Web.Logic.Tests</PackageId>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;portable-net45+win8</PackageTargetFallback>
+    <RuntimeFrameworkVersion>1.0.4</RuntimeFrameworkVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Extension.Test\Extension.Test.csproj" />
+    <ProjectReference Include="..\..\ext\Facade.MVC\Facade.MVC.csproj" />
+    <ProjectReference Include="..\..\src\DataAccess.Interfaces\DataAccess.Interfaces.csproj" />
+    <ProjectReference Include="..\..\src\FLUX.DomainObjects\FLUX.DomainObjects.csproj" />
+    <ProjectReference Include="..\..\src\FLUX.Interfaces\FLUX.Interfaces.csproj" />
+    <ProjectReference Include="..\..\src\FLUX.Web.Logic\FLUX.Web.Logic.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0-preview-20170106-08" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="1.1.1" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">
+    <PackageReference Include="NUnit" Version="3.6.1" />
+    <PackageReference Include="dotnet-test-nunit" Version="3.4.0-beta-3" />
+    <PackageReference Include="Moq" Version="4.7.1" />
+  </ItemGroup>
+</Project>

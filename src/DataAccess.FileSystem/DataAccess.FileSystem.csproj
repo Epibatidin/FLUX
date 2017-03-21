@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <AssemblyName>DataAccess.FileSystem</AssemblyName>
+    <PackageId>DataAccess.FileSystem</PackageId>
+    <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;portable-net45+win8</PackageTargetFallback>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ext\Extension.IEnumerable\Extension.IEnumerable.csproj" />
+    <ProjectReference Include="..\..\ext\DynamicLoading\DynamicLoading.csproj" />
+    <ProjectReference Include="..\..\ext\DataStructure.Tree\DataStructure.Tree.csproj" />
+    <ProjectReference Include="..\DataAccess.Base\DataAccess.Base.csproj" />
+    <ProjectReference Include="..\DataAccess.Interfaces\DataAccess.Interfaces.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="System.IO" Version="4.3.0" />
+    <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="1.1.0" />
+  </ItemGroup>
+</Project>

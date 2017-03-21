@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <AssemblyName>FLUX.Configuration</AssemblyName>
+    <PackageId>FLUX.Configuration</PackageId>
+    <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;portable-net45+win8</PackageTargetFallback>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ext\DynamicLoading\DynamicLoading.csproj" />
+    <ProjectReference Include="..\..\ext\Facade.Configuration\Facade.Configuration.csproj" />
+    <ProjectReference Include="..\..\ext\Facade.Session\Facade.Session.csproj" />
+    <ProjectReference Include="..\FLUX.Interfaces\FLUX.Interfaces.csproj" />
+    <ProjectReference Include="..\FLUX.Web.Logic\FLUX.Web.Logic.csproj" />
+    <ProjectReference Include="..\DataAccess.Interfaces\DataAccess.Interfaces.csproj" />
+    <ProjectReference Include="..\DataAccess.Base\DataAccess.Base.csproj" />
+    <ProjectReference Include="..\DataAccess.FileSystem\DataAccess.FileSystem.csproj" />
+    <ProjectReference Include="..\DataAccess.XMLStub\DataAccess.XMLStub.csproj" />
+    <ProjectReference Include="..\Extraction.Base\Extraction.Base.csproj" />
+    <ProjectReference Include="..\Extraction.Layer.File\Extraction.Layer.File.csproj" />
+    <ProjectReference Include="..\Extraction.Layer.Tags\Extraction.Layer.Tags.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.1" />
+  </ItemGroup>
+</Project>

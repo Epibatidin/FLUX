@@ -1,10 +1,7 @@
 ﻿using Extension.Test;
-using Extraction.Layer.Tags.Interfaces;
 using Extraction.Layer.Tags.TagReader;
-using Moq;
 using NUnit.Framework;
 using System.IO;
-using System.Text;
 
 namespace Extraction.Tests.Layer.Tags.Integration
 {
@@ -22,9 +19,7 @@ namespace Extraction.Tests.Layer.Tags.Integration
 
         protected override ID3V2TagReader CreateSUT()
         {
-            var mapper = new Mock<ITagSongFactory>();
-            mapper.Setup(c => c.IsSupported(It.IsAny<string>())).Returns(true);
-            var reader = new ID3V2TagReader(mapper.Object);
+            var reader = new ID3V2TagReader();
             return reader;
         }
 
