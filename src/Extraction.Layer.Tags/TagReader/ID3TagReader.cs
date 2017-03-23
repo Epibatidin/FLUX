@@ -7,7 +7,7 @@ namespace Extraction.Layer.Tags.TagReader
     public abstract class ID3TagReader : IMp3TagReader
     {
         private byte _subversion;
-        
+
         public ID3TagReader(byte subversion)
         {
             _subversion = subversion;
@@ -26,6 +26,20 @@ namespace Extraction.Layer.Tags.TagReader
 
         public abstract StreamTagContent ReadAllTagData(Stream stream);
 
+
+        protected bool ShouldAddFrame(Frame frame)
+        {
+            if (frame.FrameID == "TPOS")
+                throw new System.Exception("Found a usecase");
+
+            if (frame.FrameData == null) return false;
+            frame.FrameData = frame.FrameData.Trim('\0', '-', ' ');
+
+
+            if (frame.FrameData.Length == 0) return false;
+
+            return true;
+        }
 
         public bool Supports(Stream stream)
         {
