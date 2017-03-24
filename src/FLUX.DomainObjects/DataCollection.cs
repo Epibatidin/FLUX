@@ -7,7 +7,7 @@ namespace FLUX.DomainObjects
         public string OriginalValue { get; set; }
         public string PostbackName { get; set; }
 
-        public IList<string> LayerValues { get; set; }
+        public IEnumerable<LayerValueViewModel> LayerValues { get; set; }
 
         public bool IsLastElement { get; set; }
     }

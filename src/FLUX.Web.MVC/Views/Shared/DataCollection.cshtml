@@ -1,6 +1,4 @@
 ﻿@model FLUX.DomainObjects.DataCollection
-
-
 @*was soll passieren ? 
 wir machen nur noch layer key geraffel 
 wir soll jetzt einen wert rendern 
@@ -17,7 +15,45 @@ der rest wie ggewohn span
 
 wenn der erste wert null ist 
 nimm original value*@ 
-@if (Model.LayerValues.Count == 0)
+
+@{ bool first = true; }
+@foreach (var layerValue in Model.LayerValues)
+{
+    <div>
+        <div class="colorContainer">
+            @for (int i = 0; i < layerValue.ColorCodeActiveFlags.Length; i++)
+            {
+                string classes = "colorMarkers";
+                if (layerValue.ColorCodeActiveFlags[i])
+                {
+                    classes += " color" + i;
+                }
+                <div class="@classes">&nbsp;</div>
+            }
+        </div>
+        
+        <span>
+            @if(first)
+            {
+                <input name="@Model.PostbackName" class="spanLook" value="@layerValue.Value" />
+                first = false;
+            }
+            else
+            {
+                <text>@layerValue.Value</text>
+            }
+        </span>
+    </div>
+}
+@if (first)
+{
+    <span>
+        <input type="text" name="@Model.PostbackName" class="inValid" />
+    </span>
+}
+
+
+@*@if (Model.LayerValues.Count == 0)
 {
     <span>
         <input type="text" name="@Model.PostbackName" class="inValid" />
@@ -25,26 +61,64 @@ nimm original value*@
 }
 else
 {
+    var dict = new Dictionary<string, FooBaz>(StringComparer.CurrentCultureIgnoreCase);
+
     for (int i = 0; i < Model.LayerValues.Count; i++)
     {
         var layer = Model.LayerValues[i];
 
-    <span class="layer@(i)">
+        FooBaz container;
 
-        @if (i == 0)
+        if(!dict.TryGetValue(layer, out container))
         {
-            string classN = "spanLook";
-            if (string.IsNullOrEmpty(layer) && Model.IsLastElement)
+            container = new FooBaz();
+            dict.Add(layer, container); // neu 
+        }
+
+        container.Count++;
+
+        container.ColorFlags.AppendFormat("<div class='colorMarker color{0}'></div>", i);
+        container.Content.AppendFormat("<span class='' >");
+        if (i == 0)
+        {
+            container.Content.Append("<input ");
+
+        }
+
+
+
+        <div>
+            @for (int j = 0; j < 3; j++)
             {
-                layer = Model.OriginalValue;
-                classN += " inValid";
+                <div class="colorMarker color@(j)"></div>
             }
-            <input type="text" name="@Model.PostbackName" class="@classN" value="@layer" />
-        }
-        else
-        {
-            <text>@layer</text>
-        }
-    </span>
+            }
+
+
+
+
+
+
+
+
+            <span class="layer@(i)">
+                @if (i == 0)
+                {
+                    string classN = "spanLook";
+                    if (string.IsNullOrEmpty(layer) && Model.IsLastElement)
+                    {
+                        layer = Model.OriginalValue;
+                        classN += " inValid";
+                    }
+                    <input type="text" name="@Model.PostbackName" class="@classN" value="@layer" />
+                }
+                else
+                {
+                    <text>@layer</text>
+                }
+            </span>
+            <div class="clearfix"></div>
+
+        </div>
     }
-}
+}*@

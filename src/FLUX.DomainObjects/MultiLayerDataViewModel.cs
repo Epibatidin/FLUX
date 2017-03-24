@@ -1,11 +1,18 @@
 ﻿using Extraction.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace FLUX.DomainObjects
 {
     public class MultiLayerDataViewModel
     {
+        private class SortWrapper
+        {
+            public int Count;
+            public LayerValueViewModel Content;
+        }
+
         private int forLevel;
 
         public IList<string> Keys { get; set; }
@@ -38,12 +45,40 @@ namespace FLUX.DomainObjects
             dataCollection.IsLastElement = isLast;
             dataCollection.OriginalValue = OriginalValue;
             dataCollection.PostbackName = NamePattern + "." +key;
-            List<string> list = null;
 
-            if (!Container.Data.TryGetValue(key, out list))
-                list = new List<string>();
-            dataCollection.LayerValues = list;
+            List<string> list = null;
+            Container.Data.TryGetValue(key, out list);              
+            dataCollection.LayerValues = BuildContainer(list);
+
             return dataCollection;
+        }
+        
+        
+
+        public IEnumerable<LayerValueViewModel> BuildContainer(IList<string> values)
+        {
+            var dict = new Dictionary<string, SortWrapper>(StringComparer.CurrentCultureIgnoreCase);
+            if (values != null)
+            {
+                for (int i = 0; i < values.Count; i++)
+                {
+                    var value = values[i];
+                    if (string.IsNullOrEmpty(value)) continue;
+
+                    SortWrapper container;
+                    if (!dict.TryGetValue(value, out container))
+                    {
+                        container = new SortWrapper();
+                        container.Content = new LayerValueViewModel(values.Count, value);
+
+                        dict.Add(value, container);
+                    }
+
+                    container.Count++;
+                    container.Content.ColorCodeActiveFlags[i] = true;
+                }
+            }
+            return dict.Values.OrderByDescending(c => c.Count).Select(c => c.Content);
         }
 
         public int ID
