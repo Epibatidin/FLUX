@@ -9,3 +9,4 @@ bin/*
 Debug
 .vs/*
 node_modules/*
+**/project.assets.json
