@@ -5,7 +5,7 @@
 
   "Debug": {
     "RootNames": [ "Ashbury Heights" ],
-    "SubRootPos": [ ]
+    "SubRootPos": [0,1 ]
   },
   "Sources": [
     {

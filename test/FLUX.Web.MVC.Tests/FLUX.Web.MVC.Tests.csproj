@@ -13,8 +13,8 @@
     <ProjectReference Include="..\..\src\FLUX.Web.MVC\FLUX.Web.MVC.csproj" />
   </ItemGroup>
   <ItemGroup>
-	    <PackageReference Include="NUnit" Version="3.6.1" />
+    <PackageReference Include="NUnit" Version="3.6.1" />
     <PackageReference Include="dotnet-test-nunit" Version="3.4.0-beta-3" />
-    <PackageReference Include="Moq" Version="4.7.1" />
+    <PackageReference Include="Moq" Version="4.7.8" />
   </ItemGroup>
 </Project>
