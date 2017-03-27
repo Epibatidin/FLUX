@@ -2,28 +2,6 @@
     width: 942px;
 }
 
-.colorMarker {
-    height: 20px;
-    width: 7px;
-    border-width: 0px;
-    margin-right: 1px;
-    float:left;
-}
-
-.color0 {
-    background-color:blue;
-}
-
-
-.color1 {
-    background-color: green;
-}
-
-
-.color2 {
-    background-color: red;
-}
-
 .dropHere {
     width:300px;
     height:300px;
@@ -83,15 +61,6 @@ col.title {
 }
 
 
-.spanLook {
-    background:rgba(0,0,0,0);
-    border:none;
-    width: 100%;
-    display: block;
-    overflow: hidden;
-    font-size:14px;
-}
-
 span {
     font-family: Arial;
     font-size: 14px;
@@ -142,16 +111,13 @@ div {
     margin: 2px 5px;
 }
 
-.layer0 {
-    border-color: green;
-}
-
-.layer1 {
-    border-color: hotpink;
-}
 
 .cfix {
     content: "";
     clear: both;
     float: none;
+}
+
+.CD input {
+    width:34px;
 }

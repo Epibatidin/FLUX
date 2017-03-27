@@ -52,14 +52,16 @@ namespace FLUX.DomainObjects
 
             return dataCollection;
         }
-        
-        
+
+
 
         public IEnumerable<LayerValueViewModel> BuildContainer(IList<string> values)
         {
             var dict = new Dictionary<string, SortWrapper>(StringComparer.CurrentCultureIgnoreCase);
+            int valuesCount = 0;
             if (values != null)
             {
+                valuesCount = values.Count;
                 for (int i = 0; i < values.Count; i++)
                 {
                     var value = values[i];
@@ -78,6 +80,9 @@ namespace FLUX.DomainObjects
                     container.Content.ColorCodeActiveFlags[i] = true;
                 }
             }
+            if (dict.Count == 0)
+                return new[] { new LayerValueViewModel(valuesCount, null) };
+
             return dict.Values.OrderByDescending(c => c.Count).Select(c => c.Content);
         }
 

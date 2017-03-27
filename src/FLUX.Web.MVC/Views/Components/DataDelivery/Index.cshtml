@@ -65,15 +65,18 @@
                                         @trimmed
                                         <input type="hidden" value="@song.ID" class="idHolder" name="@(song.NamePattern + ".Id")" />
                                     </td>
-                                    @for (int s = 0; s < song.Keys.Count; s++)
-                                    {
-                                        <td>
-                                            <div class="fullWidth">
-                                                @Html.Partial("DataCollection", song.RetrieveData(song.Keys[s], s == song.Keys.Count - 1))
-                                            </div>
-                                        </td>
-                                    }
+
                                     <td>
+                                        <div class="fullWidth CD">
+                                            @Html.Partial("DataCollection", song.RetrieveData(song.Keys[0], false))
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="fullWidth">
+                                            @Html.Partial("DataCollection", song.RetrieveData(song.Keys[1], true))
+                                        </div>
+                                    </td>
                                 </tr>
 
                                 songCounter = songCounter + 1;

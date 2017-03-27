@@ -19,39 +19,29 @@ nimm original value*@
 @{ bool first = true; }
 @foreach (var layerValue in Model.LayerValues)
 {
-    <div>
-        <div class="colorContainer">
-            @for (int i = 0; i < layerValue.ColorCodeActiveFlags.Length; i++)
-            {
-                string classes = "colorMarkers";
-                if (layerValue.ColorCodeActiveFlags[i])
-                {
-                    classes += " color" + i;
-                }
-                <div class="@classes">&nbsp;</div>
-            }
-        </div>
+    <span class="valueLine">
         
-        <span>
-            @if(first)
+        @Html.Partial("ColorBlock", layerValue.ColorCodeActiveFlags)
+        
+        <div class="textContent">
+            @if (first)
             {
-                <input name="@Model.PostbackName" class="spanLook" value="@layerValue.Value" />
+                string classes = "spanLook";
+                if (layerValue.Value == null)
+                {
+                    classes += " invalid";
+                }
+                <input name="@Model.PostbackName" class="@classes" value="@layerValue.Value" />
                 first = false;
             }
             else
             {
                 <text>@layerValue.Value</text>
             }
-        </span>
-    </div>
-}
-@if (first)
-{
-    <span>
-        <input type="text" name="@Model.PostbackName" class="inValid" />
+        </div>
+        <div class="cfix"></div>
     </span>
 }
-
 
 @*@if (Model.LayerValues.Count == 0)
 {

@@ -1,0 +1,41 @@
+﻿.valueLine {
+    line-height: 23px;
+    margin-bottom:5px;
+}
+
+.colorMarker {
+    height: 23px;
+    width: 8px;
+    margin-right:2px;
+}
+
+.color0 {
+    background-color: green;
+}
+
+
+.color1 {
+    background-color: hotpink;
+}
+
+.color2 {
+    background-color: red;
+}
+
+.textContent {
+    margin-left: 3px;
+}
+
+.spanLook {
+    background: rgba(0,0,0,0);
+    border: none;
+    overflow: hidden;
+    font-size: 14px;
+    display: inline;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+p input {
+    
+}

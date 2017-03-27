@@ -34,6 +34,7 @@ namespace FLUX.Web.MVC
         {
             // Add MVC dependencies            
             services.AddMvc();
+
             services.AddOptions();
             services.Configure<RazorViewEngineOptions>(o =>
             {
